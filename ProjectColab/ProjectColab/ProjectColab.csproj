@@ -67,10 +67,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="index.aspx" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
+    <Content Include="WebFormAppAbrirChamado.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormAppAbrirChamado.aspx.cs">
+      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAppAbrirChamado.aspx.designer.cs">
+      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
