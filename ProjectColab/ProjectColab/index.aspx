@@ -11,9 +11,26 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <h2>COLAB</h2>
-            <hr />
-            <asp:HyperLink runat="server" Text="Abrir Chamado" NavigateUrl="WebFormAppAbrirChamado.aspx"></asp:HyperLink>
+            <head>
+	<title>COLAB</title>
+	<link rel="shortcut icon" href="Logo.png" >
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+	<div class="top">
+		<img src="Imangens/Logo.png">
+	</div>
+	<div class="top">
+		<a href="">DASHBOARD</a>
+		<a href="">BASE DE TUTORIAS</a>
+		<a href="">REQUISIÇÕES</a>
+	</div>
+    <div class="title">
+			<a>DASHBOARD</a>	
+	</div>
+
+</body>
         </div>
     </form>
 </body>

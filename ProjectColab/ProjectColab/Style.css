@@ -1,2 +1,93 @@
 ﻿body {
+    font-family: Arial;
+    font-weight: bold;
+    margin: auto;
+    padding: auto;
+    background-color: white;
 }
+
+img {
+    max-width: 5%;
+}
+
+.top {
+    background-color: white;
+    text-align: center;
+}
+
+    .top a {
+        list-style-type: none;
+        background-color: white;
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+.title {
+    background-color: black;
+    padding: 0.5%;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+}
+
+.mid {
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.poster {
+    background-color: black;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 10px;
+    max-width: 45%;
+}
+
+.number {
+    padding: 10%;
+    font-size: 1500%;
+}
+
+.bot {
+    background-color: black;
+    max-width: 100%;
+    margin-bottom: 0px;
+}
+
+.top a:hover {
+    background-color: red;
+    color: white;
+}
+
+.active {
+    background-color: red;
+}
+
+.middle {
+    text-align: center;
+}
+
+.btn {
+    background: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 150%;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 2% 20%;
+    margin: 1%;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
+    cursor: pointer;
+}
+
+    .btn:hover {
+    }
