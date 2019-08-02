@@ -11,7 +11,7 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string literalValue = ((Literal)e.Item.FindControl("Literal1")).Text;
+            
         }
     }
 }

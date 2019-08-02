@@ -89,5 +89,41 @@ img {
     cursor: pointer;
 }
 
-    .btn:hover {
-    }
+.btn:hover {
+}
+
+/* Abrir chamado */
+
+.radios div{
+    margin-right: 20px;
+    display: inline-block
+}
+
+.comboBox{
+    margin-top: 10px
+}
+
+.Maquinas {
+    margin-top: 10px;
+}
+
+.machi{
+    margin-left: 10px
+}
+
+.tomb{
+    display: block
+}
+
+.desc{
+    display: block;
+    margin-top: 10px;
+}
+
+.buttons {
+    margin-top: 10px
+}
+
+.buttons button{
+    margin-right: 15px;
+}
