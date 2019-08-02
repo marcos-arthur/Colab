@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imangens\Logo.png" />
+    <Content Include="Imangens\LogoBlack.png" />
     <Content Include="index.aspx" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />

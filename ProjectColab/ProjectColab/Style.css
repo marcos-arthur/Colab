@@ -6,16 +6,16 @@
     background-color: white;
 }
 
-img {
-    max-width: 5%;
+.top img {
+    max-width: 10%;
 }
 
 .top {
-    background-color: white;
+    background-color:white ;
     text-align: center;
 }
-
-    .top a {
+.btnwhite {
+        padding: 20%;
         list-style-type: none;
         background-color: white;
         display: inline-block;
@@ -23,14 +23,45 @@ img {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-    }
+}
+.btngray {
+    padding: 20%;
+    list-style-type: none;
+    background-color: rgb(230,230,230);
+    display: inline-block;
+    color: black;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-.title {
+.title{
     background-color: black;
     padding: 0.5%;
     color: white;
     font-size: 200%;
+}
+.topbtn {
+    background-color: white;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 30%;
+    margin-left: 30%;
+}
+.chamado {
+    background-color: black;
+    padding: 0.5%;
+    color: white;
+    font-size: 200%;
+    text-align: right;
+    text-decoration: none;
+}
+.page {
+    background-color: black;
+    padding: 0.5%;
+    color: white;
+    font-size: 200%;
+    text-align: left;
 }
 
 .mid {
@@ -61,7 +92,11 @@ img {
     margin-bottom: 0px;
 }
 
-.top a:hover {
+.btnwhite:hover {
+    background-color: red;
+    color: white;
+}
+.btngray:hover {
     background-color: red;
     color: white;
 }

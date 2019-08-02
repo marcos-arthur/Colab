@@ -14,22 +14,17 @@
             <div class="top">
                 <img src="Imangens/Logo.png"/>
 	        </div>
-	        <nav class="top">
-		        <a href="">DASHBOARD</a>
-		        <a href="">BASE DE TUTORIAS</a>
-		        <a href="">REQUISIÇÕES</a>
+	        <nav class="topbtn">
+		        <a href="" class="btnwhite">DASHBOARD</a>
+		        <a href="" class="btnwhite">BASE DE TUTORIAS</a>
+		        <a href="" class="btnwhite">REQUISIÇÕES</a>
+                <a href="WebFormAppAbrirChamado.aspx" class="btngray">+ ABRIR CHAMADO </a>
 	        </nav>
         </header>
         <body>
-            <form id="form1" runat="server">        
-	            
-                <div class="title">
-			            <a>DASHBOARD</a>	
-	            </div>
                 <div>
-                    <a href="WebFormAppAbrirChamado.aspx"> Abrir Chamado </a>
+                    
                 </div>
-            </form>
         </body>            
     </article>    
 </html>
