@@ -7,29 +7,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
         <title></title>
         <link rel="shortcut icon" href="Logo.png" />
-        <link rel="stylesheet" type="text/css" href="style.css"/>            
+        <link rel="stylesheet" type="text/css" href="Style.css"/>            
     </head>
     <article>
-        <header>	            
-            <div class="top">
-                <img src="Imangens/Logo.png"/>
-	        </div>
-	        <nav class="top">
-		        <a href="">DASHBOARD</a>
-		        <a href="">BASE DE TUTORIAS</a>
-		        <a href="">REQUISIÇÕES</a>
-	        </nav>
-        </header>
         <body>
-            <form id="form1" runat="server">        
-	            
-                <div class="title">
-			            <a>DASHBOARD</a>	
-	            </div>
-                <div>
-                    <a href="WebFormAppAbrirChamado.aspx"> Abrir Chamado </a>
+            <div class="menu">
+                <div class="clearfix">
+                    <div class="item"><a>DASHBOARD</a></div>
+                    <div class="item"><a>BASE DE TUTORIAS</a></div>
+                    <div class="item"><a>REQUISIÇÕES</a></div> 
+                    <div class="item2"><a>+</a></div>
+                    <div class="item2"><a>USUÁRIO</a></div>
                 </div>
-            </form>
+            </div>
         </body>            
     </article>    
 </html>
