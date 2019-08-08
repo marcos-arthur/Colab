@@ -1,77 +1,50 @@
 ﻿body {
     font-family: Arial;
     font-weight: bold;
-    margin: auto;
-    padding: auto;
+    background-color: RGB(240,240,240);
+    font-size: 100%;
+}
+
+.menu {
+    margin-top: 2%;
     background-color: white;
-}
-
-img {
-    max-width: 5%;
-}
-
-.top {
-    background-color: white;
-    text-align: center;
-}
-
-    .top a {
-        list-style-type: none;
-        background-color: white;
-        display: inline-block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-.title {
-    background-color: black;
-    padding: 0.5%;
-    color: white;
-    font-size: 200%;
-    text-align: center;
-}
-
-.mid {
-    border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 60%;
     margin: auto;
 }
 
-.poster {
-    background-color: black;
-    display: inline-block;
-    text-align: center;
-    color: white;
-    padding: 1%;
-    margin: 1%;
-    border-radius: 10px;
-    max-width: 45%;
+.item a {
+    float: left;
+    padding: 2%;
+    cursor: pointer;
+    border-top-style: solid;
+    border-top-color: white;
 }
 
-.number {
-    padding: 10%;
-    font-size: 1500%;
+.item2 a {
+    float: right;
+    padding: 2%;
+    cursor: pointer;
+    border-top-style: solid;
+    border-top-color: RGB(230,230,230);
+    background-color: RGB(230,230,230);
 }
 
-.bot {
-    background-color: black;
-    max-width: 100%;
-    margin-bottom: 0px;
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-.top a:hover {
-    background-color: red;
-    color: white;
+.item a:hover {
+    border-top-style: solid;
+    border-top-color: red;
 }
 
-.active {
-    background-color: red;
-}
-
-.middle {
-    text-align: center;
+.item2 a:hover {
+    background-color: RGB(220,220,220);
+    border-top-style: solid;
+    border-top-color: RGB(220,220,220);
 }
 
 .btn {
@@ -89,17 +62,18 @@ img {
     cursor: pointer;
 }
 
-.btn:hover {
-}
+
+    .btn:hover {
+    }
 
 /* Abrir chamado */
 
-.radios div{
+.radios div {
     margin-right: 20px;
     display: inline-block
 }
 
-.comboBox{
+.comboBox {
     margin-top: 10px
 }
 
@@ -107,15 +81,15 @@ img {
     margin-top: 10px;
 }
 
-.machi{
+.machi {
     margin-left: 10px
 }
 
-.tomb{
+.tomb {
     display: block
 }
 
-.desc{
+.desc {
     display: block;
     margin-top: 10px;
 }
@@ -124,6 +98,6 @@ img {
     margin-top: 10px
 }
 
-.buttons button{
-    margin-right: 15px;
-}
+    .buttons button {
+        margin-right: 15px;
+    }

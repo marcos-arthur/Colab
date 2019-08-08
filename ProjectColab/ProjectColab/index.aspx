@@ -10,26 +10,16 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
     <article>
-        <header>	            
-            <div class="top">
-                <img src="Imangens/Logo.png"/>
-	        </div>
-	        <nav class="top">
-		        <a href="">DASHBOARD</a>
-		        <a href="">BASE DE TUTORIAS</a>
-		        <a href="">REQUISIÇÕES</a>
-	        </nav>
-        </header>
         <body>
-            <form id="form1" runat="server">        
-	            
-                <div class="title">
-			            <a>DASHBOARD</a>	
-	            </div>
-                <div>
-                    <a href="WebFormAppAbrirChamado.aspx"> Abrir Chamado </a>
+            <div class="menu">
+                <div class="clearfix">
+                    <div class="item"><a>DASHBOARD</a></div>
+                    <div class="item"><a>BASE DE TUTORIAS</a></div>
+                    <div class="item"><a>REQUISIÇÕES</a></div> 
+                    <div class="item2"><a>+</a></div>
+                    <div class="item2"><a>USUÁRIO</a></div>
                 </div>
-            </form>
-        </body>            
+            </div>
+        </body>                
     </article>    
 </html>
