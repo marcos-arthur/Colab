@@ -21,10 +21,10 @@
 	<div class="top">
 		<img src="Imangens/Logo.png">
 	</div>
-	<div class="top">
-		<a href="">DASHBOARD</a>
-		<a href="">BASE DE TUTORIAS</a>
-		<a href="">REQUISIÇÕES</a>
+	<div class="menu">
+        <asp:HyperLink ID="HyperLink2" runat="server">DASHBOARD</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink3" runat="server">BASE DE TUTORIAIS</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server">REQUISIÇÕES</asp:HyperLink>
 	</div>
     <div class="title">
 			<a>DASHBOARD</a>	

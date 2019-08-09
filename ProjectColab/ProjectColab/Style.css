@@ -3,19 +3,24 @@
     font-weight: bold;
     margin: auto;
     padding: auto;
-    background-color: white;
+    background-color: RGB(219, 226, 237);
 }
 
-img {
+.logo{
     max-width: 5%;
+    filter:invert(100%);
 }
 
 .top {
-    background-color: white;
+    background-color: black;
     text-align: center;
 }
-
-    .top a {
+.menu {
+    text-align: center;
+    background-color: white;
+}
+  .menu a {
+        cursor: pointer;
         list-style-type: none;
         background-color: white;
         display: inline-block;
@@ -30,7 +35,7 @@ img {
     padding: 0.5%;
     color: white;
     font-size: 200%;
-    text-align: center;
+    text-align: left;
 }
 
 .mid {
@@ -61,7 +66,7 @@ img {
     margin-bottom: 0px;
 }
 
-.top a:hover {
+.menu a:hover {
     background-color: red;
     color: white;
 }
