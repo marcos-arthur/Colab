@@ -11,14 +11,15 @@
     max-width:30%;
 }
 .menu{
-    padding:1%;
-    max-width:80%;
-    margin:auto;
+    display:inline-block;
 }
 .clearfix{
     content:"";
-    display:table;
+    display:inline;
     clear:both;
+}
+.item{
+    margin-top:40px;
 }
 .item a {
     float: left;
