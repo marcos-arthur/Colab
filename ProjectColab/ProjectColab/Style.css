@@ -1,50 +1,61 @@
 ﻿body {
     font-family: Arial;
     font-weight: bold;
-    background-color: RGB(240,240,240);
+    background-color: rgb(33, 33, 33);
     font-size: 100%;
 }
-
-.menu {
-    margin-top: 2%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    max-width: 60%;
-    margin: auto;
+.itemimg{
+    float:left;
 }
-
+.itemimg img{
+    max-width:30%;
+}
+.menu{
+    padding:1%;
+    max-width:80%;
+    margin:auto;
+}
+.clearfix{
+    content:"";
+    display:table;
+    clear:both;
+}
 .item a {
     float: left;
-    padding: 2%;
+    padding: 10px;
     cursor: pointer;
-    border-top-style: solid;
-    border-top-color: white;
+    color: white;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 15px;
 }
 
 .item2 a {
-    float: right;
-    padding: 2%;
+    float: left;
+    padding: 10px;
     cursor: pointer;
-    border-top-style: solid;
-    border-top-color: RGB(230,230,230);
-    background-color: RGB(230,230,230);
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+    color: red;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 15px;
 }
 
 .item a:hover {
-    border-top-style: solid;
-    border-top-color: red;
+    border-style: solid;
+    border-color: black;;
+    background-color:white;
+    color:black;
 }
 
 .item2 a:hover {
-    background-color: RGB(220,220,220);
-    border-top-style: solid;
-    border-top-color: RGB(220,220,220);
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: red;
 }
 
 .btn {

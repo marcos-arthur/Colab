@@ -9,17 +9,17 @@
         <link rel="shortcut icon" href="Logo.png" />
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
-    <article>
-        <body>
-            <div class="menu">
-                <div class="clearfix">
-                    <div class="item"><a>DASHBOARD</a></div>
-                    <div class="item"><a>BASE DE TUTORIAS</a></div>
-                    <div class="item"><a>REQUISIÇÕES</a></div> 
-                    <div class="item2"><a>+</a></div>
-                    <div class="item2"><a>USUÁRIO</a></div>
+        <body> 
+            
+                <div class="menu">
+                    <div class="clearfix">
+                        <div class="itemimg"><img src="Imagens/Logo.png"/></div>
+                        <div class="item"><a>DASHBOARD</a></div>
+                        <div class="item"><a>BASE DE TUTORIAS</a></div>
+                        <div class="item"><a>REQUISIÇÕES</a></div>
+                        <div class="item"><a>USUÁRIO</a></div>
+                        <div class="item2"><a href="WebFormAddLab.aspx">ADICIONAR +</a></div>             
+                    </div>
                 </div>
-            </div>
-        </body>                
-    </article>    
+        </body>                  
 </html>
