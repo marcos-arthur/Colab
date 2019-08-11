@@ -70,6 +70,7 @@
     <Content Include="Imagens\Logo.png" />
     <Content Include="index.aspx" />
     <Content Include="Style.css" />
+    <Content Include="styleadd.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAppAbrirChamado.aspx" />
@@ -83,6 +84,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebFormAddLab.aspx.cs">
@@ -115,6 +123,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

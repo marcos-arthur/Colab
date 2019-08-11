@@ -1,82 +1,94 @@
 ﻿body {
+    /*
+    background-image: url("background2.png");
+    background-size: cover;*/
+    background-color: rgb(22, 22, 22);
     font-family: Arial;
-    font-weight: bold;
-    background-color: rgb(33, 33, 33);
-    font-size: 100%;
 }
-.itemimg{
-    float:left;
+
+.menu {
+    max-width: 90;
+    margin: auto;
+    padding: 1%;
 }
-.itemimg img{
-    max-width:30%;
+
+.logo {
+    margin-left: 50%;
 }
-.menu{
-    padding:1%;
-    max-width:80%;
-    margin:auto;
-}
-.clearfix{
-    content:"";
-    display:table;
-    clear:both;
-}
+
+    .logo a {
+        float: left;
+        text-decoration: none;
+        color: white;
+        border-bottom-style: dotted;
+        border-bottom-color: red;
+        border-width: 1px;
+        border-width: medium;
+        font-size: 3vw;
+    }
+
 .item a {
     float: left;
-    padding: 10px;
-    cursor: pointer;
+    text-decoration: none;
     color: white;
-    margin: 5px;
-    border-width: 1px;
+    padding: 0.6%;
+    margin: 10px;
     border-style: solid;
     border-color: white;
-    border-radius: 15px;
+    border-width: 1px;
+    border-radius: 7px;
+    font-size: 1.5vw;
 }
 
 .item2 a {
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    color: red;
-    margin: 5px;
-    border-width: 1px;
+    float: right;
+    text-decoration: none;
+    color: white;
+    padding: 0.6%;
+    margin: 10px;
     border-style: solid;
-    border-color: red;
-    border-radius: 15px;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 7px;
+    font-size: 1.5vw;
+}
+
+.cont {
+    max-width: 110%;
+    background-color: rgba(50,50,50,0.8);
+    border-style: solid;
+    border-color: white;
+    margin-top: 10%;
+    border-width: 1px;
+    border-radius: 5px;
 }
 
 .item a:hover {
-    border-style: solid;
-    border-color: black;;
-    background-color:white;
-    color:black;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    animation: bounce .3s;
 }
 
 .item2 a:hover {
-    border-style: solid;
-    border-color: black;
     background-color: white;
-    color: red;
+    color: black;
+    transition: all 0.3s ease;
+    animation: bounce .3s;
 }
 
-.btn {
-    background: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 150%;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 2% 20%;
-    margin: 1%;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 1s all ease;
-    cursor: pointer;
+.logo a:hover {
+    animation: bounce .5s;
 }
-
-
-    .btn:hover {
+@keyframes bounce {
+    50% {
+        transform: translateY(-10px);
     }
 
+    50% {
+        transform: translateY(10px);
+    }
+}
 /* Abrir chamado */
 
 .radios div {

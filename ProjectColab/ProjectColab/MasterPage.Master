@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="ProjectColab.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="Logo.png" />
+<link rel="stylesheet" type="text/css" href="style.css"/> 
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	<div class="menu">
+		<div class="item"><a href="">DASHBOARD</a></div>
+		<div class="item"><a href="">TUTORIAIS</a></div>
+		<div class="item"><a href="">REQUISIÇÕES</a></div>
+		<div class="logo"><a href="">COLAB</a></div>
+		<div class="item2"></i><a href="WebFormAddLab.aspx">+</a></div>
+		<div class="item2"><a href="">USUÁRIO</a></div>
+	</div>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

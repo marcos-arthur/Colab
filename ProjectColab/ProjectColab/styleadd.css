@@ -1,0 +1,50 @@
+﻿.mid {
+    margin-top: 10%;
+    max-width: 100%;
+    padding:2%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.text {
+    border-radius: 7px;
+    padding: 1%;
+    min-width: 90%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    background-color: rgb(22, 22, 22);
+    color:white;
+}
+p {
+    border-left-style: solid;
+    border-left-color: red;
+    border-width: 7px;
+    max-width:20%;
+    color: white;
+    padding:1%;
+    background-color: rgba(255, 0, 0, 0.25);
+    border-radius: 0px 10px 10px 0px;
+}
+.addbtn {
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    background: rgba(30,140,30,0.9);
+    color: #fff;
+    box-shadow: 2px 5px 0 rgba(30,100,30,0.5);
+    min-width:49%;
+}
+.cancelbtn {
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    background: rgba(100,30,30,0.8);
+    color: #fff;
+    box-shadow: 2px 5px 0 rgba(140,30,30,0.5);
+    min-width: 49%;
+}
