@@ -13,5 +13,18 @@ namespace ProjectColab
         {
 
         }
+        protected void Add_Click(object sender, EventArgs e)
+        {
+            Modelo.Laboratorios alaboratorios;
+            DAL.DALLaboratorio aDALLaboratorio;
+
+            alaboratorios = new Modelo.Laboratorios(id.Text, nome.Text, modelo.Text, Convert.ToInt32(quantidade.Text));
+
+            aDALLaboratorio = new DAL.DALLaboratorio();
+
+            aDALLaboratorio.Insert(alaboratorios);
+
+            Response.Redirect("~\\WebFormCRUDLabs.aspx");
+        }
     }
 }

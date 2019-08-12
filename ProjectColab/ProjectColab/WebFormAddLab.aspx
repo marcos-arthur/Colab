@@ -29,20 +29,18 @@
 
 
         <div class="mid">
-            <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="name" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
+            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="CÓDIGO DO LABORATÓRIO" CssClass="text"></asp:TextBox>
+
+            <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
 
             <p>QUANTIDADE DE MAQUINAS</p>
-            <asp:TextBox runat="server" ID="qtd" placeholder="QUANTIDADE DE MÁQUINAS" CssClass="text" ></asp:TextBox>
+            <asp:TextBox runat="server" ID="quantidade" placeholder="QUANTIDADE DE MÁQUINAS" CssClass="text" ></asp:TextBox>
 
             <p>MODELO</p>
 
-            <asp:TextBox runat="server" ID="mdl" placeholder="MODELO" CssClass="text"></asp:TextBox>
-
-            <br />
-            <br />
-            <asp:Button runat="server" ID="add" Text="Adicionar" CssClass="addbtn"/>
+            <asp:TextBox runat="server" ID="modelo" placeholder="MODELO" CssClass="text"></asp:TextBox>
+            <asp:Button ID="add" runat="server" Text="Button"  CssClass="addbtn" OnClick="Add_Click" />
             <asp:Button runat="server" ID="cancel" Text="Cancelar" CssClass="cancelbtn"/>
-
         </div>
     </form>
 </body>
