@@ -10,16 +10,18 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
         <body> 
-            
-                <div class="menu">
-                    <div class="clearfix">
-                        <div class="itemimg"><img src="Imagens/Logo.png"/></div>
-                        <div class="item"><a>DASHBOARD</a></div>
-                        <div class="item"><a>BASE DE TUTORIAS</a></div>
-                        <div class="item"><a>REQUISIÇÕES</a></div>
-                        <div class="item"><a>USUÁRIO</a></div>
-                        <div class="item2"><a href="WebFormAddLab.aspx">ADICIONAR +</a></div>             
-                    </div>
-                </div>
+	        <div class="logo"><a href="">COLAB</a></div>
+	        <div class="container">
+		        <div class="box">
+			        <a href="">DASHBOARD</a>
+			        <a href="">TUTORIAIS</a>
+			        <a href="">REQUISIÇÕES</a>
+			        <a href="">LABORATÓRIOS</a>
+		        </div>
+		        <div class="box2">
+			        <a href="">USUARIO</a>
+			        <a href="WebFormAddLab.aspx">+</a>
+		        </div>		
+	        </div>
         </body>                  
 </html>

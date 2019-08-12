@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background2.png" />
     <Content Include="Imagens\Logo.png" />
     <Content Include="index.aspx" />
     <Content Include="Style.css" />
+    <Content Include="styleadd.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAppAbrirChamado.aspx" />

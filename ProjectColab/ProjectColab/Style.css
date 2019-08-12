@@ -1,82 +1,90 @@
 ﻿body {
     font-family: Arial;
     font-weight: bold;
-    background-color: rgb(33, 33, 33);
-    font-size: 100%;
+    background-color: rgb(60,60,60);
+    /*background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }
-.itemimg{
-    float:left;
-}
-.itemimg img{
-    max-width:30%;
-}
-.menu{
-    padding:1%;
-    max-width:80%;
-    margin:auto;
-}
-.clearfix{
-    content:"";
-    display:table;
-    clear:both;
-}
-.item a {
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    margin: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 15px;
+.logo {
+    text-align: center;
+    max-width: 100%;
+    padding: 2%;
 }
 
-.item2 a {
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    color: red;
-    margin: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: red;
-    border-radius: 15px;
-}
-
-.item a:hover {
-    border-style: solid;
-    border-color: black;;
-    background-color:white;
-    color:black;
-}
-
-.item2 a:hover {
-    border-style: solid;
-    border-color: black;
-    background-color: white;
-    color: red;
-}
-
-.btn {
-    background: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 150%;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 2% 20%;
-    margin: 1%;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 1s all ease;
-    cursor: pointer;
-}
-
-
-    .btn:hover {
+    .logo a {
+        font-size: 3vw;
+        text-decoration: none;
+        color: white;
+        border-bottom-style: dotted;
+        border-bottom-color: red;
+        border-bottom-width: medium;
     }
 
+.container {
+    max-width: 80%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box {
+    display: inline-block;
+    width: 50%;
+    margin: 1%;
+}
+
+    .box a {
+        font-size: 1.1vw;
+        color: black;
+        text-decoration: none;
+        border-color: white;
+        border-style: solid;
+        padding: 1.5%;
+    }
+
+.box2 {
+    display: inline-block;
+    text-align: right;
+    width: 47%;
+    margin:0%;
+}
+
+    .box2 a {
+        font-size: 1.1vw;
+        color: black;
+        text-decoration: none;
+        border-color: white;
+        border-style: solid;
+        padding: 1.6%;
+    }
+
+.box a:hover {
+    border-bottom-color: red;
+    border-style: solid;
+    transition: all 0.5s ease;
+}
+
+.box2 a:hover {
+    border-color: rgb(210,210,210);
+    background-color: rgb(210,210,210);
+    border-style: solid;
+    transition: all 0.7s ease;
+}
+
+.logo a:hover {
+    animation: bounce .5s;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
 /* Abrir chamado */
 
 .radios div {
