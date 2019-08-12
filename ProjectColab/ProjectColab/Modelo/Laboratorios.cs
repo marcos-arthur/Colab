@@ -9,22 +9,22 @@ namespace ProjectColab.Modelo
     {
         public string id { get; set; }
         public string nome { get; set; }
-        public string modelo { get; set; }
-        public int quantidade { get; set; }
+        public string equipamento { get; set; }
+        public decimal quantidade { get; set; }
 
         public Laboratorios()
         {
             this.id = "";
             this.nome = "";
-            this.modelo = "";
+            this.equipamento= "";
             this.quantidade = 0;
         }
 
-        public Laboratorios(string aid,string anome,string amodelo,int aquantidade)
+        public Laboratorios(string aid,string anome,string aequipamento,decimal aquantidade)
         {
             this.id = aid;
             this.nome = anome;
-            this.modelo = amodelo;
+            this.equipamento = aequipamento;
             this.quantidade = aquantidade;
         }
     }

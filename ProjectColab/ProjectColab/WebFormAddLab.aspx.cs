@@ -18,7 +18,7 @@ namespace ProjectColab
             Modelo.Laboratorios alaboratorios;
             DAL.DALLaboratorio aDALLaboratorio;
 
-            alaboratorios = new Modelo.Laboratorios(id.Text, nome.Text, modelo.Text, Convert.ToInt32(quantidade.Text));
+            alaboratorios = new Modelo.Laboratorios(id.Text, nome.Text, modelo.Text, Convert.ToDecimal(quantidade.Text));
 
             aDALLaboratorio = new DAL.DALLaboratorio();
 

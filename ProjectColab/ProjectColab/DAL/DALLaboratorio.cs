@@ -40,7 +40,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(),dr["nome"].ToString(),dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["equipamento"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
                     // Adiciona o livro lido à lista
                     aListLaboratorios.Add(aLaboratorios);
                 }
@@ -63,11 +63,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(id,nome,modelo,quantidade) VALUES(1,tudobom,you,2)", conn);
-            cmd.Parameters.AddWithValue("id", obj.id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome,equipamento,quantidade) VALUES(@nome,@equipamento,@quantidade)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
-            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
+            cmd.Parameters.AddWithValue("@equipamento", obj.equipamento);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
