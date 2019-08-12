@@ -16,7 +16,7 @@
 			        <a href="">DASHBOARD</a>
 			        <a href="">TUTORIAIS</a>
 			        <a href="">REQUISIÇÕES</a>
-			        <a href="">LABORATÓRIOS</a>
+			        <a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a>
 		        </div>
 		        <div class="box2">
 			        <a href="">USUARIO</a>
