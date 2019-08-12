@@ -40,7 +40,7 @@ p {
     background: rgba(30,140,30,0.9);
     color: #fff;
     box-shadow: 2px 5px 0 rgba(30,100,30,0.5);
-    min-width:49%;
+    min-width:20%;
 }
 .cancelbtn {
     text-transform: uppercase;
@@ -52,6 +52,6 @@ p {
     background: rgba(150,30,30,0.8);
     color: #fff;
     box-shadow: 2px 4px 0 rgba(140,30,30,0.5);
-    min-width: 49%;
+    min-width: 20%;
 }
 

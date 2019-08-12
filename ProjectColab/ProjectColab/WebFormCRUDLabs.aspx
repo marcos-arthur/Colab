@@ -26,14 +26,22 @@
 	        </div>
         <div class="mid">
             <div>
-            <asp:hyperlink ID="inserir" NavigateUrl="~//WebFormAddLab.aspx" runat="server"  Text="ADICIONAR LABORATÓRIO" CssClass="addbtn"></asp:hyperlink>            
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+            <asp:Button ID="Button1" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="addbtn" PostBackUrl="~/WebFormAddLab.aspx" />     
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="Codigo" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="Nome do Laboratório" SortExpression="nome" />
                     <asp:BoundField DataField="equipamento" HeaderText="Tipo de Equipamentos" SortExpression="equipamento" />
                     <asp:BoundField DataField="quantidade" HeaderText="Quantidade" SortExpression="quantidade" />
                 </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
         </div></div>
