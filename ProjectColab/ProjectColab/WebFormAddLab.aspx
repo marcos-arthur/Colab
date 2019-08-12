@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-	        <div class="logo"><a href="">COLAB</a></div>
+	        <div class="logo"><a href="index.aspx">COLAB</a></div>
 	        <div class="container">
 		        <div class="box">
 			        <a href="">DASHBOARD</a>
@@ -29,7 +29,7 @@
 
 
         <div class="mid">
-            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="CÓDIGO DO LABORATÓRIO" CssClass="text" ReadOnly="True" Enabled="False"></asp:TextBox>
+            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False"></asp:TextBox>
 
             <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
 

@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-	        <div class="logo"><a href="">COLAB</a></div>
+	        <div class="logo"><a href="index.aspx">COLAB</a></div>
 	        <div class="container">
 		        <div class="box">
 			        <a href="">DASHBOARD</a>
