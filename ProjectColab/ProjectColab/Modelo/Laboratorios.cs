@@ -20,11 +20,11 @@ namespace ProjectColab.Modelo
             this.quantidade = 0;
         }
 
-        public Laboratorios(string aid,string anome,string aequipamento,int aquantidade)
+        public Laboratorios(string aid,string anome,string amodelo,int aquantidade)
         {
             this.id = aid;
             this.nome = anome;
-            this.modelo = aequipamento;
+            this.modelo = amodelo;
             this.quantidade = aquantidade;
         }
     }
