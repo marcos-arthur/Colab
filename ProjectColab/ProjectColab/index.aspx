@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
         <body> 
-	        <div class="logo"><a href="">COLAB</a></div>
+	        <div class="logo"><a href="index.aspx">COLAB</a></div>
 	        <div class="container">
 		        <div class="box">
 			        <a href="">DASHBOARD</a>
