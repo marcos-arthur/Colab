@@ -67,17 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background2.png" />
     <Content Include="Imagens\Logo.png" />
     <Content Include="index.aspx" />
+    <Content Include="script.js" />
     <Content Include="Style.css" />
+    <Content Include="styleadd.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAppAbrirChamado.aspx" />
     <Content Include="WebFormAppUpdateLab.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
+    <Content Include="WebFormEditLab.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\DALSalas.cs" />
+    <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -85,7 +89,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Salas.cs" />
+    <Compile Include="Modelo\Laboratorios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebFormAddLab.aspx.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
@@ -114,6 +118,13 @@
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.designer.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditLab.aspx.cs">
+      <DependentUpon>WebFormEditLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditLab.aspx.designer.cs">
+      <DependentUpon>WebFormEditLab.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

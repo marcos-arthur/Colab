@@ -9,16 +9,15 @@
         <link rel="shortcut icon" href="Logo.png" />
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
-        <body>             
-            <div class="menu">
-                <div class="clearfix">
-                    <div class="itemimg"><img src="Imagens/Logo.png"/></div>
-                    <div class="item"><a>DASHBOARD</a></div>
-                    <div class="item"><a>BASE DE TUTORIAS</a></div>
-                    <div class="item"><a>REQUISIÇÕES</a></div>
-                    <div class="item"><a>USUÁRIO</a></div>
-                    <div class="item2"><a href="WebFormAddLab.aspx">ADICIONAR +</a></div>             
-                </div>
-            </div>
+        <body> 
+	        <div class="logo"><a href="index.aspx">COLAB</a></div>
+            <ul class="menu2" style="background-color:white">
+                <li class="li1"><a href="">DASHBOARD</a></li>
+                <li class="li1"><a href="">TUTORIAIS</a></li>
+                <li class="li1"><a href="">REQUISIÇÕES</a></li>
+                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
+                <li class="li2"><a href="">USUARIO</a></li>
+            </ul>
         </body>                  
 </html>

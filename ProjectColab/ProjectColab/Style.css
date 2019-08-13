@@ -1,85 +1,87 @@
 ﻿body {
     font-family: Arial;
     font-weight: bold;
-    background-color: rgb(33, 33, 33);
-    font-size: 100%;
+    background-color: rgb(60,60,60);
+    /*background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }
-.itemimg{
-    float:left;
-}
-.itemimg img{
-    max-width:30%;
-}
-.menu{
-    padding:1%;
-    max-width:80%;
-    margin:auto;
-}
-/*
-.clearfix{
-    content:"";
-    display:table;
-    clear:both;
-}
-*/
-
-.item a {
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    margin: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 15px;
+.logo {
+    text-align: center;
+    max-width: 100%;
+    padding: 2%;
 }
 
-.item2 a {
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    color: red;
-    margin: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: red;
-    border-radius: 15px;
-}
-
-.item a:hover {
-    border-style: solid;
-    border-color: black;;
-    background-color:white;
-    color:black;
-}
-
-.item2 a:hover {
-    border-style: solid;
-    border-color: black;
-    background-color: white;
-    color: red;
-}
-
-.btn {
-    background: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 150%;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 2% 20%;
-    margin: 1%;
-    text-transform: uppercase;
+    .logo a {
+        font-size: 3vw;
+        text-decoration: none;
+        color: white;
+        border-bottom-style: dotted;
+        border-bottom-color: red;
+        border-bottom-width: medium;
+    }
+.menu2 {
+    font-size:0.9vw;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    transition: 1s all ease;
-    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width:60%;
+    margin:auto;
+    background-color:white;
 }
 
+.li1 {
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+}
 
-    .btn:hover {
+.li2 {
+    float: right;
+}
+
+.li2 a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+.li1 a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.li1:hover {
+    border-bottom-color: red;
+    border-bottom-style: solid;
+    transition: all 0.5s ease;
+}
+
+.li2:hover {
+    background-color: rgb(210,210,210);
+    border-bottom-color: rgb(210,210,210);
+    border-bottom-style: solid;
+    transition: all 0.7s ease;
+}
+
+.logo a:hover {
+    animation: bounce .5s;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-10px);
     }
 
+    50% {
+        transform: translateY(10px);
+    }
+}
 /* Abrir chamado */
 
 .radios div {
@@ -115,3 +117,22 @@
     .buttons button {
         margin-right: 15px;
     }
+
+.menu2 {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+}
+.li1{
+    float:left;
+}
+.li2{
+    float:right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
