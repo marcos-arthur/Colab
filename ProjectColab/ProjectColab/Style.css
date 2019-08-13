@@ -15,11 +15,14 @@
     max-width:80%;
     margin:auto;
 }
+/*
 .clearfix{
     content:"";
     display:table;
     clear:both;
 }
+*/
+
 .item a {
     float: left;
     padding: 10px;

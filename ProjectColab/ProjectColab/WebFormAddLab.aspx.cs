@@ -13,5 +13,21 @@ namespace ProjectColab
         {
 
         }
+
+        protected void saveButton(object sender, EventArgs e)
+        {
+            Modelo.Salas aSalas;
+            DAL.DALSalas aDalSalas;
+
+            aSalas = new Modelo.Salas(name.Text, 0);
+
+            aDalSalas = new DAL.DALSalas();
+
+            aDalSalas.Insert(aSalas);
+
+            aSalaequip = aDalSalas.Select();            
+
+            Response.Redirect("~\\WebFormCRUDLabs.aspx");
+        }
     }
 }

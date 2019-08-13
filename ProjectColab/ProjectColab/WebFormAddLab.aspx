@@ -21,7 +21,7 @@
 
             <br />
             <br />
-            <asp:Button runat="server" ID="add" Text="Adicionar"/>
+            <asp:Button runat="server" ID="add" Text="Adicionar" OnClick="saveButton"/>
             <asp:Button runat="server" ID="cancel" Text="Cancelar"/>
 
         </div>
