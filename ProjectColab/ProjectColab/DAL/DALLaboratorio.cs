@@ -53,6 +53,11 @@ namespace ProjectColab.DAL
             return aListLaboratorios;
         }
 
+
+
+
+
+
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Laboratorios obj)
         {
@@ -70,5 +75,89 @@ namespace ProjectColab.DAL
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Laboratorios obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome, equipamento = @equipamento, quantidade = @quantidade Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@equipamento", obj.equipamento);
+            cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
+
+            cmd.ExecuteNonQuery();
+        }
+
+
+
+
+
+
+
+
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Laboratorios> Select(string id)
+        {
+            Modelo.Laboratorios aLaboratorios;
+
+            List<Modelo.Laboratorios> aListLaboratorios = new List<Modelo.Laboratorios>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Select * From Laboratorios Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["equipamento"].ToString(),Convert.ToInt32(dr["quantidade"].ToString()));
+
+                    aListLaboratorios.Add(aLaboratorios);
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aListLaboratorios;
+        }
+
+
+
+
+
+
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(Modelo.Laboratorios obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("Delete From Laboratorios Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+
+            cmd.ExecuteNonQuery();
+        }
+
+
+
     }
 }

@@ -12,8 +12,6 @@
 <body>
     <form id="form1" runat="server">
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-	        <div class="container">
-        <div class ="menu3">
         <ul class="menu2" style="background-color:white">
             <li class="li1"><a href="">DASHBOARD</a></li>
             <li class="li1"><a href="">TUTORIAIS</a></li>
@@ -22,12 +20,11 @@
             <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
             <li class="li2"><a href="">USUARIO</a></li>
         </ul>
-        </div>
 
 
 
         <div class="mid">
-            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False"></asp:TextBox>
+            <p style="display:none">CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False" style="display:none"></asp:TextBox>
 
             <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
 

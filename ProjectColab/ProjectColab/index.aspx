@@ -11,17 +11,13 @@
     </head>
         <body> 
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-	        <div class="container">
-		        <div class="box">
-			        <a href="">DASHBOARD</a>
-			        <a href="">TUTORIAIS</a>
-			        <a href="">REQUISIÇÕES</a>
-			        <a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a>
-		        </div>
-		        <div class="box2">
-			        <a href="">USUARIO</a>
-			        <a href="WebFormAddLab.aspx">+</a>
-		        </div>		
-	        </div>
+            <ul class="menu2" style="background-color:white">
+                <li class="li1"><a href="">DASHBOARD</a></li>
+                <li class="li1"><a href="">TUTORIAIS</a></li>
+                <li class="li1"><a href="">REQUISIÇÕES</a></li>
+                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
+                <li class="li2"><a href="">USUARIO</a></li>
+            </ul>
         </body>                  
 </html>

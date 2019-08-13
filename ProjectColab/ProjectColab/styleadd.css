@@ -10,7 +10,7 @@
 .text {
     border-radius: 4px;
     padding: 0.5%;
-    font-size: 0.9vw;
+    font-size: 0.8vw;
     min-width: 24%;
     max-width:90%;
     border-style: solid;
@@ -55,4 +55,18 @@ p {
     box-shadow: 2px 4px 0 rgba(140,30,30,0.5);
     min-width: 25%;
 }
+.addbtn:hover {
+    animation: bounce2 .5s;
+}
+.cancelbtn:hover {
+    animation: bounce2 .5s;
+}
+@keyframes bounce2 {
+    50% {
+        transform: translateY(-2px);
+    }
 
+    50% {
+        transform: translateY(3px);
+    }
+}

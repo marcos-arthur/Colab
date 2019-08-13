@@ -70,6 +70,7 @@
     <Content Include="background2.png" />
     <Content Include="Imagens\Logo.png" />
     <Content Include="index.aspx" />
+    <Content Include="script.js" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="Web.config" />
@@ -77,6 +78,7 @@
     <Content Include="WebFormAppAbrirChamado.aspx" />
     <Content Include="WebFormAppUpdateLab.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
+    <Content Include="WebFormEditLab.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALLaboratorio.cs" />
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.designer.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditLab.aspx.cs">
+      <DependentUpon>WebFormEditLab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditLab.aspx.designer.cs">
+      <DependentUpon>WebFormEditLab.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
