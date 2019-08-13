@@ -33,6 +33,29 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormEditLab.aspx");
             }
+            if (e.CommandName == "Excluir")
+            {
+                string id;
+                Modelo.Laboratorios aLaboratorios;
+                DAL.DALLaboratorio aDALLaboratorio;
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do livro
+                id = GridView1.Rows[index].Cells[0].Text;
+
+                // Instancia um objeto do livro vazio
+                aLaboratorios = new Modelo.Laboratorios();
+                aLaboratorios.id = id; //atribui apenas o ID
+
+                // Instancia objeto da camada de negócio
+                aDALLaboratorio = new DAL.DALLaboratorio();
+
+                // Chama método de delete passando o objeto apenas com o ID preenchido
+                aDALLaboratorio.Delete(aLaboratorios);
+
+                Response.Redirect("~\\WebFormCRUDLabs.aspx");
+            }
 
         }
     }
