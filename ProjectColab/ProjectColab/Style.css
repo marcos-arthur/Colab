@@ -20,55 +20,52 @@
         border-bottom-color: red;
         border-bottom-width: medium;
     }
-
-.container {
-    max-width: 80%;
-    margin: auto;
-    background-color: white;
+.menu2 {
+    font-size:0.9vw;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width:60%;
+    margin:auto;
+    background-color:white;
 }
 
-.box {
-    display: inline-block;
-    width: 50%;
-    margin: 1%;
+.li1 {
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-bottom-color: white;
+    border-bottom-style: solid;
 }
 
-    .box a {
-        font-size: 1.1vw;
-        color: black;
-        text-decoration: none;
-        border-color: white;
-        border-style: solid;
-        padding: 1.5%;
-    }
-
-.box2 {
-    display: inline-block;
-    text-align: right;
-    width: 47%;
-    margin:0%;
+.li2 {
+    float: right;
 }
 
-    .box2 a {
-        font-size: 1.1vw;
-        color: black;
-        text-decoration: none;
-        border-color: white;
-        border-style: solid;
-        padding: 1.6%;
-    }
+.li2 a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+.li1 a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
 
-.box a:hover {
+.li1:hover {
     border-bottom-color: red;
-    border-style: solid;
+    border-bottom-style: solid;
     transition: all 0.5s ease;
 }
 
-.box2 a:hover {
-    border-color: rgb(210,210,210);
+.li2:hover {
     background-color: rgb(210,210,210);
-    border-style: solid;
+    border-bottom-color: rgb(210,210,210);
+    border-bottom-style: solid;
     transition: all 0.7s ease;
 }
 
@@ -120,3 +117,22 @@
     .buttons button {
         margin-right: 15px;
     }
+
+.menu2 {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+}
+.li1{
+    float:left;
+}
+.li2{
+    float:right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

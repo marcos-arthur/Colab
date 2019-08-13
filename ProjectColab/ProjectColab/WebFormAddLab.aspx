@@ -13,23 +13,21 @@
     <form id="form1" runat="server">
 	        <div class="logo"><a href="">COLAB</a></div>
 	        <div class="container">
-		        <div class="box">
-			        <a href="">DASHBOARD</a>
-			        <a href="">TUTORIAIS</a>
-			        <a href="">REQUISIÇÕES</a>
-			        <a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a>
-		        </div>
-		        <div class="box2">
-			        <a href="">USUARIO</a>
-			        <a href="WebFormAddLab.aspx">+</a>
-		        </div>		
-	        </div>
-
+        <div class ="menu3">
+        <ul class="menu2" style="background-color:white">
+            <li class="li1"><a href="">DASHBOARD</a></li>
+            <li class="li1"><a href="">TUTORIAIS</a></li>
+            <li class="li1"><a href="">REQUISIÇÕES</a></li>
+            <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+            <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
+            <li class="li2"><a href="">USUARIO</a></li>
+        </ul>
+        </div>
 
 
 
         <div class="mid">
-            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="CÓDIGO DO LABORATÓRIO" CssClass="text" ReadOnly="True" Enabled="False"></asp:TextBox>
+            <p>CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False"></asp:TextBox>
 
             <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
 
@@ -38,9 +36,11 @@
             <p>MODELO</p><asp:TextBox runat="server" ID="modelo" placeholder="MODELO" CssClass="text"></asp:TextBox>
 
             <br />
-            <br />
-            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="addbtn" OnClick="Add_Click"/>
-            <asp:Button runat="server" ID="cancel" Text="Cancelar" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
+            <br />       
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="addbtn" OnClick="Add_Click"/>
+                <asp:Button runat="server" ID="cancel" Text="Cancelar" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
+
+
         </div>
     </form>
 </body>

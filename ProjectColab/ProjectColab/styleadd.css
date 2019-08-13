@@ -1,7 +1,7 @@
 ﻿.mid {
     margin:auto;
-    margin-top:5%;
-    max-width: 70%;
+    margin-top:2%;
+    max-width: 50%;
     padding:2%;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -9,9 +9,9 @@
 }
 .text {
     border-radius: 4px;
-    padding: 1%;
-    font-size: 1vw;
-    min-width: 30%;
+    padding: 0.5%;
+    font-size: 0.9vw;
+    min-width: 24%;
     max-width:90%;
     border-style: solid;
     border-width: 1px;
@@ -23,35 +23,36 @@ p {
     border-left-style: solid;
     border-left-color: red;
     border-width: 7px;
-    max-width:30%;
+    max-width:50%;
     color: white;
     padding:1%;
     background-color: rgba(255, 0, 0, 0.25);
     border-radius: 0px 10px 10px 0px;
-    font-size:1.2vw;
+    font-size:1.1vw;
 }
 .addbtn {
     text-transform: uppercase;
     border-radius: 10px;
-    font-size:1.3vw;
+    font-size:0.8vw;
     padding: 1%;
+    margin-right:2%;
     border: none;
     cursor: pointer;
     background: rgba(30,140,30,0.9);
     color: #fff;
     box-shadow: 2px 5px 0 rgba(30,100,30,0.5);
-    min-width:20%;
+    min-width:25%;
 }
 .cancelbtn {
     text-transform: uppercase;
     border-radius: 10px;
     padding: 1%;
-    font-size: 1.3vw;
+    font-size: 0.8vw;
     border: none;
     cursor: pointer;
     background: rgba(150,30,30,0.8);
     color: #fff;
     box-shadow: 2px 4px 0 rgba(140,30,30,0.5);
-    min-width: 20%;
+    min-width: 25%;
 }
 
