@@ -27,12 +27,12 @@
             <div>   
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15">
                 <Columns>
-                    <asp:CommandField ShowDeleteButton="True" />
                     <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
                     <asp:BoundField DataField="equipamento" HeaderText="equipamento" SortExpression="equipamento" />
                     <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
                     <asp:ButtonField CommandName="Editar" Text="Editar" />
+                    <asp:ButtonField CommandName="Excluir" Text="Excluir" />
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                 <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

@@ -25,7 +25,7 @@ namespace ProjectColab
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do livro
-                id = GridView1.Rows[index].Cells[1].Text;
+                id = GridView1.Rows[index].Cells[0].Text;
 
                 // Grava código do Livro na sessão
                 Session["id"] = id;

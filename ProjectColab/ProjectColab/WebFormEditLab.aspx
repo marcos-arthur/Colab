@@ -24,7 +24,7 @@
         </ul>
 
             <div class="mid">
-                <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="500px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="500px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnItemDeleted="DetailsView1_ItemDeleted">
                     <EditRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
                     <Fields>
                         <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
