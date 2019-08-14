@@ -40,7 +40,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(),Convert.ToInt32(dr["status"].ToString()), dr["resumo"].ToString(), Convert.ToDecimal(dr["quantidadeeq"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -51,6 +51,26 @@ namespace ProjectColab.DAL
             conn.Close();
 
             return aListChamado;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void Insert(Modelo.Chamado obj)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(status,resumo,quant_equipamentos_defeituosas,data) VALUES (@status,@resumo,@quant_equipamentos_defeituosas,@data)", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@resumo", obj.resumo);
+            cmd.Parameters.AddWithValue("@quant_equipamentos_defeituosas", obj.quantidadeeq);
+            cmd.Parameters.AddWithValue("@data", obj.data);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
         }
 
     }

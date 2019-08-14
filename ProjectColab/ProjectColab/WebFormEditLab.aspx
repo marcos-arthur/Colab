@@ -14,14 +14,14 @@
     <form id="form1" runat="server">
         <div>
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-        <ul class="menu2" style="background-color:white">
-            <li class="li1"><a href="">DASHBOARD</a></li>
-            <li class="li1"><a href="">TUTORIAIS</a></li>
-            <li class="li1"><a href="">REQUISIÇÕES</a></li>
-            <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-            <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-            <li class="li2"><a href="">USUARIO</a></li>
-        </ul>
+            <ul class="menu2" style="background-color:white">
+                <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
+                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
+                <li class="li1"><a href="">REQUISIÇÕES</a></li>
+                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
+                <li class="li2"><a href="">USUARIO</a></li>
+            </ul>
 
             <div class="mid">
                 <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="500px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnItemDeleted="DetailsView1_ItemDeleted">

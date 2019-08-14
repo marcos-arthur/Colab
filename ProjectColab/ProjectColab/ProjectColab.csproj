@@ -74,9 +74,9 @@
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="Web.config" />
+    <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
-    <Content Include="WebFormAppAbrirChamado.aspx" />
-    <Content Include="WebFormAppUpdateLab.aspx" />
+    <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
     <Content Include="WebFormEditLab.aspx" />
@@ -96,6 +96,13 @@
     <Compile Include="Modelo\Laboratorios.cs" />
     <Compile Include="Modelo\Tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormAddChamado.aspx.cs">
+      <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddChamado.aspx.designer.cs">
+      <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormAddLab.aspx.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,19 +110,12 @@
     <Compile Include="WebFormAddLab.aspx.designer.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormAppAbrirChamado.aspx.cs">
-      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
+    <Compile Include="WebFormCRUDChamado.aspx.cs">
+      <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFormAppAbrirChamado.aspx.designer.cs">
-      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebFormAppUpdateLab.aspx.cs">
-      <DependentUpon>WebFormAppUpdateLab.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFormAppUpdateLab.aspx.designer.cs">
-      <DependentUpon>WebFormAppUpdateLab.aspx</DependentUpon>
+    <Compile Include="WebFormCRUDChamado.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
