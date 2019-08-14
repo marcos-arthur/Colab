@@ -18,8 +18,7 @@ namespace ProjectColab
             Modelo.Chamado aChamado;
             DAL.DALChamado aDALChamado;
 
-            aChamado = new Modelo.Chamado(id.Text,Convert.ToInt32(status.Text), resumo.Text, Convert.ToDecimal(quantidadeeq.Text), Convert.ToDateTime(data.Text));
-
+            aChamado = new Modelo.Chamado("1",1, resumo.Text, Convert.ToDecimal(quantidadeeq.Text), DateTime.Now);
             aDALChamado = new DAL.DALChamado();
 
             aDALChamado.Insert(aChamado);

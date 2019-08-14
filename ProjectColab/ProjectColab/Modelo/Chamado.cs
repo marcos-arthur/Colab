@@ -30,5 +30,13 @@ namespace ProjectColab.Modelo
             this.quantidadeeq = aquantidadeeq;
             this.data = adata;
         }
+
+        public Chamado( int astatus, string aresumo, decimal aquantidadeeq, DateTime adata)
+        {            
+            this.status = astatus;
+            this.resumo = aresumo;
+            this.quantidadeeq = aquantidadeeq;
+            this.data = adata;
+        }
     }
 }
