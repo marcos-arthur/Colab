@@ -44,7 +44,32 @@
                 <SortedDescendingHeaderStyle BackColor="#242121" />
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
-        </div> <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddLab.aspx" />  </div>
+        </div> 
+
+            <!--
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
+                <ItemTemplate>
+                    id:
+                    <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
+                    <br />
+                    nome:
+                    <asp:Label ID="nomeLabel" runat="server" Text='<%# Eval("nome") %>' />
+                    <br />
+                    equipamento:
+                    <asp:Label ID="equipamentoLabel" runat="server" Text='<%# Eval("equipamento") %>' />
+                    <br />
+                    quantidade:
+                    <asp:Label ID="quantidadeLabel" runat="server" Text='<%# Eval("quantidade") %>' />
+                    <br />
+<br />
+                </ItemTemplate>
+            </asp:DataList> -->
+            
+            
+            <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddLab.aspx" />  
+
+
+        </div>
                    
     </form>
 </body>
