@@ -82,6 +82,7 @@
     <Content Include="WebFormEditLab.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="index.aspx.cs">
@@ -91,6 +92,7 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Chamado.cs" />
     <Compile Include="Modelo\Laboratorios.cs" />
     <Compile Include="Modelo\Tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

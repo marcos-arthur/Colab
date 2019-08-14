@@ -53,7 +53,7 @@
                         <asp:SessionParameter DefaultValue="" Name="id" SessionField="id" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                <asp:Button ID="Button2" runat="server" Text="VOLTAR" CssClass="addbtn" PostBackUrl="~/WebFormCRUDLabs.aspx" />
+                <asp:Button ID="Button2" runat="server" Text="VOLTAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx" />
             </div>
         </div>
     </form>

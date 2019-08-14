@@ -34,7 +34,7 @@
 
             <br />
             <br />       
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="addbtn" OnClick="Add_Click"/>
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Add_Click"/>
                 <asp:Button runat="server" ID="cancel" Text="Cancelar" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
 
 
