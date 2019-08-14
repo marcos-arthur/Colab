@@ -78,6 +78,7 @@
     <Content Include="WebFormAppAbrirChamado.aspx" />
     <Content Include="WebFormAppUpdateLab.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
+    <Content Include="WebFormCRUDTutorial.aspx" />
     <Content Include="WebFormEditLab.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.designer.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDTutorial.aspx.cs">
+      <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>

@@ -42,7 +42,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -54,7 +54,6 @@ namespace ProjectColab.DAL
 
             return aListTutorial;
         }
-
 
 
         //INSERIR//
@@ -125,7 +124,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"]. ToString()),dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
 
                     aListTutorial.Add(aTutorial);
                 }
@@ -136,6 +135,22 @@ namespace ProjectColab.DAL
             conn.Close();
 
             return aListTutorial;
+        }
+
+
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(Modelo.Tutorial obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("Delete From Tutorial Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+
+            cmd.ExecuteNonQuery();
         }
 
 
