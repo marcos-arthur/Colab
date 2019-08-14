@@ -23,7 +23,7 @@ namespace ProjectColab
 
             aDALChamado.Insert(aChamado);
 
-            Response.Redirect("~\\index.aspx");
+            Response.Redirect("~\\WebFormCRUDChamado.aspx");
         }
     }
 }

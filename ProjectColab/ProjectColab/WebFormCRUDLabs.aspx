@@ -25,23 +25,26 @@
 
         <div class="mid">
             <div>   
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" >
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
-                    <asp:BoundField DataField="equipamento" HeaderText="equipamento" SortExpression="equipamento" />
-                    <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
-                    <asp:ButtonField CommandName="Editar" Text="Editar" />
-                    <asp:ButtonField CommandName="Excluir" Text="Excluir" />
+                    <asp:BoundField DataField="id" HeaderText="ID DO LABORATÓRIO" SortExpression="id" />
+                    <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
+                    <asp:BoundField DataField="equipamento" HeaderText="EQUIPAMENTO DO LABORATÓRIO" SortExpression="equipamento" />
+                    <asp:BoundField DataField="quantidade" HeaderText="QUANTIDADE DE EQUIPAMENTOS" SortExpression="quantidade" />
+                    <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="cancelbtn"/>
+                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="cancelbtn" />
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#999999" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#8f3d3d"  ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#7a5252"  ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#7a5252" Font-Bold="True" ForeColor="#7a5252"  />
+                <SortedAscendingCellStyle BackColor="#999999" />
+                <SortedAscendingHeaderStyle BackColor="#999999"  />
+                <SortedDescendingCellStyle BackColor="#999999" />
+                <SortedDescendingHeaderStyle BackColor="#999999" />
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
         </div> 

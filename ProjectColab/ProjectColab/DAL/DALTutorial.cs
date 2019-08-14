@@ -69,6 +69,7 @@ namespace ProjectColab.DAL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(tutorial_titulo, status, arquivo_url) VALUES(@tutorial_titulo, 1, @arquivo_url)", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@tutorial_titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@arquivo_url", obj.arquivo);

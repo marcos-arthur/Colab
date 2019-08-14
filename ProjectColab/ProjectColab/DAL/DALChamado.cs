@@ -40,7 +40,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(),Convert.ToInt32(dr["status"].ToString()), dr["resumo"].ToString(), Convert.ToDecimal(dr["quantidadeeq"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(),Convert.ToInt32(dr["status"].ToString()), dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }

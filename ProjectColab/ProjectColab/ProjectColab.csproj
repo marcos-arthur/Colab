@@ -76,6 +76,7 @@
     <Content Include="Web.config" />
     <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
+    <Content Include="WebFormAddTutorial.aspx" />
     <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="WebFormAddLab.aspx.designer.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAddTutorial.aspx.cs">
+      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDChamado.aspx.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
