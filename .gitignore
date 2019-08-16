@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+#Web.Config
+Web.config
+Web.Debug.config
+Web.Release.config
