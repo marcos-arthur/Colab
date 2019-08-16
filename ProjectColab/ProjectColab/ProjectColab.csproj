@@ -74,14 +74,18 @@
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="Web.config" />
+    <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
-    <Content Include="WebFormAppAbrirChamado.aspx" />
-    <Content Include="WebFormAppUpdateLab.aspx" />
+    <Content Include="WebFormAddTutorial.aspx" />
+    <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
+    <Content Include="WebFormCRUDTutorial.aspx" />
     <Content Include="WebFormEditLab.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
+    <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,8 +93,17 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Chamado.cs" />
     <Compile Include="Modelo\Laboratorios.cs" />
+    <Compile Include="Modelo\Tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormAddChamado.aspx.cs">
+      <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddChamado.aspx.designer.cs">
+      <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormAddLab.aspx.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,19 +111,19 @@
     <Compile Include="WebFormAddLab.aspx.designer.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormAppAbrirChamado.aspx.cs">
-      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
+    <Compile Include="WebFormAddTutorial.aspx.cs">
+      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFormAppAbrirChamado.aspx.designer.cs">
-      <DependentUpon>WebFormAppAbrirChamado.aspx</DependentUpon>
+    <Compile Include="WebFormAddTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormAppUpdateLab.aspx.cs">
-      <DependentUpon>WebFormAppUpdateLab.aspx</DependentUpon>
+    <Compile Include="WebFormCRUDChamado.aspx.cs">
+      <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFormAppUpdateLab.aspx.designer.cs">
-      <DependentUpon>WebFormAppUpdateLab.aspx</DependentUpon>
+    <Compile Include="WebFormCRUDChamado.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
@@ -118,6 +131,13 @@
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.designer.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDTutorial.aspx.cs">
+      <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>

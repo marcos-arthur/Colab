@@ -10,69 +10,69 @@
 namespace ProjectColab {
     
     
-    public partial class WebFormAppAbrirChamado {
+    public partial class WebFormAddTutorial {
         
         /// <summary>
-        /// Controle veri.
+        /// Controle form1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton veri;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle inst.
+        /// Controle id.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton inst;
+        protected global::System.Web.UI.WebControls.TextBox id;
         
         /// <summary>
-        /// Controle manu.
+        /// Controle titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton manu;
+        protected global::System.Web.UI.WebControls.TextBox titulo;
         
         /// <summary>
-        /// Controle extern.
+        /// Controle status.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton @extern;
+        protected global::System.Web.UI.WebControls.TextBox status;
         
         /// <summary>
-        /// Controle intern.
+        /// Controle arquivo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton intern;
+        protected global::System.Web.UI.WebControls.TextBox arquivo;
         
         /// <summary>
-        /// Controle all.
+        /// Controle Button1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox all;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Controle name.
+        /// Controle cancel.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name;
+        protected global::System.Web.UI.WebControls.Button cancel;
     }
 }
