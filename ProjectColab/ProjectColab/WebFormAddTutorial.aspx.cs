@@ -19,7 +19,7 @@ namespace ProjectColab
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
 
-            aTutorial = new Modelo.Tutorial(id.Text, titulo.Text,Convert.ToDecimal(status.Text), arquivo.Text) ;
+            aTutorial = new Modelo.Tutorial("1", titulo.Text,3, arquivo.Text) ;
 
             aDALTutorial = new DAL.DALTutorial();
 
