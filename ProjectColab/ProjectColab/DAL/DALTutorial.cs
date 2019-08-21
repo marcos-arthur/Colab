@@ -18,6 +18,7 @@ namespace ProjectColab.DAL
         }
 
         //SELECTALL()//
+        //Teste
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Tutorial> SelectAll()
         {
