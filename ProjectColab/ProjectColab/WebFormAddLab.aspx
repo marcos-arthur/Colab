@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
     <title></title>
 </head>
-<body>
+<body><!--Nota-->
     <form id="form1" runat="server">
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
         <ul class="menu2" style="background-color:white">
