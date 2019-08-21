@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
         <ul class="menu2" style="background-color:white">
-            <li class="li1"><a href="">DASHBOARD</a></li>
+            <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
             <li class="li1"><a href="">TUTORIAIS</a></li>
             <li class="li1"><a href="">REQUISIÇÕES</a></li>
             <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
@@ -34,8 +34,8 @@
 
             <br />
             <br />       
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="addbtn" OnClick="Add_Click"/>
-                <asp:Button runat="server" ID="cancel" Text="Cancelar" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Add_Click"/>
+                <asp:Button runat="server" ID="cancel" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
 
 
         </div>
