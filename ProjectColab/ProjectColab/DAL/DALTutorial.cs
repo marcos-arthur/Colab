@@ -17,8 +17,7 @@ namespace ProjectColab.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
 
-        //SELECTALL()//
-        //TESTE
+        //SELECTALL()//        
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Tutorial> SelectAll()
         {
