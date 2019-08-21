@@ -23,11 +23,11 @@
             </ul>
 
 
-            <div class ="mid">  
-                <asp:TextBox ID="id" runat="server"></asp:TextBox>             
-                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" style="display:none"></asp:TextBox>             
-                <asp:TextBox ID="status" runat="server"></asp:TextBox>             
-                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="arquivo" runat="server" style="display:none"></asp:TextBox>             
+            <div class ="mid">            
+                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"></asp:TextBox>                     
+                <p>URL DO ARQUIVO</p>   <asp:TextBox ID="arquivo" runat="server" CssClass="text" ></asp:TextBox>        
+                <br />
+                <br />
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
                 <asp:Button runat="server" ID="cancel" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDTutorial.aspx"/>
             </div>
