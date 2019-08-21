@@ -85,7 +85,6 @@
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
-    <Compile Include="DAL\DALOutroTeste.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
