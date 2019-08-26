@@ -31,7 +31,6 @@
                     <asp:BoundField DataField="id" HeaderText="ID DO LABORATÓRIO" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
                     <asp:BoundField DataField="equipamento" HeaderText="EQUIPAMENTO DO LABORATÓRIO" SortExpression="equipamento" />
-                    <asp:BoundField DataField="quantidade" HeaderText="QUANTIDADE DE EQUIPAMENTOS" SortExpression="quantidade" />
                     <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="cancelbtn"/>
                     <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="cancelbtn" />
                 </Columns>
@@ -48,30 +47,7 @@
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
         </div> 
-
-            <!--
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
-                <ItemTemplate>
-                    id:
-                    <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
-                    <br />
-                    nome:
-                    <asp:Label ID="nomeLabel" runat="server" Text='<%# Eval("nome") %>' />
-                    <br />
-                    equipamento:
-                    <asp:Label ID="equipamentoLabel" runat="server" Text='<%# Eval("equipamento") %>' />
-                    <br />
-                    quantidade:
-                    <asp:Label ID="quantidadeLabel" runat="server" Text='<%# Eval("quantidade") %>' />
-                    <br />
-<br />
-                </ItemTemplate>
-            </asp:DataList> -->
-            
-            
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddLab.aspx" />  
-
-
         </div>
                    
     </form>

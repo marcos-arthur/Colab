@@ -30,7 +30,6 @@
                         <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
                         <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
                         <asp:BoundField DataField="equipamento" HeaderText="equipamento" SortExpression="equipamento" />
-                        <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar"></asp:LinkButton>

@@ -1,7 +1,7 @@
 ﻿body {
     font-family: Arial;
     font-weight: bold;
-    background-color: rgb(60,60,60);
+    background-color: rgb(245, 245, 245);
     /*background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: cover;*/
@@ -15,7 +15,7 @@
     .logo a {
         font-size: 3vw;
         text-decoration: none;
-        color: white;
+        color: black;
         border-bottom-style: dotted;
         border-bottom-color: red;
         border-bottom-width: medium;

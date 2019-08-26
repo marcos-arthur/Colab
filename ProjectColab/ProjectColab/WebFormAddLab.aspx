@@ -28,9 +28,7 @@
 
             <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
 
-            <p>QUANTIDADE DE MAQUINAS</p><asp:TextBox runat="server" ID="quantidade" placeholder="QUANTIDADE DE MÁQUINAS" CssClass="text" ></asp:TextBox>
-
-            <p>MODELO</p><asp:TextBox runat="server" ID="modelo" placeholder="MODELO" CssClass="text"></asp:TextBox>
+            <p>EQUIPAMENTOS</p><asp:TextBox runat="server" ID="modelo" placeholder="MODELO" CssClass="text"></asp:TextBox>
 
             <br />
             <br />       

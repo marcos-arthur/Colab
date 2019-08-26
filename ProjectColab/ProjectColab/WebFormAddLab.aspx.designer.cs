@@ -40,15 +40,6 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox nome;
         
         /// <summary>
-        /// Controle quantidade.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantidade;
-        
-        /// <summary>
         /// Controle modelo.
         /// </summary>
         /// <remarks>

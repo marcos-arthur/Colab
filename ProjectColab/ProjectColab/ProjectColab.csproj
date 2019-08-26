@@ -81,6 +81,7 @@
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
     <Content Include="WebFormEditLab.aspx" />
+    <Content Include="WebFormEditTutorial.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="WebFormEditLab.aspx.designer.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditTutorial.aspx.cs">
+      <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
