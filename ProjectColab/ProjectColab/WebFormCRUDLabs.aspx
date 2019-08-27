@@ -35,8 +35,8 @@
                     <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="tablebtn">
 <ControlStyle CssClass="tablebtn2"></ControlStyle>
                     </asp:ButtonField>
-                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="cancelbtn" >
-<ControlStyle CssClass="cancelbtn"></ControlStyle>
+                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="tablebtn" >
+<ControlStyle CssClass="tablebtn2"></ControlStyle>
                     </asp:ButtonField>
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />

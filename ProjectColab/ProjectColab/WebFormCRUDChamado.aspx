@@ -8,6 +8,7 @@
 <link rel="shortcut icon" href="Logo.png" />
 <link rel="stylesheet" type="text/css" href="style.css"/>    
 <link rel="stylesheet" type="text/css" href="styleadd.css"/>
+<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> 
     <title></title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 
             <div class="mid">
 
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="ID DO CHAMADO" SortExpression="id" />
@@ -34,6 +35,7 @@
                         <asp:BoundField DataField="resumo" HeaderText="RESUMO DO PROBLEMA" SortExpression="resumo" />
                         <asp:BoundField DataField="quantidadeeq" HeaderText="EQUIPAMENTOS DEFEITUOSOS" SortExpression="quantidadeeq" />
                         <asp:BoundField DataField="data" HeaderText="DATA DE ABERTURA" SortExpression="data" />
+                        <asp:ButtonField CommandName="ABRIR" Text="ABRIR" ControlStyle-CssClass="tablebtn2" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

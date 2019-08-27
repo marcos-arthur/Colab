@@ -73,5 +73,40 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Chamado> Select(string id)
+        {
+            Modelo.Chamado aChamado;
+
+            List<Modelo.Chamado> aListChamado = new List<Modelo.Chamado>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "SELECT * FROM Chamado id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+
+                    aListChamado.Add(aChamado);
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aListChamado;
+        }
+
     }
 }

@@ -81,11 +81,13 @@
     <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
+    <Content Include="WebFormEditChamado.aspx" />
     <Content Include="WebFormEditLab.aspx" />
     <Content Include="WebFormEditTutorial.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
+    <Compile Include="DAL\DALComentario.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="index.aspx.cs">
@@ -96,6 +98,7 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Chamado.cs" />
+    <Compile Include="Modelo\Comentario.cs" />
     <Compile Include="Modelo\Laboratorios.cs" />
     <Compile Include="Modelo\Tutorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +143,13 @@
     </Compile>
     <Compile Include="WebFormCRUDTutorial.aspx.designer.cs">
       <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditChamado.aspx.cs">
+      <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditChamado.aspx.designer.cs">
+      <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>
