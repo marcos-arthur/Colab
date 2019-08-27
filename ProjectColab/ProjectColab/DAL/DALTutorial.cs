@@ -85,17 +85,12 @@ namespace ProjectColab.DAL
         public void Update(Modelo.Tutorial obj)
         {
             SqlConnection conn = new SqlConnection(connectionString);
-
             conn.Open();
-
             SqlCommand com = conn.CreateCommand();
-
             SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo_url = @arquivo_url Where id = @id", conn);
-
             cmd.Parameters.AddWithValue("@tutorial_titulo", obj.titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@arquivo_url", obj.arquivo);
-
             cmd.ExecuteNonQuery();
         }
 
