@@ -86,7 +86,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM Chamado id = @id";
+            cmd.CommandText = "SELECT * FROM Chamado WHERE id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();

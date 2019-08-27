@@ -13,5 +13,16 @@ namespace ProjectColab
         {
 
         }
+
+        protected void add_Click(object sender, EventArgs e)
+        {
+            Modelo.Comentario aComentario;
+            DAL.DALComentario aDALComentario;
+            aComentario = new Modelo.Comentario("1","1",Convert.ToInt32(Session["id"]), 1,descricao.Text, DateTime.Now);
+            aDALComentario = new DAL.DALComentario();
+
+            aDALComentario.Insert(aComentario);
+            Response.Redirect("~\\WebFormEditChamado.aspx");
+        }
     }
 }
