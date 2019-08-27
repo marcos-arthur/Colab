@@ -9,18 +9,19 @@ namespace ProjectColab.Modelo
     {
         public string id { get; set; }
         public string titulo { get; set; }
-        public decimal status{ get; set; }
-        public string arquivo { get; set; }
+        public decimal status { get; set; }
+        public byte[] arquivo { get; set; }
+
 
         public Tutorial()
         {
             this.id = "";
             this.titulo = "";
             this.status = 0;
-            this.arquivo = "";
+            this.arquivo = null;
         }
 
-        public Tutorial(string aid, string atitulo, decimal astatus, string aarquivo)
+        public Tutorial(string aid, string atitulo, decimal astatus, byte[] aarquivo)
         {
             this.id = aid;
             this.titulo = atitulo;

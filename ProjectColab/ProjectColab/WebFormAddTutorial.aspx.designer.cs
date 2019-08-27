@@ -31,13 +31,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox titulo;
         
         /// <summary>
-        /// Controle arquivo.
+        /// Controle arquivo_url.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox arquivo;
+        protected global::System.Web.UI.WebControls.FileUpload arquivo_url;
         
         /// <summary>
         /// Controle Button1.

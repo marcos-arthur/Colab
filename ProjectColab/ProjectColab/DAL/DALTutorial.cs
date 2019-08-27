@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo_url"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), (byte[])dr["arquivo_url"]);
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -126,7 +126,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), (byte[])dr["arquivo_url"]);
 
                     aListTutorial.Add(aTutorial);
                 }

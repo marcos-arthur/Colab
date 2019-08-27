@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormAddTutorial.aspx.cs" Inherits="ProjectColab.WebFormAddTutorial" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormAddTutorial.aspx.cs" Inherits="ProjectColab.WebFormAddTutorial" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +26,7 @@
 
             <div class ="mid">            
                 <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"></asp:TextBox>                     
-                <p>URL DO ARQUIVO</p>   <asp:TextBox ID="arquivo" runat="server" CssClass="text" ></asp:TextBox>        
+                <p>URL DO ARQUIVO</p>   <asp:FileUpload ID="arquivo_url" runat="server" />        
                 <br />
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
