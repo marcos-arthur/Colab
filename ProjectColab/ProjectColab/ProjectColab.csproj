@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="background2.png" />
+    <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
     <Content Include="index.aspx" />
     <Content Include="script.js" />

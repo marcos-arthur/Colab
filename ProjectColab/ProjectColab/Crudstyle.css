@@ -1,0 +1,45 @@
+﻿body {
+}
+.tablebtn {
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 0.9vw;
+    padding: 1%;
+    margin-right: 2%;
+    border: none;
+    cursor: pointer;
+    background: rgb(150,60,60);
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(100,0,0,0.9);
+    min-width: 25%;
+}
+.tablebtn2 {
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 0.2vw;
+    padding: 1%;
+    margin-right: 2%;
+    border: none;
+    cursor: pointer;
+    background: rgb(150,60,60);
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(100,0,0,0.9);
+    min-width: 25%;
+}
+
+
+.tablebtn:hover {
+    animation: bounce2 .5s;
+}
+
+@keyframes bounce2 {
+    50% {
+        transform: translateY(-2px);
+        -webkit-transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(3px);
+        -webkit-transform: translateY(3px);
+    }
+}

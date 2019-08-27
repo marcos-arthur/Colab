@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="style.css"/> 
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
+<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> 
 <script src="script.js"></script>
     <title></title>
 </head>
@@ -26,24 +27,28 @@
         <div class="mid">
             <div>   
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" >
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID DO LABORATÓRIO" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
                     <asp:BoundField DataField="equipamento" HeaderText="EQUIPAMENTO DO LABORATÓRIO" SortExpression="equipamento" />
-                    <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="cancelbtn"/>
-                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="cancelbtn" />
+                    <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="tablebtn">
+<ControlStyle CssClass="tablebtn2"></ControlStyle>
+                    </asp:ButtonField>
+                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="cancelbtn" >
+<ControlStyle CssClass="cancelbtn"></ControlStyle>
+                    </asp:ButtonField>
                 </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#999999" ForeColor="White" Font-Bold="True" />
-                <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" />
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" CssClass="header"/>
                 <PagerStyle BackColor="#8f3d3d"  ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#7a5252"  ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#7a5252" Font-Bold="True" ForeColor="#7a5252"  />
-                <SortedAscendingCellStyle BackColor="#999999" />
-                <SortedAscendingHeaderStyle BackColor="#999999"  />
-                <SortedDescendingCellStyle BackColor="#999999" />
-                <SortedDescendingHeaderStyle BackColor="#999999" />
+                <RowStyle BackColor="white" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"  />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1"  />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
         </div> 
