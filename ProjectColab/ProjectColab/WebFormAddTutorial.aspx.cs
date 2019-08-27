@@ -29,7 +29,7 @@ namespace ProjectColab
 
         //    aDALTutorial.Insert(aTutorial);
 
-       //    aTutorial_info = new Modelo.Tutorial_info("1", FileUpload1.FileBytes, TextBoxPrInfo.Text);
+        //    aTutorial_info = new Modelo.Tutorial_info("1", FileUpload1.FileBytes, TextBoxPrInfo.Text, FileUpload1.FileName);
 
         //    aDALTutorial_info = new DAL.DALTutorial_info();
 

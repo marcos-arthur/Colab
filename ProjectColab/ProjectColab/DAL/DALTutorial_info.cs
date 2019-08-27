@@ -44,7 +44,8 @@ namespace ProjectColab.DAL
                     aTutorial_info = new Modelo.Tutorial_info(
                         dr["tutorial_id"].ToString(),
                         (byte[])dr["logo"],
-                        dr["pr_info"].ToString()
+                        dr["pr_info"].ToString(),
+                        dr["arquivo"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListTutorial_info.Add(aTutorial_info);
@@ -82,10 +83,11 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Pub_info (tutorial_id, logo, pr_info) VALUES(@tutorial_id, @logo, @pr_info)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Pub_info (tutorial_id, logo, pr_info, arquivo) VALUES(@tutorial_id, @logo, @pr_info, @arquivo)", conn);
             cmd.Parameters.AddWithValue("@tutorial_id", obj.tutorial_id);
             cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.Parameters.AddWithValue("@pr_info", obj.pr_info);
+            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
@@ -100,10 +102,11 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Pub_info SET logo = @logo, pr_info = @pr_info WHERE tutorial_id = @tutorial_id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Pub_info SET logo = @logo, pr_info = @pr_info, arquivo = @arquivo WHERE tutorial_id = @tutorial_id", conn);
             cmd.Parameters.AddWithValue("@tutorial_id", obj.tutorial_id);
             cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.Parameters.AddWithValue("@pr_info", obj.pr_info);
+            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
