@@ -30,7 +30,9 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Laboratorios";
+            cmd.CommandText = "Select lab.*,eq.*" +
+                "FROM Laboratorios lab" +
+                "INNER JOIN Equipamento eq ON eq.laboratorio_id = lab.id";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -40,7 +42,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["equipamento"].ToString());
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString()));
                     // Adiciona o livro lido à lista
                     aListLaboratorios.Add(aLaboratorios);
                 }
@@ -68,9 +70,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome,equipamento) VALUES(@nome,@equipamento)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome) VALUES(@nome)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@equipamento", obj.equipamento);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
@@ -84,10 +85,9 @@ namespace ProjectColab.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome, equipamento = @equipamento Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@equipamento", obj.equipamento);
 
             cmd.ExecuteNonQuery();
         }
@@ -122,7 +122,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["equipamento"].ToString());
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString()));
 
                     aListLaboratorios.Add(aLaboratorios);
                 }

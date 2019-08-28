@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALComentario.cs" />
+    <Compile Include="DAL\DALEquipamento.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="DAL\DALTutorial_info.cs" />
@@ -103,6 +104,7 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Chamado.cs" />
+    <Compile Include="Modelo\Equipamento.cs" />
     <Compile Include="Modelo\Comentario.cs" />
     <Compile Include="Modelo\Laboratorios.cs" />
     <Compile Include="Modelo\Tutorial.cs" />

@@ -26,12 +26,11 @@
 
         <div class="mid">
             <div>   
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" >
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" BorderStyle="None" BorderWidth="0px" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="ID DO LABORATÓRIO" SortExpression="id" />
                     <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
-                    <asp:BoundField DataField="equipamento" HeaderText="EQUIPAMENTO DO LABORATÓRIO" SortExpression="equipamento" />
                     <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="tablebtn">
 <ControlStyle CssClass="tablebtn2"></ControlStyle>
                     </asp:ButtonField>

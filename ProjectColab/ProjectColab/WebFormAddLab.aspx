@@ -25,18 +25,25 @@
 
         <div class="mid">
             <p style="display:none">CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="id" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False" style="display:none"></asp:TextBox>
-
+            
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
             <p>NOME DO LABORATÓRIO</p><asp:TextBox runat="server" ID="nome" placeholder="NOME DO LABORATÓRIO" CssClass="text"></asp:TextBox>
-
-            <p>EQUIPAMENTOS</p><asp:TextBox runat="server" ID="modelo" placeholder="MODELO" CssClass="text"></asp:TextBox>
 
             <br />
             <br />       
                 <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Add_Click"/>
                 <asp:Button runat="server" ID="cancel" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
-
-
         </div>
+       <div class="mid">
+            <asp:DropDownList ID="idlab" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>
+           <p>MODELO</p><asp:TextBox ID="modelo" runat="server" CssClass="text"></asp:TextBox>
+           <p>QUANTIDADE</p><asp:TextBox ID="quant" runat="server" CssClass="text"></asp:TextBox>
+           <br />
+           <br />
+           <asp:Button ID="Button2" runat="server" Text="Button" CssClass="cancelbtn" OnClick="Button2_Click"  />
+           <asp:Button ID="Button1" runat="server" Text="Button" CssClass="cancelbtn"  />
+
+       </div> 
     </form>
 </body>
 </html>
