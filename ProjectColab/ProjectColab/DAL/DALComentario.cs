@@ -52,7 +52,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM Comentario  WHERE chamados_id = @id";
+            cmd.CommandText = "SELECT * FROM Comentario  WHERE chamados_id = @id ORDER BY data_hora DESC";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();

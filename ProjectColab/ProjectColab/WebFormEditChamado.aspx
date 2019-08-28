@@ -24,11 +24,11 @@
             </ul>
 
         <div class="mid">
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="40%" Width="90%" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:DetailsView ID="DetailsView1" runat="server" Height="40%" Width="90%" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="black" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
                 <EditRowStyle BackColor="#2461BF" />
-                <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+                <FieldHeaderStyle BackColor="#FFFFFF" Font-Bold="True" />
                 <Fields>
                     <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
                     <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
@@ -50,28 +50,38 @@
                 </UpdateParameters>
             </asp:ObjectDataSource>
         </div>
-            <div class="mid">
-                <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="text"></asp:TextBox>
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
-            </div>
-            <div class="mid">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2">
-                    <Columns>
-                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                        <asp:BoundField DataField="usuario_id" HeaderText="usuario_id" SortExpression="usuario_id" />
-                        <asp:BoundField DataField="chamados_id" HeaderText="chamados_id" SortExpression="chamados_id" />
-                        <asp:BoundField DataField="restricao" HeaderText="restricao" SortExpression="restricao" />
-                        <asp:BoundField DataField="descricao" HeaderText="descricao" SortExpression="descricao" />
-                        <asp:BoundField DataField="data_hora" HeaderText="data_hora" SortExpression="data_hora" />
-                    </Columns>
-                </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
-                    <SelectParameters>
-                        <asp:SessionParameter Name="id" SessionField="id" Type="String" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-            </div>
 
+
+
+
+
+            <div class="mid">
+                    <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="comenttext"></asp:TextBox>
+                    <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
+
+
+
+
+
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
+                    <ItemTemplate>
+                        <div class="sec-mid">
+                            <ul class="coment">
+                                <li class="descricao"><a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a></li>
+                                <li class="data_hora"><a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a></li>
+                            </ul>
+                        </div>
+                    </ItemTemplate>
+
+                </asp:Repeater>
+
+
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="id" SessionField="id" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+            </div>
         </div>
     </form>
 </body>
