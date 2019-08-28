@@ -2,28 +2,26 @@
 }
 .tablebtn {
     text-transform: uppercase;
-    border-radius: 2px;
-    font-size: 0.7vw;
+    font-size: 1vw;
     padding: 1%;
     margin-right: 2%;
     border: none;
+    border-width: 10px;
+    border-color: rgb(150,60,60);
     cursor: pointer;
     background: rgb(150,60,60);
     color: #fff;
-    box-shadow: 5px 4px 0 rgba(100,0,0,0.9);
-    min-width: 25%;
+    min-width: 30%;
 }
 .tablebtn2 {
     text-transform: uppercase;
-    border-radius: 4px;
-    font-size: 0.9vw;
+    font-size: 1vw;
     padding: 1%;
     margin-right: 2%;
     border: none;
     cursor: pointer;
     background: rgb(150,60,60);
     color: #fff;
-    box-shadow: 2px 3px 0 rgba(100,0,0,0.9);
     min-width: 25%;
 }
 
