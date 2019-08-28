@@ -69,13 +69,13 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(id,nome,login,senha,tipo,foto_url) VALUES(@id,@nome,@login,@senha,@tipo,@foto_url)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(id,nome,login,senha,tipo,foto_url) VALUES(@id,@nome,@login,@senha,@tipo,@logo)", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto_url", obj.foto_url);
+            cmd.Parameters.AddWithValue("@foto_url", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -88,13 +88,13 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Tutorial Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, foto_url = @foto_url Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Tutorial Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, logo = @logo Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto_url", obj.foto_url);
+            cmd.Parameters.AddWithValue("@foto_url", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -126,7 +126,7 @@ namespace ProjectColab.DAL
                 while (dr.Read())
                 {
                    
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto_url"]);
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["logo"]);
 
                     aListUsuario.Add(aUsuario);
                 }
