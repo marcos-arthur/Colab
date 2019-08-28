@@ -10,7 +10,7 @@ namespace ProjectColab.DAL
 {
     public class DALUsuario_info
     {
-        /*private string connectionString = "";
+        private string connectionString = "";
 
         public DALUsuario_info()
         {
@@ -110,6 +110,6 @@ namespace ProjectColab.DAL
 
               // Executa Comando
               cmd.ExecuteNonQuery();
-          }*/
+          }
     }
 }
