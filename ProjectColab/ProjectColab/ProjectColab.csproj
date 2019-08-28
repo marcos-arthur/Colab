@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALComentario.cs" />
+    <Compile Include="DAL\DALConsulta.cs" />
     <Compile Include="DAL\DALEquipamento.cs" />
     <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
