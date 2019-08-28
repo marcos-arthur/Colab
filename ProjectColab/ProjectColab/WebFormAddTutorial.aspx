@@ -25,7 +25,7 @@
 
 
             <div class ="mid">            
-                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"></asp:TextBox>                     
+                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="tutorial_titulo" runat="server" CssClass="text"></asp:TextBox>                     
                 <p>URL DO ARQUIVO</p>   <asp:FileUpload ID="arquivo_url" runat="server" />        
                 <br />
                 <br />

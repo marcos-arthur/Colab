@@ -17,7 +17,7 @@ namespace ProjectColab.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial_info> Select(string tutorial_id)
+        public List<Modelo.Tutorial_info> Select(string id)
         {
             // Variavel para armazenar um livro
             Modelo.Tutorial_info aTutorial_info;
@@ -30,8 +30,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial_info Where tutorial_id = @tutorial_id";
-            cmd.Parameters.AddWithValue("@pub_id", tutorial_id);
+            cmd.CommandText = "Select * from Tutorial_info Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -42,9 +42,8 @@ namespace ProjectColab.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial_info = new Modelo.Tutorial_info(
-                        dr["tutorial_id"].ToString(),
+                        dr["id"].ToString(),
                         (byte[])dr["logo"],
-                        dr["pr_info"].ToString(),
                         dr["arquivo"].ToString()
                         );
                     // Adiciona o livro lido à lista
@@ -68,8 +67,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("DELETE FROM Pub_info WHERE tutorial_id = @tutorial_id", conn);
-            cmd.Parameters.AddWithValue("@pub_id", obj.tutorial_id);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Tutorial_info WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
@@ -83,10 +82,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Pub_info (tutorial_id, logo, pr_info, arquivo) VALUES(@tutorial_id, @logo, @pr_info, @arquivo)", conn);
-            cmd.Parameters.AddWithValue("@tutorial_id", obj.tutorial_id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial_info (logo, arquivo) VALUES(@logo, @arquivo)", conn);
             cmd.Parameters.AddWithValue("@logo", obj.logo);
-            cmd.Parameters.AddWithValue("@pr_info", obj.pr_info);
             cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
 
             // Executa Comando
@@ -102,10 +99,9 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Pub_info SET logo = @logo, pr_info = @pr_info, arquivo = @arquivo WHERE tutorial_id = @tutorial_id", conn);
-            cmd.Parameters.AddWithValue("@tutorial_id", obj.tutorial_id);
+            SqlCommand cmd = new SqlCommand("UPDATE Tutorial_info SET logo = @logo, arquivo = @arquivo WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@logo", obj.logo);
-            cmd.Parameters.AddWithValue("@pr_info", obj.pr_info);
             cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
 
             // Executa Comando

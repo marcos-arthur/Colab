@@ -7,23 +7,20 @@ namespace ProjectColab.Modelo
 {
     public class Tutorial_info
     {
-        public string tutorial_id { get; set; }
+        public string id { get; set; }
         public byte[] logo { get; set; }
-        public string pr_info { get; set; }
         public string arquivo { get; set; }
 
         public Tutorial_info()
         {
-            this.tutorial_id = "";
+            this.id = "";
             this.logo = null;
-            this.pr_info = "";
             this.arquivo = "";
         }
-        public Tutorial_info(string atutorial_id, byte[] alogo, string apr_info, string aarquivo)
+        public Tutorial_info(string aid, byte[] alogo, string aarquivo)
         {
-            this.tutorial_id = atutorial_id;
+            this.id = aid;
             this.logo = alogo;
-            this.pr_info = apr_info;
             this.arquivo = aarquivo;
         }
     }

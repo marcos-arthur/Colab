@@ -8,25 +8,22 @@ namespace ProjectColab.Modelo
     public class Tutorial
     {
         public string id { get; set; }
-        public string titulo { get; set; }
+        public string tutorial_titulo { get; set; }
         public decimal status { get; set; }
-        public byte[] arquivo { get; set; }
 
 
         public Tutorial()
         {
             this.id = "";
-            this.titulo = "";
+            this.tutorial_titulo = "";
             this.status = 0;
-            this.arquivo = null;
         }
 
-        public Tutorial(string aid, string atitulo, decimal astatus, byte[] aarquivo)
+        public Tutorial(string aid, string atutorial_titulo, decimal astatus)
         {
             this.id = aid;
-            this.titulo = atitulo;
+            this.tutorial_titulo = atutorial_titulo;
             this.status = astatus;
-            this.arquivo = aarquivo;
         }
     }
 }

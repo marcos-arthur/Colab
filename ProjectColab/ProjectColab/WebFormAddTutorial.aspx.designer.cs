@@ -22,13 +22,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle titulo.
+        /// Controle tutorial_titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox titulo;
+        protected global::System.Web.UI.WebControls.TextBox tutorial_titulo;
         
         /// <summary>
         /// Controle arquivo_url.

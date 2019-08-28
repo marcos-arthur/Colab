@@ -30,12 +30,15 @@
                      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
                          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                          <Columns>
-                             <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                             <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
-                             <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
-                             <asp:BoundField DataField="arquivo" HeaderText="arquivo" SortExpression="arquivo" />
-                             <asp:ButtonField ButtonType="Button" CommandName="Editar" Text="EDITAR" />
-                             <asp:ButtonField ButtonType="Button" CommandName="Excluir" Text="EXCLUIR" />
+                             <asp:BoundField DataField="id" HeaderText="ID" SortExpression="id" />
+                             <asp:BoundField DataField="tutorial_titulo" HeaderText="Título" SortExpression="tutorial_titulo" />
+                             <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
+                             <asp:TemplateField HeaderText="Imagem">
+                                 <ItemTemplate>
+                                     <asp:Image ID="Image1" runat="server" width="50px" ImageUrl='<%# "HandlerTutorial_info.ashx?id=" + Eval("id") %>' />
+                                 </ItemTemplate>
+                             </asp:TemplateField>
+                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
                          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -48,9 +51,10 @@
                          <SortedDescendingCellStyle BackColor="#FFFDF8" />
                          <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                      </asp:GridView>
-                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update" DeleteMethod="Delete"></asp:ObjectDataSource>
+                     
+                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update"></asp:ObjectDataSource>
+                     
                 </div>
-
 
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="cancelbtn" PostBackUrl="~/WebFormAddTutorial.aspx" />
     

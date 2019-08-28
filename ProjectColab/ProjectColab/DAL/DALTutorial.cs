@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), (byte[])dr["arquivo_url"]);
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -69,16 +69,13 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(tutorial_titulo, status, arquivo_url) VALUES(@tutorial_titulo, 1, @arquivo_url)", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.titulo);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(tutorial_titulo, status) VALUES(@tutorial_titulo, 1)", conn);
+           
+            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@arquivo_url", obj.arquivo);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
-
-
 
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -88,14 +85,10 @@ namespace ProjectColab.DAL
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo_url = @arquivo_url Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.titulo);
+            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@arquivo_url", obj.arquivo);
             cmd.ExecuteNonQuery();
         }
-
-
-
 
 
         //SELECIONAR//
@@ -121,7 +114,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), (byte[])dr["arquivo_url"]);
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()));
 
                     aListTutorial.Add(aTutorial);
                 }

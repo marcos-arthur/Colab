@@ -16,48 +16,26 @@ namespace ProjectColab
 
         }
         //Quase pronto
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-        //    Modelo.Tutorial aTutorial;
-        //    DAL.DALTutorial aDALTutorial;
-        //    Modelo.Tutorial_info aTutorial_info;
-        //   DAL.DALTutorial_info aDALTutorial_info;
-
-        //    aTutorial = new Modelo.Tutorial("1", titulo.Text, 3, arquivo_url.FileBytes);
-
-        //    aDALTutorial = new DAL.DALTutorial();
-
-        //    aDALTutorial.Insert(aTutorial);
-
-        //    aTutorial_info = new Modelo.Tutorial_info("1", FileUpload1.FileBytes, TextBoxPrInfo.Text, FileUpload1.FileName);
-
-        //    aDALTutorial_info = new DAL.DALTutorial_info();
-
-        //    aDALTutorial_info.Insert(aTutorial_info);
-
-        //    Response.Redirect("~\\WebFormCRUDTutorial.aspx");
-        //}
-
-        //"Funciona"
         protected void Button1_Click(object sender, EventArgs e)
         {
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
+            Modelo.Tutorial_info aTutorial_info;
+            DAL.DALTutorial_info aDALTutorial_info;
 
-            aTutorial = new Modelo.Tutorial("1", titulo.Text, 3, arquivo_url.FileBytes);
+            aTutorial = new Modelo.Tutorial("1", tutorial_titulo.Text, 3);
 
             aDALTutorial = new DAL.DALTutorial();
 
             aDALTutorial.Insert(aTutorial);
 
+            aTutorial_info = new Modelo.Tutorial_info("1", arquivo_url.FileBytes, arquivo_url.FileName);
 
-            string filename = Request.PhysicalApplicationPath + "imagens\\" + arquivo_url.FileName;
+            aDALTutorial_info = new DAL.DALTutorial_info();
 
-            arquivo_url.SaveAs(filename);
-
+            aDALTutorial_info.Insert(aTutorial_info);
 
             Response.Redirect("~\\WebFormCRUDTutorial.aspx");
-
         }
     }
 }
