@@ -25,5 +25,10 @@ namespace ProjectColab
 
             Response.Redirect("~\\WebFormCRUDChamado.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~\\WebFormCRUDChamado.aspx");
+        }
     }
 }

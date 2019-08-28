@@ -13,7 +13,7 @@ namespace ProjectColab
         {
 
         }
-        protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             //Verifica se o comando é "Editar"
             if (e.CommandName == "EDITAR")
@@ -24,7 +24,7 @@ namespace ProjectColab
                 int index = Convert.ToInt32(e.CommandArgument);
 
                 // Copia o conteúdo da primeira célula da linha -> Código do livro
-                id = GridView1.Rows[index].Cells[2].Text;
+                id = GridView1.Rows[index].Cells[0].Text;
 
                 // Grava código do Livro na sessão
                 Session["id"] = id;
@@ -55,7 +55,6 @@ namespace ProjectColab
 
                 Response.Redirect("~\\WebFormCRUDLabs.aspx");
             }
-
         }
     }
 }

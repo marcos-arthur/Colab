@@ -1,5 +1,14 @@
 ﻿body {
 }
+.t-mid {
+    margin: auto;
+    margin-top: 2%;
+    max-width:100%;
+    padding: 2%;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+
+}
 .tablebtn {
     text-transform: uppercase;
     font-size: 0.9vw;

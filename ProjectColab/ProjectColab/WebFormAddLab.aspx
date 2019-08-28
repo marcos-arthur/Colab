@@ -40,8 +40,8 @@
            <p>QUANTIDADE</p><asp:TextBox ID="quant" runat="server" CssClass="text"></asp:TextBox>
            <br />
            <br />
-           <asp:Button ID="Button2" runat="server" Text="Button" CssClass="cancelbtn" OnClick="Button2_Click"  />
-           <asp:Button ID="Button1" runat="server" Text="Button" CssClass="cancelbtn"  />
+           <asp:Button ID="Button2" runat="server" Text="ADICIONAR" CssClass="cancelbtn" OnClick="Button2_Click"  />
+           <asp:Button ID="Button1" runat="server" Text="CANCELAR" CssClass="cancelbtn" OnClick="Button1_Click"  />
 
        </div> 
     </form>
