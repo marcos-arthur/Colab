@@ -50,28 +50,25 @@
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>    
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
+
+                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-                        <asp:BoundField DataField="laboratorio_id" HeaderText="laboratorio_id" SortExpression="laboratorio_id" />
-                        <asp:BoundField DataField="modelo" HeaderText="modelo" SortExpression="modelo" />
-                        <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
+                        <asp:ButtonField ButtonType="Button" CommandName="EDITAR" Text="EDITAR" />
+                        <asp:ButtonField Text="Botão" />
                     </Columns>
-                    <EditRowStyle BackColor="#2461BF" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#EFF3FB" />
-                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                <EditRowStyle BackColor="#2461BF" />
+                <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" CssClass="header"/>
+                <PagerStyle BackColor="#8f3d3d"  ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="white" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"  />
+                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                <SortedAscendingHeaderStyle BackColor="#6D95E1"  />
+                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-            
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Equipamento" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALEquipamento"></asp:ObjectDataSource>
-            
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectPublishers" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
             </div> 
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddLab.aspx" />  
         </div>
