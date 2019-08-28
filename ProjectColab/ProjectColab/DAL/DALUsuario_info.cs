@@ -8,16 +8,16 @@ using System.Web;
 
 namespace ProjectColab.DAL
 {
-    public class DALUsuarioinfo
+    public class DALUsuario_info
     {
         private string connectionString = "";
 
-        public DALUsuarioinfo()
+        public DALUsuario_info()
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial_info> Select(string tutorial_id)
+       /* [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Usuario_info> Select(string usuario_id)
         {
             // Variavel para armazenar um livro
             Modelo.Usuario_info aUsuario_info;
@@ -56,8 +56,8 @@ namespace ProjectColab.DAL
             // Fecha Conexão
             conn.Close();
 
-            return aListUsuario_info;
-        }
+           // return aListUsuario_info; ------------importante
+        }*/
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Usuario_info obj)
         {
