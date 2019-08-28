@@ -17,7 +17,7 @@
                 <li class="li1"><a href="">REQUISIÇÕES</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
                 <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-                <li class="li2"><a href="WebFormAddUsuario.aspx">USUARIO</a></li>
+                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUARIO</a></li>
             </ul>
         </body>                  
 </html>

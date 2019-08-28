@@ -74,7 +74,9 @@
     <Content Include="script.js" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAddTutorial.aspx" />
@@ -97,6 +99,9 @@
     <Compile Include="DAL\DALTutorial_info.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
     <Compile Include="DAL\DALUsuario_info.cs" />
+    <Compile Include="HandlerTutorial_info.ashx.cs">
+      <DependentUpon>HandlerTutorial_info.ashx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -192,6 +197,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HandlerTutorial_info.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
