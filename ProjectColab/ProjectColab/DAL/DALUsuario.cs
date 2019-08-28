@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto_url"]);
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["logo"]);
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
                 }
@@ -69,13 +69,12 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(id,nome,login,senha,tipo,foto_url) VALUES(@id,@nome,@login,@senha,@tipo,@foto_url)", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nome,login,senha,tipo,logo) VALUES(@nome,@login,@senha,@tipo,@logo)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto_url", obj.foto_url);
+            cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -88,13 +87,12 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Tutorial Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, foto_url = @foto_url Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            SqlCommand cmd = new SqlCommand("Update Usuario Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, logo = @logo Where id = @id", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto_url", obj.foto_url);
+            cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -126,7 +124,7 @@ namespace ProjectColab.DAL
                 while (dr.Read())
                 {
                    
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto_url"]);
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["logo"]);
 
                     aListUsuario.Add(aUsuario);
                 }
@@ -141,7 +139,7 @@ namespace ProjectColab.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Tutorial obj)
+        public void Delete(Modelo.Usuario obj)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -149,7 +147,7 @@ namespace ProjectColab.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Delete From Tutorial Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Delete From Usuario Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
 
             cmd.ExecuteNonQuery();

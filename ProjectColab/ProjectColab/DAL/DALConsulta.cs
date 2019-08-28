@@ -26,7 +26,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "  SELECT lab.*,eq.* FROM Laboratorios lab INNER JOIN Equipamento eq ON eq.laboratorio_id = lab.id";
+            cmd.CommandText = "  SELECT lab.id AS 'CODIGO',lab.nome AS 'NOME DO LABORATÓRIO',eq.id AS 'CODIGO DO EQUIPAMENTO',eq.modelo 'AS MODELO DOS EQUIPAMENTOS',eq.quantidade 'A QUANTIDADE DE EQUIPAMENTO'  FROM Laboratorios lab INNER JOIN Equipamento eq ON eq.laboratorio_id = lab.id";
 
             // Cria objeto DataAdapter para execução do comando e 
             // geração de dados para o Dataset
@@ -41,6 +41,23 @@ namespace ProjectColab.DAL
 
             return ds;
         }
-    }
 
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Equipamento obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, laboratorio_id = @laboratorio_id , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@laboratorio_id", obj.laboratorio_id);
+            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
+            cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

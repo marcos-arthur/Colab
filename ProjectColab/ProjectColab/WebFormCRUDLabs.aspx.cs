@@ -13,11 +13,10 @@ namespace ProjectColab
         {
 
         }
-
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             //Verifica se o comando é "Editar"
-            if (e.CommandName == "Editar")
+            if (e.CommandName == "EDITAR")
             {
                 string id;
 
@@ -33,7 +32,7 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormEditLab.aspx");
             }
-            if (e.CommandName == "Excluir")
+            if (e.CommandName == "EXCLUIR")
             {
                 string id;
                 Modelo.Laboratorios aLaboratorios;
@@ -56,7 +55,6 @@ namespace ProjectColab
 
                 Response.Redirect("~\\WebFormCRUDLabs.aspx");
             }
-
         }
     }
 }

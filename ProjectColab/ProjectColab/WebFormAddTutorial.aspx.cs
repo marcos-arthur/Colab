@@ -20,20 +20,12 @@ namespace ProjectColab
         {
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
-            Modelo.Tutorial_info aTutorial_info;
-            DAL.DALTutorial_info aDALTutorial_info;
 
-            aTutorial = new Modelo.Tutorial("1", tutorial_titulo.Text, 3);
+            aTutorial = new Modelo.Tutorial("1", tutorial_titulo.Text, 3, arquivo_url.FileBytes);
 
             aDALTutorial = new DAL.DALTutorial();
 
             aDALTutorial.Insert(aTutorial);
-
-            aTutorial_info = new Modelo.Tutorial_info("1", arquivo_url.FileBytes, arquivo_url.FileName);
-
-            aDALTutorial_info = new DAL.DALTutorial_info();
-
-            aDALTutorial_info.Insert(aTutorial_info);
 
             Response.Redirect("~\\WebFormCRUDTutorial.aspx");
         }

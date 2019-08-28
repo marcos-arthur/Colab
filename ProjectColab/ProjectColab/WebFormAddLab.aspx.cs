@@ -40,5 +40,10 @@ namespace ProjectColab
             Response.Redirect("~\\WebFormCRUDLabs.aspx");
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~\\WebFormCRUDLabs.aspx");
+        }
     }
 }

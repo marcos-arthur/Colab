@@ -14,20 +14,20 @@ namespace ProjectColab
         public void ProcessRequest(HttpContext context)
         {
             string id;
-            List<Modelo.Tutorial_info> aListTutorial_info;
-            Modelo.Tutorial_info aTutorial_info;
-            DAL.DALTutorial_info aDALTutorial_info;
+            List<Modelo.Tutorial> aListTutorial;
+            Modelo.Tutorial aTutorial;
+            DAL.DALTutorial aDALTutorial;
 
             id = context.Request.QueryString["id"].ToString();
 
-            aDALTutorial_info = new DAL.DALTutorial_info();
-            aListTutorial_info = aDALTutorial_info.Select(id);
+            aDALTutorial = new DAL.DALTutorial();
+            aListTutorial = aDALTutorial.Select(id);
 
-            if (aListTutorial_info.Count > 0)
+            if (aListTutorial.Count > 0)
             {
-                aTutorial_info = aListTutorial_info[0];
-                context.Response.ContentType = aTutorial_info.logo.ToString();
-                context.Response.BinaryWrite(aTutorial_info.logo);
+                aTutorial = aListTutorial[0];
+                context.Response.ContentType = aTutorial.logo.ToString();
+                context.Response.BinaryWrite(aTutorial.logo);
             }
         }
 

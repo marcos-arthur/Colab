@@ -30,7 +30,7 @@
                 <br />
                 <br />
                 <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="cancelbtn" OnClick="add_Click1"/>
-                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="cancelbtn"/>
+                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="cancelbtn" OnClick="Button1_Click"/>
             </div>       
         </div>
     </form>

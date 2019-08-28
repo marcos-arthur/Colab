@@ -10,8 +10,6 @@ namespace ProjectColab.DAL
 {
     public class DALUsuario_info
     {
-        private string connectionString = "";
-
         public DALUsuario_info()
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
