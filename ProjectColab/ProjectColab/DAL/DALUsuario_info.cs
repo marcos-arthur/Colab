@@ -16,7 +16,7 @@ namespace ProjectColab.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
-       /* [DataObjectMethod(DataObjectMethodType.Select)]
+       [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Usuario_info> Select(string usuario_id)
         {
             // Variavel para armazenar um livro
@@ -57,7 +57,7 @@ namespace ProjectColab.DAL
             conn.Close();
 
            // return aListUsuario_info; ------------importante
-        }*/
+        }
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Usuario_info obj)
         {
