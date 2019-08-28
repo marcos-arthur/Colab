@@ -7,30 +7,30 @@ namespace ProjectColab.Modelo
 {
     public class Usuario
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string nome { get; set; }
-        public string login{ get; set; }
-        public string senha{ get; set; }
+        public string login { get; set; }
+        public string senha { get; set; }
         public int tipo { get; set; }
-        public string foto_url { get; set; }
+        public byte[] foto_url { get; set; }
 
 
 
 
-        publi Usuario()
+        public Usuario()
         {
-            id = 0;
+            id = "";
             nome = "";
             login = "";
             senha = "";
-            tipo = "";
-            foto_url = "";
+            tipo = 0;
+            foto_url = null ;
         }
 
-        public Usuario(int id, string name, string login, string senha, int tipo, string foto_url)
+        public Usuario(string id, string nome, string login, string senha, int tipo, byte[]  foto_url)
         {
             this.id = id;
-            this.nome = name;
+            this.nome = nome;
             this.login = login;
             this.senha = senha;
             this.tipo = tipo;
