@@ -12,9 +12,7 @@ namespace ProjectColab.Modelo
         public string login { get; set; }
         public string senha { get; set; }
         public int tipo { get; set; }
-        public byte[] foto_url { get; set; }
-
-
+        public byte[] logo { get; set; }
 
 
         public Usuario()
@@ -24,17 +22,17 @@ namespace ProjectColab.Modelo
             login = "";
             senha = "";
             tipo = 0;
-            foto_url = null ;
+            logo = null ;
         }
 
-        public Usuario(string id, string nome, string login, string senha, int tipo, byte[]  foto_url)
+        public Usuario(string id, string nome, string login, string senha, int tipo, byte[] logo)
         {
             this.id = id;
             this.nome = nome;
             this.login = login;
             this.senha = senha;
             this.tipo = tipo;
-            this.foto_url = foto_url;
+            this.logo = logo;
         }
     }
 }
