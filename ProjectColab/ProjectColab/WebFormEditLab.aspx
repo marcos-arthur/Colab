@@ -49,6 +49,29 @@
                 <RowStyle BackColor="#EFF3FB" />
                 </asp:DetailsView>
 
+                <asp:DetailsView ID="DetailsView2" Height="40%" Width="90%" runat="server"  AutoGenerateRows="False" DataSourceID="ObjectDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
+                    <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+                    <Fields>
+                        <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                        <asp:BoundField DataField="laboratorio_id" HeaderText="laboratorio_id" SortExpression="laboratorio_id" />
+                        <asp:BoundField DataField="modelo" HeaderText="modelo" SortExpression="modelo" />
+                        <asp:BoundField DataField="quantidade" HeaderText="quantidade" SortExpression="quantidade" />
+                    </Fields>
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                </asp:DetailsView>
+
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Equipamento" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento" UpdateMethod="Insert">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="id" SessionField="id" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update" DeleteMethod="Delete">
                     <SelectParameters>
                         <asp:SessionParameter DefaultValue="" Name="id" SessionField="id" Type="String" />

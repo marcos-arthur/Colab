@@ -75,12 +75,6 @@
              </asp:GridView>
              <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALEquipamento"></asp:ObjectDataSource>
 
-             <asp:GridView ID="GridView3" runat="server" DataSourceID="ObjectDataSource2">
-                 <Columns>
-                     <asp:ButtonField CommandName="EDITAR" Text="EDITAR" />
-                 </Columns>
-             </asp:GridView>
-             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Equipamento" InsertMethod="Update" SelectMethod="SelectPublishers" TypeName="ProjectColab.DAL.DALConsulta" UpdateMethod="Update"></asp:ObjectDataSource>
         </div>
          <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddLab.aspx" />  
     </div>          
