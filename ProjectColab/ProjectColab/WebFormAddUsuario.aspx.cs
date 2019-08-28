@@ -9,14 +9,18 @@ namespace ProjectColab
 {
     public partial class WebFormAddUsuario : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Modelo.Usuario aUsuario;
+            DAL.DALUsuario aDALUsuario;
 
+            aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senha.Text, int.Parse(tipo.Text), fotodousuario.FileBytes);
+
+            aDALUsuario = new DAL.DALUsuario();
+
+            aDALUsuario.Insert(aUsuario);
+
+            Response.Redirect("~\\WebFormCRUDUsuario.aspx");
         }
     }
 }
