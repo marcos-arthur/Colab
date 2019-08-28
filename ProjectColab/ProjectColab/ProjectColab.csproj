@@ -78,9 +78,11 @@
     <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAddTutorial.aspx" />
+    <Content Include="WebFormAddUsuario.aspx" />
     <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
+    <Content Include="WebFormCRUDUsuario.aspx" />
     <Content Include="WebFormEditChamado.aspx" />
     <Content Include="WebFormEditLab.aspx" />
     <Content Include="WebFormEditTutorial.aspx" />
@@ -92,6 +94,7 @@
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="DAL\DALTutorial_info.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
+    <Compile Include="DAL\DALUsuario_info.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +108,7 @@
     <Compile Include="Modelo\Tutorial.cs" />
     <Compile Include="Modelo\Tutorial_info.cs" />
     <Compile Include="Modelo\Usuario.cs" />
+    <Compile Include="Modelo\Usuario_info.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebFormAddChamado.aspx.cs">
       <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
@@ -127,6 +131,13 @@
     <Compile Include="WebFormAddTutorial.aspx.designer.cs">
       <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormAddUsuario.aspx.cs">
+      <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddUsuario.aspx.designer.cs">
+      <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormCRUDChamado.aspx.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,6 +158,13 @@
     </Compile>
     <Compile Include="WebFormCRUDTutorial.aspx.designer.cs">
       <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDUsuario.aspx.cs">
+      <DependentUpon>WebFormCRUDUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDUsuario.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormEditChamado.aspx.cs">
       <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
