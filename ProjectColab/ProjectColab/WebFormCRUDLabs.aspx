@@ -23,40 +23,12 @@
                 <li class="li2"><a href="">USUARIO</a></li>
             </ul>
 
-
-        <div class="mid">
-            <div>   
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" PageSize="15" BorderStyle="None" BorderWidth="0px" >
-                <AlternatingRowStyle BackColor="White" />
-                <Columns>
-                    <asp:BoundField DataField="id" HeaderText="ID DO LABORATÓRIO" SortExpression="id" />
-                    <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
-                    <asp:ButtonField CommandName="Editar" Text="EDITAR" ButtonType="Button"  ControlStyle-CssClass="tablebtn">
-<ControlStyle CssClass="tablebtn2"></ControlStyle>
-                    </asp:ButtonField>
-                    <asp:ButtonField CommandName="Excluir" Text="EXCLUIR" ButtonType="Button" ControlStyle-CssClass="tablebtn" >
-<ControlStyle CssClass="tablebtn2"></ControlStyle>
-                    </asp:ButtonField>
-                </Columns>
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" CssClass="header"/>
-                <PagerStyle BackColor="#8f3d3d"  ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="white" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"  />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1"  />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
-            </asp:GridView>    
+     <div class="mid">
+         <div class="sec-mid">
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" DeleteMethod="Delete" UpdateMethod="Update"></asp:ObjectDataSource>
 
-                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="ObjectDataSource3" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand1">
                     <AlternatingRowStyle BackColor="White" />
-                    <Columns>
-                        <asp:ButtonField ButtonType="Button" CommandName="EDITAR" Text="EDITAR" />
-                        <asp:ButtonField Text="Botão" />
-                    </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
                 <HeaderStyle BackColor="#8f3d3d"  Font-Bold="True" ForeColor="White" CssClass="header"/>
@@ -67,12 +39,22 @@
                 <SortedAscendingHeaderStyle BackColor="#6D95E1"  />
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                         <Columns>
+                        <asp:ButtonField ButtonType="Button" CommandName="EDITAR" Text="EDITAR" ControlStyle-CssClass="tablebtn" >
+<ControlStyle CssClass="tablebtn"></ControlStyle>
+                             </asp:ButtonField>
+                        <asp:ButtonField Text="EXCLUIR" ButtonType="Button" CommandName="EXCLUIR" ControlStyle-CssClass="tablebtn" >
+<ControlStyle CssClass="tablebtn"></ControlStyle>
+                             </asp:ButtonField>
+                    </Columns>
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectPublishers" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
-            </div> 
-            <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddLab.aspx" />  
+                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectPublishers" TypeName="ProjectColab.DAL.DALConsulta" DataObjectTypeName="ProjectColab.Modelo.Equipamento" UpdateMethod="Update"></asp:ObjectDataSource>
+            
+
         </div>
-                   
+         <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddLab.aspx" />  
+    </div>          
     </form>
 </body>
 </html>
