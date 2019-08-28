@@ -30,9 +30,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select lab.*,eq.*" +
-                "FROM Laboratorios lab" +
-                "INNER JOIN Equipamento eq ON eq.laboratorio_id = lab.id";
+            cmd.CommandText = "SELECT * FROM Laboratorios";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -42,8 +40,8 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString()));
-                    // Adiciona o livro lido à lista
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString());
+                    // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
                     aListLaboratorios.Add(aLaboratorios);
                 }
             }
@@ -122,7 +120,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString()));
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString());
 
                     aListLaboratorios.Add(aLaboratorios);
                 }

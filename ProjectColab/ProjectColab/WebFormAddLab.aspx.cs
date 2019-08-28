@@ -18,7 +18,7 @@ namespace ProjectColab
             Modelo.Laboratorios alaboratorios;
             DAL.DALLaboratorio aDALLaboratorio;
 
-            alaboratorios = new Modelo.Laboratorios(id.Text, nome.Text,"1","1","1",1);
+            alaboratorios = new Modelo.Laboratorios(id.Text, nome.Text);
 
             aDALLaboratorio = new DAL.DALLaboratorio();
 
@@ -37,7 +37,7 @@ namespace ProjectColab
 
             aDALEquipamento.Insert(aEquipamento);
 
-            Response.Redirect("~\\WebFormCRUBLabs.aspx");
+            Response.Redirect("~\\WebFormCRUDLabs.aspx");
 
         }
     }
