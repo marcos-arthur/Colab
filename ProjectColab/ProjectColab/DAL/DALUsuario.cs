@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["logo"]);
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()));
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
                 }
@@ -69,12 +69,11 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nome,login,senha,tipo,logo) VALUES(@nome,@login,@senha,@tipo,@logo)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario2(nome,login,senha,tipo,logo) VALUES(@nome,@login,@senha,@tipo)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -92,7 +91,6 @@ namespace ProjectColab.DAL
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@logo", obj.logo);
             cmd.ExecuteNonQuery();
         }
 
@@ -124,7 +122,7 @@ namespace ProjectColab.DAL
                 while (dr.Read())
                 {
                    
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["logo"]);
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()));
 
                     aListUsuario.Add(aUsuario);
                 }

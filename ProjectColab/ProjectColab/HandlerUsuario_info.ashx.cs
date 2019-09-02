@@ -4,13 +4,12 @@ using System.Linq;
 using System.Web;
 
 namespace ProjectColab
-{
+{/*
     /// <summary>
     /// Descrição resumida de HandlerUsuario_info
     /// </summary>
     public class HandlerUsuario_info : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             string id;
@@ -39,4 +38,5 @@ namespace ProjectColab
             }
         }
     }
+    */
 }

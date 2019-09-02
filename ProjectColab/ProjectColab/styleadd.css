@@ -7,28 +7,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.mid2 {
-    margin: auto;
-    margin-top: 2%;
-    max-width: 50%;
-    padding: 2%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-}
-
-}
-
-.coment {
-    font-size: 0.9vw;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.1);     
-    margin: auto;
-    background-color: white;
-}
 .descricao{
     float:left;
     text-decoration:none;
@@ -53,18 +31,6 @@ text-decoration:none;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.comenttext {
-    border-radius: 4px;
-    padding: 0.5%;
-    font-size: 0.8vw;
-    min-width: 85%;
-    max-width: 90%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: RGBA(255,0,0,0.4);
-    background-color: rgba(255, 255, 255, 0.90);
-    color: black;
-}
 .text {
     border-radius: 4px;
     padding: 0.5%;
@@ -73,11 +39,11 @@ text-decoration:none;
     max-width: 90%;
     border-style: solid;
     border-width: 1px;
-    border-color: RGBA(255,0,0,0.4);
+    border-color: RGB(255,0,0);
     background-color: rgba(255, 255, 255, 0.90);
     color: black;
 }
-p {
+.p {
     border-left-style: solid;
     border-left-color: red;
     border-width: 7px;

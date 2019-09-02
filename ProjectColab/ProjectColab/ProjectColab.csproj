@@ -74,6 +74,7 @@
     <Content Include="script.js" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
+    <Content Include="stylelogin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

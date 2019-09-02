@@ -14,7 +14,7 @@ namespace ProjectColab
             Modelo.Usuario aUsuario;
             DAL.DALUsuario aDALUsuario;
 
-            aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senha.Text, int.Parse(tipo.Text), fotodousuario.FileBytes);
+            aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senha.Text, int.Parse(tipo.Text));
 
             aDALUsuario = new DAL.DALUsuario();
 
