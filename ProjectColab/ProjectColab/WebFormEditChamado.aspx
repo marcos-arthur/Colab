@@ -1,28 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormEditChamado.aspx.cs" Inherits="ProjectColab.WebFormEditChamado" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="style.css"/>    
-<link rel="stylesheet" type="text/css" href="styleadd.css"/>
-<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> 
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-            <ul class="menu2" style="background-color:white">
-                <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
-                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
-                <li class="li1"><a href="">REQUISIÇÕES</a></li>
-                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUARIO</a></li>
-            </ul>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageMaster.Master" AutoEventWireup="true" CodeBehind="WebFormEditChamado.aspx.cs" Inherits="ProjectColab.WebFormEditChamado" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="mid">
             <asp:DetailsView ID="DetailsView1" runat="server" Height="40%" Width="90%" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="black" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
@@ -66,8 +45,8 @@
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>
                         <div class="sec-mid">
-                            <ul class="coment">
-                                <li class="descricao"><a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a></li>
+                            <ul>
+                                <li class="descricao" ><a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a></li>
                                 <li class="data_hora"><a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a></li>
                             </ul>
                         </div>
@@ -82,7 +61,5 @@
                         </SelectParameters>
                     </asp:ObjectDataSource>
             </div>
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

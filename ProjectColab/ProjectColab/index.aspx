@@ -10,14 +10,5 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>            
     </head>
         <body> 
-	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-            <ul class="menu2" style="background-color:white">
-                <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
-                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
-                <li class="li1"><a href="">REQUISIÇÕES</a></li>
-                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUARIO</a></li>
-            </ul>
         </body>                  
 </html>
