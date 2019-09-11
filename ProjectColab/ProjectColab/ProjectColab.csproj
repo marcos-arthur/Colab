@@ -72,6 +72,7 @@
     <Content Include="Imagens\Logo.png" />
     <Content Include="Index2.aspx" />
     <Content Include="script.js" />
+    <Content Include="SQL\Colab.sql" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="stylelogin.css" />
