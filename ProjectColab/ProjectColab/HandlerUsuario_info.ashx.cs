@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 namespace ProjectColab
-{/*
+{
     /// <summary>
     /// Descrição resumida de HandlerUsuario_info
     /// </summary>
@@ -25,8 +25,8 @@ namespace ProjectColab
             if (aListUsuario.Count > 0)
             {
                 aUsuario = aListUsuario[0];
-                context.Response.ContentType = aUsuario.logo.ToString();
-                context.Response.BinaryWrite(aUsuario.logo);
+                context.Response.ContentType = aUsuario.foto.ToString();
+                context.Response.BinaryWrite(aUsuario.foto);
             }
         }
 
@@ -38,5 +38,4 @@ namespace ProjectColab
             }
         }
     }
-    */
 }
