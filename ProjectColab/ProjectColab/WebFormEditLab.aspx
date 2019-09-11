@@ -1,30 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormEditLab.aspx.cs" Inherits="ProjectColab.WebFormEditLab" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="style.css"/>  
-<link rel="stylesheet" type="text/css" href="styleadd.css"/> 
-<script src="script.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-            <ul class="menu2" style="background-color:white">
-                <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
-                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
-                <li class="li1"><a href="">REQUISIÇÕES</a></li>
-                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUARIO</a></li>
-            </ul>
-
-            <div class="mid">
-                <asp:DetailsView ID="DetailsView1" runat="server" Height="40%" Width="90%" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" OnItemDeleted="DetailsView1_ItemDeleted" ForeColor="#333333" GridLines="None">
+<%@ Page Title="" Language="C#" MasterPageFile="~/PageMaster.Master" AutoEventWireup="true" CodeBehind="WebFormEditLab.aspx.cs" Inherits="ProjectColab.WebFormEditLab" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div class="mid">
+                <asp:DetailsView ID="DetailsView3" runat="server" Height="40%" Width="90%" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" OnItemDeleted="DetailsView1_ItemDeleted" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
                     <EditRowStyle BackColor="WHITE" />
@@ -38,8 +19,8 @@
                                 &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
-                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" OnClientClick="javascript:return ConfirmaExclusao()" Text="Excluir"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
+                                &nbsp;<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" OnClientClick="javascript:return ConfirmaExclusao()" Text="Excluir"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Fields>
@@ -49,7 +30,7 @@
                 <RowStyle BackColor="#EFF3FB" />
                 </asp:DetailsView>
 
-                <asp:DetailsView ID="DetailsView2" Height="40%" Width="90%" runat="server"  AutoGenerateRows="False" DataSourceID="ObjectDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:DetailsView ID="DetailsView4" Height="40%" Width="90%" runat="server"  AutoGenerateRows="False" DataSourceID="ObjectDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
                     <EditRowStyle BackColor="#2461BF" />
@@ -66,20 +47,17 @@
                     <RowStyle BackColor="#EFF3FB" />
                 </asp:DetailsView>
 
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Equipamento" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento" UpdateMethod="Insert">
+                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Equipamento" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento" UpdateMethod="Insert">
                     <SelectParameters>
                         <asp:SessionParameter Name="id" SessionField="id" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
 
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update" DeleteMethod="Delete">
+                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update" DeleteMethod="Delete">
                     <SelectParameters>
                         <asp:SessionParameter DefaultValue="" Name="id" SessionField="id" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                <asp:Button ID="Button2" runat="server" Text="VOLTAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx" />
+                <asp:Button ID="Button1" runat="server" Text="VOLTAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx" />
             </div>
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>

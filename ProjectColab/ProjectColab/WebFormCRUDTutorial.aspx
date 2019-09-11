@@ -1,31 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormCRUDTutorial.aspx.cs" Inherits="ProjectColab.WebFormCRUDTutorial" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="style.css"/>  
-<link rel="stylesheet" type="text/css" href="styleadd.css"/>
-<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> 
-<script src="script.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-            <ul class="menu2" style="background-color:white">
-               <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
-                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
-                <li class="li1"><a href="">REQUISIÇÕES</a></li>
-                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2"><a href="WebFormAddLab.aspx">+</a></li>
-                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUARIO</a></li>
-            </ul>
-
-
-            <div class="mid">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageMaster.Master" AutoEventWireup="true" CodeBehind="WebFormCRUDTutorial.aspx.cs" Inherits="ProjectColab.WebFormCRUDTutorial" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div class="mid">
                 <div class="tables">
                      <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
                          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -52,7 +29,4 @@
                 </div>
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="cancelbtn" PostBackUrl="~/WebFormAddTutorial.aspx" />    
             </div>
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>
