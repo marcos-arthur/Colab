@@ -84,6 +84,7 @@
     <Content Include="WebFormAddTutorial.aspx" />
     <Content Include="WebFormAddUsuario.aspx" />
     <Content Include="WebFormCRUDChamado.aspx" />
+    <Content Include="WebFormCRUDEquipamento.aspx" />
     <Content Include="WebFormCRUDLabs.aspx" />
     <Content Include="WebFormCRUDTutorial.aspx" />
     <Content Include="WebFormCRUDUsuario.aspx" />
@@ -161,6 +162,13 @@
     </Compile>
     <Compile Include="WebFormCRUDChamado.aspx.designer.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDEquipamento.aspx.cs">
+      <DependentUpon>WebFormCRUDEquipamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDEquipamento.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDEquipamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormCRUDLabs.aspx.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>

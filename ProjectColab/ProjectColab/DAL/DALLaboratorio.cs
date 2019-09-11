@@ -153,7 +153,5 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-
-
     }
 }

@@ -32,7 +32,8 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormEditLab.aspx");
             }
-            if (e.CommandName == "EXCLUIR")
+            /*
+            else if (e.CommandName == "EXCLUIR")
             {
                 string id;
                 Modelo.Laboratorios aLaboratorios;
@@ -54,6 +55,19 @@ namespace ProjectColab
                 aDALLaboratorio.Delete(aLaboratorios);
 
                 Response.Redirect("~\\WebFormCRUDLabs.aspx");
+            }*/
+            else if (e.CommandName == "ABRIR")
+            {
+                string id;
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Copia o conteúdo da primeira célula da linha -> Código do livro
+                id = GridView1.Rows[index].Cells[0].Text;
+
+                // Grava código do Livro na sessão
+                Session["id"] = id;
+
+                Response.Redirect("~\\WebFormCRUDEquipamento.aspx");
             }
         }
     }
