@@ -75,6 +75,7 @@
     <Content Include="SQL\Colab.sql" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
+    <Content Include="stylecontainer.css" />
     <Content Include="stylelogin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

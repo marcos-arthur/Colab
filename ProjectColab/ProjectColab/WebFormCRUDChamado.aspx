@@ -41,7 +41,7 @@
             </ul>
         </HeaderTemplate>
         <ItemTemplate>
-            <ul>
+            <ul class="container">
                 <li><%# DataBinder.Eval(Container.DataItem, "id")%> </li>
                 <li><%# DataBinder.Eval(Container.DataItem, "status")%> </li>
                 <li><%# DataBinder.Eval(Container.DataItem, "resumo")%> </li>
