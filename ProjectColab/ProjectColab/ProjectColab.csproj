@@ -70,7 +70,6 @@
     <Content Include="background2.png" />
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
-    <Content Include="index.aspx" />
     <Content Include="Index2.aspx" />
     <Content Include="script.js" />
     <Content Include="Style.css" />
@@ -105,13 +104,6 @@
     </Compile>
     <Compile Include="HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index2.aspx.cs">
       <DependentUpon>Index2.aspx</DependentUpon>

@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()));
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()),(byte[])dr["foto"]);
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
                 }
@@ -69,11 +69,12 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario2(nome,login,senha,tipo,logo) VALUES(@nome,@login,@senha,@tipo)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nome,login,senha,tipo,foto) VALUES(@nome,@login,@senha,@tipo,@foto)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@foto", obj.foto);
             cmd.ExecuteNonQuery();
         }
 
@@ -86,11 +87,12 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Usuario Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, logo = @logo Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Usuario Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, foto = @foto Where id = @id", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
+            cmd.Parameters.AddWithValue("@foto", obj.foto);
             cmd.ExecuteNonQuery();
         }
 
@@ -122,7 +124,7 @@ namespace ProjectColab.DAL
                 while (dr.Read())
                 {
                    
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()));
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto"]);
 
                     aListUsuario.Add(aUsuario);
                 }

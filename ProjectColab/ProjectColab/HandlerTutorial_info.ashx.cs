@@ -8,7 +8,7 @@ namespace ProjectColab
     /// <summary>
     /// Descrição resumida de HandlerTutorial_info
     /// </summary>
-    public class HandlerTutorial_info : IHttpHandler
+    /*public class HandlerTutorial_info : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
@@ -26,8 +26,8 @@ namespace ProjectColab
             if (aListTutorial.Count > 0)
             {
                 aTutorial = aListTutorial[0];
-                context.Response.ContentType = aTutorial.logo.ToString();
-                context.Response.BinaryWrite(aTutorial.logo);
+                context.Response.ContentType = aTutorial.arquivo.ToString();
+                context.Response.BinaryWrite(aTutorial.arquivo);
             }
         }
 
@@ -39,5 +39,5 @@ namespace ProjectColab
                 return false;
             }
         }
-    }
+    }*/
 }

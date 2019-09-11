@@ -10,7 +10,7 @@ namespace ProjectColab.Modelo
         public string id { get; set; }
         public string tutorial_titulo { get; set; }
         public decimal status { get; set; }
-        public byte[] logo { get; set; }
+        public string arquivo { get; set; }
 
 
         public Tutorial()
@@ -18,15 +18,15 @@ namespace ProjectColab.Modelo
             this.id = "";
             this.tutorial_titulo = "";
             this.status = 0;
-            this.logo = null;
+            this.arquivo = null;
         }
 
-        public Tutorial(string aid, string atutorial_titulo, decimal astatus, byte[] alogo)
+        public Tutorial(string id, string tutorial_titulo, decimal status, string arquivo)
         {
-            this.id = aid;
-            this.tutorial_titulo = atutorial_titulo;
-            this.status = astatus;
-            this.logo = alogo;
+            this.id = id;
+            this.tutorial_titulo = tutorial_titulo;
+            this.status = status;
+            this.arquivo = arquivo;
         }
     }
 }

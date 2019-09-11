@@ -21,7 +21,7 @@ namespace ProjectColab
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
 
-            aTutorial = new Modelo.Tutorial("1", tutorial_titulo.Text, 3, arquivo_url.FileBytes);
+            aTutorial = new Modelo.Tutorial("1", titulo.Text, 3, arquivo.Text);
 
             aDALTutorial = new DAL.DALTutorial();
 

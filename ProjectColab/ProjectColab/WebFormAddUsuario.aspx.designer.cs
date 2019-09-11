@@ -58,13 +58,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox tipo;
         
         /// <summary>
-        /// Controle fotodousuario.
+        /// Controle foto.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fotodousuario;
+        protected global::System.Web.UI.WebControls.FileUpload foto;
         
         /// <summary>
         /// Controle Button1.

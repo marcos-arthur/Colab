@@ -28,7 +28,7 @@
                 <p>LOGIN</p>   <asp:TextBox ID="login" runat="server" CssClass="text"></asp:TextBox>      
                 <p>SENHA</p>   <asp:TextBox ID="senha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>                     
                 <p>TIPO</p>   <asp:TextBox ID="tipo" runat="server" CssClass="text"></asp:TextBox>   
-                <p>FOTO</p>     <asp:FileUpload ID="fotodousuario" runat="server" />
+                <p>FOTO</p>     <asp:FileUpload ID="foto" runat="server" />
                 <br />
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>

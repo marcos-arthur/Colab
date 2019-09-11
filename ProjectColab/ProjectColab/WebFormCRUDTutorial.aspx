@@ -33,11 +33,6 @@
                              <asp:BoundField DataField="id" HeaderText="ID" SortExpression="id" />
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="Título" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
-                             <asp:TemplateField HeaderText="Imagem">
-                                 <ItemTemplate>
-                                     <asp:Image ID="Image1" runat="server" width="50px" ImageUrl='<%# "HandlerTutorial_info.ashx?id=" + Eval("id") %>' />
-                                 </ItemTemplate>
-                             </asp:TemplateField>
                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
