@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="style.css"/>  
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
+<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> 
 <script src="script.js"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
