@@ -31,4 +31,26 @@
             </div>
                 <asp:Button ID="Button2" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddChamado.aspx" />
             </div>
+
+
+<div class ="mid">
+    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+        <HeaderTemplate>
+            <ul>
+                <li></li>
+            </ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <ul>
+                <li><%# DataBinder.Eval(Container.DataItem, "id")%> </li>
+                <li><%# DataBinder.Eval(Container.DataItem, "status")%> </li>
+                <li><%# DataBinder.Eval(Container.DataItem, "resumo")%> </li>
+                <li><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></li>
+                <li><%# DataBinder.Eval(Container.DataItem, "data")%> </li>
+            </ul>
+        </ItemTemplate>
+
+
+    </asp:Repeater>
+</div>
 </asp:Content>
