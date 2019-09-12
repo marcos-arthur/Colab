@@ -31,7 +31,7 @@ namespace ProjectColab
         {
             Modelo.Equipamento aEquipamento;
             DAL.DALEquipamento aDALEquipamento;
-            aEquipamento = new Modelo.Equipamento("1",idlab.Text,modelo.Text,Convert.ToDecimal(quant.Text));
+            aEquipamento = new Modelo.Equipamento("1",idnome.Text,modelo.Text,Convert.ToDecimal(quant.Text));
 
             aDALEquipamento = new DAL.DALEquipamento();
 

@@ -18,7 +18,7 @@
                             </asp:TemplateField>
                             <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
                             <asp:BoundField DataField="login" HeaderText="login" SortExpression="login" />
-                            <asp:BoundField DataField="senha" HeaderText="senha" SortExpression="senha" />
+                            <asp:BoundField DataField="senha" HeaderText="senha" SortExpression="senha"/>
                             <asp:BoundField DataField="tipo" HeaderText="tipo" SortExpression="tipo" />
                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         </Columns>

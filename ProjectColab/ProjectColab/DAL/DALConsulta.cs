@@ -51,9 +51,9 @@ namespace ProjectColab.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, laboratorio_id = @laboratorio_id , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, laboratorio_nome = @laboratorio_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@laboratorio_id", obj.laboratorio_id);
+            cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
 

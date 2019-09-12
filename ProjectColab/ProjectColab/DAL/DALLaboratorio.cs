@@ -53,11 +53,6 @@ namespace ProjectColab.DAL
             return aListLaboratorios;
         }
 
-
-
-
-
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Laboratorios obj)
         {
