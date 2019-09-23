@@ -7,7 +7,8 @@
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>
             <div class="chamados"> <a> <%# DataBinder.Eval(Container.DataItem, "count")%></a> <a>Chamdos</a></div>
-       
+            <div class="chamados2"> <a> <%# DataBinder.Eval(Container.DataItem, "count")%></a> <a>Chamdos</a></div>
+            <div class="chamados2"> <a> <%# DataBinder.Eval(Container.DataItem, "count")%></a> <a>Chamdos</a></div>
         </ItemTemplate>
     </asp:Repeater>
 
