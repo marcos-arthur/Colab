@@ -1,28 +1,44 @@
 ﻿.container {
-    max-width: 40%;
-    margin: auto;
-    margin-top: 10%;
-    height:400px;   
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    max-width:60%;
+    margin:auto;
+}
+.left-chamados {
+    float: left;
+    width: 70%;
+}
+.left-chamados  .content {
+    margin-top:2%;
+    background-color:white;
+    height:500px;
+    text-align:center;
+}
+.rigth-chamados {
+    float: left;
+    width: 20%;
+    margin-left:1%;
+}
+.content2 {
+    margin-top: 4%;
     background-color: white;
 }
-.chamados {
-    max-width: 70%;
-    height:400px;
-    text-align:center;
-    display:block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-}
-    .chamados a {
-        margin:auto;
-    }
 .chamados2 {
-    max-width: 30%;
-    height: 200px;
+    max-width: 20%;
+    margin-top:0%;
+    height: 400px;
+    float:left;
     text-align: center;
     display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border-radius: 0.5%;
 }
+    .chamados2 .sub {
+        float: left;
+        max-width: 40%;
+        height: 200px;
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    }
 @media only screen and (max-width: 800px) {
     .chamados{
         background-color: red;
@@ -37,4 +53,9 @@
     .logo a{
         font-size: 5vw;
     }
+}
+
+
+.atencao {
+    color:red;
 }
