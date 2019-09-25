@@ -23,7 +23,7 @@
                 <br />
                 <br />
                 <asp:Button ID="add" runat="server" Text="ENTRAR"   CssClass="loginbtn"/>
-                <asp:Button ID="cadastro" runat="server" Text="CADASTRAR"   CssClass="loginbtn"/>
+                <asp:Button ID="cadastro" runat="server" Text="CADASTRAR"  CssClass="loginbtn"  PostBackUrl="~/WebFormLoginRegister.aspx" />
             </div>       
         </div>
     </form>

@@ -13,5 +13,15 @@ namespace ProjectColab
         {
 
         }
+
+        protected void cadastro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cadastro_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

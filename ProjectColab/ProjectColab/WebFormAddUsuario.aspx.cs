@@ -21,6 +21,27 @@ namespace ProjectColab
             aDALUsuario.Insert(aUsuario);
 
             Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+
+            // Valida senha
+            if (Senha.Text != ConfirmarSenha.Text)
+            {
+                Session["msgErro"] = "Senha não confere";
+                Response.Redirect("~\\WebFormLoginRegister.aspx");
+            }
+            Session["msgErro"] = "";
+            // Instancia objeto DAL
+            DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
+            // Critografa senha
+            string senhaMD5 = GerarHashMd5(Senha.Text);
+            // Instancia objeto Modelo
+            Modelo.Usuario aUsuario = new Modelo.Usuario("0", Nome.Text, Login.Text, senhaMD5, 0, Foto.FileBytes);
+            // Insere usuário
+            aDALUsuario.Insert(aUsuario);
+            // Grava na sessão
+
+            Response.Redirect("~\\WebFormLogin.aspx");
+
         }
+    }
     }
 }
