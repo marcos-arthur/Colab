@@ -16,6 +16,39 @@ namespace ProjectColab.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
+
+        public int SelectID(string nomeLab)
+        {
+            int id = 0;
+
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("select id from Laboratorios where nome = @nome", conn);
+            cmd.Parameters.AddWithValue("@nome", nomeLab);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    id = Convert.ToInt32(dr["id"]);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return id;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Laboratorios> SelectAll()
         {

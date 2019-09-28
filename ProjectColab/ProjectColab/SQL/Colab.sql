@@ -21,11 +21,14 @@ CREATE TABLE Usuario(
 CREATE TABLE Equipamento(
 	id INT IDENTITY NOT NULL,
 	laboratorio_id INT NOT NULL,
+	laboratorio_nome VARCHAR(45) NOT NULL,
 	modelo VARCHAR(45) NOT NULL,
 	quantidade INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(laboratorio_id) REFERENCES Laboratorios(id)
 )
+--drop table Equipamento
+
 CREATE TABLE Chamado(
 	id INT IDENTITY NOT NULL,
 	usuario_aberto_id INT ,
@@ -68,7 +71,7 @@ CREATE TABLE Tutorial(
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
-SELECT id, status,
+/*SELECT id, status,
 CASE WHEN status = 3 THEN 'SENDO ANALIZADO'
 WHEN status = 2 THEN 'APROVADO'
 ELSE 'NÃO APROVADO'
@@ -82,3 +85,13 @@ FROM Equipamento eqip
 INNER JOIN Laboratorios lab ON lab.id = eqip.laboratorio_id
 
 order by eqip.id
+
+select id from Laboratorios 
+	where nome = 'Lab13'
+
+INSERT INTO Equipamento(laboratorio_id, laboratorio_nome, modelo, quantidade)
+
+VALUES(4,'3','Modelo',2)
+
+select * from Laboratorios
+select * from Equipamento*/

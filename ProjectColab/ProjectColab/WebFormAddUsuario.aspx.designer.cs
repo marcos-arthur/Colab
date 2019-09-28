@@ -40,6 +40,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox senha;
         
         /// <summary>
+        /// Controle confirmaSenha.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox confirmaSenha;
+        
+        /// <summary>
         /// Controle tipo.
         /// </summary>
         /// <remarks>

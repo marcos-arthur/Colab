@@ -20,15 +20,20 @@ namespace ProjectColab
 
             aDALUsuario.Insert(aUsuario);
 
-            Response.Redirect("~\\WebFormCRUDUsuario.aspx");
 
             // Valida senha
-            if (Senha.Text != ConfirmarSenha.Text)
+            if (senha.Text != confirmaSenha.Text)
             {
                 Session["msgErro"] = "Senha não confere";
                 Response.Redirect("~\\WebFormLoginRegister.aspx");
             }
-            Session["msgErro"] = "";
+            else {                
+                Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+            }
+            //Session["msgErro"] = "";
+
+
+            /*
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
             // Critografa senha
@@ -39,9 +44,8 @@ namespace ProjectColab
             aDALUsuario.Insert(aUsuario);
             // Grava na sessão
 
-            Response.Redirect("~\\WebFormLogin.aspx");
+            Response.Redirect("~\\WebFormLogin.aspx");*/
 
         }
-    }
     }
 }
