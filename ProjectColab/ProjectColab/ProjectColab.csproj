@@ -73,6 +73,7 @@
     <Content Include="Index2.aspx" />
     <Content Include="script.js" />
     <Content Include="SQL\Colab.sql" />
+    <Content Include="SQL\triggers.sql" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="stylecontainer.css" />

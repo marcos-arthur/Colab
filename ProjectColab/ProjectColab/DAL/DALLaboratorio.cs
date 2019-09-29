@@ -98,8 +98,9 @@ namespace ProjectColab.DAL
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome) VALUES(@nome)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            // Executa Comando
-            cmd.ExecuteNonQuery();
+
+            // Executa Comando            
+            cmd.ExecuteNonQuery();                               
         }
 
         [DataObjectMethod(DataObjectMethodType.Update)]
