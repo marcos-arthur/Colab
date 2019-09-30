@@ -15,7 +15,7 @@ namespace ProjectColab
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            //Verifica se o comando é "Editar"
+          /*  //Verifica se o comando é "Editar"
             if (e.CommandName == "EDITAR")
             {
                 string id;
@@ -56,7 +56,7 @@ namespace ProjectColab
 
                 Response.Redirect("~\\WebFormCRUDLabs.aspx");
             }*/
-            else if (e.CommandName == "ABRIR")
+            /*else if (e.CommandName == "ABRIR")
             {
                 string id;
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -68,7 +68,7 @@ namespace ProjectColab
                 Session["id"] = id;
 
                 Response.Redirect("~\\WebFormCRUDEquipamento.aspx");
-            }
+            }*/
         }
     }
 }

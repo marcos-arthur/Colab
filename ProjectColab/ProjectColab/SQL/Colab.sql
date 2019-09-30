@@ -1,6 +1,7 @@
+--drop table Laboratorios
 CREATE TABLE Laboratorios(
 	id INT IDENTITY NOT NULL,
-	nome VARCHAR(100) NOT NULL,
+	nome VARCHAR(100) NOT NULL,	
 	PRIMARY KEY(id)
 )
 

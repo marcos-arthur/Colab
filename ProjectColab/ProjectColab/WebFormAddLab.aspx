@@ -5,9 +5,9 @@
         <div class="mid">
             <!-- LABEL de erros -->
             <asp:Label ID="MsgErro" runat="server" ForeColor="Red"></asp:Label> <!-- COLOCAR UMA QUEBRA DE LINHA VIA .CSS -->
-            <asp:Label ID="MsgErroDropLab" runat="server" ForeColor="Red"></asp:Label>
-            <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
-            <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>
+            
+            
+            
 
             <p style="display:none">CÓDIGO DO LABORATÓRIO</p><asp:TextBox runat="server" ID="TextBox1" placeholder="INDISPONIVEL" CssClass="text" ReadOnly="True" Enabled="False" style="display:none"></asp:TextBox>
             
@@ -19,11 +19,14 @@
             <asp:Button runat="server" ID="Button4" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
         </div>
         <div class="mid">
+            <asp:Label ID="MsgErroDropLab" runat="server" ForeColor="Red"></asp:Label>
             <asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
             
+            <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
             <p>MODELO DE EQUIPAMENTO</p><asp:TextBox ID="modelo" runat="server" CssClass="text"></asp:TextBox>
             
+            <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>
             <p>QUANTIDADE</p><asp:TextBox ID="quant" runat="server" CssClass="text"></asp:TextBox>
             
             <br />

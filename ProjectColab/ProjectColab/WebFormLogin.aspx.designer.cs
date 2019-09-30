@@ -22,6 +22,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Controle LabelMsgErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LabelMsgErro;
+        
+        /// <summary>
         /// Controle Login.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox Login;
         
         /// <summary>
-        /// Controle Senha.
+        /// Controle senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Senha;
+        protected global::System.Web.UI.WebControls.TextBox senha;
         
         /// <summary>
         /// Controle data.

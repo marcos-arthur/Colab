@@ -19,15 +19,15 @@ namespace ProjectColab
             }
             if ((Session["MsgErroDropLab"] != null) && (Session["MsgErroDropLab"].ToString() != ""))
             {
-                MsgErro.Text = Session["MsgErroDropLab"].ToString();
+                MsgErroDropLab.Text = Session["MsgErroDropLab"].ToString();
             }
             if ((Session["MsgErroModelo"] != null) && (Session["MsgErroModelo"].ToString() != ""))
             {
-                MsgErro.Text = Session["MsgErroModelo"].ToString();
+                MsgErroModelo.Text = Session["MsgErroModelo"].ToString();
             }
             if ((Session["MsgErroQuant"] != null) && (Session["MsgErroQuant"].ToString() != ""))
             {
-                MsgErro.Text = Session["MsgErroQuant"].ToString();
+                MsgErroQuant.Text = Session["MsgErroQuant"].ToString();
             }
         }
 
@@ -75,17 +75,13 @@ namespace ProjectColab
             {
                 aDALEquipamento.Insert(aEquipamento);
             }
-            catch (SqlException error) when (error.Message == "A transação foi encerrada no gatilho. O lote foi anulado.\r\nO equipamento inserido deve pertencer a algum laboratorio")
+            catch (SqlException error)
             {
-                Session["MsgErroDropLab"] = "O equipamento inserido deve pertencer a algum laboratório";              
-            }
-            catch (SqlException error) when (error.Message == "A transação foi encerrada no gatilho. O lote foi anulado.\r\nO modelo do equipamento nao pode ser vazio")
-            {
-                Session["MsgErroModelo"] = "O modelo do equipamento nao pode ser vazio";                
-            }
-            catch (SqlException error) when (error.Message == "A transação foi encerrada no gatilho. O lote foi anulado.\r\nA quantidade de equipamento deve ser um número maior que 0")
-            {
-                Session["MsgErroQuant"] = "A quantidade de equipamento deve ser um número maior que 0";                                
+                if (error.Message.Contains("O equipamento inserido deve pertencer a algum laboratorio")) Session["MsgErroDropLab"] = "O equipamento inserido deve pertencer a algum laboratório";
+
+                if (error.Message.Contains("A quantidade de equipamento deve ser um número maior que 0")) Session["MsgErroQuant"] = "A quantidade de equipamento deve ser um número maior que 0";
+
+                if (error.Message.Contains("O modelo do equipamento nao pode ser vazio")) Session["MsgErroModelo"] = "O modelo do equipamento nao pode ser vazio";
             }
 
             Response.Redirect("~\\WebFormAddLab.aspx");
