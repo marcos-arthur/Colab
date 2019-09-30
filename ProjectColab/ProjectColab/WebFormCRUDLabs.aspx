@@ -7,16 +7,21 @@
 
              <br />
 
-             <asp:GridView ID="GridView1"  Height="20%" Width="90%" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand">
+             <asp:GridView ID="GridView1"  Height="20%" Width="90%" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" DataKeyNames="id">
                  <AlternatingRowStyle BackColor="White" />
                  <Columns>
                      <asp:BoundField DataField="id" HeaderText="ID DO LABORÁTORIO" SortExpression="id" />
-                     <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />
-                     <asp:ButtonField CommandName="EDITAR" Text="EDITAR" ControlStyle-CssClass =" tablebtn2" ButtonType="Button" >
-                        <ControlStyle CssClass=" tablebtn2"></ControlStyle>
-                     </asp:ButtonField>
-                     <asp:ButtonField CommandName="ABRIR" Text="ABRIR"  ControlStyle-CssClass = " tablebtn2" ButtonType="Button">
-                     </asp:ButtonField>
+                     <asp:BoundField DataField="nome" HeaderText="NOME DO LABORATÓRIO" SortExpression="nome" />                                  
+                     <asp:TemplateField ShowHeader="False">
+                         <EditItemTemplate>
+                             <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar"></asp:LinkButton>
+                             &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
+                         </EditItemTemplate>
+                         <ItemTemplate>
+                             <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Editar"></asp:LinkButton>
+                             &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Excluir"></asp:LinkButton>
+                         </ItemTemplate>
+                     </asp:TemplateField>
                  </Columns>
                  <EditRowStyle BackColor="#2461BF" />
                  <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
