@@ -24,22 +24,29 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
-            SqlCommand com = conn.CreateCommand();
+            try
+            {
+                // Cria comando SQL
+                SqlCommand com = conn.CreateCommand();
 
-            DALLaboratorio lab = new DALLaboratorio();
+                DALLaboratorio lab = new DALLaboratorio();
 
-            //Chama método para procurar laboratório e devolver ID
-            int idLab = lab.SelectID(obj.laboratorio_nome);
+                //Chama método para procurar laboratório e devolver ID
+                int idLab = lab.SelectID(obj.laboratorio_nome);
 
-            // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_id, laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_id, @laboratorio_nome,@modelo,@quantidade)", conn);
-            cmd.Parameters.AddWithValue("@laboratorio_id", idLab);
-            cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
-            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
-            cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
-            // Executa Comando
-            cmd.ExecuteNonQuery();
+                // Define comando de exclusão
+                SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_id, laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_id, @laboratorio_nome,@modelo,@quantidade)", conn);
+                cmd.Parameters.AddWithValue("@laboratorio_id", idLab);
+                cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
+                cmd.Parameters.AddWithValue("@modelo", obj.modelo);
+                cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
+                // Executa Comando
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }                       
         }        
 
         [DataObjectMethod(DataObjectMethodType.Select)]
