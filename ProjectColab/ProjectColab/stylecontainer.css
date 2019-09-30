@@ -1,61 +1,86 @@
-﻿.container {
-    width: 60%;
-    margin: auto;
-    margin-top: 1%;
+﻿* {
+    box-sizing: border-box;
 }
-.left-chamados {
+.row {
+    width:55%;
+    margin:auto;
+    padding:1%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
     float: left;
-    width:70%;
 }
-    .left-chamados .alinhameto {
-        background-color: white;
-        height: 500px;
-        text-align: center;
+    /* Left and right column */
+    .column.side {
+        width: 23%;
+        margin-left:2%;
+        height:200px;
+        background-color:white;
+        border-radius:3px;
     }
-.rigth-chamados {
-    float: left;
-    width: 17%;
-    margin-left:1%;
+
+    /* Middle column */
+    .column.middle {
+        width: 75%;
+        background-color:white;
+        height:800px;
+        border-radius:3px;
+    }
+.content {
+    background-color: RGBA(255,0,0,0.5);
+    border-radius: 3px;
+    text-align: center;
+    margin:1%;
 }
 .content2 {
     background-color: white;
-    height: 200px;
-    text-align:center;
-}
-.chamados2 {
-    max-width: 20%;
-    margin-top:0%;
-    height: 400px;
-    float:left;
+    border-radius: 3px;
     text-align: center;
+}
+.first {
+    color: white;
+    font-size: 10vw;
     display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-    background-color: white;
-    border-radius: 0.5%;
 }
-    .chamados2 .sub {
-        float: left;
-        max-width: 40%;
-        height: 200px;
-        text-align: center;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-    }
-.content{
+.sub-first {
+    font-size: 4vw;
+    display: block;
+}
+.title {
+    color: white;
+    font-size: 2vw;
+    display: block;
+}
+.sub-title {
+    font-size: 0.8vw;
+    display: block;
+}
+.btn {
+    width:98%;
+    background-color:RGBA(0,0,0,0);
+    border-style:solid;
+    border-width:1px;
+    padding:1%;
+    margin:1%;
+    color:white;
+    cursor:pointer;
+    font-size:1.3vw;
+    border-radius:3px;
+}
+.btn.small{
+    padding:5%;
     max-width:90%;
-    margin:auto;
-    background-color:red;
+    color:black;
+    font-size:0.8vw;
+    
 }
-    .content .first {
-        margin-top:1%;
-        background-color:black;
-    }
 @media only screen and (max-width: 800px) {
-    .chamados{
-        background-color: red;
-    }
-    .container {
-        max-width:700px;
-        margin-top: 5%;
+    .row{
+        width:100%;
     }
     .menu2 {
         max-width:100%;
@@ -64,7 +89,12 @@
         font-size: 5vw;
     }
 }
-
+.btn:hover {
+    background-color: white;
+    color: RGBA(255,0,0,0.5);
+    transition: all 0.4s ease;
+    border-color:rgba(255,0,0,0.7);
+}
 
 .atencao {
     color:red;
