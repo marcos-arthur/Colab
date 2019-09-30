@@ -7,11 +7,11 @@
     float: left;
     width:70%;
 }
-.left-chamados  .content {
-    background-color:white;
-    height:500px;
-    text-align:center;
-}
+    .left-chamados .alinhameto {
+        background-color: white;
+        height: 500px;
+        text-align: center;
+    }
 .rigth-chamados {
     float: left;
     width: 17%;
@@ -39,6 +39,15 @@
         height: 200px;
         text-align: center;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    }
+.content{
+    max-width:90%;
+    margin:auto;
+    background-color:red;
+}
+    .content .first {
+        margin-top:1%;
+        background-color:black;
     }
 @media only screen and (max-width: 800px) {
     .chamados{
