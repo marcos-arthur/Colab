@@ -17,41 +17,46 @@
     /* Left and right column */
     .column.side {
         width: 23%;
-        margin-left:2%;
-        height:200px;
-        background-color:white;
-        border-radius:3px;
+        margin-left: 2%;
+        padding:1%;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
 
     /* Middle column */
     .column.middle {
         width: 75%;
-        background-color:white;
-        height:800px;
-        border-radius:3px;
+        background-color: white;
+        padding:1%;
+        margin-bottom:2%;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
 .content {
-    background-color: RGBA(255,0,0,0.5);
     border-radius: 3px;
     text-align: center;
-    margin:1%;
+    margin: 1%;
+    border-style:solid;
+    border-width:1px;
+    border-color: rgba( 255, 179, 175,1);
 }
 .content2 {
-    background-color: red;
+    background-color: white;
     border-radius: 3px;
     text-align: center;
 }
 .first {
-    color: white;
     font-size: 10vw;
     display: block;
 }
 .sub-first {
     font-size: 4vw;
+    color:red;
     display: block;
 }
 .title {
-    color: white;
+    color: black;
     font-size: 2vw;
     display: block;
 }
@@ -59,6 +64,14 @@
     font-size: 0.8vw;
     display: block;
 }
+.content.small{
+    font-size:2vw;
+}
+
+.content.small a{
+    padding:3%;
+}
+
 .btn {
     width:98%;
     background-color:RGBA(0,0,0,0);
@@ -66,7 +79,7 @@
     border-width:1px;
     padding:1%;
     margin:1%;
-    color:white;
+    color:black;
     cursor:pointer;
     font-size:1.3vw;
     border-radius:3px;
@@ -88,6 +101,18 @@
     .logo a{
         font-size: 5vw;
     }
+    .column.middle {
+        display:block;
+        width:100%;
+    }
+    .column.side {
+        display: block;
+        width: 100%;
+        margin-left:0;
+    }
+    .btnPesquisar{
+        right: 5%;
+    }
 }
 .btn:hover {
     background-color: white;
@@ -95,7 +120,27 @@
     transition: all 0.4s ease;
     border-color:rgba(255,0,0,0.7);
 }
+.btn.fixed:hover {
+    color: red;
+    background-color: rgb(252,252,252);
+    border-color:red;
+}
 
 .atencao {
     color:red;
+}
+
+.btnPesquisar, .btnMaisBotoes {
+    position: fixed;
+    float: bottom;
+    bottom: 15px;
+    right: 15%;
+    z-index: 100;
+}
+.btn.fixed {
+    height:75px;
+    width:75px;
+    border-radius: 50%;
+    border-color: rgba(10,10,10,0.2);
+    background-color: white;
 }
