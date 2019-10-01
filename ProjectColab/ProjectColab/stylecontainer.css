@@ -37,17 +37,11 @@
     border-radius: 3px;
     text-align: center;
     margin: 1%;
-    border-style:solid;
-    border-width:1px;
-    border-color: rgba( 255, 179, 175,1);
 }
 .content2 {
     background-color: white;
     border-radius: 3px;
     text-align: center;
-    border-style:solid;
-    border-width:1px;
-    border-color: rgba( 255, 179, 175,1);
 }
 .first {
     font-size: 10vw;
@@ -81,7 +75,7 @@
     border-style:solid;
     border-width:1px;
     padding:1%;
-    margin:1%;
+    margin:2%;
     color:black;
     cursor:pointer;
     font-size:1.3vw;
@@ -94,27 +88,98 @@
     font-size:0.8vw;
     
 }
+
+
+.btnPesquisar, .btnMaisBotoes {
+    position: fixed;
+    float: bottom;
+    bottom: 15px;
+    z-index: 100;
+}
+
+.btn.fixed {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border-color: rgba(10,10,10,0.2);
+    background-color: rgba(252,252,252,0.5);
+}
 @media only screen and (max-width: 800px) {
-    .row{
-        width:100%;
+    .row {
+        width: 100%;
     }
+
     .menu2 {
-        max-width:100%;
+        max-width: 100%;
+        font-size:2.3vw;
+        margin:0;
+        padding:0;
     }
+
     .btnPesquisar {
         right: 5%;
     }
-    .logo a{
-        font-size: 5vw;
+
+    .logo a {
+        font-size: 10vw;
     }
+
     .column.middle {
-        display:block;
-        width:100%;
-    }
-    .column.side {
         display: block;
         width: 100%;
-        margin-left:0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .column.side {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+        background-color: white;
+        margin-bottom: 2%;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .title {
+        font-size: 4vw;
+    }
+
+    .sub-title {
+        font-size: 4vw;
+    }
+
+    .btn.small {
+        width: 98%;
+        background-color: RGBA(0,0,0,0);
+        border-style: solid;
+        border-width: 1px;
+        padding: 1%;
+        margin: 2%;
+        color: black;
+        cursor: pointer;
+        font-size: 3vw;
+        border-radius: 3px;
+    }
+
+    .btn {
+        font-size: 3vw;
+    }
+
+    .first {
+        font-size: 15vw;
+        display: block;
+    }
+
+    .sub-first {
+        font-size: 15vw;
+        display: block;
+    }
+    .btn.fixed {
+        height: 50px;
+        width: 50px;
     }
 }
 
@@ -138,19 +203,4 @@
 
 .atencao {
     color:red;
-}
-
-.btnPesquisar, .btnMaisBotoes {
-
-    position: fixed;
-    float: bottom;
-    bottom: 15px;
-    z-index: 100;
-}
-.btn.fixed {
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-    border-color: rgba(10,10,10,0.2);
-    background-color: rgba(252,252,252,0.5);
 }
