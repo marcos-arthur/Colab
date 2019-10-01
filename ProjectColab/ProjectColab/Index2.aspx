@@ -32,7 +32,6 @@
                   </div>
                 <button class="btnPesquisar btn fixed">+</button>
             </div>
-            <div class="rigth-chamados"><div class="content2"> <a> <%# DataBinder.Eval(Container.DataItem, "count")%></a> <a>CHAMDOS</a><a class="atencao"> ATRIBUIDOS A MIM</a></div></div>
         </ItemTemplate>
     </asp:Repeater>
 

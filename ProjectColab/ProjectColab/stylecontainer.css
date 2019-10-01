@@ -28,7 +28,7 @@
     .column.middle {
         width: 75%;
         background-color: white;
-        padding:1%;
+        padding:0.5%;
         margin-bottom:2%;
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
@@ -45,6 +45,9 @@
     background-color: white;
     border-radius: 3px;
     text-align: center;
+    border-style:solid;
+    border-width:1px;
+    border-color: rgba( 255, 179, 175,1);
 }
 .first {
     font-size: 10vw;
@@ -98,6 +101,9 @@
     .menu2 {
         max-width:100%;
     }
+    .btnPesquisar {
+        right: 5%;
+    }
     .logo a{
         font-size: 5vw;
     }
@@ -110,8 +116,11 @@
         width: 100%;
         margin-left:0;
     }
-    .btnPesquisar{
-        right: 5%;
+}
+
+@media only screen and (min-width: 800px) {
+    .btnPesquisar {
+        right: 30%;
     }
 }
 .btn:hover {
@@ -121,9 +130,10 @@
     border-color:rgba(255,0,0,0.7);
 }
 .btn.fixed:hover {
+    transition: all 0.4s ease;
     color: red;
     background-color: rgb(252,252,252);
-    border-color:red;
+    border-color: red;
 }
 
 .atencao {
@@ -131,16 +141,16 @@
 }
 
 .btnPesquisar, .btnMaisBotoes {
+
     position: fixed;
     float: bottom;
     bottom: 15px;
-    right: 15%;
     z-index: 100;
 }
 .btn.fixed {
-    height:75px;
-    width:75px;
+    height: 75px;
+    width: 75px;
     border-radius: 50%;
     border-color: rgba(10,10,10,0.2);
-    background-color: white;
+    background-color: rgba(252,252,252,0.5);
 }
