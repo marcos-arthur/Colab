@@ -123,8 +123,7 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-
-        //EDITAR//
+        //EDITAR FOTO//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void UpdateImagem(Modelo.Usuario obj)
         {
@@ -137,48 +136,7 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-
-
-
-
-        //SELECIONAR//
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Usuario> Select(string id)
-        {
-            Modelo.Usuario aUsuario;
-
-            List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
-
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand cmd = conn.CreateCommand();
-
-            cmd.CommandText = "Select * From Usuario Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                   
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto"]);
-
-                    aListUsuario.Add(aUsuario);
-                }
-            }
-
-            dr.Close();
-
-            conn.Close();
-
-            return aListUsuario;
-        }
-
-
+        //DELETE//
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Usuario obj)
         {
@@ -193,8 +151,5 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
-
-
-
     }
 }
