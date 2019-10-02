@@ -39,7 +39,7 @@ namespace ProjectColab
 
         }
 
-        protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+      /*  protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "ABRIR")
             {
@@ -57,7 +57,7 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~\\WebFormEditChamado.aspx");
             }
-        }
+        } */
 
     }
 }
