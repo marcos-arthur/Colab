@@ -8,7 +8,7 @@
             <div class="row">
                   <div class="column middle" >
                       <div class="content">
-                          <div class="indicador"><a class="title indicador">DASHBOARD</a></div>
+                          <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
                          <a class="title">CHAMADOS</a>
                          <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
@@ -30,13 +30,13 @@
                   </div>
                   <div class="column middle" >
                       <div class="content">
-                         <div class="indicador"><a class="title indicador">TUTORIAIS</a></div>
+                         <div class="indicador"><a class="colorfix titulo">TUTORIAIS</a></div>
                          <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>
                   </div>
                   <div class="column middle">
                       <div class="content">
-                         <div class="indicador"><a class="title indicador">LABORATÓRIOS</a></div>
+                         <div class="indicador"><a class="colorfix titulo">LABORATÓRIOS</a></div>
                          <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>
                   </div>
