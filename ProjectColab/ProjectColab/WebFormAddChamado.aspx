@@ -9,8 +9,7 @@
                 <p>RESUMO DO PROBLEMA</p>
                 <asp:TextBox ID="resumo" runat="server" CssClass="text"></asp:TextBox>             
                 
-                <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p><asp:TextBox ID="quantidadeeq" runat="server" CssClass="text"></asp:TextBox>
-                <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>
+                <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p><asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
                 
                 <br />
                 <br />

@@ -30,16 +30,20 @@
                 <asp:Button ID="Button2" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddChamado.aspx" />
             </div>-->
 
-        <div class="column middle">
+        <div class="column middle teste">
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
                     <div class="content chamado">
                         <div class="row chamado">
-                            <a>CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%> </a>
-                            <a><%# DataBinder.Eval(Container.DataItem, "status")%> </a>
-                            <a><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
-                            <a><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></a>
-                            <a><%# DataBinder.Eval(Container.DataItem, "data")%> </a>
+                            <div class="margin id">
+                                <div class="gridfix id"><a class="text id">CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%> </a></div>
+                                <div class="gridfix status"><a class="text status"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a> </div>
+                            </div>
+
+                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a></div>
+                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
+                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
+                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
                         </div>
                     </div>  
                 </ItemTemplate>

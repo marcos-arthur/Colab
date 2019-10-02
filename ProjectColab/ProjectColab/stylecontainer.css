@@ -6,9 +6,16 @@
     margin:auto;
     padding:1%;
 }
-.row.chamado{
-    margin:0%;
-}
+    .row.chamado {
+        margin: 1%;
+        float: left;
+        width: 98%;
+        background-color: rgb(230,230,230);
+        padding: 0%;
+        border-radius: 5px;
+        text-align: unset;
+    }
+
 .row:after {
     content: "";
     display: table;
@@ -61,9 +68,10 @@
     margin: 1%;
 }
     .content.chamado{
-        display: block;
-        background-color:red;
+        background-color:rgb(230,230,230);
         text-align:unset;
+        width:100%;
+        float:none;
     }
 .content2 {
     background-color: white;
@@ -133,6 +141,32 @@
     background-color: rgba(252,252,252,1);
 }
 
+.margin.id{
+    width:100%;
+    margin:0%;
+    float:left;
+    background-color:rgb(200,200,200);
+    border-radius: 5px 5px 0px 0px;
+    padding:1%;
+}
+.margin{
+    margin:1%;
+}
+
+.gridfix{
+
+}
+    .gridfix.id{
+        float:left;
+        width:80%;
+        padding:1%;
+    }
+    .gridfix.status {
+        float: left;
+        background-color: rgb(255,150,150);
+        padding: 1%;
+        border-radius:5px;
+    }
 
 @media only screen and (max-width: 800px) {
     .row {

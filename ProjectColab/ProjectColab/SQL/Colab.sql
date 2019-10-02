@@ -72,12 +72,26 @@ CREATE TABLE Tutorial(
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
-/*SELECT id, status,
+SELECT *,
 CASE WHEN status = 3 THEN 'SENDO ANALIZADO'
 WHEN status = 2 THEN 'APROVADO'
 ELSE 'NÃO APROVADO'
 END AS statustext
 FROM Tutorial;
+
+
+
+
+
+SELECT *,
+CASE WHEN status = 1 THEN 'ABERTO'
+WHEN status = 2 THEN 'EM ATENDIMENTO'
+WHEN status = 3 THEN 'FECHADO'
+ELSE 'REABERTO'
+END AS statustextchamado
+FROM Chamado;
+
+
 
 INSERT INTO Usuario(nome,login,senha,tipo,foto) values ('1','1','1',1,'1')
 SELECT *,lab.nome
