@@ -11,7 +11,16 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Apresenta mensagem de erro
+            if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
+            {
+               // Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
+            else if (Session["tipo"].ToString() != "1")
+            {
+                Response.Redirect("~\\Index2.aspx");
+            }
         }
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
