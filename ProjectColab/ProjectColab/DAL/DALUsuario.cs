@@ -45,6 +45,34 @@ namespace ProjectColab.DAL
             return aListUsuario;
         }
 
+        //SELECIONAR//
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Usuario> SelectLogin(string login)
+        {
+            Modelo.Usuario aUsuario;
+            List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * From Usuario Where login = @login";
+            cmd.Parameters.AddWithValue("@login", login);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(),
+                        dr["nome"].ToString(), dr["login"].ToString(),
+                        dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()),
+                        (byte[])dr["foto"]);
+                    aListUsuario.Add(aUsuario);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListUsuario;
+        }
+
         //SELECTALL()//
         [DataObjectMethod(DataObjectMethodType.Select)]
          public List<Modelo.Usuario> SelectAll()

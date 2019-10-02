@@ -27,7 +27,7 @@ namespace ProjectColab
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
 
             // Valida Usuario
-            List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(Login.Text);
+            List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
             if (aListUsuario.Count == 0)
             {
                 Session["msgErro"] = "Usuário não cadastrado";
