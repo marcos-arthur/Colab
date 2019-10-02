@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMasterAdmin.master.cs" Inherits="ProjectColab.PageMasterAdmin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMasterProfessor.master.cs" Inherits="ProjectColab.PageMasterProfessor" %>
 
 <!DOCTYPE html>
 
@@ -22,7 +22,8 @@
         <div>
             <div class="logo"><a href="IndexServidor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
-                <li class="li2"><a href="WebFormCRUDUsuario.aspx">USUÁRIO</a></li>
+                <li class="li1"><a href="IndexServidor.aspx">DASHBOARD</a></li>
+                <li class="li2"><a>USUARIO</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

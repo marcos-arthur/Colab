@@ -13,7 +13,7 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
+          /*  if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
             {
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
@@ -21,7 +21,7 @@ namespace ProjectColab
             {
                 Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
                 Response.Redirect("~\\WebFormLogin.aspx");
-            }
+            }*/
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
