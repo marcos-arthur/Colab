@@ -2,23 +2,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="mid">
-                <div class="sec-mid">
-                <asp:GridView ID="GridView1" Height="30%" Max-Width="100%" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+    <div class="row">
+        <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+        <div class="column middle">
+                <asp:GridView ID="GridView1" Height="30%" width="100%" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="5" DataSourceID="ObjectDataSource1" ForeColor="#E6E6E6" GridLines="None" OnRowCommand="GridView1_RowCommand" ItemStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="NotSet" CellSpacing="0" EditRowStyle-Height="100%">
+                    <AlternatingRowStyle BackColor="White" ForeColor="black" HorizontalAlign="Center" VerticalAlign="Middle" />
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="ID DO CHAMADO" SortExpression="id" />
                         <asp:BoundField DataField="status" HeaderText="STATUS DO CHAMADO" SortExpression="status" />
                         <asp:BoundField DataField="resumo" HeaderText="RESUMO DO PROBLEMA" SortExpression="resumo" />
                         <asp:BoundField DataField="quantidadeeq" HeaderText="EQUIPAMENTOS DEFEITUOSOS" SortExpression="quantidadeeq" />
                         <asp:BoundField DataField="data" HeaderText="DATA DE ABERTURA" SortExpression="data" />
-                        <asp:ButtonField CommandName="ABRIR" Text="ABRIR" ControlStyle-CssClass="tablebtn2" ButtonType="Button" >
-                        <ControlStyle CssClass="tablebtn2"></ControlStyle>
-                        </asp:ButtonField>
+                        <asp:ButtonField CommandName="ABRIR" Text="ABRIR" ControlStyle-CssClass="btn small" ButtonType="Button" ><ControlStyle CssClass="btn small"></ControlStyle></asp:ButtonField>
                     </Columns>
-                    <EditRowStyle BackColor="#999999" />
+                    <EditRowStyle BackColor="#999999"  CssClass="editrow" Width="50px" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#8f3d3d" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#E6E6E6" Font-Bold="True" ForeColor="black"  CssClass="indicador"/>
                     <PagerStyle BackColor="#8f3d3d" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="WHITE" ForeColor="BLACK"  HorizontalAlign="Center"/>
                     <SelectedRowStyle BackColor="" Font-Bold="True" ForeColor="#333333" />
@@ -28,29 +27,39 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Chamado" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
-            </div>
                 <asp:Button ID="Button2" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddChamado.aspx" />
             </div>
+        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
+            <ItemTemplate>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
 
-
-<div class ="mid">
-    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-        <HeaderTemplate>
-            <ul>
-                <li></li>
-            </ul>
-        </HeaderTemplate>
-        <ItemTemplate>
-            <ul class="container">
-                <li><%# DataBinder.Eval(Container.DataItem, "id")%> </li>
-                <li><%# DataBinder.Eval(Container.DataItem, "status")%> </li>
-                <li><%# DataBinder.Eval(Container.DataItem, "resumo")%> </li>
-                <li><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></li>
-                <li><%# DataBinder.Eval(Container.DataItem, "data")%> </li>
-            </ul>
-        </ItemTemplate>
-
-
-    </asp:Repeater>
-</div>
+        <div class="column middle">
+            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                <ItemTemplate>
+                    <ul class="container">
+                        <li><%# DataBinder.Eval(Container.DataItem, "id")%> </li>
+                        <li><%# DataBinder.Eval(Container.DataItem, "status")%> </li>
+                        <li><%# DataBinder.Eval(Container.DataItem, "resumo")%> </li>
+                        <li><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></li>
+                        <li><%# DataBinder.Eval(Container.DataItem, "data")%> </li>
+                    </ul>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+    </div>
 </asp:Content>

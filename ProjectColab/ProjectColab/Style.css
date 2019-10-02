@@ -67,9 +67,6 @@
     transition: all 0.7s ease;
 }
 
-.logo a:hover {
-    animation: bounce .5s;
-}
 
 @keyframes bounce {
     50% {
@@ -80,6 +77,10 @@
         transform: translateY(10px);
     }
 }
+.logos:hover {
+    animation: bounce .1s;
+}
+
 /* Abrir chamado */
 
 .radios div {

@@ -8,6 +8,7 @@
             <div class="row">
                   <div class="column middle" >
                       <div class="content">
+                          <div class="indicador"><a class="title indicador">DASHBOARD</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
                          <a class="title">CHAMADOS</a>
                          <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
@@ -15,21 +16,32 @@
                   </div>
                   <div class="column side">
                       <div class="content2">
+                          <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
                          <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                         <a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a>
                          <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>  
                   </div>
+                  <div class="column side">
+                      <div class="content2">
+                          <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
+                      </div>  
+                  </div>
                   <div class="column middle" >
-                      <div class="content small">
-                         <a class="title">TUTORIAIS</a>
+                      <div class="content">
+                         <div class="indicador"><a class="title indicador">TUTORIAIS</a></div>
                          <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>
-                      <div class="content small">
-                         <a class="title">LABORATÓRIOS</a>
+                  </div>
+                  <div class="column middle">
+                      <div class="content">
+                         <div class="indicador"><a class="title indicador">LABORATÓRIOS</a></div>
                          <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>
                   </div>
+
+
                 <button class="btnPesquisar btn fixed">+</button>
             </div>
         </ItemTemplate>

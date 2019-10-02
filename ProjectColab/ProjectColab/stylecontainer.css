@@ -11,6 +11,10 @@
     display: table;
     clear: both;
 }
+.editrow{
+    margin:10%;
+}
+
 .column {
     float: left;
 }
@@ -18,7 +22,8 @@
     .column.side {
         width: 23%;
         margin-left: 2%;
-        padding:1%;
+        margin-bottom: 1%;
+        padding: 1.4% 1% 1.4% 1%;
         background-color: white;
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
@@ -33,6 +38,19 @@
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
+.indicador {
+    width: 100%;
+    background-color: rgb(230,230,230);
+    border-radius: 0px 8px 8px 0px;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: rgb(200,200,200);
+    padding:0.5%;
+}
+.title.indicador {
+    color: black;
+    border-style:none;
+}
 .content {
     border-radius: 3px;
     text-align: center;
@@ -49,7 +67,7 @@
 }
 .sub-first {
     font-size: 4vw;
-    color:red;
+    color:black;
     display: block;
 }
 .title {
@@ -60,6 +78,7 @@
 .sub-title {
     font-size: 0.8vw;
     display: block;
+    margin:1%;
 }
 .content.small{
     font-size:2vw;
@@ -85,7 +104,7 @@
     padding:5%;
     max-width:90%;
     color:black;
-    font-size:0.8vw;
+    font-size:0.7vw;
     
 }
 
@@ -102,7 +121,7 @@
     width: 75px;
     border-radius: 50%;
     border-color: rgba(10,10,10,0.2);
-    background-color: rgba(252,252,252,0.5);
+    background-color: rgba(252,252,252,1);
 }
 @media only screen and (max-width: 800px) {
     .row {
@@ -119,7 +138,13 @@
     .btnPesquisar {
         right: 5%;
     }
-
+    .btn.fixed {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        border-color: rgba(10,10,10,0.2);
+        background-color: rgba(252,252,252,0.5);
+    }
     .logo a {
         font-size: 10vw;
     }

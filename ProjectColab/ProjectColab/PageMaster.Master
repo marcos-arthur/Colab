@@ -20,7 +20,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="logo"><a href="index2.aspx">COLAB</a></div>
+            <div class="logo"><a href="index2.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="WebFormCRUDChamado.aspx">DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
