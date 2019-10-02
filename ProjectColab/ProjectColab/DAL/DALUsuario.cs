@@ -16,49 +16,74 @@ namespace ProjectColab.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
-
-        //SELECTALL()//
-        //Teste
+   
+        //SELECIONAR//
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Usuario> SelectAll()
+        public List<Modelo.Usuario> Select(string id)
         {
-            // Variavel para armazenar um livro
             Modelo.Usuario aUsuario;
-            // Cria Lista Vazia
             List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
-            // define SQL do comando
-            cmd.CommandText = "Select * from Usuario";
-            // Executa comando, gerando objeto DbDataReader
+            cmd.CommandText = "Select * From Usuario Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do livro do resultado e apresenta no segundo rótulo
             if (dr.HasRows)
             {
-
-                while (dr.Read()) // Le o proximo registro
-                {
-                    // Cria objeto com dados lidos do banco de dados
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()),(byte[])dr["foto"]);
-                    // Adiciona o livro lido à lista
+                while (dr.Read())
+                {                   
+                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), 
+                        dr["nome"].ToString(), dr["login"].ToString(),
+                        dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), 
+                        (byte[])dr["foto"]);
                     aListUsuario.Add(aUsuario);
                 }
             }
-            // Fecha DataReader
             dr.Close();
-            // Fecha Conexão
             conn.Close();
-
             return aListUsuario;
         }
 
+        //SELECTALL()//
+        [DataObjectMethod(DataObjectMethodType.Select)]
+         public List<Modelo.Usuario> SelectAll()
+         {
+             // Variavel para armazenar um livro
+             Modelo.Usuario aUsuario;
+             // Cria Lista Vazia
+             List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
+             // Cria Conexão com banco de dados
+             SqlConnection conn = new SqlConnection(connectionString);
+             // Abre conexão com o banco de dados
+             conn.Open();
+             // Cria comando SQL
+             SqlCommand cmd = conn.CreateCommand();
+             // define SQL do comando
+             cmd.CommandText = "Select * from Usuario";
+             // Executa comando, gerando objeto DbDataReader
+             SqlDataReader dr = cmd.ExecuteReader();
+             // Le titulo do livro do resultado e apresenta no segundo rótulo
+             if (dr.HasRows)
+             {
+
+                 while (dr.Read()) // Le o proximo registro
+                 {
+                     // Cria objeto com dados lidos do banco de dados
+                     aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()),(byte[])dr["foto"]);
+                     // Adiciona o livro lido à lista
+                     aListUsuario.Add(aUsuario);
+                 }
+             }
+             // Fecha DataReader
+             dr.Close();
+             // Fecha Conexão
+             conn.Close();
+
+             return aListUsuario;
+         }
 
         //INSERIR//
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Usuario obj)
         {
@@ -78,8 +103,6 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-
-
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Usuario obj)
@@ -95,49 +118,7 @@ namespace ProjectColab.DAL
             cmd.Parameters.AddWithValue("@foto", obj.foto);
             cmd.ExecuteNonQuery();
         }
-
-
-
-
-
-        //SELECIONAR//
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Usuario> Select(string id)
-        {
-            Modelo.Usuario aUsuario;
-
-            List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
-
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand cmd = conn.CreateCommand();
-
-            cmd.CommandText = "Select * From Usuario Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                   
-                    aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()), (byte[])dr["foto"]);
-
-                    aListUsuario.Add(aUsuario);
-                }
-            }
-
-            dr.Close();
-
-            conn.Close();
-
-            return aListUsuario;
-        }
-
-
+               
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Usuario obj)
         {

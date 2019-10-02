@@ -13,54 +13,49 @@ namespace ProjectColab
     {
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Modelo.Usuario aUsuario;
+            /*Modelo.Usuario aUsuario;
             DAL.DALUsuario aDALUsuario;
 
             aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senha.Text, int.Parse(tipo.Text), foto.FileBytes);
 
             aDALUsuario = new DAL.DALUsuario();
 
-            aDALUsuario.Insert(aUsuario);
+            aDALUsuario.Insert(aUsuario);*/
 
 
             // Valida senha
             if (senha.Text != confirmaSenha.Text)
             {
                 Session["msgErro"] = "Senha não confere";
-                Response.Redirect("~\\WebFormLoginRegister.aspx");
-            }
-            else
-            {
-                Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+                Response.Redirect("~\\WebAddUsuario.aspx");
             }
 
-      
-
-
-            //Session["msgErro"] = "";
-
-
-            /*
+            Session["msgErro"] = "";
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
             // Critografa senha
-            string senhaMD5 = GerarHashMd5(Senha.Text);
+            string senhaMD5 = GerarHashMd5(senha.Text);
             // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("0", Nome.Text, Login.Text, senhaMD5, 0, Foto.FileBytes);
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senhaMD5, int.Parse(tipo.Text), foto.FileBytes);
+            //    0, login.Text, senhaMD5, 0);
             // Insere usuário
             aDALUsuario.Insert(aUsuario);
             // Grava na sessão
-
-            Response.Redirect("~\\WebFormLogin.aspx");*/
+            Session["Usuario"] = aUsuario.login;
+            Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+            // Valida Usuario
+            List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(login.Text);
+            if (aListUsuario.Count > 0)
+            {
+                Session["msgErro"] = "Usuário já cadastrado";
+                Response.Redirect("~\\WebAddUsuario.aspx");
+            }
         }
         public string GerarHashMd5(string input)
         {
             MD5 md5Hash = MD5.Create();
-            // Converter a String para array de bytes, que é como a biblioteca trabalha.
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            // Cria-se um StringBuilder para recompôr a string.
             StringBuilder sBuilder = new StringBuilder();
-            // Loop para formatar cada byte como uma String em hexadecimal
             for (int i = 0; i < data.Length; i++)
             {
                 sBuilder.Append(data[i].ToString("x2"));
