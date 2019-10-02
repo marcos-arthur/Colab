@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ProjectColab
 {
-    public partial class WebFormEditTutorial : System.Web.UI.Page
+    public partial class PageMasterAdmin : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

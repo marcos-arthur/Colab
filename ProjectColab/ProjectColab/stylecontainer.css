@@ -10,10 +10,13 @@
         margin: 1%;
         float: left;
         width: 98%;
-        background-color: rgb(230,230,230);
+        background-color: rgb(240,240,240);
         padding: 0%;
-        border-radius: 5px;
+        border-radius: 0px 5px 5px 0px;
         text-align: unset;
+        border-left-color: rgb(190,190,190);
+        border-left-style: solid;
+        border-left-width: 2px;
     }
 
 .row:after {
@@ -51,16 +54,12 @@
     }
 .indicador {
     width: 100%;
-    background-color: rgb(230,230,230);
+    background-color: rgba(255,0,0,0.35);
     border-radius: 0px 8px 8px 0px;
     border-left-style: solid;
     border-left-width: 2px;
-    border-left-color: rgb(200,200,200);
-    padding:0.5%;
-}
-.title.indicador {
-    color: black;
-    border-style:none;
+    border-left-color: rgba(255,0,0,0.5);
+    padding: 0.5%;
 }
 .content {
     border-radius: 3px;
@@ -108,6 +107,7 @@
 .btn {
     width:98%;
     background-color:RGBA(0,0,0,0);
+    border-color:rgba(255,0,0,0.3);
     border-style:solid;
     border-width:1px;
     padding:1%;
@@ -141,13 +141,13 @@
     background-color: rgba(252,252,252,1);
 }
 
-.margin.id{
-    width:100%;
-    margin:0%;
-    float:left;
-    background-color:rgb(200,200,200);
-    border-radius: 5px 5px 0px 0px;
-    padding:1%;
+.margin.id {
+    width: 100%;
+    margin: 0%;
+    float: left;
+    background-color: rgb(230,230,230);
+    padding: 1%;
+    border-radius: 0px 5px 5px 0px;
 }
 .margin{
     margin:1%;
@@ -163,11 +163,14 @@
     }
     .gridfix.status {
         float: left;
-        background-color: rgb(255,150,150);
+        background-color: rgb(190,190,190);
         padding: 1%;
         border-radius:5px;
     }
-
+.colorfix.titulo{
+    color:white;
+    font-size:2vw;
+}
 @media only screen and (max-width: 800px) {
     .row {
         width: 100%;

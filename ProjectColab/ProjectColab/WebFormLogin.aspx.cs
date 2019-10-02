@@ -47,7 +47,27 @@ namespace ProjectColab
             // Salva usuário na sessão
             Session["msgErro"] = "";
             Session["usuario"] = aUsuario.login;
-            Response.Redirect("~\\Index2.aspx");
+            Session["tipo"] = aUsuario.tipo;
+            if (Session["tipo"].ToString() == "1")
+            {
+                Response.Redirect("~\\IndexAdmin.aspx");
+            }
+            else if (Session["tipo"].ToString() != "2")
+            {
+                Response.Redirect("~\\IndexServidor.aspx");
+            }
+            else if (Session["tipo"].ToString() != "3")
+            {
+                Response.Redirect("~\\IndexBolsista.aspx");
+            }
+            else if (Session["tipo"].ToString() != "4")
+            {
+                Response.Redirect("~\\IndexProfessor.aspx");
+            }
+            else
+            {
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
         }
         public string GerarHashMd5(string input)
         {

@@ -11,6 +11,18 @@ namespace ProjectColab
 {
     public partial class WebFormAddUsuario : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+          /*  if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
+            {
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
+            else if (Session["tipo"].ToString() != "1")
+            {
+                Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }*/
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             // Validar senha

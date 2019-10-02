@@ -11,7 +11,15 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
+            {
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
+            else if ((Session["tipo"].ToString() != "2") && (Session["tipo"].ToString() != "3"))
+            {
+                Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -19,17 +27,9 @@ namespace ProjectColab
             if (e.CommandName == "Editar")
             {
                 string id;
-
-                // Lê o número da linha selecionada
                 int index = Convert.ToInt32(e.CommandArgument);
-
-                // Copia o conteúdo da primeira célula da linha -> Código do livro
                 id = GridView1.Rows[index].Cells[0].Text;
-
-                // Grava código do Livro na sessão
                 Session["id"] = id;
-
-                // Chama a tela de edição
                 Response.Redirect("~\\WebFormEditTutorial.aspx");
             }
         }

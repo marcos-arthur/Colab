@@ -2,11 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="mid">
-         <div class="sec-mid">
 
-             <br />
-
+    <div class="row">
+    <div class="column middle">
              <asp:GridView ID="GridView1"  Height="20%" Width="90%" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnRowCommand="GridView1_RowCommand" DataKeyNames="id">
                  <AlternatingRowStyle BackColor="White" />
                  <Columns>
@@ -36,7 +34,28 @@
              </asp:GridView>
              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
 
+
+         <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddLab.aspx" />    
+    
         </div>
-         <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddLab.aspx" />  
-    </div>      
+            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
+            <ItemTemplate>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+        </div>
+    <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
 </asp:Content>
