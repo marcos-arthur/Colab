@@ -47,6 +47,7 @@ namespace ProjectColab
             // Salva usuário na sessão
             Session["msgErro"] = "";
             Session["usuario"] = aUsuario.login;
+            Session["tipo"] = aUsuario.tipo;
             Response.Redirect("~\\Index2.aspx");
         }
         public string GerarHashMd5(string input)
