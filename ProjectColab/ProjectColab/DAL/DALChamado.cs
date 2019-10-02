@@ -80,7 +80,7 @@ namespace ProjectColab.DAL
 
             List<Modelo.Chamado> aListChamado = new List<Modelo.Chamado>();
 
-            SqlConnection conn = new SqlConnection(connectionString);
+SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
 
@@ -95,7 +95,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), Convert.ToInt32(dr["status"].ToString()), "1", dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
 
                     aListChamado.Add(aChamado);
                 }

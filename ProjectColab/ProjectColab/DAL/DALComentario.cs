@@ -45,31 +45,33 @@ namespace ProjectColab.DAL
             Modelo.Comentario aComentario;
 
             List<Modelo.Comentario> aListcomentario  = new List<Modelo.Comentario>();
-
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand cmd = conn.CreateCommand();
-
-            cmd.CommandText = "SELECT * FROM Comentario  WHERE chamados_id = @id ORDER BY data_hora DESC";
-            cmd.Parameters.AddWithValue("@id", id);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (dr.HasRows)
+            if (id != null)
             {
-                while (dr.Read())
+                SqlConnection conn = new SqlConnection(connectionString);
+
+                conn.Open();
+
+                SqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "SELECT * FROM Comentario  WHERE chamados_id = @id ORDER BY data_hora DESC";
+                cmd.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
                 {
-                    aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(),Convert.ToInt32( dr["chamados_id"].ToString()), Convert.ToDecimal(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
+                    while (dr.Read())
+                    {
+                        aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), Convert.ToInt32(dr["chamados_id"].ToString()), Convert.ToDecimal(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
 
-                    aListcomentario.Add(aComentario);
+                        aListcomentario.Add(aComentario);
+                    }
                 }
+
+                dr.Close();
+
+                conn.Close();
             }
-
-            dr.Close();
-
-            conn.Close();
 
             return aListcomentario;
         }
