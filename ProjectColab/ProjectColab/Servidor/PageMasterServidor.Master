@@ -27,9 +27,9 @@
                 <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
                 <li class="li2"><a>USUARIO</a></li>
             </ul>
+        </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
     </form>
 </body>
 </html>

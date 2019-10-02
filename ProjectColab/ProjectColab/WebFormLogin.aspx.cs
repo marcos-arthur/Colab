@@ -52,15 +52,15 @@ namespace ProjectColab
             {
                 Response.Redirect("~\\IndexAdmin.aspx");
             }
-            else if (Session["tipo"].ToString() != "2")
+            else if (Session["tipo"].ToString() == "2")
             {
-                Response.Redirect("~\\IndexServidor.aspx");
+                Response.Redirect("~\\Servidor\\IndexServidor.aspx");
             }
-            else if (Session["tipo"].ToString() != "3")
+            else if (Session["tipo"].ToString() == "3")
             {
                 Response.Redirect("~\\IndexBolsista.aspx");
             }
-            else if (Session["tipo"].ToString() != "4")
+            else if (Session["tipo"].ToString() == "4")
             {
                 Response.Redirect("~\\IndexProfessor.aspx");
             }

@@ -70,10 +70,11 @@
     <Content Include="background2.png" />
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
-    <Content Include="IndexServidor.aspx" />
+    <Content Include="Servidor\IndexServidor.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexBolsista.aspx" />
     <Content Include="IndexProfessor.aspx" />
+    <Content Include="IndexServidorTeste.aspx" />
     <Content Include="script.js" />
     <Content Include="SQL\Colab.sql" />
     <Content Include="SQL\triggers.sql" />
@@ -111,11 +112,11 @@
     <Compile Include="HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
     </Compile>
-    <Compile Include="IndexServidor.aspx.cs">
+    <Compile Include="Servidor\IndexServidor.aspx.cs">
       <DependentUpon>IndexServidor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexServidor.aspx.designer.cs">
+    <Compile Include="Servidor\IndexServidor.aspx.designer.cs">
       <DependentUpon>IndexServidor.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexAdmin.aspx.cs">
@@ -139,6 +140,13 @@
     <Compile Include="IndexProfessor.aspx.designer.cs">
       <DependentUpon>IndexProfessor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexServidorTeste.aspx.cs">
+      <DependentUpon>IndexServidorTeste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexServidorTeste.aspx.designer.cs">
+      <DependentUpon>IndexServidorTeste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Chamado.cs" />
     <Compile Include="Modelo\Equipamento.cs" />
     <Compile Include="Modelo\Comentario.cs" />
@@ -159,11 +167,11 @@
     <Compile Include="PageMasterProfessor.Master.designer.cs">
       <DependentUpon>PageMasterProfessor.Master</DependentUpon>
     </Compile>
-    <Compile Include="PageMasterServidor.Master.cs">
+    <Compile Include="Servidor\PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PageMasterServidor.Master.designer.cs">
+    <Compile Include="Servidor\PageMasterServidor.Master.designer.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
     <Compile Include="PageMasterAdmin.Master.cs">
@@ -263,7 +271,7 @@
     <Content Include="HandlerTutorial_info.ashx" />
     <Content Include="HandlerUsuario_info.ashx" />
     <None Include="packages.config" />
-    <Content Include="PageMasterServidor.Master" />
+    <Content Include="Servidor\PageMasterServidor.Master" />
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
     <Content Include="PageMasterProfessor.Master" />
