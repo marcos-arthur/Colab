@@ -4,13 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="mid">
                 <div class="tables">
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2" ForeColor="Black" GridLines="Vertical" DataKeyNames="id">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2" ForeColor="Black" GridLines="Vertical" DataKeyNames="id" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
-                            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
+                            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" ReadOnly="True" />
                             <asp:TemplateField HeaderText="logo" SortExpression="logo">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("foto") %>'></asp:TextBox>
+                                    <asp:FileUpload ID="FileUpload1" runat="server" />
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Image ID="Image1" runat="server" width="50px" ImageUrl='<%# "HandlerUsuario_info.ashx?id=" + Eval("id") %>' />
@@ -43,4 +43,5 @@
                    </div>
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR USUÁRIO" CssClass="cancelbtn" PostBackUrl="~/WebFormAddUsuario.aspx" />    
             </div>          
+       
 </asp:Content>

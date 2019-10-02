@@ -87,15 +87,28 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Usuario Set id = @id, nome = @nome, login = @login, senha = @senha, tipo = @tipo, foto = @foto Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Usuario Set nome = @nome, login = @login, senha = @senha, tipo = @tipo Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto", obj.foto);
             cmd.ExecuteNonQuery();
         }
 
+
+        //EDITAR//
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void UpdateImagem(Modelo.Usuario obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("Update Usuario Set foto = @foto Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@foto", obj.foto);
+            cmd.ExecuteNonQuery();
+        }
 
 
 
