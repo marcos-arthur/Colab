@@ -85,6 +85,7 @@
     <Content Include="WebFormAddChamado.aspx" />
     <Content Include="WebFormAddLab.aspx" />
     <Content Include="WebFormAddTutorial.aspx" />
+    <Content Include="WebFormAddTutorialBolsista.aspx" />
     <Content Include="WebFormAddUsuario.aspx" />
     <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="WebFormCRUDEquipamento.aspx" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="WebFormAddTutorial.aspx.designer.cs">
       <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAddTutorialBolsista.aspx.cs">
+      <DependentUpon>WebFormAddTutorialBolsista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAddTutorialBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormAddTutorialBolsista.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormAddUsuario.aspx.cs">
       <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>

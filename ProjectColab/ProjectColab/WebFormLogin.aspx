@@ -14,11 +14,10 @@
     <form id="form1" runat="server">
         <div>
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
-            
-            <div class="login">
-                <p style="color: #FF0000" >
+            <p>
                     <asp:Literal runat="server" ID="LabelMsgErro" />
                 </p> 
+            <div class="login">                
                 <p>LOGIN</p><asp:TextBox ID="Login" runat="server" CssClass="text"></asp:TextBox>
                 <p>SENHA</p><asp:TextBox ID="Senha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>

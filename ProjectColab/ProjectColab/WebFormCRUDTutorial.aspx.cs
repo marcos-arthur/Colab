@@ -15,9 +15,10 @@ namespace ProjectColab
             {
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
-            else if ((Session["tipo"].ToString() != "2") && (Session["tipo"].ToString() != "3") && (Session["tipo"].ToString() != "4"))
+            else if ((Session["tipo"].ToString() != "2") && (Session["tipo"].ToString() != "3"))
             {
-                Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+                Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
+                Response.Redirect("~\\WebFormLogin.aspx");
             }
         }
 
