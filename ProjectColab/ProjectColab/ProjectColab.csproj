@@ -71,6 +71,7 @@
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
     <Content Include="Index2.aspx" />
+    <Content Include="IndexAdmin.aspx" />
     <Content Include="script.js" />
     <Content Include="SQL\Colab.sql" />
     <Content Include="SQL\triggers.sql" />
@@ -115,6 +116,13 @@
     <Compile Include="Index2.aspx.designer.cs">
       <DependentUpon>Index2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexAdmin.aspx.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexAdmin.aspx.designer.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Chamado.cs" />
     <Compile Include="Modelo\Equipamento.cs" />
     <Compile Include="Modelo\Comentario.cs" />
@@ -127,6 +135,13 @@
     </Compile>
     <Compile Include="PageMaster.Master.designer.cs">
       <DependentUpon>PageMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PageMasterAdmin.Master.cs">
+      <DependentUpon>PageMasterAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageMasterAdmin.Master.designer.cs">
+      <DependentUpon>PageMasterAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebFormAddChamado.aspx.cs">
@@ -219,6 +234,7 @@
     <Content Include="HandlerUsuario_info.ashx" />
     <None Include="packages.config" />
     <Content Include="PageMaster.Master" />
+    <Content Include="PageMasterAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

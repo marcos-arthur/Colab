@@ -11,6 +11,14 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
+            {
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
+            else if ((Session["tipo"].ToString() != "2") && (Session["tipo"].ToString() != "3") && (Session["tipo"].ToString() != "4"))
+            {
+                Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+            }
 
         }
     }
