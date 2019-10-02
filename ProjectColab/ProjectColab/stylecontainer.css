@@ -6,6 +6,9 @@
     margin:auto;
     padding:1%;
 }
+.row.chamado{
+    margin:0%;
+}
 .row:after {
     content: "";
     display: table;
@@ -31,6 +34,7 @@
 
     /* Middle column */
     .column.middle {
+        min-height:200px;
         width: 75%;
         background-color: white;
         padding:0.5%;
@@ -56,6 +60,11 @@
     text-align: center;
     margin: 1%;
 }
+    .content.chamado{
+        display: block;
+        background-color:red;
+        text-align:unset;
+    }
 .content2 {
     background-color: white;
     border-radius: 3px;
@@ -123,6 +132,8 @@
     border-color: rgba(10,10,10,0.2);
     background-color: rgba(252,252,252,1);
 }
+
+
 @media only screen and (max-width: 800px) {
     .row {
         width: 100%;

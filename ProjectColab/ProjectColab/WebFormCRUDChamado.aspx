@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
-        <div class="column middle">
+        <!--<div class="column middle">
                 <asp:GridView ID="GridView1" Height="30%" width="100%" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="5" DataSourceID="ObjectDataSource1" ForeColor="#E6E6E6" GridLines="None" OnRowCommand="GridView1_RowCommand" ItemStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="NotSet" CellSpacing="0" EditRowStyle-Height="100%">
                     <AlternatingRowStyle BackColor="White" ForeColor="black" HorizontalAlign="Center" VerticalAlign="Middle" />
                     <Columns>
@@ -28,7 +28,26 @@
                 </asp:GridView>
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Chamado" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
                 <asp:Button ID="Button2" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddChamado.aspx" />
-            </div>
+            </div>-->
+
+        <div class="column middle">
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1">
+                <ItemTemplate>
+                    <div class="content chamado">
+                        <div class="row chamado">
+                            <a>CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%> </a>
+                            <a><%# DataBinder.Eval(Container.DataItem, "status")%> </a>
+                            <a><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
+                            <a><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></a>
+                            <a><%# DataBinder.Eval(Container.DataItem, "data")%> </a>
+                        </div>
+                    </div>  
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~/WebFormAddChamado.aspx" />
+        </div>
+
+
         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
             <ItemTemplate>
                 <div class="column side">
@@ -47,19 +66,5 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-
-        <div class="column middle">
-            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-                <ItemTemplate>
-                    <ul class="container">
-                        <li><%# DataBinder.Eval(Container.DataItem, "id")%> </li>
-                        <li><%# DataBinder.Eval(Container.DataItem, "status")%> </li>
-                        <li><%# DataBinder.Eval(Container.DataItem, "resumo")%> </li>
-                        <li><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%></li>
-                        <li><%# DataBinder.Eval(Container.DataItem, "data")%> </li>
-                    </ul>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
     </div>
 </asp:Content>
