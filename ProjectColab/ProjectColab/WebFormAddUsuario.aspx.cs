@@ -13,23 +13,12 @@ namespace ProjectColab
     {
         protected void Button1_Click(object sender, EventArgs e)
         {
-            /*Modelo.Usuario aUsuario;
-            DAL.DALUsuario aDALUsuario;
-
-            aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senha.Text, int.Parse(tipo.Text), foto.FileBytes);
-
-            aDALUsuario = new DAL.DALUsuario();
-
-            aDALUsuario.Insert(aUsuario);*/
-
-
-            // Valida senha
+            // Validar senha
             if (senha.Text != confirmaSenha.Text)
             {
                 Session["msgErro"] = "Senha não confere";
                 Response.Redirect("~\\WebAddUsuario.aspx");
             }
-
             Session["msgErro"] = "";
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
@@ -37,7 +26,6 @@ namespace ProjectColab
             string senhaMD5 = GerarHashMd5(senha.Text);
             // Instancia objeto Modelo
             Modelo.Usuario aUsuario = new Modelo.Usuario("1", nomeusuario.Text, login.Text, senhaMD5, int.Parse(tipo.Text), foto.FileBytes);
-            //    0, login.Text, senhaMD5, 0);
             // Insere usuário
             aDALUsuario.Insert(aUsuario);
             // Grava na sessão

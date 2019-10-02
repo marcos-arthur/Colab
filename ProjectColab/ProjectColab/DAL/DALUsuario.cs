@@ -70,7 +70,11 @@ namespace ProjectColab.DAL
                  while (dr.Read()) // Le o proximo registro
                  {
                      // Cria objeto com dados lidos do banco de dados
-                     aUsuario = new Modelo.Usuario(dr["id"].ToString(), dr["nome"].ToString(), dr["login"].ToString(), dr["senha"].ToString(), Convert.ToInt32(dr["tipo"].ToString()),(byte[])dr["foto"]);
+                     aUsuario = new Modelo.Usuario(dr["id"].ToString(), 
+                         dr["nome"].ToString(),
+                         dr["login"].ToString(), dr["senha"].ToString(), 
+                         Convert.ToInt32(dr["tipo"].ToString()),
+                         (byte[])dr["foto"]);
                      // Adiciona o livro lido à lista
                      aListUsuario.Add(aUsuario);
                  }
