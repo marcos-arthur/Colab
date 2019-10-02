@@ -14,7 +14,11 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Apresenta mensagem de erro
+            if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
+            {
+                LabelMsgErro.Text = Session["msgErro"].ToString();
+            }
         }
 
         protected void add_Click(object sender, EventArgs e)
@@ -23,14 +27,15 @@ namespace ProjectColab
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
 
             // Valida Usuario
-            List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(Login.Text);
+            List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
             if (aListUsuario.Count == 0)
             {
                 Session["msgErro"] = "Usuário não cadastrado";
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
+
             // Critografa senha
-            string senhaMD5 = GerarHashMd5(senha.Text);
+            string senhaMD5 = GerarHashMd5(Senha.Text);
             // Le usuário da Lista
             Modelo.Usuario aUsuario = aListUsuario[0];
             // Valida Senha
@@ -41,23 +46,23 @@ namespace ProjectColab
             }
             // Salva usuário na sessão
             Session["msgErro"] = "";
-            Session["usuario"] = aUsuario.nome;
-            Response.Redirect("~\\WebSiteCRUDUsuario.aspx");
+            Session["usuario"] = aUsuario.login;
+            Response.Redirect("~\\Index2.aspx");
         }
-            public string GerarHashMd5(string input)
+        public string GerarHashMd5(string input)
+        {
+            MD5 md5Hash = MD5.Create();
+            // Converter a String para array de bytes, que é como a biblioteca trabalha.
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            // Cria-se um StringBuilder para recompôr a string.
+            StringBuilder sBuilder = new StringBuilder();
+            // Loop para formatar cada byte como uma String em hexadecimal
+            for (int i = 0; i < data.Length; i++)
             {
-                MD5 md5Hash = MD5.Create();
-                // Converter a String para array de bytes, que é como a biblioteca trabalha.
-                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-                // Cria-se um StringBuilder para recompôr a string.
-                StringBuilder sBuilder = new StringBuilder();
-                // Loop para formatar cada byte como uma String em hexadecimal
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sBuilder.Append(data[i].ToString("x2"));
-                }
-                return sBuilder.ToString();
+                sBuilder.Append(data[i].ToString("x2"));
             }
+            return sBuilder.ToString();
+        }
         
     }
     

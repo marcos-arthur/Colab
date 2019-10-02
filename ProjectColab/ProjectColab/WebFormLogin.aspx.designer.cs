@@ -40,13 +40,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox Login;
         
         /// <summary>
-        /// Controle senha.
+        /// Controle Senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox senha;
+        protected global::System.Web.UI.WebControls.TextBox Senha;
         
         /// <summary>
         /// Controle data.
@@ -65,14 +65,5 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
-        
-        /// <summary>
-        /// Controle cadastro.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cadastro;
     }
 }

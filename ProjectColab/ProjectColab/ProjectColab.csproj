@@ -93,7 +93,6 @@
     <Content Include="WebFormEditChamado.aspx" />
     <Content Include="WebFormEditTutorial.aspx" />
     <Content Include="WebFormLogin.aspx" />
-    <Content Include="WebFormLoginRegister.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALChamado.cs" />
@@ -213,13 +212,6 @@
     </Compile>
     <Compile Include="WebFormLogin.aspx.designer.cs">
       <DependentUpon>WebFormLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebFormLoginRegister.aspx.cs">
-      <DependentUpon>WebFormLoginRegister.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFormLoginRegister.aspx.designer.cs">
-      <DependentUpon>WebFormLoginRegister.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
