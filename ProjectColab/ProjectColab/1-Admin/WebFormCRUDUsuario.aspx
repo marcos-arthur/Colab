@@ -41,7 +41,7 @@
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Usuario" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALUsuario" UpdateMethod="Update"></asp:ObjectDataSource>
                    </div>
-                <asp:Button ID="Button1" runat="server" Text="ADICIONAR USUÁRIO" CssClass="cancelbtn" PostBackUrl="~/Admin/WebFormAddUsuario.aspx" />    
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR USUÁRIO" CssClass="cancelbtn" PostBackUrl="~/1-Admin/WebFormAddUsuario.aspx" />    
             </div>          
        
 </asp:Content>

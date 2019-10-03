@@ -22,7 +22,7 @@
         <div>
             <div class="logo"><a href="IndexProfessor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
-                <li class="li1"><a href="WebFormCRUDChamadoProfessor.aspx.aspx">DASHBOARD</a></li>
+                <li class="li1"><a>DASHBOARD</a></li>
                 <li class="li2"><a>USUARIO</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

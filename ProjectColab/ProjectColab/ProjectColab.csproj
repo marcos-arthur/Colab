@@ -67,10 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
     <Content Include="background2.png" />
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
-    <Content Include="Servidor\IndexServidor.aspx" />
+    <Content Include="2-Servidor\IndexServidor.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexBolsista.aspx" />
     <Content Include="IndexProfessor.aspx" />
@@ -85,21 +86,28 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Servidor\WebFormAddChamado.aspx" />
-    <Content Include="Servidor\WebFormAddLab.aspx" />
-    <Content Include="Servidor\WebFormAddTutorial.aspx" />
-    <Content Include="Admin\WebFormAddUsuario.aspx" />
-    <Content Include="WebFormCRUDChamado.aspx" />
-    <Content Include="Servidor\WebFormCRUDEquipamento.aspx" />
-    <Content Include="Servidor\WebFormCRUDLabs.aspx" />
-    <Content Include="Servidor\WebFormCRUDTutorial.aspx" />
-    <Content Include="WebFormCRUDChamadoProfessor.aspx" />
-    <Content Include="Admin\WebFormCRUDUsuario.aspx" />
-    <Content Include="Servidor\WebFormEditChamado.aspx" />
-    <Content Include="Servidor\WebFormEditTutorial.aspx" />
+    <Content Include="2-Servidor\WebFormAddChamado.aspx" />
+    <Content Include="2-Servidor\WebFormAddLab.aspx" />
+    <Content Include="2-Servidor\WebFormAddTutorial.aspx" />
+    <Content Include="1-Admin\WebFormAddUsuario.aspx" />
+    <Content Include="2-Servidor\WebFormCRUDChamado.aspx" />
+    <Content Include="2-Servidor\WebFormCRUDEquipamento.aspx" />
+    <Content Include="2-Servidor\WebFormCRUDLabs.aspx" />
+    <Content Include="2-Servidor\WebFormCRUDTutorial.aspx" />
+    <Content Include="4-Professor\WebFormCRUDChamadoProfessor.aspx" />
+    <Content Include="1-Admin\WebFormCRUDUsuario.aspx" />
+    <Content Include="2-Servidor\WebFormEditChamado.aspx" />
+    <Content Include="2-Servidor\WebFormEditTutorial.aspx" />
     <Content Include="WebFormLogin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="4-Professor\WebFormAddChamadoProfessor.aspx.cs">
+      <DependentUpon>WebFormAddChamadoProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4-Professor\WebFormAddChamadoProfessor.aspx.designer.cs">
+      <DependentUpon>WebFormAddChamadoProfessor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALComentario.cs" />
     <Compile Include="DAL\DALConsulta.cs" />
@@ -109,6 +117,9 @@
     <Compile Include="DAL\DALUsuario.cs" />
     <Compile Include="HandlerTutorial_info.ashx.cs">
       <DependentUpon>HandlerTutorial_info.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="1-Admin\HandlerUsuario_info.ashx.cs">
+      <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
     </Compile>
     <Compile Include="HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
@@ -120,11 +131,11 @@
     <Compile Include="PageMasterServidor.Master.designer.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\IndexServidor.aspx.cs">
+    <Compile Include="2-Servidor\IndexServidor.aspx.cs">
       <DependentUpon>IndexServidor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\IndexServidor.aspx.designer.cs">
+    <Compile Include="2-Servidor\IndexServidor.aspx.designer.cs">
       <DependentUpon>IndexServidor.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexAdmin.aspx.cs">
@@ -175,11 +186,11 @@
     <Compile Include="PageMasterProfessor.Master.designer.cs">
       <DependentUpon>PageMasterProfessor.Master</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\PageMasterServidor.Master.cs">
+    <Compile Include="2-Servidor\PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\PageMasterServidor.Master.designer.cs">
+    <Compile Include="2-Servidor\PageMasterServidor.Master.designer.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
     <Compile Include="PageMasterAdmin.Master.cs">
@@ -190,88 +201,88 @@
       <DependentUpon>PageMasterAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servidor\WebFormAddChamado.aspx.cs">
+    <Compile Include="2-Servidor\WebFormAddChamado.aspx.cs">
       <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormAddChamado.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormAddChamado.aspx.designer.cs">
       <DependentUpon>WebFormAddChamado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormAddLab.aspx.cs">
+    <Compile Include="2-Servidor\WebFormAddLab.aspx.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormAddLab.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormAddLab.aspx.designer.cs">
       <DependentUpon>WebFormAddLab.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormAddTutorial.aspx.cs">
+    <Compile Include="2-Servidor\WebFormAddTutorial.aspx.cs">
       <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormAddTutorial.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormAddTutorial.aspx.designer.cs">
       <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\WebFormAddUsuario.aspx.cs">
+    <Compile Include="1-Admin\WebFormAddUsuario.aspx.cs">
       <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebFormAddUsuario.aspx.designer.cs">
+    <Compile Include="1-Admin\WebFormAddUsuario.aspx.designer.cs">
       <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormCRUDChamado.aspx.cs">
+    <Compile Include="2-Servidor\WebFormCRUDChamado.aspx.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFormCRUDChamado.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormCRUDChamado.aspx.designer.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDEquipamento.aspx.cs">
+    <Compile Include="2-Servidor\WebFormCRUDEquipamento.aspx.cs">
       <DependentUpon>WebFormCRUDEquipamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDEquipamento.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormCRUDEquipamento.aspx.designer.cs">
       <DependentUpon>WebFormCRUDEquipamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDLabs.aspx.cs">
+    <Compile Include="2-Servidor\WebFormCRUDLabs.aspx.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDLabs.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormCRUDLabs.aspx.designer.cs">
       <DependentUpon>WebFormCRUDLabs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDTutorial.aspx.cs">
+    <Compile Include="2-Servidor\WebFormCRUDTutorial.aspx.cs">
       <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDTutorial.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormCRUDTutorial.aspx.designer.cs">
       <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormCRUDChamadoProfessor.aspx.cs">
+    <Compile Include="4-Professor\WebFormCRUDChamadoProfessor.aspx.cs">
       <DependentUpon>WebFormCRUDChamadoProfessor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebFormCRUDChamadoProfessor.aspx.designer.cs">
+    <Compile Include="4-Professor\WebFormCRUDChamadoProfessor.aspx.designer.cs">
       <DependentUpon>WebFormCRUDChamadoProfessor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\WebFormCRUDUsuario.aspx.cs">
+    <Compile Include="1-Admin\WebFormCRUDUsuario.aspx.cs">
       <DependentUpon>WebFormCRUDUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebFormCRUDUsuario.aspx.designer.cs">
+    <Compile Include="1-Admin\WebFormCRUDUsuario.aspx.designer.cs">
       <DependentUpon>WebFormCRUDUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormEditChamado.aspx.cs">
+    <Compile Include="2-Servidor\WebFormEditChamado.aspx.cs">
       <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormEditChamado.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormEditChamado.aspx.designer.cs">
       <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormEditTutorial.aspx.cs">
+    <Compile Include="2-Servidor\WebFormEditTutorial.aspx.cs">
       <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormEditTutorial.aspx.designer.cs">
+    <Compile Include="2-Servidor\WebFormEditTutorial.aspx.designer.cs">
       <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormLogin.aspx.cs">
@@ -284,9 +295,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HandlerTutorial_info.ashx" />
+    <Content Include="1-Admin\HandlerUsuario_info.ashx" />
     <Content Include="HandlerUsuario_info.ashx" />
     <None Include="packages.config" />
-    <Content Include="Servidor\PageMasterServidor.Master" />
+    <Content Include="2-Servidor\PageMasterServidor.Master" />
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
     <Content Include="PageMasterProfessor.Master" />
@@ -299,7 +311,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bolsista\" />
+    <Folder Include="3-Bolsista\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

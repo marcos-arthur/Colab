@@ -6,9 +6,9 @@ using System.Web;
 namespace ProjectColab
 {
     /// <summary>
-    /// Descrição resumida de HandlerUsuario_info1
+    /// Descrição resumida de HandlerUsuario_info
     /// </summary>
-    public class HandlerUsuario_info1 : IHttpHandler
+    public class HandlerUsuario_info : IHttpHandler
     {
         public void ProcessRequest(HttpContext context)
         {

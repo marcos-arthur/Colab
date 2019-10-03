@@ -34,13 +34,13 @@ namespace ProjectColab
             aDALUsuario.Insert(aUsuario);
             // Grava na sessão
             Session["Usuario"] = aUsuario.login;
-            Response.Redirect("~/Admin/WebFormCRUDUsuario.aspx");
+            Response.Redirect("~/1-Admin/WebFormCRUDUsuario.aspx");
             // Valida Usuario
             List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(login.Text);
             if (aListUsuario.Count > 0)
             {
                 Session["msgErro"] = "Usuário já cadastrado";
-                Response.Redirect("~\\WebFormAddUsuario.aspx");
+                Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
         }
         public string GerarHashMd5(string input)
