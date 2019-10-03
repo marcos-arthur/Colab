@@ -71,7 +71,6 @@
     <Content Include="background2.png" />
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
-    <Content Include="2-Servidor\IndexServidor.aspx" />
     <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexBolsista.aspx" />
     <Content Include="IndexProfessor.aspx" />
@@ -131,13 +130,6 @@
     <Compile Include="PageMasterServidor.Master.designer.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
-    <Compile Include="2-Servidor\IndexServidor.aspx.cs">
-      <DependentUpon>IndexServidor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="2-Servidor\IndexServidor.aspx.designer.cs">
-      <DependentUpon>IndexServidor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="IndexAdmin.aspx.cs">
       <DependentUpon>IndexAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,13 +177,6 @@
     </Compile>
     <Compile Include="PageMasterProfessor.Master.designer.cs">
       <DependentUpon>PageMasterProfessor.Master</DependentUpon>
-    </Compile>
-    <Compile Include="2-Servidor\PageMasterServidor.Master.cs">
-      <DependentUpon>PageMasterServidor.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="2-Servidor\PageMasterServidor.Master.designer.cs">
-      <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
     <Compile Include="PageMasterAdmin.Master.cs">
       <DependentUpon>PageMasterAdmin.Master</DependentUpon>
@@ -298,7 +283,6 @@
     <Content Include="1-Admin\HandlerUsuario_info.ashx" />
     <Content Include="HandlerUsuario_info.ashx" />
     <None Include="packages.config" />
-    <Content Include="2-Servidor\PageMasterServidor.Master" />
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
     <Content Include="PageMasterProfessor.Master" />

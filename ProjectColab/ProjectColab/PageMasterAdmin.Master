@@ -20,7 +20,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="logo"><a href="IndexServidor.aspx" class="logos">COLAB</a></div>
+            <div class="logo"><a href="IndexAdmin.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li2"><a>USUÁRIO</a></li>
             </ul>

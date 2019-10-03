@@ -54,7 +54,7 @@ namespace ProjectColab
             }
             else if (Session["tipo"].ToString() == "2")
             {
-                Response.Redirect("~\\Servidor\\IndexServidor.aspx");
+                Response.Redirect("~\\IndexServidor.aspx");
             }
             else if (Session["tipo"].ToString() == "3")
             {
