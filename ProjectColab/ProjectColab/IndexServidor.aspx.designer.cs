@@ -10,7 +10,7 @@
 namespace ProjectColab {
     
     
-    public partial class IndexProfessor {
+    public partial class IndexServidorTeste {
         
         /// <summary>
         /// Controle Repeater1.

@@ -13,15 +13,7 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          /*  if ((Session["tipo"] == null) || (Session["tipo"].ToString() == ""))
-            {
-                Response.Redirect("~\\WebFormLogin.aspx");
-            }
-            else if (Session["tipo"].ToString() != "1")
-            {
-                Session["msgErro"] = "Acesso não permitido à página WebSiteUser. " + "Faça Login e tente novamente";
-                Response.Redirect("~\\WebFormLogin.aspx");
-            }*/
+            
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -29,7 +21,7 @@ namespace ProjectColab
             if (senha.Text != confirmaSenha.Text)
             {
                 Session["msgErro"] = "Senha não confere";
-                Response.Redirect("~\\WebAddUsuario.aspx");
+                Response.Redirect("~\\WebFormAddUsuario.aspx");
             }
             Session["msgErro"] = "";
             // Instancia objeto DAL
@@ -42,13 +34,13 @@ namespace ProjectColab
             aDALUsuario.Insert(aUsuario);
             // Grava na sessão
             Session["Usuario"] = aUsuario.login;
-            Response.Redirect("~\\WebFormCRUDUsuario.aspx");
+            Response.Redirect("~/Admin/WebFormCRUDUsuario.aspx");
             // Valida Usuario
             List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(login.Text);
             if (aListUsuario.Count > 0)
             {
                 Session["msgErro"] = "Usuário já cadastrado";
-                Response.Redirect("~\\WebAddUsuario.aspx");
+                Response.Redirect("~\\WebFormAddUsuario.aspx");
             }
         }
         public string GerarHashMd5(string input)

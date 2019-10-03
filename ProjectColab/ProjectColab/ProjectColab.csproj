@@ -74,7 +74,7 @@
     <Content Include="IndexAdmin.aspx" />
     <Content Include="IndexBolsista.aspx" />
     <Content Include="IndexProfessor.aspx" />
-    <Content Include="IndexServidorTeste.aspx" />
+    <Content Include="IndexServidor.aspx" />
     <Content Include="script.js" />
     <Content Include="SQL\Colab.sql" />
     <Content Include="SQL\triggers.sql" />
@@ -89,10 +89,11 @@
     <Content Include="Servidor\WebFormAddLab.aspx" />
     <Content Include="Servidor\WebFormAddTutorial.aspx" />
     <Content Include="Admin\WebFormAddUsuario.aspx" />
-    <Content Include="Servidor\WebFormCRUDChamado.aspx" />
+    <Content Include="WebFormCRUDChamado.aspx" />
     <Content Include="Servidor\WebFormCRUDEquipamento.aspx" />
     <Content Include="Servidor\WebFormCRUDLabs.aspx" />
     <Content Include="Servidor\WebFormCRUDTutorial.aspx" />
+    <Content Include="WebFormCRUDChamadoProfessor.aspx" />
     <Content Include="Admin\WebFormCRUDUsuario.aspx" />
     <Content Include="Servidor\WebFormEditChamado.aspx" />
     <Content Include="Servidor\WebFormEditTutorial.aspx" />
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="PageMasterServidor.Master.cs">
+      <DependentUpon>PageMasterServidor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageMasterServidor.Master.designer.cs">
+      <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
     <Compile Include="Servidor\IndexServidor.aspx.cs">
       <DependentUpon>IndexServidor.aspx</DependentUpon>
@@ -140,12 +148,12 @@
     <Compile Include="IndexProfessor.aspx.designer.cs">
       <DependentUpon>IndexProfessor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexServidorTeste.aspx.cs">
-      <DependentUpon>IndexServidorTeste.aspx</DependentUpon>
+    <Compile Include="IndexServidor.aspx.cs">
+      <DependentUpon>IndexServidor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexServidorTeste.aspx.designer.cs">
-      <DependentUpon>IndexServidorTeste.aspx</DependentUpon>
+    <Compile Include="IndexServidor.aspx.designer.cs">
+      <DependentUpon>IndexServidor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Chamado.cs" />
     <Compile Include="Modelo\Equipamento.cs" />
@@ -210,11 +218,11 @@
     <Compile Include="Admin\WebFormAddUsuario.aspx.designer.cs">
       <DependentUpon>WebFormAddUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDChamado.aspx.cs">
+    <Compile Include="WebFormCRUDChamado.aspx.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Servidor\WebFormCRUDChamado.aspx.designer.cs">
+    <Compile Include="WebFormCRUDChamado.aspx.designer.cs">
       <DependentUpon>WebFormCRUDChamado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Servidor\WebFormCRUDEquipamento.aspx.cs">
@@ -237,6 +245,13 @@
     </Compile>
     <Compile Include="Servidor\WebFormCRUDTutorial.aspx.designer.cs">
       <DependentUpon>WebFormCRUDTutorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCRUDChamadoProfessor.aspx.cs">
+      <DependentUpon>WebFormCRUDChamadoProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCRUDChamadoProfessor.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDChamadoProfessor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebFormCRUDUsuario.aspx.cs">
       <DependentUpon>WebFormCRUDUsuario.aspx</DependentUpon>
@@ -275,6 +290,7 @@
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
     <Content Include="PageMasterProfessor.Master" />
+    <Content Include="PageMasterServidor.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
