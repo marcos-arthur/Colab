@@ -40,6 +40,8 @@
 
 .li2 {
     float: right;
+    border-bottom-color: white;
+    border-bottom-style: solid;
 }
 
 .li2 a {

@@ -2,7 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-            <div class="mid">
+
+     <div class="row">
+        <div class="column middle">
+
                 <asp:TextBox ID="status" runat="server" style="display:none" CssClass="text"></asp:TextBox>
                 <asp:TextBox ID="id" runat="server" style="display:none" CssClass="text"></asp:TextBox>
 
@@ -13,7 +16,29 @@
                 
                 <br />
                 <br />
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="cancelbtn" OnClick="add_Click1"/>
-                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="cancelbtn" OnClick="Button1_Click"/>
-            </div>   
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="btn" OnClick="add_Click1"/>
+                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="btn" OnClick="Button1_Click"/>  
+            </div>
+
+    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
+        <ItemTemplate>
+            <div class="column side">
+                <div class="content2">
+                    <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                    <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                    <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
+                </div>
+            </div>
+            <div class="column side">
+                <div class="content2">
+                    <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                    <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                    <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+
+    </div>
+    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
 </asp:Content>

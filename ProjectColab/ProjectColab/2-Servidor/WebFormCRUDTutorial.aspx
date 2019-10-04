@@ -26,7 +26,7 @@
                      
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update"></asp:ObjectDataSource>
                      
-                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="tablebtn2" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />  
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />  
         </div>
                 <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>

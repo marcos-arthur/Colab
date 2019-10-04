@@ -35,7 +35,7 @@
              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
 
 
-         <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="tablebtn2" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />    
+         <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />    
     
         </div>
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">

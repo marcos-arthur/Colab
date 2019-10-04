@@ -26,7 +26,7 @@
                 </ItemTemplate>
             </asp:Repeater>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
-    <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="tablebtn2" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
+    <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
         </div>
 
 

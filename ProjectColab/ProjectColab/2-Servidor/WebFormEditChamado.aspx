@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class="row">
+        <div class="column middle">
+
 
     <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
@@ -22,7 +25,31 @@
         <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
     </asp:DetailsView>
 
+    </div>
 
+
+
+        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource3">
+            <ItemTemplate>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+                <div class="column side">
+                    <div class="content2">
+                        <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                        <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                        <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+
+
+                <div class="column middle">
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALChamado">
         <SelectParameters>
             <asp:SessionParameter SessionField="idchamado" Name="id" Type="String"></asp:SessionParameter>
@@ -33,15 +60,13 @@
 
 
 
-
-
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>
-                            <ul>
-                                <li class="descricao" ><a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a></li>
-                                <li class="data_hora"><a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a></li>
-                            </ul>
+                        <div class="column middle">
+                                <a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a>
+                               <a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a>
                         </div>
+                        <br />
                     </ItemTemplate>
 
                 </asp:Repeater>
@@ -49,8 +74,10 @@
 
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
                         <SelectParameters>
-                            <asp:SessionParameter Name="obj" SessionField="idchamado" Type="Object" />
+                            <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
+        <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+    </div>
 </asp:Content>
 
