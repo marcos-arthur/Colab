@@ -23,9 +23,9 @@
         <div>
             <div class="logo"><a href="IndexServidor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
-                <li class="li1"><a href="2-Servidor\\WebFormCRUDChamado.aspx">DASHBOARD</a></li>
-                <li class="li1"><a href="2-Servidor\\WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
-                <li class="li1"><a href="2-Servidor\\WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+                <li class="li1"><a href="IndexServidor.aspx">DASHBOARD</a></li>
+                <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
+                <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
                 <li class="li2"><a>USUÁRIO</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

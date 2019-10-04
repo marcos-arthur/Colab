@@ -26,7 +26,7 @@
                      
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update"></asp:ObjectDataSource>
                      
-                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="tablebtn2" PostBackUrl="~/WebFormAddTutorial.aspx" />  
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="tablebtn2" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />  
         </div>
                 <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>
@@ -34,14 +34,14 @@
                             <div class="content2">
                                 <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
                                 <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                                <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                                <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
                             </div>
                         </div>
                         <div class="column side">
                             <div class="content2">
                                 <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
                                 <a class="sub-first"><%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                                <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx" />
+                                <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
                             </div>
                         </div>
                     </ItemTemplate>

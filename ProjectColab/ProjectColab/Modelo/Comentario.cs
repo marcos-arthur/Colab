@@ -9,7 +9,7 @@ namespace ProjectColab.Modelo
     {
         public string id { get; set; }
         public string usuario_id { get; set; }
-        public int chamados_id { get; set; }
+        public string chamados_id { get; set; }
         public decimal restricao { get; set; }
         public string descricao { get; set; }
         public DateTime data_hora { get; set; }
@@ -18,13 +18,13 @@ namespace ProjectColab.Modelo
         {
             this.id = "";
             this.usuario_id = "";
-            this.chamados_id = 0;
+            this.chamados_id = "";
             this.descricao = "";
             this.restricao = 0;
             this.data_hora = new DateTime();
         }
 
-        public Comentario(string id, string usuario_id, int chamados_id, decimal restricao, string descricao, DateTime data_hora)
+        public Comentario(string id, string usuario_id, string chamados_id, decimal restricao, string descricao, DateTime data_hora)
         {
             this.id = id;
             this.usuario_id = usuario_id;

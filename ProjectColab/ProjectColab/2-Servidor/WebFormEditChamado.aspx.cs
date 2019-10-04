@@ -18,11 +18,11 @@ namespace ProjectColab
         {
             Modelo.Comentario aComentario;
             DAL.DALComentario aDALComentario;
-            aComentario = new Modelo.Comentario("1","2",Convert.ToInt32(Session["id"]), 1,descricao.Text, DateTime.Now);
+            aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now);
             aDALComentario = new DAL.DALComentario();
 
             aDALComentario.Insert(aComentario);
-            Response.Redirect("~\\WebFormEditChamado.aspx");
+            Response.Redirect("~\\2-Servidor\\WebFormEditChamado.aspx");
         }
     }
 }

@@ -23,12 +23,12 @@ namespace ProjectColab
 
             aDALChamado.Insert(aChamado);
 
-            Response.Redirect("~\\WebFormCRUDChamado.aspx");
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~\\WebFormCRUDChamado.aspx");
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
         }
     }
 }

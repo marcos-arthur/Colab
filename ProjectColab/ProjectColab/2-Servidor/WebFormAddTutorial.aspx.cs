@@ -27,7 +27,7 @@ namespace ProjectColab
 
             aDALTutorial.Insert(aTutorial);
 
-            Response.Redirect("~\\WebFormCRUDTutorial.aspx");
+            Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
         }
     }
 }

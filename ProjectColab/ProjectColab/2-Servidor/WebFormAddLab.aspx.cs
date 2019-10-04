@@ -52,7 +52,7 @@ namespace ProjectColab
             }
             finally
             {                
-                Response.Redirect("~\\WebFormAddLab.aspx");
+                Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
             }
         }
 
@@ -84,13 +84,13 @@ namespace ProjectColab
                 if (error.Message.Contains("O modelo do equipamento nao pode ser vazio")) Session["MsgErroModelo"] = "O modelo do equipamento nao pode ser vazio";
             }
 
-            Response.Redirect("~\\WebFormAddLab.aspx");
+            Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~\\WebFormCRUDLabs.aspx");
+            Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
         }
     }
 }

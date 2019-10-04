@@ -15,7 +15,6 @@ namespace ProjectColab
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
             //Verifica se o comando é "Editar"
             if (e.CommandName.ToString() == "ABRIR")
             {
@@ -28,7 +27,7 @@ namespace ProjectColab
                 Session["idchamado"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~\\WebFormEditChamado.aspx");
+                Response.Redirect("~//2-Servidor/WebFormEditChamado.aspx");
             }
 
 

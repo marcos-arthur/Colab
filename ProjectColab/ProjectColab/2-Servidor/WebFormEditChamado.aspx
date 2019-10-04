@@ -49,7 +49,7 @@
 
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
                         <SelectParameters>
-                            <asp:SessionParameter Name="id" SessionField="id" Type="String" />
+                            <asp:SessionParameter Name="obj" SessionField="idchamado" Type="Object" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
 </asp:Content>

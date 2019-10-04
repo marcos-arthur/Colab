@@ -8,7 +8,7 @@
                 <br />
                 <br />
                 <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
-                <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDTutorial.aspx"/>
+                <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx"/>
             </div>
 </asp:Content>
 

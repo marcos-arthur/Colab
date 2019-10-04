@@ -46,6 +46,7 @@ namespace ProjectColab
             }
             // Salva usuário na sessão
             Session["msgErro"] = "";
+            Session["idusuario"] = aUsuario.id;
             Session["usuario"] = aUsuario.login;
             Session["tipo"] = aUsuario.tipo;
             if (Session["tipo"].ToString() == "1")
@@ -54,7 +55,7 @@ namespace ProjectColab
             }
             else if (Session["tipo"].ToString() == "2")
             {
-                Response.Redirect("~\\IndexServidor.aspx");
+                Response.Redirect("~\\2-Servidor\\IndexServidor.aspx");
             }
             else if (Session["tipo"].ToString() == "3")
             {

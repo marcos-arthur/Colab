@@ -72,6 +72,7 @@ CREATE TABLE Tutorial(
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
+/*
 SELECT *,
 CASE WHEN status = 3 THEN 'SENDO ANALIZADO'
 WHEN status = 2 THEN 'APROVADO'
