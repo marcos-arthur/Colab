@@ -296,6 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="3-Bolsista\" />
+    <Folder Include="Tutoriais _pdf\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

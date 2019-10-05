@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,7 +14,15 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Apresenta mensagem de erro
+            if ((Session["MsgErrotitulo"] != null) && (Session["MsgErrotitulo"].ToString() != ""))
+            {
+                MsgErrotitulo.Text = Session["MsgErrotitulo"].ToString();
+            }
+            if ((Session["MsgErroarquivo"] != null) && (Session["MsgErroarquivo"].ToString() != ""))
+            {
+                MsgErroarquivo.Text = Session["MsgErroarquivo"].ToString();
+            }
         }
         //Quase pronto
         protected void Button1_Click(object sender, EventArgs e)
@@ -25,7 +34,23 @@ namespace ProjectColab
 
             aDALTutorial = new DAL.DALTutorial();
 
-            aDALTutorial.Insert(aTutorial);
+            //validação dos outros dados
+            try
+            {
+                aDALTutorial.Insert(aTutorial);
+            }
+            catch (SqlException error)
+
+            {
+                if (error.Message.Contains("O titulo do tutorial nao deve ser vazio")) Session["MsgErrotitulo"] = "O titulo do tutorial nao deve ser vazio";
+
+                if (error.Message.Contains("voce deve adiconar um arquivo ao novo tutorial")) Session["MsgErroarquivo"] = "voce deve adiconar um arquivo ao novo tutorial";
+
+            }
+            finally
+            {
+                Response.Redirect("~//2-Servidor/WebFormAddTutorial.aspx");
+            }
 
             Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
         }
