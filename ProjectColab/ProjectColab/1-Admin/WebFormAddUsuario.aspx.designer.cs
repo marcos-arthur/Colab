@@ -13,13 +13,22 @@ namespace ProjectColab {
     public partial class WebFormAddUsuario {
         
         /// <summary>
-        /// Controle nomeusuario.
+        /// Controle nome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nomeusuario;
+        protected global::System.Web.UI.WebControls.TextBox nome;
+        
+        /// <summary>
+        /// Controle MsgErronome.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErronome;
         
         /// <summary>
         /// Controle login.
@@ -31,6 +40,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox login;
         
         /// <summary>
+        /// Controle MsgErrologin.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrologin;
+        
+        /// <summary>
         /// Controle senha.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox senha;
+        
+        /// <summary>
+        /// Controle MsgErrosenha.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrosenha;
         
         /// <summary>
         /// Controle confirmaSenha.
@@ -49,6 +76,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox confirmaSenha;
         
         /// <summary>
+        /// Controle MsgErrosenhacf.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrosenhacf;
+        
+        /// <summary>
         /// Controle tipo.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox tipo;
         
         /// <summary>
+        /// Controle MsgErrotipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrotipo;
+        
+        /// <summary>
         /// Controle foto.
         /// </summary>
         /// <remarks>
@@ -65,6 +110,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload foto;
+        
+        /// <summary>
+        /// Controle MsgErrofoto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrofoto;
         
         /// <summary>
         /// Controle Button2.
