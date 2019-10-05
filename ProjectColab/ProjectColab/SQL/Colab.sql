@@ -145,4 +145,4 @@ drop table Usuario
 		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, 'https://suap.ifrn.edu.br/media/alunos/194384.ZwxkYFJoFdJb.jpg')	jwIsLife
 */
 
-Select * from usuario
+Select * from equipamento

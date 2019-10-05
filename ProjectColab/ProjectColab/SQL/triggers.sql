@@ -34,12 +34,12 @@ begin
 	declare @modelo varchar(45)
 	declare @quant int
 	declare @erro bit
+	set @erro = 0 --controle para erros
 
 	select 
 		@nome = laboratorio_nome,
 		@modelo = modelo,
-		@quant = quantidade,
-		@erro = 0
+		@quant = quantidade	
 	from Equipamento
 
 	--Validar nome
@@ -47,7 +47,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('O equipamento inserido deve pertencer a algum laboratorio', 16, 1)
-		select erro = 1 from Equipamento
+		set @erro = 1
 		--return
 	end	
 	
@@ -56,7 +56,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('O modelo do equipamento nao pode ser vazio', 16, 1)
-		select erro = 1 from Equipamento
+		set @erro = 1
 		--return
 	end	
 	
@@ -65,7 +65,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('A quantidade de equipamento deve ser um número maior que 0', 16, 1)
-		select erro = 1 from Equipamento
+		set @erro = 1
 		--return
 	end	
 
@@ -89,14 +89,13 @@ begin
 	declare @senha varchar (20)
 	declare @tipo int
 	declare @erro bit
+	set @erro = 0 --controle para erros
 
 	select 
 		@nome = nome,
 		@login = login,
 		@senha = senha,
-		@tipo = tipo,
-		@erro = 0
-
+		@tipo = tipo
 	from Usuario
 
 	--Validar nome
@@ -104,7 +103,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('O nome do usuario nao deve ser vazio', 16, 1)
-		select erro = 1 from Usuario
+		set @erro = 1
 		--return
 	end	
 	
@@ -113,7 +112,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('O login do usuario nao pode ser vazio', 16, 1)
-		select erro = 1 from Usuario
+		set @erro = 1
 		--return
 	end	
 	
@@ -122,7 +121,7 @@ begin
 	begin
 		--rollback transaction
 		raiserror('A senha deve ter menos que 20 caracteres e nao pode ser vazia', 16, 1)
-		select erro = 1 from Usuario
+		set @erro = 1
 		--return
 	end	
 	--Validar tipo
@@ -130,8 +129,12 @@ begin
 	begin
 		--rollback transaction
 		raiserror('tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor', 16, 1)
-		select erro = 1 from Usuario
+		set @erro = 1
 		--return
 	end	
-
+	--Validar erro
+	if(@erro = 1)
+	begin
+		rollback transaction
+	end
 end
