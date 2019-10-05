@@ -118,15 +118,7 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
-
-
-
-
-
-
-
-
-
+        
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Laboratorios> Select(string id)
         {

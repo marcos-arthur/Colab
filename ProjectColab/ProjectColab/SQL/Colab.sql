@@ -1,4 +1,3 @@
---drop table Laboratorios
 CREATE TABLE Laboratorios(
 	id INT IDENTITY NOT NULL,
 	nome VARCHAR(100) NOT NULL,	
@@ -15,7 +14,7 @@ CREATE TABLE Usuario(
 	nome VARCHAR(100) NOT NULL,
 	login VARCHAR(100) NOT NULL,
 	senha VARCHAR(100) NOT NULL,
-	tipo INT NOT NULL, /* TIPO DE USUARIO : BOLSISTA,SERVIDOR,REQUISITANTE,ADMINISTRADOR */
+	tipo INT NOT NULL, /* TIPO DE USUARIO : BOLSISTA(3), SERVIDOR(2), REQUISITANTE(4), ADMINISTRADOR(1) */
 	foto image NOT NULL,
     	PRIMARY KEY(id)
 )
@@ -28,7 +27,6 @@ CREATE TABLE Equipamento(
 	PRIMARY KEY(id),
 	FOREIGN KEY(laboratorio_id) REFERENCES Laboratorios(id)
 )
---drop table Equipamento
 
 CREATE TABLE Chamado(
 	id INT IDENTITY NOT NULL,
@@ -80,10 +78,6 @@ ELSE 'NÃO APROVADO'
 END AS statustext
 FROM Tutorial;
 
-
-
-
-
 SELECT *,
 CASE WHEN status = 1 THEN 'ABERTO'
 WHEN status = 2 THEN 'EM ATENDIMENTO'
@@ -110,4 +104,45 @@ INSERT INTO Equipamento(laboratorio_id, laboratorio_nome, modelo, quantidade)
 VALUES(4,'3','Modelo',2)
 
 select * from Laboratorios
-select * from Equipamento*/
+select * from Equipamento
+*/
+
+
+
+/* DANGER ZONE - CUIDADO
+drop table Comentario
+drop table Patrimonio
+drop table Chamado
+drop table Categoria
+drop table Equipamento
+drop table Laboratorios
+drop table Tutorial
+drop table Usuario
+*/
+
+-- INSERT DE USUARIOS - USAR PARA TESTES
+
+	/* TIPOS DE USUARIO
+		
+		1 -	ADMINISTRADOR
+		2 -	SERVIDOR 
+		3 -	BOLSISTA 
+		4 - REQUISITANTE
+
+	*/
+
+/*	
+	INSERT INTO Usuario(nome,login,senha,tipo,foto)																											senhas:
+		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')				saintseya
+
+	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
+		values ('Luenne', 'Luennia', '7948d34b40b3a90b8f926ebcf37c1d80', 2,'https://suap.ifrn.edu.br/media/alunos/194243.RusOjks8L25T.jpg')					kpop4ever
+
+	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
+		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, 'https://suap.ifrn.edu.br/media/alunos/193956.BIejA77cHAJJ.jpg')					EZClap
+
+	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
+		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, 'https://suap.ifrn.edu.br/media/alunos/194384.ZwxkYFJoFdJb.jpg')	jwIsLife
+*/
+
+Select * from usuario

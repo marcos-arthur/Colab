@@ -19,6 +19,4 @@
     </asp:Repeater>
 
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
-
-
 </asp:Content>
