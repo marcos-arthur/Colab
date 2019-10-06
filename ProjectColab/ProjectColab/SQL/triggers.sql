@@ -114,7 +114,7 @@ begin
 		raiserror('O login do usuario nao pode ser vazio', 16, 1)
 		set @erro = 1
 		--return
-	end	
+	end
 	
 	--Validar senha
 	if(len(@senha) > 20)  or (rtrim(ltrim(@senha)) = '')
@@ -124,6 +124,7 @@ begin
 		set @erro = 1
 		--return
 	end	
+
 	--Validar tipo
 	if(@tipo > 4 or @tipo < 1)
 	begin

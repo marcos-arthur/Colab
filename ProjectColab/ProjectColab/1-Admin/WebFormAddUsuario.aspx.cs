@@ -47,9 +47,12 @@ namespace ProjectColab
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            bool ok = true;
+
             // Validar senha
             if (senha.Text != confirmaSenha.Text)
             {
+                ok = false;
                 Session["MsgErrosenhacf"] = "Senha não confere";
                 Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
@@ -57,9 +60,10 @@ namespace ProjectColab
             
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
-            
+
             // Critografa senha
-            string senhaMD5 = GerarHashMd5(senha.Text);
+            string senhaMD5 = "";
+            if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
 
             //Verifica o parse do tipo
             int type = 0;
@@ -67,12 +71,13 @@ namespace ProjectColab
             else type = 0;
 
             // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes);
-            
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes);                       
+
             // Valida Usuario           
             List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(login.Text);
             if (aListUsuario.Count > 0)
             {
+                ok = false;
                 Session["MsgErrologin"] = "Usuário já cadastrado";
                 Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
@@ -83,8 +88,9 @@ namespace ProjectColab
                 aDALUsuario.Insert(aUsuario);
             }
             catch (SqlException error)
-
             {
+                ok = false;
+
                 if (error.Message.Contains("O nome do usuario nao deve ser vazio")) Session["MsgErronome"] = "O nome do usuario nao deve ser vazio";
 
                 if (error.Message.Contains("O login do usuario nao pode ser vazio")) Session["MsgErrologin"] = "O login do usuario nao pode ser vazio";
@@ -94,11 +100,10 @@ namespace ProjectColab
                 if (error.Message.Contains("tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor")) Session["MsgErrotipo"] = "tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor";
 
             }
-            finally
-            {
-                Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
-            }
-                       
+             
+            if(ok) Response.Redirect("~/1-Admin/WebFormCRUDUsuario.aspx");
+            else Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
+
         }
         public string GerarHashMd5(string input)
         {

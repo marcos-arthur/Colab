@@ -196,8 +196,15 @@ select * from usuario where tipo = 3 or tipo = 2
 
 select * from Chamado
 
-*/
+
 SELECT count(case when usuario_atribuido_id LIKE 3 then 1 end) as myCount, 
     count(*) as count,
-	count(case when usuario_atribuido_id LIKE '' then 1 end) as noCount
+	count(case when usuario_atribuido_id IS NULL then 1 end) as noCount
 FROM Chamado 
+
+*/
+
+/*
+INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senhas:
+		values ('Diogo', 'diosgo01', '', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')
+		*/
