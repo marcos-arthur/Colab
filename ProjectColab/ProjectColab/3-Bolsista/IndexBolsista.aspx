@@ -10,36 +10,31 @@
                           <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
                          <a class="title">CHAMADOS</a>
-                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
+                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormCRUDChamadoBolsista.aspx"/>
                       </div>
                   </div>
                   <div class="column side">
                       <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
                          <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
+                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/3-Bolsista/WebFormCRUDChamadoBolsista.aspx"/>
                       </div>  
                   </div>
                   <div class="column side">
                       <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
                          <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
+                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUr="~/3-Bolsista/WebFormCRUDChamadoBolsista.aspx"/>
                       </div>  
-                  </div>
-                  <div class="column middle" >
-                      <div class="content">
-                         <div class="indicador"><a class="colorfix titulo">TUTORIAIS</a></div>
-                         <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
-                      </div>
-                  </div>
+                  </div>                  
                 <button class="btnPesquisar btn fixed">+</button>
             </div>
         </ItemTemplate>
     </asp:Repeater>
-
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
-
-
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+        <SelectParameters>
+            <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>
 
