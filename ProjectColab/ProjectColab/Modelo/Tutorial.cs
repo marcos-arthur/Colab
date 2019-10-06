@@ -9,6 +9,7 @@ namespace ProjectColab.Modelo
     {
         public string id { get; set; }
         public string idUsuario { get; set; }
+        public string nomeUsuario { get; set; }
         public string tutorial_titulo { get; set; }
         public decimal status { get; set; }
         public string arquivo { get; set; }
@@ -25,6 +26,15 @@ namespace ProjectColab.Modelo
         public Tutorial(string id, string idU, string tutorial_titulo, decimal status, string arquivo)
         {
             this.id = id;
+            this.idUsuario = idU;
+            this.tutorial_titulo = tutorial_titulo;
+            this.status = status;
+            this.arquivo = arquivo;
+        }
+        public Tutorial(string id, string idU, string nomeUsu, string tutorial_titulo, decimal status, string arquivo)
+        {
+            this.id = id;
+            this.nomeUsuario = nomeUsu;
             this.idUsuario = idU;
             this.tutorial_titulo = tutorial_titulo;
             this.status = status;

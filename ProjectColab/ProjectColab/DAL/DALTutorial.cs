@@ -22,6 +22,9 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Tutorial> SelectAll()
         {
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuario;
+
             // Variavel para armazenar um livro
             Modelo.Tutorial aTutorial;
             // Cria Lista Vazia
@@ -42,8 +45,11 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
+                    ////Retorna o nome do usuário
+                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }

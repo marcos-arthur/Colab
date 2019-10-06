@@ -47,10 +47,10 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    //Pega nome do usuário
+                    //Retorna o nome do usuário
                     nomeUsuario = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Pega nome do laboratório
+                    //Retorna o nome do laboratório
                     nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
