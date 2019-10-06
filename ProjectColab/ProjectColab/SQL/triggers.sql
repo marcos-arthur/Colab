@@ -138,3 +138,59 @@ begin
 		rollback transaction
 	end
 end
+--validar dados de usuario
+drop trigger validar_tutorial
+go
+create trigger validar_tutorial on Tutorial
+for insert, update
+as
+begin
+
+	--Declaracao de variaveis
+	declare @tutorial_titulo varchar(45)
+	declare @status int
+	declare @erro bit
+	set @erro = 0
+
+	select 
+		@tutorial_titulo = tutorial_titulo,
+		@status = status
+		
+		
+
+	from Tutorial
+
+	--Validar nome
+	if(rtrim(ltrim(@tutorial_titulo)) = '')
+	begin
+		--rollback transaction
+		raiserror('O titulo do tutorial nao deve ser vazio', 16, 1)
+		set @erro = 1 
+		--return
+	end	
+	
+	--Validar status
+	if(@status > 3 or @status < 1)
+	begin
+		--rollback transaction
+		raiserror('statuts invalido(1 - aguardando autorização, 2- nao autorizado, 3 - autorizado)', 16, 1)
+		set @erro = 1 
+		--return
+	end	
+	
+	/*--Validar arquivo
+	if(@arquivo = " ")
+	begin
+		--rollback transaction
+		raiserror('voce deve adiconar um arquivo ao novo tutorial', 16, 1)
+		select erro = 1 from Tutorial
+		--return
+	end	*/
+	--Validar erro
+	if(@erro = 1)
+	begin
+		rollback transaction
+	end
+
+
+end

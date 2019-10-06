@@ -85,6 +85,7 @@ namespace ProjectColab.DAL
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo = @arquivo Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);

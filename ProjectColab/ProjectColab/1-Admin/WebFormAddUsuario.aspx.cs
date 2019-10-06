@@ -89,11 +89,9 @@ namespace ProjectColab
             }
             finally
             {
-                Response.Redirect("~/1-Admin/WebFormCRUDUsuario.aspx");
+                Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
-
-
-
+                       
         }
         public string GerarHashMd5(string input)
         {

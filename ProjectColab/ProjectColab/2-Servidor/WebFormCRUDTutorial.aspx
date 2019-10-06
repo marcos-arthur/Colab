@@ -4,10 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle">
-                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Width="100%">
+                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Width="100%" DataKeyNames="id">
                          <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                          <Columns>
-                             <asp:BoundField DataField="id" HeaderText="ID" SortExpression="id" />
+                             <asp:BoundField DataField="id" HeaderText="ID" SortExpression="id" ReadOnly="True" />
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="Título" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />
                              <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

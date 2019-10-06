@@ -22,6 +22,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox titulo;
         
         /// <summary>
+        /// Controle MsgErrotitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrotitulo;
+        
+        /// <summary>
         /// Controle arquivo.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox arquivo;
+        
+        /// <summary>
+        /// Controle MsgErroarquivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErroarquivo;
         
         /// <summary>
         /// Controle Button2.
