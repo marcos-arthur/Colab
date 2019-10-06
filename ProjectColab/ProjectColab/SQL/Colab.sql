@@ -150,6 +150,7 @@ drop table Usuario
 --Select * from laboratorios
 --Select * from Chamado
 
+/*
  --Teste da atribuição de chamados
  SELECT count(c1.id) as count, count(c2.id) as myCount
 
@@ -191,9 +192,12 @@ insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, st
 	values(1, 3, 1, 1, 'TESTE5', 1, GETDATE())
 
 
+select * from usuario where tipo = 3 or tipo = 2
 
+select * from Chamado
 
-SELECT ts.unidade, ts.unidadeApoiada, u1.sigUnidade as sigUnidade1, u2.sigUnidade as sigUnidade2 
-	FROM T_SECRETARIAS ts 
-	INNER JOIN UNIDADES u1 on u1.unidade = ts.unidade 
-	INNER JOIN UNIDADES u2 on u2.unidade = ts.unidadeApoiada WHERE....
+*/
+SELECT count(case when usuario_atribuido_id LIKE 3 then 1 end) as myCount, 
+    count(*) as count,
+	count(case when usuario_atribuido_id LIKE '' then 1 end) as noCount
+FROM Chamado 
