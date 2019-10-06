@@ -15,7 +15,8 @@
                 <br />
                 <br />       
                 <asp:Button ID="Buuton" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Add_Click"/>
-                <asp:Button runat="server" ID="Button4" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/WebFormCRUDLabs.aspx"/>
+                <asp:Button runat="server" ID="Button4" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx"/>
+                <asp:Button runat="server" ID="Button2" Text="LABORATÓRIO" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx"/>
 
                 <br />       
                 <br />       
@@ -32,6 +33,7 @@
                 <br />
                 <asp:Button ID="Button5" runat="server" Text="ADICIONAR" CssClass="cancelbtn" OnClick="Button2_Click"  />
                 <asp:Button ID="Button6" runat="server" Text="CANCELAR" CssClass="cancelbtn" OnClick="Button1_Click"  />
+                 <asp:Button ID="Button3" runat="server" Text="EQUIPAMENTO" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDEquipamento.aspx"  />
             </div>
         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
             <ItemTemplate>

@@ -35,8 +35,8 @@ namespace ProjectColab.DAL
                 int idLab = lab.SelectID(obj.laboratorio_nome);
 
                 // Define comando de exclusão
-                SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_id, laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_id, @laboratorio_nome,@modelo,@quantidade)", conn);
-                cmd.Parameters.AddWithValue("@laboratorio_id", idLab);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_nome,@modelo,@quantidade)", conn);
+               // cmd.Parameters.AddWithValue("@laboratorio_id", idLab);
                 cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
                 cmd.Parameters.AddWithValue("@modelo", obj.modelo);
                 cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
