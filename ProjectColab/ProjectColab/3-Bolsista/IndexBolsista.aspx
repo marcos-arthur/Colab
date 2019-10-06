@@ -16,7 +16,7 @@
                   <div class="column side">
                       <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
                          <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>  
                   </div>

@@ -50,11 +50,14 @@ namespace ProjectColab.DAL
         {
             Modelo.Usuario aUsuario;
             List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * From Usuario Where login = @login";
             cmd.Parameters.AddWithValue("@login", login);
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
@@ -67,8 +70,10 @@ namespace ProjectColab.DAL
                     aListUsuario.Add(aUsuario);
                 }
             }
+
             dr.Close();
             conn.Close();
+
             return aListUsuario;
         }
 

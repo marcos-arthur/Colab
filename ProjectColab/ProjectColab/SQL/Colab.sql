@@ -196,8 +196,8 @@ select * from usuario where tipo = 3 or tipo = 2
 
 select * from Chamado
 
-
-SELECT count(case when usuario_atribuido_id LIKE 3 then 1 end) as myCount, 
-    count(*) as count
-FROM Chamado 
 */
+SELECT count(case when usuario_atribuido_id LIKE 3 then 1 end) as myCount, 
+    count(*) as count,
+	count(case when usuario_atribuido_id LIKE '' then 1 end) as noCount
+FROM Chamado 
