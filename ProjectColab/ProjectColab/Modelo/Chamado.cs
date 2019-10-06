@@ -10,8 +10,10 @@ namespace ProjectColab.Modelo
         public string id { get; set; }
         public int status { get; set; }
         public string usuario_aberto_id { get; set; }
+        public string usuario_atribuido_id { get; set; }
         public string laboratorios_id { get; set; }
-        public string nomeUsuario { get; set; }
+        public string nomeUsuarioAberto { get; set; }
+        public string nomeUsuarioAtribuido { get; set; }
         public string nomeLaboratorio { get; set; }
         public string resumo { get; set; }
         public decimal quantidadeeq { get; set; }
@@ -39,13 +41,15 @@ namespace ProjectColab.Modelo
             this.data = adata;
             this.statuschamado = astatuschamado;
         }
-        public Chamado(string aid, string usuAberto, string lab, string nomeUsu, string nomeLab, int astatus, string astatuschamado, string aresumo, decimal aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string lab, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomeLab, int astatus, string astatuschamado, string aresumo, decimal aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
             this.laboratorios_id = lab;
-            this.nomeUsuario = nomeUsu;
+            this.usuario_atribuido_id = usuAtribuido;
+            this.nomeUsuarioAberto = nomeUsuAberto;
             this.nomeLaboratorio = nomeLab;
+            this.nomeUsuarioAtribuido = nomeUsuAtribuido;
             this.status = astatus;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;

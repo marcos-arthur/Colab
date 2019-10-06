@@ -54,7 +54,7 @@ namespace ProjectColab
             string senhaMD5 = GerarHashMd5(senha.Text);
             // Instancia objeto Modelo
             Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, int.Parse(tipo.Text), foto.FileBytes);
-            
+
             /*
             // Insere usuário
             aDALUsuario.Insert(aUsuario);
@@ -63,13 +63,23 @@ namespace ProjectColab
             Response.Redirect("~/1-Admin/WebFormCRUDUsuario.aspx");
             */
 
-            // Valida Usuario
+            // Valida Usuario -- Validação não funciona, pois um login é diferente de um id e este método de select requisita um id
+
+            if (aDALUsuario.Select(login.Text) != null)
+            {
+                Session["MsgErrologin"] = "Usuário já cadastrado";
+                Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
+            }
+
+            /* Método antigo
             List<Modelo.Usuario> aListUsuario = aDALUsuario.Select(login.Text);
             if (aListUsuario.Count > 0)
             {
                 Session["MsgErrologin"] = "Usuário já cadastrado";
                 Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
+            */
+
             //validação dos outros dados
             try
             {

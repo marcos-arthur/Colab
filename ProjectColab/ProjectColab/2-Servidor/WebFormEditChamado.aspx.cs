@@ -24,5 +24,17 @@ namespace ProjectColab
             aDALComentario.Insert(aComentario);
             Response.Redirect("~\\2-Servidor\\WebFormEditChamado.aspx");
         }
+
+        protected void atribuir_Click(object sender, EventArgs e)
+        {
+            DAL.DALChamado aDALChamado = new DAL.DALChamado();
+            Modelo.Chamado aChamado = aDALChamado.Select(Session["idchamado"].ToString());
+
+            aChamado.usuario_atribuido_id = atribuidoID.SelectedValue;
+
+            aDALChamado.UpdateAtribuido(aChamado);
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
     }
 }

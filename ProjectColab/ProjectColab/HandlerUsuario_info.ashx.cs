@@ -6,13 +6,14 @@ using System.Web;
 namespace ProjectColab
 {
     /// <summary>
-    /// Descrição resumida de HandlerUsuario_info
+    /// Descrição resumida de HandlerUsuario_info1
     /// </summary>
-    public class HandlerUsuario_info : IHttpHandler
+    public class HandlerUsuario_info1 : IHttpHandler
     {
         public void ProcessRequest(HttpContext context)
         {
             string id;
+
             Modelo.Usuario aUsuario;
             DAL.DALUsuario aDALUsuario;
 
@@ -22,7 +23,8 @@ namespace ProjectColab
             aUsuario = aDALUsuario.Select(id);
 
             context.Response.ContentType = aUsuario.foto.ToString();
-            context.Response.BinaryWrite(aUsuario.foto);            
+            context.Response.BinaryWrite(aUsuario.foto);
+            
         }
 
         public bool IsReusable
