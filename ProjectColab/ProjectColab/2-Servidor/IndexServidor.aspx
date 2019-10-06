@@ -47,7 +47,11 @@
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+        <SelectParameters>
+            <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 </asp:Content>

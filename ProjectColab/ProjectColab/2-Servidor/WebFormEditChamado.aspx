@@ -77,7 +77,11 @@
                             <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-        <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+        <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+            <SelectParameters>
+                <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+            </SelectParameters>
+                    </asp:ObjectDataSource>
     </div>
 </asp:Content>
 

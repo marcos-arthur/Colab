@@ -13,15 +13,6 @@ namespace ProjectColab {
     public partial class WebFormAddLab {
         
         /// <summary>
-        /// Controle MsgErro.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErro;
-        
-        /// <summary>
         /// Controle TextBox1.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nome;
+        
+        /// <summary>
+        /// Controle MsgErro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErro;
         
         /// <summary>
         /// Controle Buuton.
@@ -58,15 +58,6 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// Controle MsgErroDropLab.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErroDropLab;
-        
-        /// <summary>
         /// Controle idnome.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList idnome;
+        
+        /// <summary>
+        /// Controle MsgErroDropLab.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErroDropLab;
         
         /// <summary>
         /// Controle ObjectDataSource2.
@@ -85,15 +85,6 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
-        /// Controle MsgErroModelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErroModelo;
-        
-        /// <summary>
         /// Controle modelo.
         /// </summary>
         /// <remarks>
@@ -103,13 +94,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox modelo;
         
         /// <summary>
-        /// Controle MsgErroQuant.
+        /// Controle MsgErroModelo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErroQuant;
+        protected global::System.Web.UI.WebControls.Label MsgErroModelo;
         
         /// <summary>
         /// Controle quant.
@@ -119,6 +110,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quant;
+        
+        /// <summary>
+        /// Controle MsgErroQuant.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErroQuant;
         
         /// <summary>
         /// Controle Button5.

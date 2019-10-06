@@ -42,8 +42,8 @@ namespace ProjectColab.DAL
             return ds;
         }
 
-
-        public DataSet SelectChamados()
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public DataSet SelectChamados(int id)
         {
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);

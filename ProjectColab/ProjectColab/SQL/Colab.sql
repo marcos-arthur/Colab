@@ -43,6 +43,7 @@ CREATE TABLE Chamado(
 	FOREIGN KEY(laboratorios_id) REFERENCES Laboratorios(id),
 	FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
 )
+
 CREATE TABLE Patrimonio(
 	id INT IDENTITY NOT NULL,
 	chamados_id INT,
@@ -132,17 +133,67 @@ drop table Usuario
 	*/
 
 /*	
-	INSERT INTO Usuario(nome,login,senha,tipo,foto)																											senhas:
-		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')				saintseya
+	INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senhas:
+		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')				--saintseya
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Luenne', 'Luennia', '7948d34b40b3a90b8f926ebcf37c1d80', 2,'https://suap.ifrn.edu.br/media/alunos/194243.RusOjks8L25T.jpg')					kpop4ever
+		values ('Luenne', 'Luennia', '7948d34b40b3a90b8f926ebcf37c1d80', 2,'https://suap.ifrn.edu.br/media/alunos/194243.RusOjks8L25T.jpg')					--kpop4ever
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, 'https://suap.ifrn.edu.br/media/alunos/193956.BIejA77cHAJJ.jpg')					EZClap
+		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, 'https://suap.ifrn.edu.br/media/alunos/193956.BIejA77cHAJJ.jpg')					--EZClap
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, 'https://suap.ifrn.edu.br/media/alunos/194384.ZwxkYFJoFdJb.jpg')	jwIsLife
+		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, 'https://suap.ifrn.edu.br/media/alunos/194384.ZwxkYFJoFdJb.jpg')	--jwIsLife
 */
 
-Select * from equipamento
+--Select * from usuario
+--Select * from laboratorios
+--Select * from Chamado
+
+ --Teste da atribuição de chamados
+ SELECT count(c1.id) as count, count(c2.id) as myCount
+
+
+ --COUNT(*) as count 
+	FROM Chamado c1 
+	inner join chamado c2 on c1.id = c1.usuario_atribuido_id
+
+select * from chamado
+SELECT * FROM Chamado where usuario_atribuido_id = 2
+
+select count(c1.id) as count, count(c2.id) as myCount
+from chamado c1 inner join chamado c2
+on c2.id = c1.id where usuario_atribuido_id = 2
+
+SELECT COUNT(*) as count FROM Chamado
+SELECT * FROM Chamado
+SELECT COUNT(*) as count FROM Chamado where usuario_atribuido_id = 1
+
+SELECT COUNT(*) as count FROM Chamado where usuario_atribuido_id = 2
+
+SELECT COUNT(*) as count FROM Chamado where usuario_atribuido_id = 3
+
+SELECT COUNT(*) as count FROM Chamado where usuario_atribuido_id = 4
+
+insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, status, resumo, quant_equipamentos_defeituosos, data)
+	values(1, 1, 1, 1, 'TESTE1', 1, GETDATE())
+
+insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, status, resumo, quant_equipamentos_defeituosos, data)
+	values(1, 1, 1, 1, 'TESTE2', 1, GETDATE())
+
+insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, status, resumo, quant_equipamentos_defeituosos, data)
+	values(1, 2, 1, 1, 'TESTE3', 1, GETDATE())
+
+insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, status, resumo, quant_equipamentos_defeituosos, data)
+	values(1, 3, 1, 1, 'TESTE4', 1, GETDATE())
+
+insert into Chamado(usuario_aberto_id, usuario_atribuido_id, laboratorios_id, status, resumo, quant_equipamentos_defeituosos, data)
+	values(1, 3, 1, 1, 'TESTE5', 1, GETDATE())
+
+
+
+
+SELECT ts.unidade, ts.unidadeApoiada, u1.sigUnidade as sigUnidade1, u2.sigUnidade as sigUnidade2 
+	FROM T_SECRETARIAS ts 
+	INNER JOIN UNIDADES u1 on u1.unidade = ts.unidade 
+	INNER JOIN UNIDADES u2 on u2.unidade = ts.unidadeApoiada WHERE....

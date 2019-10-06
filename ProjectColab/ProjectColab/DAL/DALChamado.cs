@@ -80,7 +80,7 @@ namespace ProjectColab.DAL
 
             List<Modelo.Chamado> aListChamado = new List<Modelo.Chamado>();
 
-SqlConnection conn = new SqlConnection(connectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
 
             conn.Open();
 
