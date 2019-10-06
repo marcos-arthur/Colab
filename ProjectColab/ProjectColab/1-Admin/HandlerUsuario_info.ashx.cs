@@ -13,21 +13,16 @@ namespace ProjectColab
         public void ProcessRequest(HttpContext context)
         {
             string id;
-            List<Modelo.Usuario> aListUsuario;
             Modelo.Usuario aUsuario;
             DAL.DALUsuario aDALUsuario;
 
             id = context.Request.QueryString["id"].ToString();
 
             aDALUsuario = new DAL.DALUsuario();
-            aListUsuario = aDALUsuario.Select(id);
+            aUsuario = aDALUsuario.Select(id);
 
-            if (aListUsuario.Count > 0)
-            {
-                aUsuario = aListUsuario[0];
-                context.Response.ContentType = aUsuario.foto.ToString();
-                context.Response.BinaryWrite(aUsuario.foto);
-            }
+            context.Response.ContentType = aUsuario.foto.ToString();
+            context.Response.BinaryWrite(aUsuario.foto);            
         }
 
         public bool IsReusable

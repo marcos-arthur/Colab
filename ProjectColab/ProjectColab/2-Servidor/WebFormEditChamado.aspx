@@ -5,26 +5,30 @@
 
     <div class="row">
         <div class="column middle">
-
-
-    <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
-        <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
-        <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
-        <Fields>
-            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id"></asp:BoundField>
-            <asp:BoundField DataField="status" HeaderText="status" SortExpression="status"></asp:BoundField>
-            <asp:BoundField DataField="resumo" HeaderText="resumo" SortExpression="resumo"></asp:BoundField>
-            <asp:BoundField DataField="quantidadeeq" HeaderText="quantidadeeq" SortExpression="quantidadeeq"></asp:BoundField>
-            <asp:BoundField DataField="data" HeaderText="data" SortExpression="data"></asp:BoundField>
-            <asp:BoundField DataField="statuschamado" HeaderText="statuschamado" SortExpression="statuschamado"></asp:BoundField>
-        </Fields>
-        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-    </asp:DetailsView>
-
+            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
+                <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+                <Fields>
+                    <asp:BoundField DataField="id" HeaderText="id" SortExpression="id"></asp:BoundField>
+                    <asp:BoundField DataField="status" HeaderText="status" SortExpression="status"></asp:BoundField>
+                    <asp:BoundField DataField="resumo" HeaderText="resumo" SortExpression="resumo"></asp:BoundField>
+                    <asp:BoundField DataField="quantidadeeq" HeaderText="quantidadeeq" SortExpression="quantidadeeq"></asp:BoundField>
+                    <asp:BoundField DataField="data" HeaderText="data" SortExpression="data"></asp:BoundField>
+                    <asp:BoundField DataField="statuschamado" HeaderText="statuschamado" SortExpression="statuschamado"></asp:BoundField>
+                </Fields>
+                <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            </asp:DetailsView>
+            
+            <div>
+                <p>ATRIBUIR CHAMADO</p>
+                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id" ></asp:DropDownList>
+                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
+                <asp:Button ID="atribuir" runat="server" Text="atribuir" OnClick="atribuir_Click"/>
+            </div>
     </div>
 
 
