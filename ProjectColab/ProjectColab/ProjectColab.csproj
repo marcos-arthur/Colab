@@ -71,9 +71,9 @@
     <Content Include="background2.png" />
     <Content Include="Crudstyle.css" />
     <Content Include="Imagens\Logo.png" />
-    <Content Include="IndexAdmin.aspx" />
-    <Content Include="IndexBolsista.aspx" />
-    <Content Include="IndexProfessor.aspx" />
+    <Content Include="1-Admin\IndexAdmin.aspx" />
+    <Content Include="3-Bolsista\IndexBolsista.aspx" />
+    <Content Include="4-Professor\IndexProfessor.aspx" />
     <Content Include="2-Servidor\IndexServidor.aspx" />
     <Content Include="script.js" />
     <Content Include="SQL\Colab.sql" />
@@ -96,6 +96,7 @@
     <Content Include="4-Professor\WebFormCRUDChamadoProfessor.aspx" />
     <Content Include="1-Admin\WebFormCRUDUsuario.aspx" />
     <Content Include="2-Servidor\WebFormEditChamado.aspx" />
+    <Content Include="3-Bolsista\WebFormCRUDChamadoBolsista.aspx" />
     <Content Include="WebFormLogin.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +120,6 @@
     <Compile Include="1-Admin\HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
     </Compile>
-    <Compile Include="HandlerUsuario_info.ashx.cs">
-      <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
-    </Compile>
     <Compile Include="PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,25 +127,25 @@
     <Compile Include="PageMasterServidor.Master.designer.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
     </Compile>
-    <Compile Include="IndexAdmin.aspx.cs">
+    <Compile Include="1-Admin\IndexAdmin.aspx.cs">
       <DependentUpon>IndexAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexAdmin.aspx.designer.cs">
+    <Compile Include="1-Admin\IndexAdmin.aspx.designer.cs">
       <DependentUpon>IndexAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexBolsista.aspx.cs">
+    <Compile Include="3-Bolsista\IndexBolsista.aspx.cs">
       <DependentUpon>IndexBolsista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexBolsista.aspx.designer.cs">
+    <Compile Include="3-Bolsista\IndexBolsista.aspx.designer.cs">
       <DependentUpon>IndexBolsista.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexProfessor.aspx.cs">
+    <Compile Include="4-Professor\IndexProfessor.aspx.cs">
       <DependentUpon>IndexProfessor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexProfessor.aspx.designer.cs">
+    <Compile Include="4-Professor\IndexProfessor.aspx.designer.cs">
       <DependentUpon>IndexProfessor.aspx</DependentUpon>
     </Compile>
     <Compile Include="2-Servidor\IndexServidor.aspx.cs">
@@ -262,6 +260,13 @@
     <Compile Include="2-Servidor\WebFormEditChamado.aspx.designer.cs">
       <DependentUpon>WebFormEditChamado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="3-Bolsista\WebFormCRUDChamadoBolsista.aspx.cs">
+      <DependentUpon>WebFormCRUDChamadoBolsista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormCRUDChamadoBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormCRUDChamadoBolsista.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormLogin.aspx.cs">
       <DependentUpon>WebFormLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,7 +278,6 @@
   <ItemGroup>
     <Content Include="HandlerTutorial_info.ashx" />
     <Content Include="1-Admin\HandlerUsuario_info.ashx" />
-    <Content Include="HandlerUsuario_info.ashx" />
     <None Include="packages.config" />
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
@@ -287,7 +291,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="3-Bolsista\" />
     <Folder Include="Tutoriais _pdf\" />
   </ItemGroup>
   <PropertyGroup>

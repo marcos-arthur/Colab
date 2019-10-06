@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>
             <div class="row">
@@ -34,14 +33,6 @@
                          <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>
                   </div>
-                  <div class="column middle">
-                      <div class="content">
-                         <div class="indicador"><a class="colorfix titulo">LABORATÓRIOS</a></div>
-                         <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
-                      </div>
-                  </div>
-
-
                 <button class="btnPesquisar btn fixed">+</button>
             </div>
         </ItemTemplate>

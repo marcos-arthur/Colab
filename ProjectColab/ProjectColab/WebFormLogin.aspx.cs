@@ -51,7 +51,7 @@ namespace ProjectColab
             Session["tipo"] = aUsuario.tipo;
             if (Session["tipo"].ToString() == "1")
             {
-                Response.Redirect("~\\IndexAdmin.aspx");
+                Response.Redirect("~\\1-Admin\\IndexAdmin.aspx");
             }
             else if (Session["tipo"].ToString() == "2")
             {
@@ -59,11 +59,11 @@ namespace ProjectColab
             }
             else if (Session["tipo"].ToString() == "3")
             {
-                Response.Redirect("~\\IndexBolsista.aspx");
+                Response.Redirect("~\\3-Bolsista\\IndexBolsista.aspx");
             }
             else if (Session["tipo"].ToString() == "4")
             {
-                Response.Redirect("~\\IndexProfessor.aspx");
+                Response.Redirect("~\\4-Professor\\IndexProfessor.aspx");
             }
             else
             {
