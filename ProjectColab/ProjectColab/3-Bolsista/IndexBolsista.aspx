@@ -23,7 +23,7 @@
                   <div class="column side">
                       <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
-                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
                          <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
                       </div>  
                   </div>
@@ -38,7 +38,11 @@
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+        <SelectParameters>
+            <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 
 
 </asp:Content>

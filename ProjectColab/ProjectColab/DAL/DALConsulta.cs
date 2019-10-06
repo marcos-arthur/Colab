@@ -52,7 +52,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT COUNT(*) as count FROM Chamado";
+            cmd.CommandText = "SELECT count(case when usuario_atribuido_id LIKE @id then 1 end) as myCount, count(*) as count FROM Chamado ";
+            cmd.Parameters.AddWithValue("@id", id);
 
             // Cria objeto DataAdapter para execução do comando e 
             // geração de dados para o Dataset
