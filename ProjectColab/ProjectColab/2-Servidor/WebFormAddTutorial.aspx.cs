@@ -14,6 +14,7 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             // Apresenta mensagem de erro
             if ((Session["MsgErrotitulo"] != null) && (Session["MsgErrotitulo"].ToString() != ""))
             {
@@ -30,7 +31,9 @@ namespace ProjectColab
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
 
-            aTutorial = new Modelo.Tutorial("1", titulo.Text, 3, arquivo.Text);
+            //string idTeste = Session["idusuario"].ToString();
+
+            aTutorial = new Modelo.Tutorial("1", Session["idusuario"].ToString(), titulo.Text, 3, arquivo.Text);
 
             aDALTutorial = new DAL.DALTutorial();
 

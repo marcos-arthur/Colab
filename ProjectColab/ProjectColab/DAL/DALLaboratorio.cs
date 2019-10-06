@@ -153,7 +153,37 @@ namespace ProjectColab.DAL
 
             return aListLaboratorios;
         }
-                          
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public string SelectNome(string id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Select * From Laboratorios Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            string nome = "";
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    nome = dr["nome"].ToString();
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return nome;
+        }
+
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Laboratorios obj)

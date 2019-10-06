@@ -43,7 +43,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -69,7 +69,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(tutorial_titulo, status, arquivo) VALUES(@tutorial_titulo, 1, @arquivo)", conn);           
+            SqlCommand cmd = new SqlCommand("INSERT INTO Tutorial(usuario_id, tutorial_titulo, status, arquivo) VALUES(@usuario_id, @tutorial_titulo, 1, @arquivo)", conn);
+            cmd.Parameters.AddWithValue("@usuario_id", obj.idUsuario); 
             cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
@@ -117,7 +118,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
 
                     aListTutorial.Add(aTutorial);
                 }

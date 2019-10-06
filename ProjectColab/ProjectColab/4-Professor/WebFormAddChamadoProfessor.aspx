@@ -10,6 +10,10 @@
                 <asp:TextBox ID="resumo" runat="server" CssClass="text"></asp:TextBox>             
                 
                 <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p><asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
+
+                <p>Laboratório</p>
+                <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
                 
                 <br />
                 <br />
