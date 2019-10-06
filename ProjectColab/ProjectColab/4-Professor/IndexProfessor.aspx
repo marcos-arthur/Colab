@@ -10,7 +10,7 @@
                           <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
                          <a class="title">CHAMADOS</a>
-                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~/4-Professor/WebFormCRUDChamadoProfessor.aspx" />
+                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//4-Professor/WebFormCRUDChamadoProfessor.aspx" />
                       </div>
                   </div>
                 <button class="btnPesquisar btn fixed">+</button>
@@ -18,5 +18,10 @@
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+        <SelectParameters>
+            <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>
+
