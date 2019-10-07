@@ -12,6 +12,8 @@
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="tutorial_titulo" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
                              <asp:BoundField DataField="arquivo" HeaderText="arquivo" SortExpression="arquivo" />
+                             <asp:ButtonField CommandName="Baixar" Text="Baixar" />
+
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
                          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

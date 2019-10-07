@@ -1,5 +1,5 @@
 --validar dados de laboratório
-drop trigger validar_lab
+--drop trigger validar_lab
 go
 create trigger validar_lab on Laboratorios
 for insert, update
@@ -22,7 +22,7 @@ begin
 	--Validar repetição de nome (Sem ideias de como fazer)
 end
 --validar dados de equipamento
-drop trigger validar_equipamento
+--drop trigger validar_equipamento
 go
 create trigger validar_equipamento on Equipamento
 for insert, update
@@ -76,7 +76,7 @@ begin
 	end
 end
 --validar dados de usuario
-drop trigger validar_usuario
+--drop trigger validar_usuario
 go
 create trigger validar_usuario on Usuario
 for insert, update
@@ -140,7 +140,7 @@ begin
 	end
 end
 --validar dados de usuario
-drop trigger validar_tutorial
+--drop trigger validar_tutorial
 go
 create trigger validar_tutorial on Tutorial
 for insert, update
@@ -156,9 +156,6 @@ begin
 	select 
 		@tutorial_titulo = tutorial_titulo,
 		@status = status
-		
-		
-
 	from Tutorial
 
 	--Validar nome
@@ -187,6 +184,7 @@ begin
 		select erro = 1 from Tutorial
 		--return
 	end	*/
+
 	--Validar erro
 	if(@erro = 1)
 	begin
@@ -196,7 +194,7 @@ begin
 end
 
 --validar dados de chamado
-drop trigger validar_chamado
+--drop trigger validar_chamado
 go
 create trigger validar_chamado on Chamado
 for insert, update

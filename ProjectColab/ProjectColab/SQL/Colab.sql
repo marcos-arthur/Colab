@@ -66,11 +66,14 @@ CREATE TABLE Tutorial(
 	id INT IDENTITY NOT NULL,
 	usuario_id INT,
 	tutorial_titulo VARCHAR(45) NOT NULL,
-	arquivo VARCHAR(500) NOT NULL,
+	arquivo varbinary(max) NOT NULL,
 	status INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
+
+select * from tutorial
+
 /*
 SELECT *,
 CASE WHEN status = 3 THEN 'SENDO ANALIZADO'
@@ -212,3 +215,4 @@ INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senh
 SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where usuario_atribuido_id = 2	
 
 select * from chamado*/
+
