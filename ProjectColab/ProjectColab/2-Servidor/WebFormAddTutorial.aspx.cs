@@ -57,5 +57,18 @@ namespace ProjectColab
 
             Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
         }
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
     }
 }
