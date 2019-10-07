@@ -22,20 +22,7 @@
                  <SortedDescendingCellStyle BackColor="#E9EBEF" />
                  <SortedDescendingHeaderStyle BackColor="#4870BE" />
              </asp:GridView>
-             <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento">
-                 <SelectParameters>
-                     <asp:SessionParameter Name="id" SessionField="id" Type="String" />
-                 </SelectParameters>
-             </asp:ObjectDataSource>
-             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento">
-                 <SelectParameters>
-                     <asp:SessionParameter Name="laboratorio_nome" SessionField="laboratorio_nome" Type="String" />
-                 </SelectParameters>
-             </asp:ObjectDataSource>
-             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Select" TypeName="ProjectColab.DAL.DALEquipamento">
-                 <SelectParameters>
-                     <asp:Parameter Name="id" Type="String" />
-                 </SelectParameters>
+             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALEquipamento" DataObjectTypeName="ProjectColab.Modelo.Equipamento" DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
              </asp:ObjectDataSource>
 </div>
 </asp:Content>

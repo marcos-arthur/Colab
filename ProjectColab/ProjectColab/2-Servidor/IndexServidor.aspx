@@ -40,9 +40,7 @@
                          <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" />
                       </div>
                   </div>
-
-
-                <button class="btnPesquisar btn fixed">+</button>
+                <button class="btnPesquisar btn fixed"><a href="WebFormAddChamado.aspx">+</a></button>
             </div>
         </ItemTemplate>
     </asp:Repeater>

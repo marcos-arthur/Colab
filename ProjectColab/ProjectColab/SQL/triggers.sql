@@ -192,6 +192,65 @@ begin
 	begin
 		rollback transaction
 	end
+	
+end
 
+--validar dados de chamado
+drop trigger validar_chamado
+go
+create trigger validar_chamado on Chamado
+for insert, update
+as
+begin
+    /*select eq.laboratorio_nome,eq.quantidade from Equipamento eq
+  inner join Laboratorios lab on lab.nome = eq.laboratorio_nome -- retorna o numero de maquinas cadastradas em cada lab
+  */
+    
 
+	--Declaracao de variaveis
+	declare @resumo varchar(500)
+	declare @quant_equipamentos_defeituosos int
+    declare @laboratorios_id varchar
+	declare @erro bit
+	set @erro = 0
+
+	select 
+		@resumo = resumo,
+		@quant_equipamentos_defeituosos = quant_equipamentos_defeituosos,
+		@laboratorios_id = laboratorios_id	
+		
+	from Chamado
+
+	--Validar o resumo
+	if(rtrim(ltrim(@resumo)) = '')
+	begin
+		--rollback transaction
+		raiserror('Para abrir um chamado você deve indicar o problema', 16, 1)
+		set @erro = 1
+		--return
+	end	
+	
+	--Validar laboratório 
+	if(@laboratorios_id ='')
+	begin
+		--rollback transaction
+		raiserror('Voce deve selecionar o laboratório que possui equipamentos com defeito', 16, 1)
+		set @erro = 1
+		--return
+	end	
+	
+	--Validar quantidade de maquinas com defeitos
+	if((@quant_equipamentos_defeituosos < 0) ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	begin
+		--rollback transaction
+		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
+		set @erro = 1
+		--return
+	end	
+
+	--Validar erro
+	if(@erro = 1)
+	begin
+		rollback transaction
+	end
 end

@@ -86,6 +86,39 @@ namespace ProjectColab.DAL
             return aListEquipamento;
         }
 
+        //EDITAR//
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Equipamento obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set modelo= @modelo, quantidade = @quantidade  Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
+            cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        //DELETAR
+
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(Modelo.Equipamento obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand com = conn.CreateCommand();
+
+            SqlCommand cmd = new SqlCommand("Delete From Equipamento Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+
+            cmd.ExecuteNonQuery();
+        }
+
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Equipamento> Select(string id)
         {

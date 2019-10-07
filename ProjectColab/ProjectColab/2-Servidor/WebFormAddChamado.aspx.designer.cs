@@ -40,6 +40,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox resumo;
         
         /// <summary>
+        /// Controle MsgErroresumop.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErroresumop;
+        
+        /// <summary>
         /// Controle quantidadeeq.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
+        
+        /// <summary>
+        /// Controle MsgErromaqdef.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
         
         /// <summary>
         /// Controle labDrop.
@@ -65,6 +83,15 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
+        
+        /// <summary>
+        /// Controle MsgErrolab.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrolab;
         
         /// <summary>
         /// Controle idnome.
