@@ -10,9 +10,26 @@ namespace ProjectColab
     public partial class WebFormCRUDChamadoBolsista : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
+            if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
+            else if (Session["chamadoValue"].ToString() == "noCount")
+            {
+                ObjectDataSource1.SelectMethod = "SelectNo";
+            }
+            else if (Session["chamadoValue"].ToString() == "myCount")
+            {
+                ObjectDataSource1.SelectMethod = "SelectMy";
 
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "id";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "idusuario";
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+            }
         }
+
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             //Verifica se o comando é "Editar"
@@ -29,8 +46,20 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~//3-Bolsista/WebFormAddChamadoBolsista.aspx");
             }
+        }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
 
+            Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
         }
     }
 }

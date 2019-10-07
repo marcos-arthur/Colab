@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div class="row">
         <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
             <SelectParameters>
@@ -32,9 +33,11 @@
                     </div>  
                 </ItemTemplate>
             </asp:Repeater>
-    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >
-    </asp:ObjectDataSource>
-    <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
+    
+            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >    
+            </asp:ObjectDataSource>
+    
+            <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
         </div>
 
 
@@ -42,10 +45,10 @@
             <ItemTemplate>
                 <div class="column side">
                     <div class="content2">
-                          <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
-                      </div>  
+                        <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                        <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
+                        <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
+                    </div>  
                   </div>
                   <div class="column side">
                       <div class="content2">

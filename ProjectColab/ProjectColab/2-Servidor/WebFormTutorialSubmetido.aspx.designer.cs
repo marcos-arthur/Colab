@@ -7,64 +7,37 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._3_Bolsista {
+namespace ProjectColab._2_Servidor {
     
     
-    public partial class WebFormAddTutorial {
+    public partial class WebFormTutorialSubmetido {
         
         /// <summary>
-        /// Controle titulo.
+        /// Controle GridView1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox titulo;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Controle MsgErrotitulo.
+        /// Controle ObjectDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErrotitulo;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Controle arquivos.
+        /// Controle Button1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox arquivos;
-        
-        /// <summary>
-        /// Controle arquivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload arquivo;
-        
-        /// <summary>
-        /// Controle MsgErroarquivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErroarquivo;
-        
-        /// <summary>
-        /// Controle Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Controle Button3.
@@ -76,21 +49,21 @@ namespace ProjectColab._3_Bolsista {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// Controle Repeater1.
+        /// Controle Repeater2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
         
         /// <summary>
-        /// Controle ObjectDataSource1.
+        /// Controle ObjectDataSource2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
     }
 }

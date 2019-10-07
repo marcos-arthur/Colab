@@ -16,7 +16,8 @@ namespace ProjectColab
             {
                 ObjectDataSource1.SelectMethod = "SelectNo";
             }
-            else if (Session["chamadoValue"].ToString() == "myCount") {
+            else if (Session["chamadoValue"].ToString() == "myCount")
+            {
                 ObjectDataSource1.SelectMethod = "SelectMy";
 
                 SessionParameter empid = new SessionParameter();
@@ -45,8 +46,6 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~//2-Servidor/WebFormEditChamado.aspx");
             }
-
-
         }
 
         protected void Button2_Click(object sender, EventArgs e)

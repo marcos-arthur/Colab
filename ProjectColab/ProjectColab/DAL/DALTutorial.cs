@@ -61,7 +61,48 @@ namespace ProjectColab.DAL
 
             return aListTutorial;
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Tutorial> SelectAllStatus()
+        {
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuario;
 
+            // Variavel para armazenar um livro
+            Modelo.Tutorial aTutorial;
+            // Cria Lista Vazia
+            List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Tutorial Where status = 1";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    ////Retorna o nome do usuário
+                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+
+                    // Cria objeto com dados lidos do banco de dados
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), (byte[])dr["arquivo"]);
+                    // Adiciona o livro lido à lista
+                    aListTutorial.Add(aTutorial);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListTutorial;
+        }
 
         //INSERIR//
 
