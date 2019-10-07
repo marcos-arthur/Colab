@@ -7,7 +7,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css"/>  
+<link rel="stylesheet" type="text/css" href="style.css"/> 
+<link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
 <link href="css/fontawesome.css" rel="stylesheet">
 <link href="css/brands.css" rel="stylesheet">
@@ -32,8 +33,20 @@
                 <li class="li1"><a href="IndexServidor.aspx">DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2"><a><i class="fas fa-sign-out-alt"></i></a></li>
-                <li class="li2"><a>USUÁRIO</a></li>
+                <li class="li2"><a href="..\WebFormLogin.aspx">SAIR</a></li>
+                <li class="li2">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                        <ItemTemplate>
+                            <a><%# DataBinder.Eval(Container.DataItem,"nome")%></a> 
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectImage" TypeName="ProjectColab.DAL.DALConsulta">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="idusuario" Name="id" Type="String"></asp:SessionParameter>
+
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

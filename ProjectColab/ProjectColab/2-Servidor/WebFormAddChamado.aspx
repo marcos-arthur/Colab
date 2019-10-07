@@ -5,29 +5,28 @@
 
      <div class="row">
         <div class="column middle">
+                <div class="menuadicao">
 
-                <asp:TextBox ID="status" runat="server" style="display:none" CssClass="text"></asp:TextBox>
-                <asp:TextBox ID="id" runat="server" style="display:none" CssClass="text"></asp:TextBox>
-
-                <p>RESUMO DO PROBLEMA</p>
-                <asp:TextBox ID="resumo" runat="server" CssClass="text"></asp:TextBox>  
+                <div class="tag"><a>RESUMO DO PROBLEMA</a></div>
+                <asp:TextBox ID="resumo" runat="server" CssClass="inputtext"></asp:TextBox>  
                 <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
-                
-                <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p>
-                <asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
-                <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
 
-                <p>Laboratório</p>
-                <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                <div class="tag"><a>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</a></div>
+                <asp:TextBox ID="quantidadeeq" runat="server" CssClass="inputtext"></asp:TextBox>
+                <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
+                
+                <div class="tag"><a>LABORATÓRIO</a></div>
+                <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtext" DataSourceID="ObjectDataSource2"></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
                 <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->
                 
                 <br />
                 <br />
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="btn" OnClick="add_Click1"/>
-                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="btn" OnClick="Button1_Click"/>  
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="btn adiciao" OnClick="add_Click1"/>
+                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="btn cancel" OnClick="Button1_Click"/>  
             </div>
+         </div>
 
     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>

@@ -82,6 +82,7 @@
     <Content Include="css\fontawesome.min.css" />
     <Content Include="css\regular.css" />
     <Content Include="css\regular.min.css" />
+    <Content Include="css\sign-out-alt-solid.svg" />
     <Content Include="css\solid.css" />
     <Content Include="css\solid.min.css" />
     <Content Include="css\svg-with-js.css" />
@@ -99,6 +100,7 @@
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="stylecontainer.css" />
+    <Content Include="StyleInput.css" />
     <Content Include="stylelogin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

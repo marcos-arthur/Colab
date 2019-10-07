@@ -11,6 +11,7 @@
        
 
         <div class="column middle teste">
+            <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                 <ItemTemplate>
                     <div class="content chamado">
@@ -34,7 +35,6 @@
             </asp:Repeater>
     <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >
     </asp:ObjectDataSource>
-    <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
         </div>
 
 

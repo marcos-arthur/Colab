@@ -41,6 +41,7 @@
                       </div>
                   </div>
                 <button class="btnPesquisar btn fixed"><a href="WebFormAddChamado.aspx">+</a></button>
+                </div>
             </div>
         </ItemTemplate>
     </asp:Repeater>
