@@ -49,7 +49,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()),(byte[])dr["arquivo"]);
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -103,11 +103,11 @@ namespace ProjectColab.DAL
 
         //SELECIONAR//
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial> Select(string id)
+        public Modelo.Tutorial Select(string id)
         {
-            Modelo.Tutorial aTutorial;
+            Modelo.Tutorial aTutorial = new Modelo.Tutorial();
 
-            List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
+            //List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -124,9 +124,9 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), dr["arquivo"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), (byte[]) dr["arquivo"]);
 
-                    aListTutorial.Add(aTutorial);
+                    //aListTutorial.Add(aTutorial);
                 }
             }
 
@@ -134,7 +134,7 @@ namespace ProjectColab.DAL
 
             conn.Close();
 
-            return aListTutorial;
+            return aTutorial;
         }
 
 

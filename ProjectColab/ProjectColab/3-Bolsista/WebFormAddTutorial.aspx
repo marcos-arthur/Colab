@@ -5,7 +5,12 @@
             <div class ="mid">            
                 <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"/>  
                 <asp:Label ID="MsgErrotitulo" runat="server" ForeColor="Red"></asp:Label>
-                <p>URL DO ARQUIVO</p>       <asp:TextBox ID="arquivo" runat="server" CssClass="text"/>          
+                <p>URL DO ARQUIVO</p>       
+                <!--
+                <asp:TextBox ID="arquivos" runat="server" CssClass="text"/>          
+                -->
+                <asp:FileUpload ID="arquivo" runat="server" />
+                
                 <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>
                 <br />
                 <br />
