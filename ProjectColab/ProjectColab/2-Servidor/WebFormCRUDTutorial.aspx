@@ -12,6 +12,7 @@
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="tutorial_titulo" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
                              <asp:BoundField DataField="arquivo" HeaderText="arquivo" SortExpression="arquivo" />
+                             <asp:ButtonField CommandName="Baixar" Text="Baixar" ButtonType="Button" />
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
                          <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -28,6 +29,7 @@
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update"></asp:ObjectDataSource>
                      
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />  
+                <asp:Button ID="Button3" runat="server" Text="VER TUTORIAIS SUBMETIDOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormTutorialSubmetido.aspx" />  
         </div>
                 <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>

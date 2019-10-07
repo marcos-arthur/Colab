@@ -32,11 +32,11 @@ namespace ProjectColab.DAL
                 DALLaboratorio lab = new DALLaboratorio();
 
                 //Chama método para procurar laboratório e devolver ID
-                int idLab = lab.SelectID(obj.laboratorio_nome);
+                //int idLab = lab.SelectID(obj.laboratorio_nome);
 
                 // Define comando de exclusão
-                SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_nome,@modelo,@quantidade)", conn);
-               // cmd.Parameters.AddWithValue("@laboratorio_id", idLab);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Equipamento(laboratorio_id,laboratorio_nome,modelo,quantidade) VALUES(@laboratorio_id,@laboratorio_nome,@modelo,@quantidade)", conn);
+                cmd.Parameters.AddWithValue("@laboratorio_id", obj.laboratorio_id);
                 cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
                 cmd.Parameters.AddWithValue("@modelo", obj.modelo);
                 cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
@@ -73,7 +73,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
                     // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_nome"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
                     aListEquipamento.Add(aEquipamento);
                 }
@@ -141,7 +141,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
 
                     aListEquipamento.Add(aEquipamento);
                 }

@@ -12,7 +12,7 @@
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="tutorial_titulo" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
                              <asp:BoundField DataField="arquivo" HeaderText="arquivo" SortExpression="arquivo" />
-                             <asp:ButtonField CommandName="Baixar" Text="Baixar" />
+                             <asp:ButtonField CommandName="Baixar" Text="Baixar" ButtonType="Button" />
 
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
@@ -29,22 +29,22 @@
                      
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Tutorial" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALTutorial" UpdateMethod="Update"></asp:ObjectDataSource>
                      
-                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormAddTutorial.aspx"/>  
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormAddTutorialBolsista.aspx"/>  
         </div>
                 <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
                     <ItemTemplate>
                         <div class="column side">
                             <div class="content2">
                                 <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                                <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                                <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
-                            </div>  
-                        </div>
+                                    <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
+                                    <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
+                                </div>  
+                            </div>
                         <div class="column side">
                             <div class="content2">
                                 <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
                                 <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                                <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~/WebFormCRUDChamado.aspx"/>
+                                <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button5_Click"/>
                             </div>  
                         </div>
                     </ItemTemplate>

@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab {
+namespace ProjectColab._2_Servidor {
     
     
-    public partial class WebFormCRUDTutorial {
+    public partial class WebFormTutorialSubmetido {
         
         /// <summary>
         /// Controle GridView1.
