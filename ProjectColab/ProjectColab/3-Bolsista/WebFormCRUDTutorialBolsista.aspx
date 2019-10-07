@@ -12,7 +12,7 @@
                              <asp:BoundField DataField="tutorial_titulo" HeaderText="tutorial_titulo" SortExpression="tutorial_titulo" />
                              <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" />
                              <asp:BoundField DataField="arquivo" HeaderText="arquivo" SortExpression="arquivo" />
-                             <asp:ButtonField CommandName="Baixar" Text="Baixar" />
+                             <asp:ButtonField CommandName="Baixar" Text="Baixar" ButtonType="Button" />
 
                          </Columns>
                          <EditRowStyle BackColor="#999999" />
