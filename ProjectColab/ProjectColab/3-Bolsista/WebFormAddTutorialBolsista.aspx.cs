@@ -73,5 +73,19 @@ namespace ProjectColab._3_Bolsista
             if(ok) Response.Redirect("~\\3-Bolsista\\WebFormCRUDTutorialBolsista.aspx");
             else Response.Redirect("~\\3-Bolsista\\WebFormAddTutorialBolsista.aspx"); 
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
+
+            Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
+        }
     }
 }

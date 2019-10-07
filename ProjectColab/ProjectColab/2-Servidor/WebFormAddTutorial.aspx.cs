@@ -68,7 +68,6 @@ namespace ProjectColab
 
             }
 
-
             if (ok) Response.Redirect("~\\3-Bolsista\\WebFormCRUDTutorialBolsista.aspx");
             else Response.Redirect("~\\3-Bolsista\\WebFormAddTutorialBolsista.aspx");
         }
