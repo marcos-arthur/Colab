@@ -48,13 +48,9 @@ namespace ProjectColab
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.FileUpload arquivo;
-        
-=======
-        protected global::System.Web.UI.WebControls.TextBox arquivo;
 
->>>>>>> 0597f4ee3c5d8a52a380ffc90180aa4cae99db27
+
         /// <summary>
         /// Controle MsgErroarquivo.
         /// </summary>

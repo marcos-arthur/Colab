@@ -8,12 +8,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css"/>  
-<link rel="stylesheet" type="text/css" href="stylecontainer.css"/>  
+<link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
+<link href="css/fontawesome.css" rel="stylesheet">
+<link href="css/brands.css" rel="stylesheet">
+<link href="css/solid.css" rel="stylesheet">    
+<script src="..\confirmar.js"></script>
 <!--
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
 <link rel="stylesheet" type="text/css" href="Crudstyle.css"/> -->
-<script src="script.js"></script>
+<script type="text/javascript">
+
+</script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -26,7 +32,7 @@
                 <li class="li1"><a href="IndexServidor.aspx">DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
-                <li class="li2" onclick="ConfirmaExclusao()"><asp:HyperLink ID="HyperLink1" runat="server" CssClass="textotroll" onclick="ConfirmaExclusao()"  NavigateUrl="~/WebFormLogin.aspx"  >SAIR</asp:HyperLink></li>
+                <li class="li2"><a><i class="fas fa-sign-out-alt"></i></a></li>
                 <li class="li2"><a>USUÁRIO</a></li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
