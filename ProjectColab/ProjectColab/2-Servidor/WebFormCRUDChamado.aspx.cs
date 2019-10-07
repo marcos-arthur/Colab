@@ -11,7 +11,23 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
+            else if (Session["chamadoValue"].ToString() == "noCount")
+            {
+                ObjectDataSource1.SelectMethod = "SelectNo";
+            }
+            else if (Session["chamadoValue"].ToString() == "myCount") {
+                ObjectDataSource1.SelectMethod = "SelectMy";
 
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "id";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "idusuario";
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+            }
+            
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -33,25 +49,39 @@ namespace ProjectColab
 
         }
 
-      /*  protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "ABRIR")
-            {
-                string id;
+            Session["chamadoValue"] = "noCount";
 
-                // Lê o número da linha selecionada
-                int index = Convert.ToInt32(e.CommandArgument);
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
 
-                // Copia o conteúdo da primeira célula da linha -> Código do livro
-                id = GridView1.Rows[index].Cells[0].Text;
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
 
-                // Grava código do Livro na sessão
-                Session["id"] = id;
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
 
-                // Chama a tela de edição
-                Response.Redirect("~\\WebFormEditChamado.aspx");
-            }
-        } */
+        /*  protected void GridView1_RowCommand1(object sender, GridViewCommandEventArgs e)
+          {
+              if (e.CommandName == "ABRIR")
+              {
+                  string id;
+
+                  // Lê o número da linha selecionada
+                  int index = Convert.ToInt32(e.CommandArgument);
+
+                  // Copia o conteúdo da primeira célula da linha -> Código do livro
+                  id = GridView1.Rows[index].Cells[0].Text;
+
+                  // Grava código do Livro na sessão
+                  Session["id"] = id;
+
+                  // Chama a tela de edição
+                  Response.Redirect("~\\WebFormEditChamado.aspx");
+              }
+          } */
 
     }
 }
