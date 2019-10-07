@@ -139,8 +139,8 @@ drop table Usuario
 	INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senhas:
 		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')				--saintseya
 
-	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Luenne', 'Luennia', '7948d34b40b3a90b8f926ebcf37c1d80', 2,'https://suap.ifrn.edu.br/media/alunos/194243.RusOjks8L25T.jpg')					--kpop4ever
+INSERT INTO Usuario(nome,login,senha,tipo,foto)																												--senhalue	
+		values ('Luenne', 'lue', 'd911a24c1bcbfe97ed492a0b9c48fccb', 2,'0x68747470733A2F2F737561702E6966726E2E6564752E62722F6D656469612F616C756E6F732F3139343234332E5275734F6A6B73384C3235542E6A7067')
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
 		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, 'https://suap.ifrn.edu.br/media/alunos/193956.BIejA77cHAJJ.jpg')					--EZClap
