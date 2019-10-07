@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
-    <Content Include="3-Bolsista\WebFormAddTutorial.aspx" />
+    <Content Include="3-Bolsista\WebFormAddTutorialBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx" />
     <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
     <Content Include="background2.png" />
@@ -125,12 +125,12 @@
     <Compile Include="3-Bolsista\WebFormAddChamadoBolsista.aspx.designer.cs">
       <DependentUpon>WebFormAddChamadoBolsista.aspx</DependentUpon>
     </Compile>
-    <Compile Include="3-Bolsista\WebFormAddTutorial.aspx.cs">
-      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
+    <Compile Include="3-Bolsista\WebFormAddTutorialBolsista.aspx.cs">
+      <DependentUpon>WebFormAddTutorialBolsista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="3-Bolsista\WebFormAddTutorial.aspx.designer.cs">
-      <DependentUpon>WebFormAddTutorial.aspx</DependentUpon>
+    <Compile Include="3-Bolsista\WebFormAddTutorialBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormAddTutorialBolsista.aspx</DependentUpon>
     </Compile>
     <Compile Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx.cs">
       <DependentUpon>WebFormCRUDTutorialBolsista.aspx</DependentUpon>

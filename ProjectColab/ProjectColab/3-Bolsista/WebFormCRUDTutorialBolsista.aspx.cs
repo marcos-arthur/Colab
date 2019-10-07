@@ -33,13 +33,14 @@ namespace ProjectColab._3_Bolsista
 
                 DAL.DALTutorial arquivo = new DAL.DALTutorial();                
 
-                byte[] data = arquivo.Select(id).arquivo;                
+                byte[] data = arquivo.Select(id).arquivo;
                 byte[] buffer = null;
                 using (Stream st = new MemoryStream(data))
                 {
+                    buffer = new byte[st.Length];
                     long dataLengthToRead = st.Length;
                     Response.ContentType = "application/pdf";  //Or other you need
-                    Response.AddHeader("Content-Disposition", "attachment; filename=\"" + theFileName + "\"");
+                    Response.AddHeader("Content-Disposition", "attachment; filename=\"" + theFileName + ".pdf\"");
                     while (dataLengthToRead > 0 && Response.IsClientConnected)
                     {
                         Int32 lengthRead = st.Read(buffer, 0, data.Length);
