@@ -16,12 +16,12 @@
                     <div class="content chamado">
                         <div class="row chamado">
                             <div class="margin id">
-                                <div class="gridfix id"><a class="text id">CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
-                                <div class="botaoabrir"> <asp:Button ID="Abrir"  runat="server" Text="Abrir" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> /> </div>
-                                <div class="gridfix status"><a class="text status"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a> </div>
+                                <div class="gridfix">
+                                    <a class="text id">CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%></a>
+                                    <a class="text status"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                                    <asp:Button ID="Abrir"  runat="server" Text="Abrir" CssClass="btn test" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> />
+                                </div>                            
                             </div>
-
-                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a></div>
                             <div class="margin"><a class="text">Aberto por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
                             <div class="margin"><a class="text">Laboratório: <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
                             <div class="margin"><a class="text">Atribuido a: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>

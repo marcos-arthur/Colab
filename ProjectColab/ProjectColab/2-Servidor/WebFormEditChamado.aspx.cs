@@ -31,6 +31,7 @@ namespace ProjectColab
             Modelo.Chamado aChamado = aDALChamado.Select(Session["idchamado"].ToString());
 
             aChamado.usuario_atribuido_id = atribuidoID.SelectedValue;
+            aChamado.status = 2;
 
             aDALChamado.UpdateAtribuido(aChamado);
 

@@ -146,28 +146,29 @@
     width: 100%;
     margin: 0%;
     float: left;
-    background-color: rgb(230,230,230);
     padding: 1%;
+    background-color: rgb(230,230,230);
     border-radius: 0px 5px 5px 0px;
 }
 .margin{
-    margin:1%;
 }
-
-.gridfix{
+.text{
+    font-size:0.8vw;
+}
+    .text.id {
+    }
+.text.status{
+    padding:0.5%;
+    background-color:rgb(200,200,200);
+    border-radius:5px;
+}
+.btn.test{
+    font-size:0.8vw;
+    width:10%;
+    margin:0%;
+    margin-left:50%;
 
 }
-    .gridfix.id{
-        float:left;
-        width:85%;
-        padding:1%;
-    }
-    .gridfix.status {
-        float: left;
-        background-color: rgb(190,190,190);
-        padding: 1%;
-        border-radius:5px;
-    }
 .colorfix.titulo{
     color:white;
     font-size:2vw;
