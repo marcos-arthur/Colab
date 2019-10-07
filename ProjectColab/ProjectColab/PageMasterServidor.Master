@@ -26,8 +26,8 @@
                 <li class="li1"><a href="IndexServidor.aspx">DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx">TUTORIAIS</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx">LABORATÓRIOS</a></li>
+                <li class="li2" onclick="ConfirmaExclusao()"><asp:HyperLink ID="HyperLink1" runat="server" CssClass="textotroll" onclick="ConfirmaExclusao()"  NavigateUrl="~/WebFormLogin.aspx"  >SAIR</asp:HyperLink></li>
                 <li class="li2"><a>USUÁRIO</a></li>
-                <asp:Button ID="Button1" runat="server" Text="Logout" PostBackUrl="~/WebFormLogin.aspx" />
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

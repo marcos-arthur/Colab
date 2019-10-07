@@ -40,6 +40,7 @@
 
 .li2 {
     float: right;
+    color:red;
     border-bottom-color: white;
     border-bottom-style: solid;
 }
@@ -48,6 +49,12 @@
     color: black;
     text-align: center;
     text-decoration: none;
+    cursor:pointer;
+}
+.textotroll {
+    color: red;
+    text-align: center;
+    cursor:pointer;
 }
 .li1 a {
     display: block;

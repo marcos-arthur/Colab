@@ -247,7 +247,7 @@ namespace ProjectColab.DAL
             SqlCommand cmd = new SqlCommand("Update Chamado Set usuario_atribuido_id = @usuario_atribuido_id,status = @status Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@usuario_atribuido_id", obj.usuario_atribuido_id);
-            cmd.Parameters.AddWithValue("@tipo", obj.status);
+            cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
         }
