@@ -252,7 +252,7 @@ begin
 	if(@quant_equipamentos_defeituosos > @totalmaq ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
 	begin
 		--rollback transaction
-		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
+		raiserror('Número máximo de máquinas excedido', 16, 1)
 		set @erro = 1
 		--return
 	end	

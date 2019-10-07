@@ -33,6 +33,10 @@ namespace ProjectColab
         {
             Modelo.Chamado aChamado;
             DAL.DALChamado aDALChamado;
+            decimal quantidade;
+
+            if (decimal.TryParse(quantidadeeq.Text, out decimal result)) quantidade = Convert.ToDecimal(quantidadeeq.Text);
+            else quantidade = 0;
 
             aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, 1,"" ,Convert.ToString(resumo.Text), Convert.ToDecimal(quantidadeeq.Text), DateTime.Now);
             aDALChamado = new DAL.DALChamado();
@@ -48,6 +52,8 @@ namespace ProjectColab
 
                 if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos deve ser um número maior que 0";
 
+                if (error.Message.Contains("Número máximo de máquinas excedido")) Session["MsgErromaqdef"] = "Número máximo de equipamentos excedido";
+                
                 if (error.Message.Contains("Voce deve selecionar o laboratório que possui equipamentos com defeito")) Session["MsgErrolab"] = "Voce deve selecionar o laboratório que possui equipamentos com defeito";
 
             }

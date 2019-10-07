@@ -71,7 +71,7 @@ namespace ProjectColab
             if (decimal.TryParse(quant.Text, out decimal result)) quantidade = Convert.ToDecimal(quant.Text);
             else quantidade = 0;
 
-            aEquipamento = new Modelo.Equipamento("1", idnome.Text, modelo.Text, quantidade);
+            aEquipamento = new Modelo.Equipamento( "1", idnome.SelectedItem.ToString(), idnome.SelectedValue, modelo.Text, quantidade);
 
             aDALEquipamento = new DAL.DALEquipamento();
 
