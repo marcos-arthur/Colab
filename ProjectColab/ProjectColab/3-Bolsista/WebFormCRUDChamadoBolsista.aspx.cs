@@ -10,9 +10,7 @@ namespace ProjectColab
     public partial class WebFormCRUDChamadoBolsista : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            ObjectDataSource1.SelectParameters.Clear();
-
+        {            
             if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
