@@ -13,6 +13,21 @@ namespace ProjectColab
         {
             
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
           /*  //Verifica se o comando é "Editar"

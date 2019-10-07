@@ -207,4 +207,8 @@ FROM Chamado
 /*
 INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senhas:
 		values ('Diogo', 'diosgo01', '', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')
-		*/
+		
+
+SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where usuario_atribuido_id = 2	
+
+select * from chamado*/

@@ -32,7 +32,8 @@
                     </div>  
                 </ItemTemplate>
             </asp:Repeater>
-    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
+    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >
+    </asp:ObjectDataSource>
     <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" />
         </div>
 
@@ -43,14 +44,14 @@
                     <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
                          <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx"/>
+                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
                       </div>  
                   </div>
                   <div class="column side">
                       <div class="content2">
                           <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
                          <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx"/>
+                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button5_Click"/>
                       </div>  
                 </div>
             </ItemTemplate>
