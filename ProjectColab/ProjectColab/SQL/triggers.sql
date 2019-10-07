@@ -218,6 +218,9 @@ begin
 		@laboratorios_id = laboratorios_id	
 		
 	from Chamado
+	DECLARE @totalmaq INT 
+ select @totalmaq = SUM(quantidade) from equipamento where laboratorio_id  = @laboratorios_id
+	
 
 	--Validar o resumo
 	if(rtrim(ltrim(@resumo)) = '')
@@ -238,7 +241,15 @@ begin
 	end	
 	
 	--Validar quantidade de maquinas com defeitos
-	if((@quant_equipamentos_defeituosos < 0) ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	if(@quant_equipamentos_defeituosos < 0) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	begin
+		--rollback transaction
+		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
+		set @erro = 1
+		--return
+	end	
+	--Validar quantidade de maquinas com defeitos
+	if(@quant_equipamentos_defeituosos > @totalmaq ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
 	begin
 		--rollback transaction
 		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
