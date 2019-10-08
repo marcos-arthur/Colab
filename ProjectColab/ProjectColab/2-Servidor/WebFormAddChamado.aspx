@@ -8,11 +8,11 @@
                 <div class="menuadicao">
 
                 <div class="tag"><a>RESUMO DO PROBLEMA</a></div>
-                <asp:TextBox ID="resumo" runat="server" CssClass="inputtext"></asp:TextBox>  
+                <asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="inputtext"></asp:TextBox>  
                 <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
 
                 <div class="tag"><a>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</a></div>
-                <asp:TextBox ID="quantidadeeq" runat="server" CssClass="inputtext"></asp:TextBox>
+                <asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputtext"></asp:TextBox>
                 <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
                 
                 <div class="tag"><a>LABORATÓRIO</a></div>
@@ -23,8 +23,8 @@
                 
                 <br />
                 <br />
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"   CssClass="btn adiciao" OnClick="add_Click1"/>
-                <asp:Button ID="Button1" runat="server" Text="CANCELAR"   CssClass="btn cancel" OnClick="Button1_Click"/>  
+                <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" OnClick="add_Click1"><i class="fa fa-check"></i><p>ADICIONAR</p></asp:LinkButton>
+                <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
             </div>
          </div>
 
