@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageMasterServidor.Master" AutoEventWireup="true" CodeBehind="WebFormEditChamado.aspx.cs" Inherits="ProjectColab.WebFormEditChamado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageMasterBolsista.Master" AutoEventWireup="true" CodeBehind="WebFormEditChamadoBolsista.aspx.cs" Inherits="ProjectColab._3_Bolsista.WebFormEditChamadoBolsista" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="row">
         <div class="column middle">
             <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -23,12 +22,14 @@
                 <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
             </asp:DetailsView>
             
+            <!-- ATRIBUIR CHAMADO!!
             <div>
                 <p>ATRIBUIR CHAMADO</p>
                 <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id" ></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
-                <asp:Button ID="atribuir" runat="server" Text="atribuir" OnClick="atribuir_Click"/>
+                <asp:Button ID="atribuir" runat="server" Text="atribuir" />
             </div>
+            -->
         </div>
 
 
@@ -85,4 +86,3 @@
         </div>
     </div>
 </asp:Content>
-

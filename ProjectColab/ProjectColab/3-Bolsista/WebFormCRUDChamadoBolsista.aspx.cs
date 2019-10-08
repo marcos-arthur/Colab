@@ -44,7 +44,7 @@ namespace ProjectColab
                 Session["idchamado"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//3-Bolsista/WebFormAddChamadoBolsista.aspx");
+                Response.Redirect("~//3-Bolsista/WebFormEditChamadoBolsista.aspx");
             }
         }
 

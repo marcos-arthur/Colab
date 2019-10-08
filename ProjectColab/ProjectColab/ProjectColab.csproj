@@ -71,6 +71,7 @@
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormAddTutorialBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx" />
+    <Content Include="3-Bolsista\WebFormEditChamadoBolsista.aspx" />
     <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
     <Content Include="background2.png" />
     <Content Include="confirmar.js" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx.designer.cs">
       <DependentUpon>WebFormCRUDTutorialBolsista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormEditChamadoBolsista.aspx.cs">
+      <DependentUpon>WebFormEditChamadoBolsista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormEditChamadoBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormEditChamadoBolsista.aspx</DependentUpon>
     </Compile>
     <Compile Include="4-Professor\WebFormAddChamadoProfessor.aspx.cs">
       <DependentUpon>WebFormAddChamadoProfessor.aspx</DependentUpon>
