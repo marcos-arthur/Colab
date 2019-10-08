@@ -35,6 +35,7 @@
             <div class="logo"><a href="IndexServidor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                <li class="li1"><a href="WebFormCRUDChamado.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx"><i class="fa fa-book"></i> TUTORIAIS</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx"><i class="fa fa-laptop"></i> LABORATÓRIOS</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>

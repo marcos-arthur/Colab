@@ -16,8 +16,36 @@ body {
     transition: all 0.3s linear 0.2s;
 }
     .inputtext:first-of-type:focus {
+        background-color: rgb(250,250,250);
         width: 100%;
-        border-bottom: rgba(255,0,0,0.7) solid 1px;
+        border-bottom: rgba(255,0,0,0.3) solid 1px;
+    }
+    .inputtext:focus {
+        background-color: rgb(250,250,250);
+        border-bottom: rgba(255,0,0,0.3) solid 1px;
+    }
+.inputtextDrop {
+    width: 10%;
+    border: none;
+    background-color: rgb(240,240,240);
+    border-bottom: rgb(240,240,240) solid 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    box-sizing: border-box;
+    transition: all 0.3s linear 0.2s;
+}
+
+    .inputtextDrop:first-of-type:focus {
+        background-color: rgb(250,250,250);
+        width: 40%;
+        border-bottom: rgba(255,0,0,0.3) solid 1px;
+    }
+
+    .inputtext:focus {
+        background-color: white;
+        border-bottom: rgba(255,0,0,0.3) solid 1px;
     }
 .tag {
     width:100%;
@@ -53,15 +81,50 @@ body {
     margin-bottom: 2%;
 }
 .iconchamado {
-    background-color: red;
-    border-radius: 5px 5px 0px 0px;
-    font-size:2vw;
+    background-color: rgba(255,0,0,0.35);
+    color:white;
+    border-radius: 5px;
+    /*border-left: red 2px solid;*/
+    font-size:1vw;
+    padding:5%;
 }
 .article {
+    text-align:center;
+    width:48%;
+    background-color: rgb(253,253,253);
+    border-radius: 0px 0px 5px 5px;
+    float:left;
+    margin:1%;
+}
+.bot {
     background-color: rgb(240,240,240);
-    width: 40%;
-    border-radius: 0px 0px 5px 5px;;
+    color: white;
+    border-bottom: rgba(255,0,0,0.1) solid 1px;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 1vw;
+    padding: 5%;
 }
 .text {
     text-transform: uppercase;
+    font-size: 10px;
+}
+.resu{
+    width:100%;
+    font-size:10px;    
+}
+.botaoopen {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    min-width: 25%;
+    text-decoration: none;
+    color: black;
+    border: rgba(255,0,0,0.3) 1px solid;
+    border-radius: 5px;
+    padding: 2% 10% 2% 10%;
+    font-size: 0.8vw;
+    cursor: pointer;
+}
+input:focus{
+    outline:none !important;
 }
