@@ -7,7 +7,7 @@
             <asp:Label ID="MsgErronome" runat="server" ForeColor="Red"></asp:Label>
             <p>LOGIN</p>   <asp:TextBox ID="login" runat="server" CssClass="text"></asp:TextBox>      
             <asp:Label ID="MsgErrologin" runat="server" ForeColor="Red"></asp:Label>
-            <p>SENHA</p>   <asp:TextBox ID="senha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>
+            <p>SENHA</p>   <asp:TextBox ID="senha" TextMode="Password" runat="server" CssClass="text" MaxLength="20" ></asp:TextBox>
             <asp:Label ID="MsgErrosenha" runat="server" ForeColor="Red"></asp:Label>
             <p>Confirmar senha</p>   <asp:TextBox ID="confirmaSenha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>
             <asp:Label ID="MsgErrosenhacf" runat="server" ForeColor="Red"></asp:Label>
