@@ -33,7 +33,7 @@ namespace ProjectColab._2_Servidor
 
                 Response.Redirect("~//2-Servidor/WebFormTutorialSubmetido.aspx");
             }
-                if (e.CommandName == "Autorizar")
+            if (e.CommandName == "Autorizar")
             {
                 string id;
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -50,8 +50,6 @@ namespace ProjectColab._2_Servidor
                 arquivo.Update(mtutorial);
 
                 Response.Redirect("~//2-Servidor/WebFormTutorialSubmetido.aspx");
-
-
 
             }
             if (e.CommandName == "Baixar")
