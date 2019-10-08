@@ -33,7 +33,7 @@
                          <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormCRUDTutorialBolsista.aspx"/>
                       </div>
                   </div>
-                <button class="btnPesquisar btn fixed"><a href="WebFormAddChamadoBolsista.aspx">+</a></button>
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//3-Bolsista/WebFormAddChamadoBolsista.aspx"/>
             </div>
         </ItemTemplate>
     </asp:Repeater>
