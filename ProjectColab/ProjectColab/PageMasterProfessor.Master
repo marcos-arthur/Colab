@@ -22,7 +22,7 @@
         <div>
             <div class="logo"><a href="IndexProfessor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
-                <li class="li1"><a>DASHBOARD</a></li>
+                <li class="li1"><a href="IndexProfessor.aspx">DASHBOARD</a></li>
                 <li class="li2"><a>USUÁRIO</a></li>
                 <asp:Button ID="Button1" runat="server" Text="Logout" PostBackUrl="~/WebFormLogin.aspx" />
             </ul>
