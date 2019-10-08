@@ -45,7 +45,6 @@
             </div>
         </ItemTemplate>
     </asp:Repeater>
-    <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder4" runat="server">
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
         <SelectParameters>
             <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
@@ -54,8 +53,3 @@
 
 
 </asp:Content>
-
-    <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder4" runat="server">
-
-
-        </asp:Content>
