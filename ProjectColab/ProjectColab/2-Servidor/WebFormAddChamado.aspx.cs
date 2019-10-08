@@ -100,19 +100,5 @@ namespace ProjectColab
         {
             Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Session["chamadoValue"] = "noCount";
-
-            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            Session["chamadoValue"] = "myCount";
-
-            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
-        }
     }
 }

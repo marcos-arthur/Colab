@@ -25,11 +25,13 @@
 </script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+                            <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>  
             <div class="logo"><a href="IndexServidor.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
@@ -52,7 +54,36 @@
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
+            <ItemTemplate>
+                <div class="column side">
+                    <div class="content2">
+                            <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
+                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
+                            <asp:Button runat="server" ID="Button7" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button7_Click"/>
+                        </div>  
+                    </div>
+                    <div class="column side">
+                        <div class="content2">
+                            <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
+                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
+                            <asp:Button runat="server" ID="Button8" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button8_Click"/>
+                        </div>  
+                    </div>                
+            </ItemTemplate>
+        </asp:Repeater>
+        <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
+            <SelectParameters>
+                <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
+            </SelectParameters>
+            </asp:ObjectDataSource>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>

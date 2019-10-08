@@ -35,28 +35,6 @@
                 <asp:Button ID="Button6" runat="server" Text="CANCELAR" CssClass="cancelbtn" OnClick="Button1_Click"  />
                  <asp:Button ID="Button3" runat="server" Text="EQUIPAMENTO" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDEquipamento.aspx"  />
             </div>
-        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
-            <ItemTemplate>
-                <div class="column side">
-                    <div class="content2">
-                            <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                            <asp:Button runat="server" ID="Button7" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button7_Click"/>
-                        </div>  
-                    </div>
-                    <div class="column side">
-                        <div class="content2">
-                            <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
-                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                            <asp:Button runat="server" ID="Button8" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button8_Click"/>
-                        </div>  
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-        <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
-            <SelectParameters>
-                <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
-            </SelectParameters>
-            </asp:ObjectDataSource>
-    </div>
+        
+</div>
 </asp:Content>

@@ -17,5 +17,19 @@ namespace ProjectColab
             if (Session["idusuario"].ToString() == "3") Response.Redirect("~/3-Bolsista/IndexBolsista");
             if (Session["idusuario"].ToString() == "4") Response.Redirect("~/4-Professor/IndexProfessor");
         }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
     }
 }

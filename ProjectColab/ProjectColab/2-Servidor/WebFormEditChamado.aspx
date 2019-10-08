@@ -22,6 +22,11 @@
                 <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
                 <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
             </asp:DetailsView>
+            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALChamado">
+                <SelectParameters>
+                    <asp:SessionParameter SessionField="idchamado" Name="id" Type="String"></asp:SessionParameter>
+                </SelectParameters>
+            </asp:ObjectDataSource>
             
             <div>
                 <p>ATRIBUIR CHAMADO</p>
@@ -30,34 +35,11 @@
                 <asp:Button ID="atribuir" runat="server" Text="atribuir" OnClick="atribuir_Click"/>
             </div>
         </div>
+</asp:Content>
 
-
-
-        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource3">
-            <ItemTemplate>
-                <div class="column side">
-                    <div class="content2">
-                        <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                        <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                        <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
-                    </div>  
-                </div>
-                <div class="column side">
-                    <div class="content2">
-                        <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
-                        <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                        <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button5_Click"/>
-                    </div>  
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-                
-        <div class="column middle">
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALChamado">
-                <SelectParameters>
-                    <asp:SessionParameter SessionField="idchamado" Name="id" Type="String"></asp:SessionParameter>
-                </SelectParameters>
-            </asp:ObjectDataSource>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <div class="column middle">
+            
             <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="comenttext"></asp:TextBox>
             <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
 
@@ -70,19 +52,11 @@
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-
-
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
+            
         </div>
-    </div>
 </asp:Content>
-
