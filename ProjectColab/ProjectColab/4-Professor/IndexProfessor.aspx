@@ -13,7 +13,7 @@
                          <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//4-Professor/WebFormCRUDChamadoProfessor.aspx" />
                       </div>
                   </div>
-                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//4-Professor/WebFormAddChamadoProfessor.aspx"/>                
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//4-Professor/WebFormAddChamadoProfessor.aspx"/>
             </div>
         </ItemTemplate>
     </asp:Repeater>

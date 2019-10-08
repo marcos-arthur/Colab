@@ -40,7 +40,7 @@ namespace ProjectColab
                 {
                     buffer = new byte[st.Length];
                     long dataLengthToRead = st.Length;
-                    Response.ContentType = "application/pdf";  //Or other you need
+                    Response.ContentType = "application/pdf"; 
                     Response.AddHeader("Content-Disposition", "attachment; filename=\"" + theFileName + ".pdf\"");
                     while (dataLengthToRead > 0 && Response.IsClientConnected)
                     {

@@ -7,13 +7,17 @@
                 <asp:TextBox ID="id" runat="server" style="display:none" CssClass="text"></asp:TextBox>
 
                 <p>RESUMO DO PROBLEMA</p>
-                <asp:TextBox ID="resumo" runat="server" CssClass="text"></asp:TextBox>             
+                <asp:TextBox ID="resumo" runat="server" CssClass="text"></asp:TextBox>            
+                <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
                 
-                <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p><asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
+                <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p>
+                <asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
+                <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
 
                 <p>Laboratório</p>
                 <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
                 
                 <br />
                 <br />
