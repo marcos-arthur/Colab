@@ -4,6 +4,10 @@ CREATE TABLE Laboratorios(
 	PRIMARY KEY(id)
 )
 
+--Laboratório mestre para tratamento de possíveis erros
+--insert into Laboratorios(nome)
+	--values('MESTRE')
+
 CREATE TABLE Categoria(
 	id int IDENTITY NOT NULL,
 	nome VARCHAR(60) NOT NULL,
@@ -137,16 +141,16 @@ drop table Usuario
 
 /*	
 	INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senhas:
-		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, 'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')				--saintseya
+		values ('Diogo', 'diosgo01', 'cb206c19858b4bc15820c04b5faaccb0', 1, '')				--saintseya
 
 INSERT INTO Usuario(nome,login,senha,tipo,foto)																												--senhalue	
-		values ('Luenne', 'lue', 'd911a24c1bcbfe97ed492a0b9c48fccb', 2,'https://suap.ifrn.edu.br/media/alunos/197963.BwCp51rvMkMu.jpg')
+		values ('Luenne', 'lue', 'd911a24c1bcbfe97ed492a0b9c48fccb', 2,'')
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, 'https://suap.ifrn.edu.br/media/alunos/193956.BIejA77cHAJJ.jpg')					--EZClap
+		values ('Marcos', 'Pas0c4', '9a91473e3dcdf8bae307c9f4081f9b0a', 3, '')					--EZClap
 
 	INSERT INTO Usuario(nome,login,senha,tipo,foto) 
-		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, 'https://suap.ifrn.edu.br/media/alunos/194384.ZwxkYFJoFdJb.jpg')	--jwIsLife
+		values ('Vitórias', 'Victorique', 'jwI5f1df35db605b479c2dde6a3b25529b8sLife', 4, '')	--jwIsLife
 */
 
 --Select * from usuario
@@ -214,5 +218,5 @@ INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senh
 
 SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where usuario_atribuido_id = 2	
 
-select * from chamado*/
+select * from tutorial where arquivo = 0x*/
 

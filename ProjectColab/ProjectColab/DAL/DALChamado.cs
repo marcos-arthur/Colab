@@ -58,7 +58,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(),dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()),dr["statuschamado"].ToString(),dr["resumo"].ToString(),Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(),dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()),dr["statuschamado"].ToString(),dr["resumo"].ToString(),Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -112,7 +112,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -168,7 +168,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -194,7 +194,17 @@ namespace ProjectColab.DAL
             SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(usuario_aberto_id, status, laboratorios_id, resumo,quant_equipamentos_defeituosos,data) VALUES (@usuario_aberto_id, @laboratorios_id, @status,@resumo,@quant_equipamentos_defeituosos,@data)", conn);            
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@usuario_aberto_id", int.Parse(obj.usuario_aberto_id));
-            cmd.Parameters.AddWithValue("@laboratorios_id", int.Parse(obj.laboratorios_id));
+
+            //TryCatch para conversão
+            try
+            {
+                cmd.Parameters.AddWithValue("@laboratorios_id", int.Parse(obj.laboratorios_id));
+            }
+            catch (FormatException error)
+            {
+                cmd.Parameters.AddWithValue("@laboratorios_id", 0);
+            }
+
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@resumo", obj.resumo);
             cmd.Parameters.AddWithValue("@quant_equipamentos_defeituosos", obj.quantidadeeq);
@@ -224,7 +234,7 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), Convert.ToInt32(dr["status"].ToString()), "1", dr["resumo"].ToString(), Convert.ToDecimal(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), Convert.ToInt32(dr["status"].ToString()), "1", dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                 }
             }
 

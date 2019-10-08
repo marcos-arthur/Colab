@@ -150,12 +150,14 @@ begin
 	--Declaracao de variaveis
 	declare @tutorial_titulo varchar(45)
 	declare @status int
+	declare @arquivo varbinary(max)
 	declare @erro bit
 	set @erro = 0
 
 	select 
 		@tutorial_titulo = tutorial_titulo,
-		@status = status
+		@status = status,
+		@arquivo = arquivo
 	from Tutorial
 
 	--Validar nome
@@ -176,14 +178,14 @@ begin
 		--return
 	end	
 	
-	/*--Validar arquivo
-	if(@arquivo = " ")
+	--Validar arquivo
+	if(@arquivo = 0x)
 	begin
 		--rollback transaction
 		raiserror('voce deve adiconar um arquivo ao novo tutorial', 16, 1)
-		select erro = 1 from Tutorial
+		set @erro = 1 
 		--return
-	end	*/
+	end	
 
 	--Validar erro
 	if(@erro = 1)
@@ -232,7 +234,7 @@ begin
 	end	
 	
 	--Validar laboratório 
-	if(@laboratorios_id ='')
+	if(@laboratorios_id = '') or (@laboratorios_id = 0)
 	begin
 		--rollback transaction
 		raiserror('Voce deve selecionar o laboratório que possui equipamentos com defeito', 16, 1)
@@ -241,7 +243,7 @@ begin
 	end	
 	
 	--Validar quantidade de maquinas com defeitos
-	if(@quant_equipamentos_defeituosos < 0) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	if(@quant_equipamentos_defeituosos < 1) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
 	begin
 		--rollback transaction
 		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
@@ -252,7 +254,7 @@ begin
 	if(@quant_equipamentos_defeituosos > @totalmaq ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
 	begin
 		--rollback transaction
-		raiserror('Número máximo de máquinas excedido', 16, 1)
+		raiserror('Numero maximo de maquinas excedido', 16, 1)
 		set @erro = 1
 		--return
 	end	

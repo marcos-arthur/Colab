@@ -17,12 +17,14 @@ namespace ProjectColab
             
             // Apresenta mensagem de erro
             if ((Session["MsgErrotitulo"] != null) && (Session["MsgErrotitulo"].ToString() != ""))
-            {
+            {                
                 MsgErrotitulo.Text = Session["MsgErrotitulo"].ToString();
+                Session["MsgErrotitulo"] = null;
             }
             if ((Session["MsgErroarquivo"] != null) && (Session["MsgErroarquivo"].ToString() != ""))
             {
                 MsgErroarquivo.Text = Session["MsgErroarquivo"].ToString();
+                Session["MsgErroarquivo"] = null;
             }
         }
         //Quase pronto
@@ -31,23 +33,9 @@ namespace ProjectColab
             Modelo.Tutorial aTutorial;
             DAL.DALTutorial aDALTutorial;
 
-            // loading bytes from a file is very easy in C#. The built in System.IO.File.ReadAll* methods take care of making sure every byte is read properly.
-            // note that for Linux, you will not need the c: part
-            // just swap out the example folder here with your actual full file path
+            
             byte[] bytes = arquivo.FileBytes;
-            //byte[] bytes = System.IO.File.ReadAllBytes(pdfFilePath);
-
-            // munge bytes with whatever pdf software you want, i.e. http://sourceforge.net/projects/itextsharp/
-            // bytes = MungePdfBytes(bytes); // MungePdfBytes is your custom method to change the PDF data
-            // ...
-            // make sure to cleanup after yourself
-
-            // and save back - System.IO.File.WriteAll* makes sure all bytes are written properly.
-            //System.IO.File.WriteAllBytes(pdfFilePath, bytes);
-
-
-            //string idTeste = Session["idusuario"].ToString();
-
+            
             aTutorial = new Modelo.Tutorial("1", Session["idusuario"].ToString(), titulo.Text, 3, bytes);
 
             aDALTutorial = new DAL.DALTutorial();
@@ -68,8 +56,8 @@ namespace ProjectColab
 
             }
 
-            if (ok) Response.Redirect("~\\3-Bolsista\\WebFormCRUDTutorialBolsista.aspx");
-            else Response.Redirect("~\\3-Bolsista\\WebFormAddTutorialBolsista.aspx");
+            if (ok) Response.Redirect("~\\2-Servidor\\WebFormCRUDTutorial.aspx");
+            else Response.Redirect("~\\2-Servidor\\WebFormAddTutorial.aspx");
         }
         protected void Button6_Click(object sender, EventArgs e)
         {
