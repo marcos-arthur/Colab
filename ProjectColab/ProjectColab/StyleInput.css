@@ -52,3 +52,16 @@ body {
     margin-right: 2%;
     margin-bottom: 2%;
 }
+.iconchamado {
+    background-color: red;
+    border-radius: 5px 5px 0px 0px;
+    font-size:2vw;
+}
+.article {
+    background-color: rgb(240,240,240);
+    width: 40%;
+    border-radius: 0px 0px 5px 5px;;
+}
+.text {
+    text-transform: uppercase;
+}
