@@ -17,7 +17,23 @@ namespace ProjectColab._2_Servidor
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Autorizar")
+            if (e.CommandName == "Negar")
+            {
+                string id;
+                int index = Convert.ToInt32(e.CommandArgument);
+                id = GridView1.Rows[index].Cells[0].Text;
+                Session["id"] = id;
+                DAL.DALTutorial arquivo = new DAL.DALTutorial();
+
+                Modelo.Tutorial mtutorial;
+
+                mtutorial = arquivo.Select(id);
+
+                arquivo.Delete(mtutorial);
+
+                Response.Redirect("~//2-Servidor/WebFormTutorialSubmetido.aspx");
+            }
+                if (e.CommandName == "Autorizar")
             {
                 string id;
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -81,6 +97,6 @@ namespace ProjectColab._2_Servidor
             Session["chamadoValue"] = "myCount";
 
             Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
-        }    
+        }
     }
 }
