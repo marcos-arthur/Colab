@@ -1,14 +1,29 @@
-﻿.inputtext{
-    border:none;
-    background-color:rgb(240,240,240);
-    border-radius:5px;
-    padding:2%;
-    margin-bottom:1%;
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
+.inputtext {
+    width: 50%;
+    border: none;
+    background-color: rgb(240,240,240);
+    border-bottom: rgb(240,240,240) solid 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    box-sizing: border-box;
+    transition: all 0.3s linear 0.2s;
+}
+    .inputtext:first-of-type:focus {
+        width: 100%;
+        border-bottom: rgba(255,0,0,0.7) solid 1px;
+    }
 .tag {
     width:100%;
     margin-bottom:1%;
-    background-color: rgba(255,0,0,0.35);
+    color:rgb(20,20,20);
+    background-color: rgba(255,0,0,0.2);
     border-radius: 0px 8px 8px 0px;
     border-left-style: solid;
     border-left-width: 2px;
@@ -20,4 +35,20 @@
 }
 .btn.adicao{
     width:20%;
+}
+.botaoadd {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    float: left;
+    min-width: 25%;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border: rgba(255,0,0,0.3) 1px solid;
+    border-radius: 5px;
+    padding: 2% 10% 2% 10%;
+    font-size: 0.8vw;
+    cursor: pointer;
+    margin-right: 2%;
+    margin-bottom: 2%;
 }

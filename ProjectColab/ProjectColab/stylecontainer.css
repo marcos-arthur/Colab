@@ -119,13 +119,12 @@
     font-size: 1.3vw;
     border-radius: 3px;
 }
-.btn.small{
-    padding:5%;
-    max-width:90%;
-    color:black;
-    font-size:0.7vw;
-    
-}
+    .btn.small {
+        padding: 5%;
+        max-width: 90%;
+        color: black;
+        font-size: 0.7vw;
+    }
 
 
 .btnPesquisar, .btnMaisBotoes {
@@ -152,16 +151,6 @@
     border-radius: 0px 5px 5px 0px;
 }
 .margin{
-}
-.text{
-    font-size:0.8vw;
-}
-    .text.id {
-    }
-.text.status{
-    padding:0.5%;
-    background-color:rgb(200,200,200);
-    border-radius:5px;
 }
 .btn.test{
     font-size:0.8vw;

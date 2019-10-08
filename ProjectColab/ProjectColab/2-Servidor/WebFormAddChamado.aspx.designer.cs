@@ -85,22 +85,22 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.DropDownList idnome;
         
         /// <summary>
-        /// Controle add.
+        /// Controle Button2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button add;
+        protected global::System.Web.UI.WebControls.LinkButton Button2;
         
         /// <summary>
-        /// Controle Button1.
+        /// Controle Button3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.LinkButton Button3;
         
         /// <summary>
         /// Controle Repeater2.
