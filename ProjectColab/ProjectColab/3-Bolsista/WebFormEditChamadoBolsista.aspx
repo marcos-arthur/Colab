@@ -15,6 +15,7 @@
                     <asp:BoundField DataField="quantidadeeq" HeaderText="quantidadeeq" SortExpression="quantidadeeq"></asp:BoundField>
                     <asp:BoundField DataField="data" HeaderText="data" SortExpression="data"></asp:BoundField>
                     <asp:BoundField DataField="statuschamado" HeaderText="statuschamado" SortExpression="statuschamado"></asp:BoundField>
+                    <asp:ButtonField ButtonType="Button" CommandName="Fechar" Text="Fechar Chamado" />
                 </Fields>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -61,7 +62,6 @@
             </asp:ObjectDataSource>
             <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="comenttext"></asp:TextBox>
             <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
-
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
                     <div class="column middle">
