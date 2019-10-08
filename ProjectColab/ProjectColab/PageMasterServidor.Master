@@ -39,6 +39,7 @@
                 <li class="li1"><a href="WebFormCRUDLabs.aspx"><i class="fa fa-laptop"></i> LABORATÓRIOS</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
                 <li class="li2">
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>
                     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
                         <ItemTemplate>
                             <a><i class="fa fa-user-circle"></i>  <%# DataBinder.Eval(Container.DataItem,"nome")%></a> 
