@@ -20,6 +20,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~/3-Bolsista/WebFormAddChamadoBolsista.aspx"/>
             <div class="logo"><a href="IndexBolsista.aspx" class="logos">COLAB</a></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="IndexBolsista.aspx">DASHBOARD</a></li>

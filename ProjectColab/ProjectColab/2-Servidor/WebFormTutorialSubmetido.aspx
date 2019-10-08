@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" EnableViewState="False" OnRowCommand="GridView1_RowCommand" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" EnableViewState="False" OnRowCommand="GridView1_RowCommand">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="id" SortExpression="id"></asp:BoundField>
@@ -13,7 +13,7 @@
                     <asp:BoundField DataField="status" HeaderText="status" SortExpression="status"></asp:BoundField>
                     <asp:ButtonField ButtonType="Button" CommandName="Baixar" Text="Baixar" />
                     <asp:ButtonField ButtonType="Button" CommandName="Autorizar" Text="Autorizar" />
-                    <asp:ButtonField ButtonType="Button" DataTextField="Negar" Text="Negar" CommandName="Negar" />
+                    <asp:ButtonField ButtonType="Button" Text="Negar" CommandName="Negar" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

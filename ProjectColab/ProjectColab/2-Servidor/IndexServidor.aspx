@@ -40,7 +40,7 @@
                          <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" />
                       </div>
                   </div>
-                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>
+                
                 </div>
             </div>
         </ItemTemplate>
