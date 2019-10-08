@@ -13,7 +13,7 @@
                 
                 <p>QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS</p>
                 <asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
-              <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
+                <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
 
 
                 <p>Laboratório</p>

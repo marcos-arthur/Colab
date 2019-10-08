@@ -25,7 +25,7 @@ namespace ProjectColab._3_Bolsista
                 Session["MsgErroarquivo"] = null;
             }
         }
-        //Quase pronto
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             Modelo.Tutorial aTutorial;

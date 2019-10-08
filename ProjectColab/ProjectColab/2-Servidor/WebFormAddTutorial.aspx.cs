@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
@@ -27,7 +25,7 @@ namespace ProjectColab
                 Session["MsgErroarquivo"] = null;
             }
         }
-        //Quase pronto
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             Modelo.Tutorial aTutorial;
