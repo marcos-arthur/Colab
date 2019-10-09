@@ -72,6 +72,8 @@
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormAddTutorialBolsista.aspx" />
+    <Content Include="3-Bolsista\WebFormChamadosFechadosBolsista.aspx" />
+    <Content Include="3-Bolsista\WebFormChamadosFechadosEditBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormEditChamadoBolsista.aspx" />
     <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
@@ -157,6 +159,20 @@
     </Compile>
     <Compile Include="3-Bolsista\WebFormAddTutorialBolsista.aspx.designer.cs">
       <DependentUpon>WebFormAddTutorialBolsista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormChamadosFechadosBolsista.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosBolsista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormChamadosFechadosBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosBolsista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormChamadosFechadosEditBolsista.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosEditBolsista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3-Bolsista\WebFormChamadosFechadosEditBolsista.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosEditBolsista.aspx</DependentUpon>
     </Compile>
     <Compile Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx.cs">
       <DependentUpon>WebFormCRUDTutorialBolsista.aspx</DependentUpon>

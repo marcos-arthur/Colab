@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PageMasterBolsista.Master" CodeBehind="WebFormCRUDChamadoBolsista.aspx.cs" Inherits="ProjectColab.WebFormCRUDChamadoBolsista" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PageMasterBolsista.Master" CodeBehind="WebFormChamadosFechadosBolsista.aspx.cs" Inherits="ProjectColab._3_Bolsista.WebFormChamadosFechadosBolsista" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">        
+    <div class="row">
+        
         <div class="column middle teste">
        <!-- <div class="content"> <i class="fa fa-circle-o"></i>
             <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" ><i class="fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>
         </div>-->
-        <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormChamadosFechadosBolsista.aspx"/>
 
- <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
+ <!--REPEATER PARA VISUALIZAR OS CHAMADOS FECHADOS-->
             <div class="content">
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
@@ -28,7 +28,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectOnly" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectClose" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
             </div>
         </div>  
 </asp:Content>
