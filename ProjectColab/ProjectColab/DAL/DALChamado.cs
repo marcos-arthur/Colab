@@ -40,7 +40,7 @@ namespace ProjectColab.DAL
             SqlCommand cmdLab = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'SEM ATRIBUIÇÃO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado; ";            
+            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'SEM ATRIBUIÇÃO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado";            
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -216,6 +216,12 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Chamado Select(string id)
         {
+            DALLaboratorio lab = new DALLaboratorio();
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuarioAberto;
+            string nomeUsuarioAtribuido;
+            string nomeLab;
+
             Modelo.Chamado aChamado = new Modelo.Chamado();            
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -224,7 +230,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT * FROM Chamado WHERE id = @id";
+            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'SEM ATRIBUIÇÃO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -234,7 +240,18 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), Convert.ToInt32(dr["status"].ToString()), "1", dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    //Retorna o nome do usuário
+                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+
+                    //Retorna o nome do laboratório
+                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+
+                    //Retorna o nome do usuario
+                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+
+                    // Cria objeto com dados lidos do banco de dados
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+
                 }
             }
 

@@ -5,7 +5,45 @@
 
     <div class="row">
         <div class="column middle">
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
+                    <ItemTemplate>
+                        <div class="">
+                            <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
+                            <a class="text" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                            <br />
+
+                            <a class="text">Aberto por <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
+                            <br />
+
+                            <a class="text">Atribui a <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
+                            <br />
+
+                            <a class="text"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
+                            <br />
+                            <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
+                            <br />-->
+
+                            <a class="text"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
+                            <br />
+                            <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
+                            <br />-->
+
+                            <a class="text">Quantidade de equipamentos: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>
+                            <br />
+                            
+                            <a class="text">Data de abertura: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>                            
+                            
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" TypeName="ProjectColab.DAL.DALChamado" SelectMethod="Select" >
+                    <SelectParameters>
+                        <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+
+            <!--
+                <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
                 <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
@@ -27,12 +65,19 @@
                     <asp:SessionParameter SessionField="idchamado" Name="id" Type="String"></asp:SessionParameter>
                 </SelectParameters>
             </asp:ObjectDataSource>
+                -->
+            
             
             <div>
                 <p>ATRIBUIR CHAMADO</p>
                 <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id" ></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
                 <asp:Button ID="atribuir" runat="server" Text="atribuir" OnClick="atribuir_Click"/>
+            </div>
+
+            <div>
+                <p>FECHAR CHAMADO</p>                
+                <asp:Button ID="fecharButton" runat="server" Text="Fechar" />
             </div>
         </div>
 </asp:Content>
@@ -48,6 +93,7 @@
                     <div class="column middle">
                         <a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a>
                         <a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a>
+                        <a><%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></a>
                     </div>
                     <br />
                 </ItemTemplate>

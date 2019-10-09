@@ -5,24 +5,23 @@
 
     <div class="row">
         <div class="column middle">
+                <div class="menuadicao">
 
-
-                <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"/>  
+                <div class="tag"><a>TITULO DO TUTORIAL</a></div>
+                <asp:TextBox ID="titulo" runat="server" Placeholder="DIGITE AQUI O TÍTULO DO TUTORIAL" CssClass="inputtext"></asp:TextBox>  
                 <asp:Label ID="MsgErrotitulo" runat="server" ForeColor="Red"></asp:Label>
-                <p>URL DO ARQUIVO</p>       
-                
-                <!-- <asp:TextBox ID="arquivos" runat="server" CssClass="text"/>-->
+
+                <div class="tag"><a>URL DO ARQUIVO</a></div>
                 <asp:FileUpload ID="arquivo" runat="server" />
-               
-                <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>
+                <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>                                
+                
                 <br />
                 <br />
-                <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
-                <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx"/>
-
-
-
-        </div> 
+                
+                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
+            </div>
+         </div> 
         
 </asp:Content>
 

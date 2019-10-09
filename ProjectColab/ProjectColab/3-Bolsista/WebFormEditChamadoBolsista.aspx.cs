@@ -20,6 +20,7 @@ namespace ProjectColab._3_Bolsista
         {
             Modelo.Comentario aComentario;
             DAL.DALComentario aDALComentario;
+
             aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now);
             aDALComentario = new DAL.DALComentario();
 

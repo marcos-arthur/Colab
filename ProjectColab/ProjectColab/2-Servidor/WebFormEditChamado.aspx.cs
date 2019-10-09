@@ -14,10 +14,16 @@ namespace ProjectColab
 
         }
 
-        protected void add_Click(object sender, EventArgs e)
+        protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+            protected void add_Click(object sender, EventArgs e)
         {
             Modelo.Comentario aComentario;
             DAL.DALComentario aDALComentario;
+
             aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now);
             aDALComentario = new DAL.DALComentario();
 

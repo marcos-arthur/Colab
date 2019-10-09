@@ -42,6 +42,9 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Comentario> Select(string id)
         {
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuario;
+
             Modelo.Comentario aComentario;
 
             List<Modelo.Comentario> aListcomentario  = new List<Modelo.Comentario>();
@@ -62,7 +65,10 @@ namespace ProjectColab.DAL
                 {
                     while (dr.Read())
                     {
-                        aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(),dr["chamados_id"].ToString(), Convert.ToDecimal(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
+                        //Retorna o nome do usuário
+                        nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+
+                        aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["chamados_id"].ToString(), Convert.ToDecimal(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
 
                         aListcomentario.Add(aComentario);
                     }
