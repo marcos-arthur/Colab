@@ -38,6 +38,7 @@
                 <li class="li1"><a href="WebFormCRUDChamado.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx"><i class="fa fa-book"></i> TUTORIAIS</a></li>
                 <li class="li1"><a href="WebFormCRUDLabs.aspx"><i class="fa fa-laptop"></i> LABORATÓRIOS</a></li>
+                <li class="li1"><a href="WebFormCRUDEquipamento.aspx"><i class=""></i> EQUIPAMENTOS</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
                 <li class="li2">
                 <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>

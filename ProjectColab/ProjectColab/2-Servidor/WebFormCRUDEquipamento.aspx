@@ -2,7 +2,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="mid">
+    <div class="row">        
+        <div class="column middle teste">          
+            <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
+            <div class="content">
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR EQUIPAMENTO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />
+                <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
+                    <ItemTemplate>
+                        <div class="article">
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text">Equipamento  #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
+                            <a class="text"> <%# DataBinder.Eval(Container.DataItem, "modelo")%> </a>
+                            <a class="text"> <%# DataBinder.Eval(Container.DataItem, "laboratorio_nome")%> </a>
+                            <a class="text"> <%# DataBinder.Eval(Container.DataItem, "quantidade")%> </a>
+                            <!-- EXCLUIR EQUIPAMENTO <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> ABRIR LABORATÓRIO</asp:LinkButton></div> -->
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" TypeName="ProjectColab.DAL.DALEquipamento" SelectMethod="SelectAll" >
+                </asp:ObjectDataSource>
+            </div>            
+        </div>
+
+    <!--<div class="mid">
              <asp:GridView ID="GridView2" runat="server" Height="20%" Width="90%" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" DataSourceID="ObjectDataSource1">
                  <AlternatingRowStyle BackColor="White" />
                  <Columns>
@@ -24,5 +45,6 @@
              </asp:GridView>
              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALEquipamento" DataObjectTypeName="ProjectColab.Modelo.Equipamento" DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
              </asp:ObjectDataSource>
-</div>
+</div>-->
+
 </asp:Content>

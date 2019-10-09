@@ -3,11 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row">
-        <div class="column middle teste">
-       
- <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
+    <div class="row">        
+        <div class="column middle teste">          
+            <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource2" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
@@ -19,8 +19,7 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" TypeName="ProjectColab.DAL.DALLaboratorio" SelectMethod="SelectAll" >
                 </asp:ObjectDataSource>
-            </div>
-            <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />    
+            </div>            
         </div>
         
         <!--<div class="column middle">

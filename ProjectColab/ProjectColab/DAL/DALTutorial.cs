@@ -183,6 +183,21 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
+        //EDITAR//
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void UpdateStatus(Modelo.Tutorial obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("Update Tutorial Set status = @status, arquivo = @arquivo Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+
+            cmd.ExecuteNonQuery();
+        }
+
 
         //SELECIONAR//
         [DataObjectMethod(DataObjectMethodType.Select)]

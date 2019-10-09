@@ -47,7 +47,7 @@ namespace ProjectColab._2_Servidor
 
                 mtutorial.status = 2;
 
-                arquivo.Update(mtutorial);
+                arquivo.UpdateStatus(mtutorial);
 
                 Response.Redirect("~//2-Servidor/WebFormTutorialSubmetido.aspx");
 

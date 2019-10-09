@@ -13,7 +13,7 @@
                     <asp:BoundField DataField="status" HeaderText="status" SortExpression="status"></asp:BoundField>
                     <asp:ButtonField ButtonType="Button" CommandName="Baixar" Text="Baixar" />
                     <asp:ButtonField ButtonType="Button" CommandName="Autorizar" Text="Autorizar" />
-                    <asp:ButtonField ButtonType="Button" DataTextField="Negar" Text="Negar" CommandName="Negar" />
+                    <asp:ButtonField ButtonType="Button" Text="Negar" CommandName="Negar" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
