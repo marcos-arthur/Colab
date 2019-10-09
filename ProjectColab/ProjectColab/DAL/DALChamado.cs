@@ -285,12 +285,26 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Chamado Set usuario_atribuido_id = @usuario_atribuido_id,status = @status Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Chamado Set status = @status Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@usuario_atribuido_id", obj.usuario_atribuido_id);
             cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
         }
+        /*string usuAberto, string lab, int astatus, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata)
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Tutorial obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo = @arquivo Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+
+            cmd.ExecuteNonQuery();
+        }*/
     }
 }

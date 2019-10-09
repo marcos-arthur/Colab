@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
 <link rel="stylesheet" type="text/css" href="Crudstyle.css"/> -->
 <script src="script.js"></script>
-    <title></title>
+    <title>COLAB</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

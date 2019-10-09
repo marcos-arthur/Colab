@@ -22,8 +22,6 @@
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" TypeName="ProjectColab.DAL.DALTutorial" SelectMethod="SelectAllStatus" >
                 </asp:ObjectDataSource>
             </div>
-            <asp:Button ID="Button4" runat="server" Text="VER TUTORIAIS SUBMETIDOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormTutorialSubmetido.aspx" />
-
             <!--
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" EnableViewState="False" OnRowCommand="GridView1_RowCommand" >
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -49,8 +47,6 @@
             </asp:GridView>
             <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAllStatus" TypeName="ProjectColab.DAL.DALTutorial"></asp:ObjectDataSource>
             -->
-            
-            <asp:Button ID="Button1" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />  
                 <asp:Button ID="Button3" runat="server" Text="VOLTAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" />  
         </div>
                 

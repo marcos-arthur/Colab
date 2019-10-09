@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle">
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnItemCommand="DetailsView1_ItemCommand">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
                 <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
@@ -15,26 +15,14 @@
                     <asp:BoundField DataField="quantidadeeq" HeaderText="quantidadeeq" SortExpression="quantidadeeq"></asp:BoundField>
                     <asp:BoundField DataField="data" HeaderText="data" SortExpression="data"></asp:BoundField>
                     <asp:BoundField DataField="statuschamado" HeaderText="statuschamado" SortExpression="statuschamado"></asp:BoundField>
-                    <asp:ButtonField ButtonType="Button" CommandName="Fechar" Text="Fechar Chamado" />
+                    <asp:ButtonField ButtonType="Button" CommandName="Fechar" Text="Fechar Chamado"/>
                 </Fields>
                 <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
                 <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
             </asp:DetailsView>
-            
-            <!-- ATRIBUIR CHAMADO!!
-            <div>
-                <p>ATRIBUIR CHAMADO</p>
-                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id" ></asp:DropDownList>
-                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
-                <asp:Button ID="atribuir" runat="server" Text="atribuir" />
-            </div>
-            -->
         </div>
-
-
-
         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource3">
             <ItemTemplate>
                 <div class="column side">
@@ -71,8 +59,6 @@
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-
-
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
