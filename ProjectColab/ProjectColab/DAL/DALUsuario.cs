@@ -217,11 +217,10 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Usuario Set nome = @nome, login = @login, senha = @senha, tipo = @tipo Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Usuario Set nome = @nome, login = @login, tipo = @tipo Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@login", obj.login);
-            cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@login", obj.login);          
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
             cmd.ExecuteNonQuery();
         }
