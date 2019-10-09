@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab {
+namespace ProjectColab._3_Bolsista {
     
     
-    public partial class WebFormCRUDChamadoBolsista {
+    public partial class WebFormChamadosFechadosBolsista {
         
         /// <summary>
         /// Controle Button2.
@@ -20,15 +20,6 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button2;
-        
-        /// <summary>
-        /// Controle Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Controle Repeater1.

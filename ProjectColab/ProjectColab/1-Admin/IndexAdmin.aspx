@@ -3,12 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <div class="collumn middle">
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2" ForeColor="Black" GridLines="Vertical" DataKeyNames="id" >
+               <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource2" ForeColor="Black" GridLines="Vertical" DataKeyNames="id,senha" >
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
-                            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" ReadOnly="True" />
-                            <asp:TemplateField HeaderText="logo" SortExpression="logo">
+                            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" ReadOnly="True" Visible="False" />
+                            <asp:TemplateField HeaderText="Foto" SortExpression="logo">
                                 <EditItemTemplate>
                                     <asp:FileUpload ID="FileUpload1" runat="server" />
                                 </EditItemTemplate>
@@ -16,9 +15,9 @@
                                     <asp:Image ID="Image1" runat="server" width="50px" ImageUrl='<%# "HandlerUsuario_info.ashx?id=" + Eval("id") %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome" />
-                            <asp:BoundField DataField="login" HeaderText="login" SortExpression="login" />
-                            <asp:BoundField DataField="tipo" HeaderText="tipo" SortExpression="tipo" />
+                            <asp:BoundField DataField="nome" HeaderText="Nome" SortExpression="nome" />
+                            <asp:BoundField DataField="login" HeaderText="Login" SortExpression="login" />
+                            <asp:BoundField DataField="tipo" HeaderText="Tipo" SortExpression="tipo" />
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
                                     <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Atualizar"></asp:LinkButton>
@@ -29,6 +28,7 @@
                                     &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Excluir" ForeColor="Black"></asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:BoundField DataField="senha" HeaderText="senha" Visible="False" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -41,8 +41,7 @@
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Usuario" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALUsuario" UpdateMethod="Update"></asp:ObjectDataSource>
                 <asp:Button ID="Button1" runat="server" Text="ADICIONAR USUÁRIO" CssClass="cancelbtn" PostBackUrl="~/1-Admin/WebFormAddUsuario.aspx" />    
-            </div>  
-        </div>
+            </div>      
        
 
 </asp:Content>

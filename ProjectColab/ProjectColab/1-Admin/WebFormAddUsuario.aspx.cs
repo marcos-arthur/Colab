@@ -91,13 +91,13 @@ namespace ProjectColab
             {
                 ok = false;
 
-                if (error.Message.Contains("O nome do usuario nao deve ser vazio")) Session["MsgErronome"] = "O nome do usuario nao deve ser vazio";
+                if (error.Message.Contains("O nome do usuario nao deve ser vazio")) Session["MsgErronome"] = "Por favor, inserir nome do usuário";
 
-                if (error.Message.Contains("O login do usuario nao pode ser vazio")) Session["MsgErrologin"] = "O login do usuario nao pode ser vazio";
+                if (error.Message.Contains("O login do usuario nao pode ser vazio")) Session["MsgErrologin"] = "Por favor, inserir um login";
 
-                if (error.Message.Contains("A senha deve ter menos que 20 caracteres e nao pode ser vazia")) Session["MsgErrosenha"] = "A senha deve ter menos que 20 caracteres e nao pode ser vazia";
+                if (error.Message.Contains("A senha deve ter menos que 20 caracteres e nao pode ser vazia")) Session["MsgErrosenha"] = "Por favor, inserir senha válida";
 
-                if (error.Message.Contains("tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor")) Session["MsgErrotipo"] = "tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor";
+                if (error.Message.Contains("tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor")) Session["MsgErrotipo"] = "Tipo inválido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor)";
 
             }
              

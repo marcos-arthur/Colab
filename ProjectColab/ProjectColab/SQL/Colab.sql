@@ -218,5 +218,10 @@ INSERT INTO Usuario(nome,login,senha,tipo,foto)																											--senh
 
 SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where usuario_atribuido_id = 2	
 
-select * from tutorial where arquivo = 0x*/
+select * from tutorial where arquivo = 0x
 
+select * from usuario
+
+
+SELECT	count(case when (usuario_atribuido_id LIKE @id) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as myCount, count(case when status like 1 or status like 2 or status like 4 then 1 end) as count, count(case when usuario_atribuido_id IS NULL then 1 end) as noCount FROM Chamado
+*/
