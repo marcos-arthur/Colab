@@ -28,50 +28,69 @@ namespace ProjectColab
             Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
         }
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-          /*  //Verifica se o comando é "Editar"
-            if (e.CommandName == "EDITAR")
+            //Verifica se o comando é "Editar"
+            if (e.CommandName.ToString() == "ABRIR")
             {
-                string id;
+                //string id;
 
                 // Lê o número da linha selecionada
-                int index = Convert.ToInt32(e.CommandArgument);
-
-                // Copia o conteúdo da primeira célula da linha -> Código do livro
-                id = GridView1.Rows[index].Cells[0].Text;
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
 
                 // Grava código do Livro na sessão
-                Session["id"] = id;
+                Session["idlab"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~\\WebFormEditLab.aspx");
+                Response.Redirect("~//2-Servidor/WebFormEditLab.aspx");
             }
-            /*
-            else if (e.CommandName == "EXCLUIR")
-            {
-                string id;
-                Modelo.Laboratorios aLaboratorios;
-                DAL.DALLaboratorio aDALLaboratorio;
+        }
 
-                int index = Convert.ToInt32(e.CommandArgument);
 
-                // Copia o conteúdo da primeira célula da linha -> Código do livro
-                id = GridView1.Rows[index].Cells[0].Text;
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            /*  //Verifica se o comando é "Editar"
+              if (e.CommandName == "EDITAR")
+              {
+                  string id;
 
-                // Instancia um objeto do livro vazio
-                aLaboratorios = new Modelo.Laboratorios();
-                aLaboratorios.id = id; //atribui apenas o ID
+                  // Lê o número da linha selecionada
+                  int index = Convert.ToInt32(e.CommandArgument);
 
-                // Instancia objeto da camada de negócio
-                aDALLaboratorio = new DAL.DALLaboratorio();
+                  // Copia o conteúdo da primeira célula da linha -> Código do livro
+                  id = GridView1.Rows[index].Cells[0].Text;
 
-                // Chama método de delete passando o objeto apenas com o ID preenchido
-                aDALLaboratorio.Delete(aLaboratorios);
+                  // Grava código do Livro na sessão
+                  Session["id"] = id;
 
-                Response.Redirect("~\\WebFormCRUDLabs.aspx");
-            }*/
-            /*else if (e.CommandName == "ABRIR")
+                  // Chama a tela de edição
+                  Response.Redirect("~\\WebFormEditLab.aspx");
+              }
+              /*
+              else if (e.CommandName == "EXCLUIR")
+              {
+                  string id;
+                  Modelo.Laboratorios aLaboratorios;
+                  DAL.DALLaboratorio aDALLaboratorio;
+
+                  int index = Convert.ToInt32(e.CommandArgument);
+
+                  // Copia o conteúdo da primeira célula da linha -> Código do livro
+                  id = GridView1.Rows[index].Cells[0].Text;
+
+                  // Instancia um objeto do livro vazio
+                  aLaboratorios = new Modelo.Laboratorios();
+                  aLaboratorios.id = id; //atribui apenas o ID
+
+                  // Instancia objeto da camada de negócio
+                  aDALLaboratorio = new DAL.DALLaboratorio();
+
+                  // Chama método de delete passando o objeto apenas com o ID preenchido
+                  aDALLaboratorio.Delete(aLaboratorios);
+
+                  Response.Redirect("~\\WebFormCRUDLabs.aspx");
+              }*/
+            /*if (e.CommandName == "ABRIR")
             {
                 string id;
                 int index = Convert.ToInt32(e.CommandArgument);

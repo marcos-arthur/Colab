@@ -35,6 +35,9 @@
                 <asp:Button ID="Button6" runat="server" Text="CANCELAR" CssClass="cancelbtn" OnClick="Button1_Click"  />
                  <asp:Button ID="Button3" runat="server" Text="EQUIPAMENTO" CssClass="cancelbtn" PostBackUrl="~//2-Servidor/WebFormCRUDEquipamento.aspx"  />
             </div>
-        
-</div>
+      
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 </asp:Content>

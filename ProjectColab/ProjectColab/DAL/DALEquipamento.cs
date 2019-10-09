@@ -118,6 +118,40 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Equipamento> SelectFromLab(string idLab)
+        {
+            Modelo.Equipamento aEquipamento;
+
+            List<Modelo.Equipamento> aListEquipamento = new List<Modelo.Equipamento>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Select * From Equipamento Where laboratorio_id = @id";
+            cmd.Parameters.AddWithValue("@id", idLab);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+
+                    aListEquipamento.Add(aEquipamento);
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aListEquipamento;
+        }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Equipamento> Select(string id)
