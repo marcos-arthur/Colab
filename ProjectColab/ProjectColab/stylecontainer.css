@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 .row {
-    width:55%;
+    width:70%;
     margin:auto;
     padding:1%;
 }
@@ -64,9 +64,11 @@
 }
 .content {
     border-radius: 3px;
-    text-align: center;
     margin: 1%;
 }
+    .content.top {
+        margin-left:3%;
+    }
     .content.chamado{
         background-color:rgb(230,230,230);
         text-align:unset;
