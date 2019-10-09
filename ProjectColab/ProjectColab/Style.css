@@ -10,16 +10,10 @@ body {
 .logo {
     text-align: center;
     max-width: 100%;
-    padding: 2%;
 }
 
-    .logo a {
-        font-size: 3vw;
-        text-decoration: none;
-        color: black;
-        border-bottom-style: dotted;
-        border-bottom-color: red;
-        border-bottom-width: medium;
+    .logo img {
+        max-width:8%;
     }
 .menu2 {
     font-size:0.9vw;
@@ -28,6 +22,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     max-width:60%;
     margin:auto;
+    border-radius:2px;
     background-color:white;
 }
 
