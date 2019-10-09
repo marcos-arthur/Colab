@@ -6,7 +6,7 @@
         <div class="column middle teste">          
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">
-                <asp:Button ID="Button2" runat="server" Text="ADICIONAR EQUIPAMENTO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR EQUIPAMENTO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">

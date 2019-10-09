@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2-Servidor\WebFormAddEquipamento.aspx" />
     <Content Include="2-Servidor\WebFormEditLab.aspx" />
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
@@ -122,6 +123,13 @@
     <Content Include="WebFormLogin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2-Servidor\WebFormAddEquipamento.aspx.cs">
+      <DependentUpon>WebFormAddEquipamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormAddEquipamento.aspx.designer.cs">
+      <DependentUpon>WebFormAddEquipamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="2-Servidor\WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
