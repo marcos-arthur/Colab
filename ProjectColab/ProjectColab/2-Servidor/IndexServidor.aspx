@@ -6,11 +6,16 @@
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>            
                   <div class="column middle" >
-                      <div class="content">
                           <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
+                      <div class="article">
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TODOS OS CHAMADOS</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
-                         <a class="title">CHAMADOS</a>
-                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" />
+                         <div class="bot"><asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" /></div> 
+                      </div>
+                      <div class="article">
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TODOS OS CHAMADOS</a></div>
+                         <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
+                         <div class="bot"><asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDChamado.aspx" /></div> 
                       </div>
                   </div>                                             
         </ItemTemplate>

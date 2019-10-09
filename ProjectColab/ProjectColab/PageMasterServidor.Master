@@ -32,7 +32,6 @@
     <form id="form1" runat="server">
         <div>
             
-                            <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>  
             <div class="logo"><img src="..\logo.png"/></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
@@ -88,6 +87,7 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
         </asp:ContentPlaceHolder>
+                            <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>  
     </form>
 </body>
 </html>

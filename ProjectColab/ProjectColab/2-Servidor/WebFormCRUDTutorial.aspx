@@ -3,7 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <div class="column middle teste">          
+        <div class="column middle teste">     
+            <div class="indicador"><a class="colorfix titulo"><i class="fa fa-bell"></i>TUTORIAIS</a></div>              
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />
             <div class="content">

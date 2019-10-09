@@ -15,6 +15,14 @@ body {
     .logo img {
         max-width:8%;
     }
+    .logo a {
+        font-size: 3vw;
+        text-decoration: none;
+        color: black;
+        border-bottom-style: dotted;
+        border-bottom-color: red;
+        border-bottom-width: medium;
+    }
 .menu2 {
     font-size:0.9vw;
     list-style-type: none;
