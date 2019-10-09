@@ -28,7 +28,8 @@ namespace ProjectColab
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
             }
-            
+
+            Session["chamadoValue"] = "";
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
