@@ -12,21 +12,39 @@ namespace ProjectColab._2_Servidor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            string a = Session["nomelab"].ToString();
-            string b = Session["idlab"].ToString();
-            if (Session["idlab"] != null && Session["nomelab"] != null) {
-                idnome.DataTextField = Session["idlab"].ToString();
-                idnome.DataValueField = Session["idlab"].ToString();
-
-                idnome.
-
+            
+            // string a = Session["nomelab"].ToString();
+           /* string b = Session["idlab"].ToString();
+         if (Session["idlab"] != null && Session["nomelab"] != null) {
+                idnome.Items.Clear();
+                ListItem li = new ListItem();
+                li.Value = b;
+                idnome.Items.Add(new ListItem());
+                idnome.DataBind();
                 idnome.Enabled = false;
-
                 Session["idlab"] = null;
                 Session["nomelab"] = null;
-            }*/
-
+        
+            if (Session["idlab"] != null)
+            {
+                idnome.Items.Clear();
+                ListItem li = new ListItem();
+                li.Value = b;
+                idnome.Items.Add(new ListItem());
+                idnome.DataBind();
+                idnome.Enabled = false;
+                //Session["idlab"] = null;
+                //Session["nomelab"] = null;
+            }
+            /* idnome;
+             foreach(ListItem lc in idnome.Items)
+             {
+                 if (lc.Value == Session["idlab"].ToString())
+                 {
+                     idnome.SelectedIndex = lc.;
+                     idnome.Enabled = false;
+                 }
+             }*/
             if ((Session["MsgErroDropLab"] != null) && (Session["MsgErroDropLab"].ToString() != ""))
             {
                 MsgErroDropLab.Text = Session["MsgErroDropLab"].ToString();

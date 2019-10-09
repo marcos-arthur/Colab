@@ -17,8 +17,7 @@ namespace ProjectColab._2_Servidor
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            //Session["nomelab"] = DetailsView1.Rows[1].Cells[1].Text;
-
+            //Session["nomelab"] = .Rows[1].Cells[1].Text;
             Response.Redirect("~//2-Servidor/WebFormAddEquipamento.aspx");
         }
 

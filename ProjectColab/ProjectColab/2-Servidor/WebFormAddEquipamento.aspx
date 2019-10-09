@@ -7,7 +7,8 @@
                 <div class="menuadicao">
 
                     <div class="tag"><a>LABORATÓRIO</a></div>
-                    <asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nome" DataValueField="id"></asp:DropDownList>
+                    <asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nome" DataValueField="id">
+                    </asp:DropDownList>
                     <asp:Label ID="MsgErroDropLab" runat="server" ForeColor="Red"></asp:Label>
                     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
 

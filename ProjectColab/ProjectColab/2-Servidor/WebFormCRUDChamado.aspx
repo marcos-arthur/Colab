@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    <div class="row" >
         <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
             <SelectParameters>
                 <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
@@ -20,15 +20,14 @@
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
-                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
-                            <a class="text"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>                      
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>
+                            <div class="resu"><a class="text">RESUMO DO CHAMADO:</a><a class="text"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>                   
                             <a class="text">Aberto por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
                             <a class="text">Laboratório: <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
                             <a class="text">Atribuido a: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
-                            <div class="resu"><a class="text"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
                             <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>
                             <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>
-                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> ABRIR CHAMADO</asp:LinkButton></div> 
+                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> VISUALIZAR CHAMADO</asp:LinkButton></div> 
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

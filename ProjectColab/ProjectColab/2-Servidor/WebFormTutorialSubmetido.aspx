@@ -13,9 +13,11 @@
                             <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a></div>                            
                             <a class="text">Enviado por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%> </a>
                             
-                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Autorizar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> AUTORIZAR TUTORIAL</asp:LinkButton></div> 
-                            <div class="bot"><asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Negar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> NEGAR TUTORIAL</asp:LinkButton></div> 
-                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton></div> 
+                            <div class="bot">
+                                    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Autorizar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> AUTORIZAR TUTORIAL</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Negar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> NEGAR TUTORIAL</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>' ><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton>
+                            </div> 
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
