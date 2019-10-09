@@ -17,7 +17,24 @@ namespace ProjectColab._3_Bolsista
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            if (e.CommandName == "Fechar")
+            {
+                string id;
+                int index = Convert.ToInt32(e.CommandArgument);
+                id = e.CommandArgument.ToString();
+                Session["id"] = id;
+                DAL.DALChamado arquivo = new DAL.DALChamado();
 
+                Modelo.Chamado mchamado;
+
+                mchamado = arquivo.Select(id);
+
+                mchamado.status = 3;
+
+                arquivo.Update(mchamado);
+
+                Response.Redirect("~//3-Bolsista/WebFormEditChamadoBolsista.aspx");
+            }
         }
 
         protected void add_Click(object sender, EventArgs e)
