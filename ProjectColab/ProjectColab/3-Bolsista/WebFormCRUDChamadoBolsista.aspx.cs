@@ -10,7 +10,7 @@ namespace ProjectColab
     public partial class WebFormCRUDChamadoBolsista : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
             if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
@@ -28,6 +28,8 @@ namespace ProjectColab
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
             }
+
+            Session["chamadoValue"] = "";
         }
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)

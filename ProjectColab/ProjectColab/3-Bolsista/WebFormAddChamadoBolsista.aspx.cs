@@ -12,6 +12,7 @@ namespace ProjectColab._3_Bolsista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             // Apresenta mensagem de erro
             if ((Session["MsgErroresumop"] != null) && (Session["MsgErroresumop"].ToString() != ""))
             {

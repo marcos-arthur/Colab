@@ -4,49 +4,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             
     <div class="row">            
-        <div div class="column middle">
-            <p>TITULO DO TUTORIAL</p>   <asp:TextBox ID="titulo" runat="server" CssClass="text"/>  
+        <div class="column middle">
+           <div class="menuadicao">
+                <div class="tag"><a>TITULO DO TUTORIAL</a></div>
+                <asp:TextBox ID="titulo" runat="server" Placeholder="DIGITE AQUI O TÍTULO DO TUTORIAL" CssClass="inputtext"></asp:TextBox>  
                 <asp:Label ID="MsgErrotitulo" runat="server" ForeColor="Red"></asp:Label>
-                <p>URL DO ARQUIVO</p>       
-                <!--
-                <asp:TextBox ID="arquivos" runat="server" CssClass="text"/>          
-                -->
+
+                <div class="tag"><a>URL DO ARQUIVO</a></div>
                 <asp:FileUpload ID="arquivo" runat="server" />
+                <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>                                
                 
-                <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>
                 <br />
                 <br />
-                <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
-                <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/3-Bolsista/WebFormCRUDTutorialBolsista.aspx"/>
+                
+                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
+            </div>
         </div>
-            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-                <ItemTemplate>
 
-                    <div class="column side">
-                        <div class="content2">
-                            <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                            <asp:Button runat="server" ID="Button6" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button6_Click"/>
-                        </div>  
-                    </div>
-
-                    <div class="column side">
-                        <div class="content2">
-                            <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
-                            <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                            <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button5_Click"/>
-                        </div>  
-                    </div>
-
-                </ItemTemplate>
-                
-            </asp:Repeater>
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
-                <SelectParameters>
-                    <asp:Parameter Name="id" Type="Int32"></asp:Parameter>
-                </SelectParameters>
-            </asp:ObjectDataSource> 
-
-
-    </div>
 </asp:Content>

@@ -45,9 +45,10 @@ namespace ProjectColab
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
             // Salva usuário na sessão
-            Session["msgErro"] = "";
+            Session["msgErro"] = "";            
             Session["idusuario"] = aUsuario.id;
             Session["usuario"] = aUsuario.login;
+
             Session["tipo"] = aUsuario.tipo;
             if (Session["tipo"].ToString() == "1")
             {
