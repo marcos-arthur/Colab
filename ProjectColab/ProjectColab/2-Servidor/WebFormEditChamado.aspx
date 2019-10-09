@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="column middle">
-            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3">
                     <ItemTemplate>
                         <div class="">
                             <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            

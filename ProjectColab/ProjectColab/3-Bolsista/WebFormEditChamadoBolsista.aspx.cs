@@ -14,28 +14,12 @@ namespace ProjectColab._3_Bolsista
         {
 
         }
-        protected void DetailsView1_ItemCommand(object sender, DetailsViewCommandEventArgs e)
+
+        protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "Fechar")
-            {
-                string id;
-                int index = Convert.ToInt32(e.CommandArgument);
-                id = DetailsView1.Rows[index].Cells[1].Text;
-                Session["id"] = id;
-                DAL.DALChamado arquivo = new DAL.DALChamado();
 
-                Modelo.Chamado mtutorial;
-
-                mtutorial = arquivo.Select(id);
-
-                mtutorial.status = 3;
-
-                arquivo.Update(mtutorial);
-
-                Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
-
-            }
         }
+
         protected void add_Click(object sender, EventArgs e)
         {
             Modelo.Comentario aComentario;
@@ -60,6 +44,7 @@ namespace ProjectColab._3_Bolsista
             Session["chamadoValue"] = "myCount";
 
             Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
-        }        
+        }
+        
     }
 }

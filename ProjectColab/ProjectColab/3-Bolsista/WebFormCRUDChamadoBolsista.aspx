@@ -3,54 +3,34 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
-            <SelectParameters>
-                <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
-            </SelectParameters>
-        </asp:ObjectDataSource>
+        
         <div class="column middle teste">
-            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
-                <ItemTemplate>
-                    <div class="content chamado">
-                        <div class="row chamado">
-                            <div class="margin id">
-                                <div class="gridfix id"><a class="text id">CHAMADO: #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
-                                <!--<div class="botaoabrir"> <asp:Button ID="Abrir"  runat="server" Text="Abrir" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> /> </div>-->
-                                <div class="gridfix status"><a class="text status"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a> </div>
-                                <asp:Button ID="Button1"  runat="server" Text="Abrir" CssClass="btn test" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> />
-                            </div>
+       <!-- <div class="content"> <i class="fa fa-circle-o"></i>
+            <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" ><i class="fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>
+        </div>-->
 
-                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a></div>
-                            <div class="margin"><a class="text">Aberto por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
-                            <div class="margin"><a class="text">Laboratório: <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
-                            <div class="margin"><a class="text">Atribuido a: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
-                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
-                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
-                            <div class="margin"><a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
+ <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
+            <div class="content">
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
+                    <ItemTemplate>
+                        <div class="article">
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
+                            <a class="text"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>                      
+                            <a class="text">Aberto por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
+                            <a class="text">Laboratório: <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
+                            <a class="text">Atribuido a: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
+                            <div class="resu"><a class="text"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
+                            <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>
+                            <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>
+                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> ABRIR CHAMADO</asp:LinkButton></div> 
                         </div>
-                    </div>  
-                </ItemTemplate>
-            </asp:Repeater>
-    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
-    <asp:Button ID="Button5" runat="server" Text="ABRIR CHAMADO" CssClass="btn" PostBackUrl="~//3-Bolsista/WebFormAddChamadoBolsista.aspx"/>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >
+                </asp:ObjectDataSource>
+            </div>
         </div>
-        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
-            <ItemTemplate>
-                <div class="column side">
-                    <div class="content2">
-                          <div class="indicador"><a class="sub-title">CHAMADOS SEM ATRIBUIÇÃO</a></div>
-                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "noCount")%></a>
-                         <asp:Button runat="server" ID="Button2" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button2_Click"/>
-                      </div>  
-                  </div>
-                  <div class="column side">
-                      <div class="content2">
-                          <div class="indicador"><a class="sub-title">CHAMADOS ATRIBUIDOS A MIM</a></div>
-                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "myCount")%></a>
-                         <asp:Button runat="server" ID="Button5" Text="VISUALIZAR CHAMADOS" CssClass="btn small" OnClick="Button5_Click"/>
-                      </div>   
-                </div>  
-            </ItemTemplate>
-        </asp:Repeater>     
-    </div>
+
+            
+
 </asp:Content>
