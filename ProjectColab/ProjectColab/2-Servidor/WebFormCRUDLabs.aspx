@@ -4,7 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="row">        
-        <div class="column middle teste">          
+        <div class="column middle teste">  
+            <div class="indicador"><a class="colorfix titulo"><i class="fa fa-bell"></i>LABORATÓRIOS</a></div>              
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">
                 <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />

@@ -11,6 +11,8 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+                
             if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
