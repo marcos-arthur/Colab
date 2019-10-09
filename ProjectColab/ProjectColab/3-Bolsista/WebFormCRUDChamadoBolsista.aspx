@@ -30,8 +30,5 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectOnly" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
             </div>
-        </div>
-
-            
-
+        </div>  
 </asp:Content>

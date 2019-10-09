@@ -33,7 +33,7 @@ namespace ProjectColab._3_Bolsista
 
                 arquivo.Update(mchamado);
 
-                Response.Redirect("~//3-Bolsista/WebFormEditChamadoBolsista.aspx");
+                Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
             }
         }
 
