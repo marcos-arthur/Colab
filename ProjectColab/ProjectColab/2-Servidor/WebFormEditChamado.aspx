@@ -8,11 +8,15 @@
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3">
                     <ItemTemplate>
                         <div class="">
-                            <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
+                            <div class="indicador"><i class=""></i> <a class="">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a>                          
                             <a class="text" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                            </div> 
 
-                            <a class="textEditChamado">Aberto por </a><a class="textEditChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
+                            <!--Nome do usuario-->
+                            <div class="rowChamado"><a class="textEditChamado">Aberto por </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
 
+                            <!--Usuario atribuido-->
+                            <div class="rowChamado"><a class="textEditChamado"> Atendente </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
                             <a class="text">Atribui a <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
 
                             <a class="text"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>

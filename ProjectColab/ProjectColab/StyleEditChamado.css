@@ -1,7 +1,13 @@
-﻿.textEditChamado{
-    color:rgb(200,200,200);
-
+﻿.textEditChamado {
+    color: rgb(200,200,200);
+    text-transform: uppercase;
+    margin: 1%;
+    display: block
 }
 .rowChamado{
-    border-bottom:solid black 1px;
+    border-bottom:solid rgb(150,150,150) 1px;
+    margin:2%;
+}
+.textEditChamado.nomeChamado{
+    color:rgb(50,50,50);
 }
