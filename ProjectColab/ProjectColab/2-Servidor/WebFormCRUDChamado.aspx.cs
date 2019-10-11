@@ -13,7 +13,7 @@ namespace ProjectColab
         {
 
                 
-            if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectAll";
+            if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectOnly";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
                 ObjectDataSource1.SelectMethod = "SelectNo";

@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="column middle">
-            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3">
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="">
                             <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
@@ -28,7 +28,7 @@
                             <br />
                             
                             <a class="text">Data de abertura: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>                            
-                            
+                             <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton></div> 
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
