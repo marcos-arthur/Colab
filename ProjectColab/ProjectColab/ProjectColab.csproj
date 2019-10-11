@@ -106,6 +106,7 @@
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
     <Content Include="stylecontainer.css" />
+    <Content Include="StyleEditChamado.css" />
     <Content Include="StyleInput.css" />
     <Content Include="stylelogin.css" />
     <Content Include="Web.config">

@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="style.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
+<link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
 <link href="css\fontawesome.css" rel="stylesheet">
 <link href="css\brands.css" rel="stylesheet">
 <link href="css\solid.css" rel="stylesheet">    

@@ -5,21 +5,17 @@
 
     <div class="row">
         <div class="column middle">
-            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3">
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="">
                             <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
                             <a class="text" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
-                            <br />
 
-                            <a class="text">Aberto por <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
-                            <br />
+                            <a class="textEditChamado">Aberto por </a><a class="textEditChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
 
                             <a class="text">Atribui a <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
-                            <br />
 
                             <a class="text"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
-                            <br />
                             <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
                             <br />-->
 
@@ -32,7 +28,7 @@
                             <br />
                             
                             <a class="text">Data de abertura: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>                            
-                            
+                             <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton></div> 
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
