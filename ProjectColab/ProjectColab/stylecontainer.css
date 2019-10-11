@@ -55,6 +55,7 @@
     }
 .indicador {
     width: 100%;
+    text-align:center;
     background-color: rgba(255,0,0,0.35);
     border-radius: 0px 8px 8px 0px;
     border-left-style: solid;
@@ -128,7 +129,9 @@
         font-size: 0.7vw;
     }
 
-
+.grey{
+    background-color:rgb(180,180,180);
+}
 .btnPesquisar, .btnMaisBotoes {
     position: fixed;
     float: bottom;
