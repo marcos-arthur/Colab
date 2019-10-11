@@ -13,6 +13,7 @@ namespace ProjectColab.Modelo
         public string senha { get; set; }
         public int tipo { get; set; }
         public byte[] foto { get; set; }
+        public int status { get; set; }
 
 
         public Usuario()
@@ -23,9 +24,10 @@ namespace ProjectColab.Modelo
             senha = "";
             tipo = 0;
             foto = null;
+            status = 0;
         }
 
-        public Usuario(string id, string nome, string login, string senha, int tipo, byte[] foto)
+        public Usuario(string id, string nome, string login, string senha, int tipo, byte[] foto, int status)
         {
             this.id = id;
             this.nome = nome;
@@ -33,6 +35,7 @@ namespace ProjectColab.Modelo
             this.senha = senha;
             this.tipo = tipo;
             this.foto = foto;
+            this.status = status;
         }
     }
 }

@@ -18,7 +18,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" TypeName="ProjectColab.DAL.DALTutorial" SelectMethod="SelectAll" >
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" TypeName="ProjectColab.DAL.DALTutorial" SelectMethod="SelectAllStatus" >
                 </asp:ObjectDataSource>
             </div>
             <asp:Button ID="Button4" runat="server" Text="VER TUTORIAIS SUBMETIDOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormTutorialSubmetido.aspx" />
