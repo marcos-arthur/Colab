@@ -10,7 +10,7 @@ begin
 	declare @nome varchar(100)
 
 	select @nome = nome
-	from Laboratorios
+	from inserted
 
 	--Validar nome
 	if(rtrim(ltrim(@nome)) = '')
@@ -40,7 +40,7 @@ begin
 		@nome = laboratorio_nome,
 		@modelo = modelo,
 		@quant = quantidade	
-	from Equipamento
+	from inserted
 
 	--Validar nome
 	if(rtrim(ltrim(@nome)) = '')
@@ -96,7 +96,7 @@ begin
 		@login = login,
 		@senha = senha,
 		@tipo = tipo
-	from Usuario
+	from inserted
 
 	--Validar nome
 	if(rtrim(ltrim(@nome)) = '')
@@ -158,7 +158,7 @@ begin
 		@tutorial_titulo = tutorial_titulo,
 		@status = status,
 		@arquivo = arquivo
-	from Tutorial
+	from inserted
 
 	--Validar nome
 	if(rtrim(ltrim(@tutorial_titulo)) = '')
@@ -219,7 +219,7 @@ begin
 		@quant_equipamentos_defeituosos = quant_equipamentos_defeituosos,
 		@laboratorios_id = laboratorios_id	
 		
-	from Chamado
+	from inserted
 	DECLARE @totalmaq INT 
  select @totalmaq = SUM(quantidade) from equipamento where laboratorio_id  = @laboratorios_id
 	
