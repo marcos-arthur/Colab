@@ -71,7 +71,7 @@ namespace ProjectColab
             else type = 0;
 
             // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes);                       
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);                       
 
             // Valida Usuario           
             List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(login.Text);
