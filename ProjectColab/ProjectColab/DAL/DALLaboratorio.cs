@@ -73,7 +73,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString());
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["status"].ToString());
                     // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_id"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
                     aListLaboratorios.Add(aLaboratorios);
                 }
@@ -96,9 +96,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome) VALUES(@nome)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Laboratorios(nome,status) VALUES(@nome,1)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-
             // Executa Comando            
             cmd.ExecuteNonQuery();                               
         }
@@ -115,6 +114,7 @@ namespace ProjectColab.DAL
             SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
         }
@@ -141,7 +141,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString());
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["status"].ToString());
 
                     aListLaboratorios.Add(aLaboratorios);
                 }

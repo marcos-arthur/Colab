@@ -122,6 +122,10 @@ body {
     font-size: 1vw;
     padding: 5%;
 }
+.labtext{
+    text-align:center;
+    padding:1%;
+}
 .text {
     font-size:0.8vw;
     text-transform: uppercase;
