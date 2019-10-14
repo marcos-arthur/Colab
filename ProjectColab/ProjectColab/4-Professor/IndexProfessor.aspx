@@ -10,10 +10,10 @@
                           <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
                          <a class="title">CHAMADOS</a>
-                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//4-Professor/WebFormCRUDChamadoProfessor.aspx" />
+                         <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS" CssClass="btn" PostBackUrl="~//4-Professor/WebFormCRUDChamadoProfessor.aspx"/>
                       </div>
                   </div>
-                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//4-Professor/WebFormAddChamadoProfessor.aspx"/>
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~/4-Professor/WebFormAddChamadoProfessor.aspx"/>
             </div>
         </ItemTemplate>
     </asp:Repeater>
