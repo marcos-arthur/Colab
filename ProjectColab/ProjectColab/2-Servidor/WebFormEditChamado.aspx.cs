@@ -19,7 +19,6 @@ namespace ProjectColab
             if (e.CommandName == "Fechar")
             {
                 string id;
-                int index = Convert.ToInt32(e.CommandArgument);
                 id = e.CommandArgument.ToString();
                 Session["id"] = id;
                 DAL.DALChamado arquivo = new DAL.DALChamado();

@@ -258,7 +258,7 @@ namespace ProjectColab.DAL
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
             cmd.Parameters.AddWithValue("@foto", obj.foto);
-            cmd.Parameters.AddWithValue("@status", obj.foto);
+            cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
         }
@@ -275,7 +275,7 @@ namespace ProjectColab.DAL
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);          
             cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@status", obj.tipo);
+            cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
         }
@@ -307,20 +307,6 @@ namespace ProjectColab.DAL
         }
 
 
-        //DELETE//
-        [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Usuario obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand com = conn.CreateCommand();
-
-            SqlCommand cmd = new SqlCommand("Delete From Usuario Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-
-            cmd.ExecuteNonQuery();
-        }
+        
     }
 }

@@ -30,14 +30,15 @@ namespace ProjectColab
             alaboratorios = new Modelo.Laboratorios("1", nome.Text,"1");
 
             aDALLaboratorio = new DAL.DALLaboratorio();
+
             // Valida lab repetido           
-            /*List<Modelo.Laboratorios> aListLaboratorio = aDALLaboratorio.SelectID(nome);
-            if (aListLaboratorio.Count > 0)
+            int idlab = aDALLaboratorio.SelectID(nome.Text);
+            if (idlab != 0)
             {
                 ok = false;
                 Session["msgErro"] = "Laboratório já cadastrado";
                 Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
-            }*/
+            }
             
             try
             {
