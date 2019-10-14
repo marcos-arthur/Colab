@@ -1,0 +1,29 @@
+﻿.containerChat {
+    border-bottom:solid 1px rgba(255,0,0,0.35);
+    background-color: #eee;
+    border-radius: 5px;
+    padding:2%;
+
+}
+    .containerChat i {
+        float: left;
+        font-size: 2vw;
+        color: red;
+        margin: 1%;
+    }
+    .containerChat span {
+        font-size: 1.3vw;
+        margin-right: 15px;
+    }
+    .data {
+        font-size: 1vw;
+        margin-right: 15px;
+    }
+    .coment {
+        font-size: 0.9vw;
+        word-break:break-all;
+        overflow:auto;
+        
+    }
+
+

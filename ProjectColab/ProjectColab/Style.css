@@ -8,6 +8,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;*/
 }
+#particles-js {
+    height: 100%;
+    background: red;
+}
 .logo {
     text-align: center;
     max-width: 100%;

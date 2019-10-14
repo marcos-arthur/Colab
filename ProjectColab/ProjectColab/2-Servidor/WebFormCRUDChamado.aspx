@@ -15,9 +15,10 @@
             <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" ><i class="fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>
         </div>-->
              <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormChamadosFechadosServidor.aspx"/>
-        <div class="content top">
-            <div class="search">
-            <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
+        <div class="content top">            
+            <div class="search">            
+                <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
+                <asp:LinkButton runat="server" ID="search" OnClick="search_Click" text="Busca"></asp:LinkButton>
             </div>
         </div>
  <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
