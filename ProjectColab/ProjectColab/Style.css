@@ -1,16 +1,21 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body {
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     background-color: rgb(235, 235, 235);
     /*background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: cover;*/
+    z-index: -2;
 }
 #particles-js {
-    height: 100%;
-    background: red;
+    width: 98%;
+    height:200%;
+    background: rgb(235, 235, 235);
+    position:absolute;
+    z-index:-1;
+
 }
 .logo {
     text-align: center;

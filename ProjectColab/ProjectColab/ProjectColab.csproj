@@ -100,6 +100,8 @@
     <Content Include="4-Professor\IndexProfessor.aspx" />
     <Content Include="2-Servidor\IndexServidor.aspx" />
     <Content Include="app.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\particles.js" />
     <Content Include="particles.js" />
     <Content Include="logo.png" />
     <Content Include="script.js" />
@@ -390,9 +392,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
