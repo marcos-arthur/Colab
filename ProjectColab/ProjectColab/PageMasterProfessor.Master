@@ -7,7 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css"/>  
+<link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/>  
+<link href="css\fontawesome.css" rel="stylesheet">
+<link href="css\brands.css" rel="stylesheet">
+<link href="css\solid.css" rel="stylesheet">    
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="..\confirmar.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 

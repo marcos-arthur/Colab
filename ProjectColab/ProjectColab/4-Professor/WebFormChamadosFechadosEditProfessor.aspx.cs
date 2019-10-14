@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProjectColab._3_Bolsista
+namespace ProjectColab._4_Professor
 {
-    public partial class WebFormChamadosFechadosEditBolsista : System.Web.UI.Page
+    public partial class WebFormChamadosFechadosEditProfessor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace ProjectColab._3_Bolsista
 
                 arquivo.Update(mchamado);
 
-                Response.Redirect("~//3-Bolsista/WebFormChamadosFechadosBolsista.aspx");
+                Response.Redirect("~//4-Professor/WebFormChamadosFechadosProfessor.aspx");
             }
         }
     }

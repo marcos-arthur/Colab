@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/PageMasterBolsista.Master" CodeBehind="WebFormChamadosFechadosEditBolsista.aspx.cs" Inherits="ProjectColab._3_Bolsista.WebFormChamadosFechadosEditBolsista" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/PageMasterServidor.Master" AutoEventWireup="true" CodeBehind="WebFormChamadosFechadosEditServidor.aspx.cs" Inherits="ProjectColab._2_Servidor.WebFormChamadosFechadosEditServidor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,7 +27,7 @@
                             <br />
                             
                             <a class="text">Data de abertura: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>                            
-                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Reabrir" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i>REABRIR CHAMADO</asp:LinkButton></div> 
+                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Reabrir" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> REABRIR CHAMADO</asp:LinkButton></div> 
                             
                         </div>
                     </ItemTemplate>

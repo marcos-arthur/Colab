@@ -7,38 +7,29 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._3_Bolsista
+namespace ProjectColab._2_Servidor
 {
 
 
-    public partial class WebFormChamadosFechadosBolsista
+    public partial class WebFormChamadosFechadosEditServidor
     {
 
         /// <summary>
-        /// Controle Button2.
+        /// Controle Repeater3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Button2;
+        protected global::System.Web.UI.WebControls.Repeater Repeater3;
 
         /// <summary>
-        /// Controle Repeater1.
+        /// Controle ObjectDataSource3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
-        /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
     }
 }

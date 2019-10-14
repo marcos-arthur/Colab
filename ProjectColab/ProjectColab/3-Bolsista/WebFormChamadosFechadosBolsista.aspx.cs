@@ -13,5 +13,22 @@ namespace ProjectColab._3_Bolsista
         {
 
         }
+        protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            //Verifica se o comando é "Editar"
+            if (e.CommandName.ToString() == "ABRIR")
+            {
+                //string id;
+
+                // Lê o número da linha selecionada
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+
+                // Grava código do Livro na sessão
+                Session["idchamado"] = id;
+
+                // Chama a tela de edição
+                Response.Redirect("~//3-Bolsista/WebFormChamadosFechadosEditBolsista.aspx");
+            }
+        }
     }
 }

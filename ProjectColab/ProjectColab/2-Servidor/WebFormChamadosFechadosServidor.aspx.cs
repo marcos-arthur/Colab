@@ -5,16 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProjectColab
+namespace ProjectColab._2_Servidor
 {
-    public partial class WebFormCRUDChamadoProfessor : System.Web.UI.Page
+    public partial class WebFormChamadosFechadosServidor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        
-        
-        }
 
+        }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             //Verifica se o comando é "Editar"
@@ -29,9 +27,8 @@ namespace ProjectColab
                 Session["idchamado"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//4-Professor/WebFormEditChamadoProfessor.aspx");
+                Response.Redirect("~//2-Servidor/WebFormChamadosFechadosEditServidor.aspx");
             }
         }
-
     }
 }

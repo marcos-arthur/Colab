@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2-Servidor\WebFormAddEquipamento.aspx" />
+    <Content Include="2-Servidor\WebFormChamadosFechadosEditServidor.aspx" />
+    <Content Include="2-Servidor\WebFormChamadosFechadosServidor.aspx" />
     <Content Include="2-Servidor\WebFormEditLab.aspx" />
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
@@ -77,6 +79,9 @@
     <Content Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormEditChamadoBolsista.aspx" />
     <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
+    <Content Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx" />
+    <Content Include="4-Professor\WebFormChamadosFechadosProfessor.aspx" />
+    <Content Include="4-Professor\WebFormEditChamadoProfessor.aspx" />
     <Content Include="background2.png" />
     <Content Include="confirmar.js" />
     <Content Include="Crudstyle.css" />
@@ -132,6 +137,20 @@
     </Compile>
     <Compile Include="2-Servidor\WebFormAddEquipamento.aspx.designer.cs">
       <DependentUpon>WebFormAddEquipamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormChamadosFechadosEditServidor.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosEditServidor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormChamadosFechadosEditServidor.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosEditServidor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormChamadosFechadosServidor.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosServidor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormChamadosFechadosServidor.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosServidor.aspx</DependentUpon>
     </Compile>
     <Compile Include="2-Servidor\WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>
@@ -195,6 +214,27 @@
     </Compile>
     <Compile Include="4-Professor\WebFormAddChamadoProfessor.aspx.designer.cs">
       <DependentUpon>WebFormAddChamadoProfessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosEditProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosEditProfessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4-Professor\WebFormChamadosFechadosProfessor.aspx.cs">
+      <DependentUpon>WebFormChamadosFechadosProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4-Professor\WebFormChamadosFechadosProfessor.aspx.designer.cs">
+      <DependentUpon>WebFormChamadosFechadosProfessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4-Professor\WebFormEditChamadoProfessor.aspx.cs">
+      <DependentUpon>WebFormEditChamadoProfessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4-Professor\WebFormEditChamadoProfessor.aspx.designer.cs">
+      <DependentUpon>WebFormEditChamadoProfessor.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALComentario.cs" />
