@@ -8,6 +8,25 @@
     border-bottom:solid rgb(150,150,150) 1px;
     margin:2%;
 }
-.textEditChamado.nomeChamado{
-    color:rgb(50,50,50);
+.textEditChamado.nomeChamado {
+    color: rgb(50,50,50);
+}
+.editmenu{
+    background-color:rgb(245,245,245);
+    word-break:break-all;
+}
+.borderFix {
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 80px;
+}
+.titleFix {
+    height: 120px;
+}
+.titleFixBeta {
+    height: 200px;
+}
+.rowFix {
+    height: 50px;
 }
