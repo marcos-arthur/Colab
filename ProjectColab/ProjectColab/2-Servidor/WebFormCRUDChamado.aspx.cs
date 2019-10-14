@@ -31,6 +31,23 @@ namespace ProjectColab
                 ObjectDataSource1.DataBind();
             }
 
+            if (Session["chamadobusca"].ToString() != "")
+            {
+                ObjectDataSource1.SelectMethod = "selectSearch";
+
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "val";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "chamadobusca";
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+
+                ObjectDataSource1.SelectParameters.Clear();
+            }
+                
+
+            Session["chamadobusca"] = "";
             Session["chamadoValue"] = "";
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -63,6 +80,12 @@ namespace ProjectColab
             Session["chamadoValue"] = "myCount";
 
             Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text.Trim() != "")
+                Session["chamadobusca"] = TextBox1.Text; 
         }
     }
 }

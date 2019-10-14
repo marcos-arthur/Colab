@@ -385,6 +385,57 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
+        //Pesquisa somente por resumo
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Chamado selectSearch(string val)
+        {
+            DALLaboratorio lab = new DALLaboratorio();
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuarioAberto;
+            string nomeUsuarioAtribuido;
+            string nomeLab;
+
+            Modelo.Chamado aChamado = new Modelo.Chamado();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
+                              "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (resumo like '%" + val + "%')";            
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    //Retorna o nome do usuário
+                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+
+                    //Retorna o nome do laboratório
+                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+
+                    //Retorna o nome do usuario
+                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+
+                    // Cria objeto com dados lidos do banco de dados
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    // Adiciona o livro lido à lista                    
+
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aChamado;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Chamado Select(string id)
         {
@@ -463,5 +514,7 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
+
+
     }
 }
