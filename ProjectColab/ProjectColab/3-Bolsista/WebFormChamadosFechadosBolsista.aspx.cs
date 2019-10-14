@@ -15,19 +15,23 @@ namespace ProjectColab._3_Bolsista
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            //Verifica se o comando é "Editar"
-            if (e.CommandName.ToString() == "ABRIR")
+            if (e.CommandName == "Reabrir")
             {
-                //string id;
+                string id;
+                int index = Convert.ToInt32(e.CommandArgument);
+                id = e.CommandArgument.ToString();
+                Session["id"] = id;
+                DAL.DALChamado arquivo = new DAL.DALChamado();
 
-                // Lê o número da linha selecionada
-                int id = Convert.ToInt32(e.CommandArgument.ToString());
+                Modelo.Chamado mchamado;
 
-                // Grava código do Livro na sessão
-                Session["idchamado"] = id;
+                mchamado = arquivo.Select(id);
 
-                // Chama a tela de edição
-                Response.Redirect("~//3-Bolsista/WebFormChamadosFechadosEditBolsista.aspx");
+                mchamado.status = 4;
+
+                arquivo.Update(mchamado);
+
+                Response.Redirect("~//3-Bolsista/WebFormChamadosFechadosBolsista.aspx");
             }
         }
     }

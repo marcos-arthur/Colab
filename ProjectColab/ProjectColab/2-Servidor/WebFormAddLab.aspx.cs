@@ -23,13 +23,22 @@ namespace ProjectColab
 
         protected void Add_Click(object sender, EventArgs e)
         {
+            bool ok = true;
             Modelo.Laboratorios alaboratorios;
             DAL.DALLaboratorio aDALLaboratorio;
 
             alaboratorios = new Modelo.Laboratorios("1", nome.Text,"1");
 
-            aDALLaboratorio = new DAL.DALLaboratorio();            
-           
+            aDALLaboratorio = new DAL.DALLaboratorio();
+            // Valida lab repetido           
+            /*List<Modelo.Laboratorios> aListLaboratorio = aDALLaboratorio.SelectID(nome);
+            if (aListLaboratorio.Count > 0)
+            {
+                ok = false;
+                Session["msgErro"] = "Laboratório já cadastrado";
+                Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
+            }*/
+            
             try
             {
                 aDALLaboratorio.Insert(alaboratorios);
@@ -38,7 +47,7 @@ namespace ProjectColab
             catch (SqlException error) when (error.Message == "A transação foi encerrada no gatilho. O lote foi anulado.\r\nO novo laboratorio deve possuir um nome") 
             {
                 Session["msgErro"] = "O novo laboratorio deve possuir um nome";
-                Response.Redirect("~\\WebFormAddLab.aspx");
+                Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
             }
             finally
             {                

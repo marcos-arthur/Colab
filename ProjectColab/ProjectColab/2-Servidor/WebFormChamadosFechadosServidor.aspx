@@ -23,7 +23,7 @@
                             <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>
                             <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>
                             <div class="bot">
-                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i>ABRIR CHAMADO</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Reabrir" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i>REABRIR CHAMADO</asp:LinkButton>
                             </div>
                         </div>
                     </ItemTemplate>

@@ -101,8 +101,8 @@ namespace ProjectColab
 
             }
              
-            if(ok) Response.Redirect("~/1-Admin/WebFormCRUDUsuario.aspx");
-            else Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
+            if(ok) Response.Redirect("~/1-Admin/IndexAdmin.aspx");
+            else Response.Redirect("~/1-Admin/IndexAdmin.aspx");
 
         }
         public string GerarHashMd5(string input)

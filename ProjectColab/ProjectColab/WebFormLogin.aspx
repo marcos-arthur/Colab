@@ -8,15 +8,15 @@
 <link rel="stylesheet" type="text/css" href="style.css"/>  
 <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
-    <title>ABRIR CHAMADO</title>
+    <title>COLAB</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
 	        <div class="logo"><a href="index.aspx">COLAB</a></div>
             <p>
-                    <asp:Literal runat="server" ID="LabelMsgErro" />
-                </p> 
+               <asp:Literal runat="server" ID="LabelMsgErro" />
+            </p> 
             <div class="login">                
                 <p>LOGIN</p><asp:TextBox ID="Login" runat="server" CssClass="text"></asp:TextBox>
                 <p>SENHA</p><asp:TextBox ID="Senha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>
