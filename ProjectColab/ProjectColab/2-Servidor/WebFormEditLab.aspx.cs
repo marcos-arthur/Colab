@@ -50,5 +50,26 @@ namespace ProjectColab._2_Servidor
         {
             Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
         }
+        protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "Fechar")
+            {
+                string id;
+                int index = Convert.ToInt32(e.CommandArgument);
+                id = e.CommandArgument.ToString();
+                Session["id"] = id;
+                DAL.DALLaboratorio arquivo = new DAL.DALLaboratorio();
+
+                Modelo.Laboratorios mchamado;
+
+                mchamado = arquivo.Select2(id);
+
+                mchamado.status = "2";
+
+                arquivo.Update(mchamado);
+
+                Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
+            }
+        }
     }
 }

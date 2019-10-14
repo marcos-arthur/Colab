@@ -111,7 +111,7 @@ namespace ProjectColab.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Laboratorios Set nome = @nome, status = @status Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@status", obj.status);
@@ -120,11 +120,48 @@ namespace ProjectColab.DAL
         }
         
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Laboratorios> Select(string id)
+        public List<Modelo.Laboratorios> SelectStatus1()
         {
-            Modelo.Laboratorios aLaboratorios;
+            DALLaboratorio usu = new DALLaboratorio();
 
-            List<Modelo.Laboratorios> aListLaboratorios = new List<Modelo.Laboratorios>();
+            // Variavel para armazenar um livro
+            Modelo.Laboratorios aLab;
+            // Cria Lista Vazia
+            List<Modelo.Laboratorios> aListLab = new List<Modelo.Laboratorios>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "Select * from Laboratorios Where status = 1";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aLab = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["status"].ToString());
+                    // Adiciona o livro lido à lista
+                    aListLab.Add(aLab);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListLab;
+        }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Laboratorios Select2(string id)
+        {
+
+            Modelo.Laboratorios aLaboratorios = new Modelo.Laboratorios();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -132,18 +169,18 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "Select * From Laboratorios Where id = @id";
+            cmd.CommandText = "SELECT id, nome, status, CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'FECHADO'END AS status FROM Laboratorios where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.HasRows)
             {
-                while (dr.Read())
-                {
-                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["status"].ToString());
 
-                    aListLaboratorios.Add(aLaboratorios);
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aLaboratorios = new Modelo.Laboratorios(dr["id"].ToString(), dr["nome"].ToString(), dr["status"].ToString());
                 }
             }
 
@@ -151,7 +188,7 @@ namespace ProjectColab.DAL
 
             conn.Close();
 
-            return aListLaboratorios;
+            return aLaboratorios;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
