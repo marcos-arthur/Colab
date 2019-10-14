@@ -61,8 +61,9 @@ namespace ProjectColab.DAL
 
             return aListTutorial;
         }
+        //Tutoriais com status 1(submetido)
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial> SelectAllStatus()
+        public List<Modelo.Tutorial> SelectStatus1()
         {
             DALUsuario usu = new DALUsuario();
             string nomeUsuario;
@@ -103,6 +104,7 @@ namespace ProjectColab.DAL
 
             return aListTutorial;
         }
+        //Tutoriais com status 2(aprovado)
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Tutorial> SelectAllStatus2()
         {

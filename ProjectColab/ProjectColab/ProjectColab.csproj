@@ -75,7 +75,6 @@
     <Content Include="3-Bolsista\WebFormCRUDTutorialBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormEditChamadoBolsista.aspx" />
     <Content Include="4-Professor\WebFormAddChamadoProfessor.aspx" />
-    <Content Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx" />
     <Content Include="4-Professor\WebFormChamadosFechadosProfessor.aspx" />
     <Content Include="4-Professor\WebFormEditChamadoProfessor.aspx" />
     <Content Include="background2.png" />
@@ -196,13 +195,6 @@
     </Compile>
     <Compile Include="4-Professor\WebFormAddChamadoProfessor.aspx.designer.cs">
       <DependentUpon>WebFormAddChamadoProfessor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx.cs">
-      <DependentUpon>WebFormChamadosFechadosEditProfessor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="4-Professor\WebFormChamadosFechadosEditProfessor.aspx.designer.cs">
-      <DependentUpon>WebFormChamadosFechadosEditProfessor.aspx</DependentUpon>
     </Compile>
     <Compile Include="4-Professor\WebFormChamadosFechadosProfessor.aspx.cs">
       <DependentUpon>WebFormChamadosFechadosProfessor.aspx</DependentUpon>
