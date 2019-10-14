@@ -4,16 +4,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle">
-            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" >
+            <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="">
                             <div class=""><i class=""></i> <a class="text">Laboratório #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
                             <a class="text" ><%# DataBinder.Eval(Container.DataItem, "nome")%> </a>
                             <br />                                         
                         </div>
+                        <div class="bot">
+                         <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Fechar" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i>FECHAR LABORATÓRIO</asp:LinkButton>
+                 </div>
                     </ItemTemplate>
                 </asp:Repeater>
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALLaboratorio">
+
+            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select2" TypeName="ProjectColab.DAL.DALLaboratorio">
                 <SelectParameters>
                     <asp:SessionParameter SessionField="idlab" Name="id" Type="String"></asp:SessionParameter>
                 </SelectParameters>

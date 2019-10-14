@@ -42,7 +42,7 @@ body {
 .inputtextDrop {
     width: 10%;
     border: none;
-    background-color: rgb(240,240,240);
+    background-color: rgb(230,230,230);
     border-bottom: rgb(240,240,240) solid 1px;
     border-radius: 5px;
     padding: 2%;
@@ -169,6 +169,7 @@ body {
     font-size: 0.8vw;
     cursor: pointer;
     display:block;
+    text-align:center;
 }
 input:focus{
     outline:none !important;
