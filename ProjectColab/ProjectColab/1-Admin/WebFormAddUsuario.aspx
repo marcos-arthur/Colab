@@ -18,7 +18,7 @@
             <br />
             <br />
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
-            <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/1-Admin/WebFormCRUDUsuario.aspx" />
+            <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/1-Admin/IndexAdmin.aspx"/>
         </div>
 </asp:Content>
 

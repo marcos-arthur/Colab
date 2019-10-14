@@ -1,6 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMasterServidor.master.cs" Inherits="ProjectColab.PageMasterServidor" %>
-
-<!DOCTYPE html>
 <!DOCTYPE html>
 
 <html>
@@ -9,6 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
+<link rel="stylesheet" type="text/css" href="StyleChat.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
 <link href="css\fontawesome.css" rel="stylesheet">
@@ -29,10 +28,8 @@
 
     </asp:ContentPlaceHolder>
 </head>
-<body onload="alerta()">
-    <form id="form1" runat="server">
-        <div>
-            
+<body onload="alerta()" id="particles-js">
+    <form id="form1" runat="server">          
             <div class="logo"><img src="..\logo.png"/></div>
             <ul class="menu2" style="background-color:white">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
@@ -90,5 +87,7 @@
         </asp:ContentPlaceHolder>
                             <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>  
     </form>
+<script type="text/javascript" src="particles.js"></script>   
+<script type="text/javascript" src="app.js"></script> 
 </body>
 </html>
