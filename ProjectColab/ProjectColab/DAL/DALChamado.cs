@@ -387,7 +387,7 @@ namespace ProjectColab.DAL
 
         //Pesquisa somente por resumo
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Chamado selectSearch(string val)
+        public List<Modelo.Chamado> selectSearch(string resumo)
         {
             DALLaboratorio lab = new DALLaboratorio();
             DALUsuario usu = new DALUsuario();
@@ -396,6 +396,7 @@ namespace ProjectColab.DAL
             string nomeLab;
 
             Modelo.Chamado aChamado = new Modelo.Chamado();
+            List<Modelo.Chamado> listChamado = new List<Modelo.Chamado>();
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -404,7 +405,7 @@ namespace ProjectColab.DAL
             SqlCommand cmd = conn.CreateCommand();
 
             cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
-                              "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (resumo like '%" + val + "%')";            
+                              "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (resumo like '%" + resumo + "%')";            
 
             SqlDataReader dr = cmd.ExecuteReader();
 
@@ -426,6 +427,7 @@ namespace ProjectColab.DAL
                     aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista                    
 
+                    listChamado.Add(aChamado);
                 }
             }
 
@@ -433,7 +435,7 @@ namespace ProjectColab.DAL
 
             conn.Close();
 
-            return aChamado;
+            return listChamado;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]

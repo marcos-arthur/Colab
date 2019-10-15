@@ -2,35 +2,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row" >
-        <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">
-            <SelectParameters>
-                <asp:SessionParameter Name="id" SessionField="idusuario" Type="Int32" />
-            </SelectParameters>
-        </asp:ObjectDataSource>
-      
+    <div class="row" >      
         <div class="column middle teste">
             <div class="indicador"><a class="colorfix titulo"><i class="fa fa-bell"></i>CHAMADOS</a></div>            
-       <!-- <div class="content"> <i class="fa fa-circle-o"></i>
-            <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx" ><i class="fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>
-        </div>-->
-             <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormChamadosFechadosServidor.aspx"/>
-        <div class="content top">            
-            <div class="search">            
-                <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
-                <asp:LinkButton runat="server" ID="search" OnClick="search_Click" text="Busca"></asp:LinkButton>
+            
+            <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormChamadosFechadosServidor.aspx"/>
+            
+            <!-- Busca -->
+            <div class="content top">            
+                <div class="search">            
+                    <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
+                    <asp:Button runat="server" Text="Busca" ID="search1" CssClass="btn small" OnClick="search_Click"/>
+                    <asp:LinkButton runat="server" ID="search" OnClick="search_Click" text="Busca"></asp:LinkButton>
+                </div>
             </div>
-        </div>
- <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
+            
+            <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
             <div class="content">
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
+                            
                             <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>
+                            
                             <div class="rowChamado titleFix">
                                 <a class="textEditChamado">RESUMO DO CHAMADO:</a>                               
                                 <a class="textEditChamado nomeChamado borderFix"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
                             </div>                                     
+                            
                             <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
                             <!-- Nome do laboratorio-->
                             <div class="rowChamado rowFix"><a class="textEditChamado"> Laboratório </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
@@ -51,7 +50,7 @@
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" TypeName="ProjectColab.DAL.DALChamado" >
                 </asp:ObjectDataSource>
             </div>
-        </div>
- <!--FIM DO REPEATER-->
+            <!--FIM DO REPEATER-->
+        </div>            
 
 </asp:Content>
