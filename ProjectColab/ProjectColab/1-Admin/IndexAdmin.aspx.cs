@@ -56,7 +56,7 @@ namespace ProjectColab
                 DAL.DALUsuario status = new DAL.DALUsuario();
 
                 Modelo.Usuario musuario;
-                id = GridView1.Rows[Convert.ToInt32(id)].Cells[0].Text;
+                id = GridView2.Rows[Convert.ToInt32(id)].Cells[0].Text;
 
                 musuario = status.Select(id);
 
