@@ -11,7 +11,7 @@
         margin: 1%;
         float: left;
         width: 98%;
-        background-color: rgb(240,240,240);
+        background-color: #BBBEFA;
         padding: 0%;
         border-radius: 0px 5px 5px 0px;
         text-align: unset;
@@ -38,25 +38,25 @@
         margin-left: 2%;
         margin-bottom: 1%;
         padding: 1.4% 1% 1.4% 1%;
-        background-color: white;
+        background-color: #BBBEFA;
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
 
     /* Middle column */
     .column.middle {
-        min-height:400px;
+        min-height: 400px;
         width: 75%;
-        background-color: white;
-        padding:0.5%;
-        margin-bottom:2%;
+        background-color: #BBBEFA;
+        padding: 0.5%;
+        margin-bottom: 2%;
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
 .indicador {
     width: 100%;
-    text-align:center;
-    background-color: rgba(255,0,0,0.35);
+    text-align: center;
+    background-color: #7D81FF;
     border-radius: 0px 8px 8px 0px;
     border-left-style: solid;
     border-left-width: 2px;

@@ -115,7 +115,7 @@ body {
     margin:2%;
 }
 .bot {
-    background-color: rgb(240,240,240);
+    background-color: #7D81FF;
     color: white;
     border-bottom: rgba(255,0,0,0.1) solid 2px;
     border-radius: 0px 0px 5px 5px;

@@ -33,7 +33,7 @@
     <form id="form1" runat="server">
 <div id="particles-js"></div>        
             <div class="logo"><img src="..\logo.png"/></div>
-            <ul class="menu2" style="background-color:white">
+            <ul class="menu2" style="background-color: #BBBEFA">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDChamado.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorial.aspx"><i class="fa fa-book"></i> TUTORIAIS</a></li>
