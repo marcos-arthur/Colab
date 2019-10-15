@@ -13,7 +13,7 @@ namespace ProjectColab
         {
 
                 
-            if (Session["chamadoValue"].ToString() == "") ObjectDataSource1.SelectMethod = "SelectOnly";
+            if ((Session["chamadoValue"].ToString() == "") && (Session["chamadobusca"].ToString() == "")) ObjectDataSource1.SelectMethod = "SelectOnly";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
                 ObjectDataSource1.SelectMethod = "SelectNo";
@@ -30,24 +30,24 @@ namespace ProjectColab
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
             }
-
-            if (Session["chamadobusca"].ToString() != "")
-            {
+            else if (Session["chamadoValue"].ToString() == "search") {
                 ObjectDataSource1.SelectMethod = "selectSearch";
 
+                string a = Session["chamadob"].ToString();
+
+                //Passar chamadoValue como parâmetro
                 SessionParameter empid = new SessionParameter();
-                empid.Name = "val";
+                empid.Name = "resumo";
                 empid.Type = TypeCode.String;
-                empid.SessionField = "chamadobusca";
+                empid.SessionField = "chamadob";
+                
 
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
-
-                ObjectDataSource1.SelectParameters.Clear();
-            }
                 
-
-            Session["chamadobusca"] = "";
+            }
+            
+            //Session["chamadobusca"] = "";
             Session["chamadoValue"] = "";
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -85,7 +85,12 @@ namespace ProjectColab
         protected void search_Click(object sender, EventArgs e)
         {
             if (TextBox1.Text.Trim() != "")
-                Session["chamadobusca"] = TextBox1.Text; 
+            {
+                Session["chamadoValue"] = "search";
+                Session["chamadob"] = TextBox1.Text;
+                Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+            }
+                            
         }
     }
 }
