@@ -8,35 +8,18 @@
     align-items: center;
 }
 .login {
-    width: 30%;
+    align-items:center;
+    text-align:center;
+    width: 25%;
     padding: 2%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(240, 240, 253);
     border-radius: 10px;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.text {
-    border-radius: 4px;
-    padding: 1%;
-    font-size: 0.8vw;
-    min-width: 98%;
-    max-width: 98%;
-    margin-bottom:10%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: RGBA(255,0,0,0.4);
-    background-color: rgba(255, 255, 255, 0.90);
-    color: black;
-}
 
 .login p {
-    border-left-style: solid;
-    border-left-color: red;
-    border-width: 0.15vw;
-    max-width: 98%;
-    color: rgb(235,235,235);
-    padding: 1%;
-    background-color: rgba(255, 0, 0, 0.5);
-    border-radius: 0px 10px 10px 0px;
+    color: rgb(235,235,235);    
+    border-radius: 5px;
     font-size: 1.1vw;
 }
 .loginbtn {
@@ -52,24 +35,58 @@
     min-width: 12%;
 }
 .inputlogin {
+    display: block;
     padding: 2%;
-    width: 100%;
-    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
     border: none;
-    background-color: rgb(254,254,254);
-    border-bottom: solid 1px rgba(255,0,0,0.05);
+    background-color: rgb(240, 240, 253);
+    border-bottom: solid 1px white;
     transition: all 0.5s;
 }
     .inputlogin:focus {
         background-color: rgb(251,251,251);
-        border-bottom: solid 1px rgba(255,0,0,0.55);
+        border-bottom: solid 1px white;
+        width: 100%;
+        border-radius:5px;
     }
 
     .loginbtn:hover {
         animation: bounce2 .5s;
     }
-.loginindicador{
-    margin-top:10%;
+.btnlogin {
+    margin-top: 15%;
+    width: 50%;
+    background-color: rgb(240, 240, 253);
+    border-color: rgb(180,180,255);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1%;
+    color: rgb(180,180,255);
+    cursor: pointer;
+    font-size: 1vw;
+    border-radius: 5px;
+    text-align: center;
+    transition:all 0.5s;
+}
+.btnlogin:hover {
+    margin-top: 15%;
+    width: 50%;
+    background-color: rgb(230, 230, 253);
+    border-color: rgb(110,110,255);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1%;
+    color: rgb(110,110,255);
+    cursor: pointer;
+    font-size: 1vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.loginindicador {
+    margin-top: 10%;
 }
 @keyframes bounce2 {
     50% {

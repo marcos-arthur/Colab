@@ -32,10 +32,10 @@ body{
 
                 <div class="login"> 
                <asp:Literal runat="server" ID="LabelMsgErro" />                
-                <p class="indicador loginindicador">LOGIN</p><asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
-                <p class="indicador loginindicador">SENHA</p><asp:TextBox ID="Senha" placeholder="DIGITE SUA SENHA" TextMode="Password" runat="server" CssClass="inputlogin"></asp:TextBox>
+                    <asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
+                    <asp:TextBox ID="Senha" placeholder="DIGITE SUA SENHA" TextMode="Password" runat="server" CssClass="inputlogin"></asp:TextBox>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>
-                <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="btn" OnClick="add_Click"/>
+                <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="btnlogin" OnClick="add_Click"/>
                 </div>     
         </div>
 <script src="js/particles.js"></script>

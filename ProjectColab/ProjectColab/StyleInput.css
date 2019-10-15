@@ -96,8 +96,7 @@ body {
     margin-bottom: 2%;
 }
 .iconchamado {
-    border-top: rgba(255,0,0,0.1) solid 2px;
-    background-color: rgb(230,230,230);
+    background-color: rgb(220,220,255);
     color: black;
     border-radius: 5px 5px 0px 0px;
     /*border-left: red 2px solid;*/
@@ -115,9 +114,8 @@ body {
     margin:2%;
 }
 .bot {
-    background-color: #7D81FF;
+    background-color: rgb(220,220,255);
     color: white;
-    border-bottom: rgba(255,0,0,0.1) solid 2px;
     border-radius: 0px 0px 5px 5px;
     font-size: 1vw;
     padding: 5%;

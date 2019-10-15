@@ -8,7 +8,7 @@ body {
     /*background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: cover;*/
-    z-index: -2;
+    z-index: 1;
 }
 
 /*
@@ -38,6 +38,7 @@ body {
     .logo img {
         max-width:8%;
     }
+
     .logo a {
         font-size: 3vw;
         text-decoration: none;
