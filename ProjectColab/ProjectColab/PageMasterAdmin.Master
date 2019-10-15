@@ -7,11 +7,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
+<link rel="stylesheet" type="text/css" href="StyleChat.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
 <link href="css\fontawesome.css" rel="stylesheet">
 <link href="css\brands.css" rel="stylesheet">
-<link href="css\solid.css" rel="stylesheet">    
+<link href="css\solid.css" rel="stylesheet">  
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script src="../confirmar.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,10 +29,29 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="logo"><a href="IndexAdmin.aspx" class="logos">COLAB</a></div>
+            <div class="logo"><img src="..\logo.png"/></div>
             <ul class="menu2" style="background-color:white">
-                <li class="li2"><a>USUÁRIO</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
+                <li class="li2">
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
+                        <ItemTemplate>
+                            <a><i class="fa fa-user-circle"></i><%# DataBinder.Eval(Container.DataItem,"nome")%></a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectImage" TypeName="ProjectColab.DAL.DALConsulta">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="idusuario" Name="id" Type="String"></asp:SessionParameter>
+
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectImage" TypeName="ProjectColab.DAL.DALConsulta">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="idusuario" Name="id" Type="String"></asp:SessionParameter>
+
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </li>
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

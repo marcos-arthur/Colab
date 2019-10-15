@@ -12,9 +12,9 @@
             <div class="content top">            
                 <div class="search">            
                     <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
-                    <asp:Button runat="server" Text="Busca" ID="search1" CssClass="btn small" OnClick="search_Click"/>
-                    <asp:LinkButton runat="server" ID="search" OnClick="search_Click" text="Busca"></asp:LinkButton>
                 </div>
+                    <asp:Button runat="server" Text="Busca" ID="search1" CssClass="btn" OnClick="search_Click"/>
+                    <asp:LinkButton runat="server" ID="search" OnClick="search_Click"  CssClass="btn" text="Busca"></asp:LinkButton>
             </div>
             
             <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->

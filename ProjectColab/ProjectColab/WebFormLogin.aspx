@@ -14,6 +14,10 @@
 <link href="css\brands.css" rel="stylesheet">
 <link href="css\solid.css" rel="stylesheet">  
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<style>
+body{
+}
+</style>
 <script src="../confirmar.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>COLAB</title>
@@ -25,10 +29,10 @@
             <div class="row">    
                 <div class="column middle">
                <asp:Literal runat="server" ID="LabelMsgErro" />                
-                <p>LOGIN</p><asp:TextBox ID="Login" runat="server" CssClass="text"></asp:TextBox>
-                <p>SENHA</p><asp:TextBox ID="Senha" TextMode="Password" runat="server" CssClass="text"></asp:TextBox>
+                <p class="indicador">LOGIN</p><asp:TextBox ID="Login" runat="server" CssClass="inputtext"></asp:TextBox>
+                <p class="indicador">SENHA</p><asp:TextBox ID="Senha" TextMode="Password" runat="server" CssClass="inputtext"></asp:TextBox>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>
-                <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="loginbtn" OnClick="add_Click"/>
+                <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="btn" OnClick="add_Click"/>
                 </div>
             </div>       
         </div>
