@@ -25,7 +25,7 @@
                 <asp:BoundField DataField="senha" HeaderText="senha" SortExpression="senha" Visible="False" />
                 <asp:BoundField DataField="tipo" HeaderText="tipo" SortExpression="tipo" />
                 <asp:BoundField DataField="status" HeaderText="status" SortExpression="status" /> 
-                <asp:ButtonField CommandName="desativar" Text="Ativar" />
+                <asp:ButtonField CommandName="ativar" Text="Ativar" />
             </Columns>
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAllStatus2" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>

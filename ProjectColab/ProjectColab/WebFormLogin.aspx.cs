@@ -28,11 +28,7 @@ namespace ProjectColab
 
             // Valida Usuario
             List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
-            if (aListUsuario.Count == 0)
-            {
-                Session["msgErro"] = "Usuário não cadastrado";
-                Response.Redirect("~\\WebFormLogin.aspx");
-            }
+                    
 
             // Critografa senha
             string senhaMD5 = GerarHashMd5(Senha.Text);
@@ -42,6 +38,12 @@ namespace ProjectColab
             if (aUsuario.senha != senhaMD5)
             {
                 Session["msgErro"] = "Senha Inválida";
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
+           
+            if ((aListUsuario.Count == 0) || (aUsuario.status != 1))
+            {
+                Session["msgErro"] = "Usuário não cadastrado";
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
             // Salva usuário na sessão
