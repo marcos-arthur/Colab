@@ -3,17 +3,19 @@ body {
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    background-color: rgb(235, 235, 235);
+    overflow-x:hidden;
+    background-color: rgb(220, 220, 220);
     /*background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: cover;*/
     z-index: -2;
 }
 #particles-js {
-    width: 98%;
-    height:150%;
-    background: rgb(235, 235, 235);
-    position:absolute;
+    overflow:hidden;
+    width: 100%;
+    height:100%;
+    background: rgb(220, 220, 220);
+    position:fixed;
     z-index:-1;
 
 }

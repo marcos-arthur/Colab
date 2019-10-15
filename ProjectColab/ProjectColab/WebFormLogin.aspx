@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="style.css"/> 
+<link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="StyleChat.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
@@ -16,6 +17,7 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <style>
 body{
+    overflow-y:hidden;
 }
 </style>
 <script src="../confirmar.js"></script>
@@ -24,17 +26,17 @@ body{
 </head>
 <body>
 <div id="particles-js"></div> 
-    <form id="form1" runat="server">   
-        <div>
-            <div class="row">    
-                <div class="column middle">
+    <form id="form1" runat="server">
+            <div class="logo"><img src="..\logo.png"/></div>
+        <div class="loginfix">
+
+                <div class="login"> 
                <asp:Literal runat="server" ID="LabelMsgErro" />                
                 <p class="indicador">LOGIN</p><asp:TextBox ID="Login" runat="server" CssClass="inputtext"></asp:TextBox>
                 <p class="indicador">SENHA</p><asp:TextBox ID="Senha" TextMode="Password" runat="server" CssClass="inputtext"></asp:TextBox>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>
                 <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="btn" OnClick="add_Click"/>
-                </div>
-            </div>       
+                </div>     
         </div>
 <script src="js/particles.js"></script>
 <script src="js/app.js"></script>
