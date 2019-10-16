@@ -77,3 +77,42 @@
         border-color: rgb(110,110,255);
         color: rgb(110,110,255);
     }
+
+.btnEditChamado {
+    margin-top: 5%;
+    width: 100%;
+    background-color: rgb(240, 240, 253);
+    border-color: rgb(110,110,255);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1%;
+    color: rgb(110,110,255);
+    cursor: pointer;
+    font-size: 0.8vw;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.5s;
+}
+    .btnEditChamado:hover {
+        background-color: rgb(230, 230, 253);
+        border-color: rgb(110,110,255);
+        color: rgb(110,110,255);
+    }
+.btnsearch {
+    display:inline-block;
+    width: 15%;
+    background-color: rgb(240, 240, 253);
+    border-color: rgb(110,110,255);
+    border-style: solid;
+    border-width: 1px;
+    padding: 1%;
+    color: rgb(110,110,255);
+    cursor: pointer;
+    font-size: 0.8vw;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.btnsearch.big{
+    width:30%;
+}

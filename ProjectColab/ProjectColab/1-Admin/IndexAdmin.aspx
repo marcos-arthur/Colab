@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
+        <div class="column middle">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" DataKeyNames="id,senha">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
@@ -29,6 +30,7 @@
             </Columns>
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAllStatus2" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
+        </div>  
     </div>      
        
 </asp:Content>

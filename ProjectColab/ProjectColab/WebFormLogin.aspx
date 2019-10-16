@@ -33,9 +33,13 @@ body{
 
                 <div class="login"> 
                <asp:Literal runat="server" ID="LabelMsgErro" />
-            <div class="logo"><img  class="imagefix" src="..\logo.png"/></div>                    
-                    <asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
-                    <asp:TextBox ID="Senha" placeholder="DIGITE SUA SENHA" TextMode="Password" runat="server" CssClass="inputlogin"></asp:TextBox>
+            <div class="logo"><img  class="imagefix" src="..\logo.png"/></div>    
+                    <div class="">
+                        <i class="fa fa-user-circle"></i><asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
+                    </div>
+                    <div class="">
+                        <i class="fa fa-key"></i><asp:TextBox ID="Senha" placeholder="DIGITE SUA SENHA" TextMode="Password" runat="server" CssClass="inputlogin"></asp:TextBox>
+                    </div>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>
                 <asp:Button ID="add" runat="server" Text="ENTRAR" CssClass="btnlogin" OnClick="add_Click"/>
                 </div>     

@@ -5,10 +5,11 @@
           
     <div class="row">
             <div class="column middle">
+            <div class="indicador"><a class="title">ADICIONAR LABORATÓRIO</a></div>
                 <div class="menuadicao">
 
-                <div class="tag"><a>Nome do Laboratório</a></div>
-                <asp:TextBox ID="nome" runat="server" Placeholder="DIGITE AQUI O NOME" CssClass="inputtext"></asp:TextBox>  
+                <div class=""><i class="fa fa-desktop"></i>
+                <asp:TextBox ID="nome" runat="server" Placeholder="nome do laboratório" CssClass="inputtext"></asp:TextBox> </div> 
                 <asp:Label ID="MsgErro" runat="server" ForeColor="Red"></asp:Label>
 
                 <br />

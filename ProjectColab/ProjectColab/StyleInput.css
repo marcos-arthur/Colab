@@ -1,9 +1,8 @@
 ﻿.inputlogin {
-    display: block;
     padding: 2%;
     width: 80%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 10%;        
     border: none;
     background-color: rgb(240, 240, 253);
     border-bottom: solid 1px white;
@@ -13,7 +12,7 @@
     .inputlogin:focus {
         background-color: rgb(251,251,251);
         border-bottom: solid 1px white;
-        width: 100%;
+        width: 90%;
         border-radius: 5px;
     }
 .imagefix {
@@ -25,7 +24,6 @@
     background-color: rgb(240,240,240);
     border-bottom: rgb(240,240,240) solid 1px;
     border-radius: 5px;
-    padding: 2%;
     margin-top: 2%;
     margin-bottom: 8%;
     box-sizing: border-box;
@@ -33,7 +31,7 @@
 }
     .inputtext:focus {
         background-color: rgb(250,250,250); 
-        border-bottom: white solid 1px;
+        border-bottom: rgb(0,0,0) solid 1px;
     }
 
 .inputtextDrop {
@@ -59,10 +57,36 @@
     background-color: white;
     border-bottom: rgba(255,0,0,0.3) solid 1px;
 }
+.btnplace{
+    background-color:red;
+    margin:2%;
+}
 
+.inputsearch {
+    padding: 1%;
+    display:inline-block;
+    width: 30%;
+    margin: auto;
+    border: none;
+    background-color: rgb(240, 240, 253);
+    border-bottom: solid 1px white;
+    transition: all 0.5s;
+}
+.ch{
+    margin-right:37%;
+}
 
-
-
+    .inputsearch:focus {
+        background-color: rgb(251,251,251);
+        border-bottom: solid 1px white;
+        border-radius: 5px;
+    }
+.searchplace {
+    margin:2%;
+    margin-top: 1%;
+    padding-bottom: 2%;
+    border-bottom: solid 1px rgb(210, 210, 255);
+}
 
 
 
@@ -94,18 +118,6 @@ body {
     border:none;
 }
 .searchbar:focus{
-}
-.inputtext {
-    width: 50%;
-    border: none;
-    background-color: rgb(240,240,240);
-    border-bottom: rgb(240,240,240) solid 1px;
-    border-radius: 5px;
-    padding: 2%;
-    margin-top: 2%;
-    margin-bottom: 8%;
-    box-sizing: border-box;
-    transition: all 0.3s linear 0.2s;
 }
 .menuadicao {
     margin: 2% 10% 0% 10%;

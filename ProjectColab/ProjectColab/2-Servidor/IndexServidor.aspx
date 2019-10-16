@@ -36,14 +36,20 @@
             <div class="column middle" >
                       <div class="content">
                           <div class="article">
-                                <div class="indicador"><a class="title">TUTORIAIS</a></div>
                                 <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TUTORIAIS</a></div>
                              <div class="bot"><asp:Button runat="server" ID="Button5" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" /></div> 
                           </div>
-                          <div class="article">
-                                <div class="indicador"><a class="title">LABORATÓRIOS</a></div>                                
+                          <div class="article">                              
                                 <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">laboratórios</a></div>
                              <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" /></div> 
+                          </div>
+                          <div class="article">                             
+                                <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TUTORIAIS EM ANÁLISE</a></div>
+                             <div class="bot"> <asp:Button runat="server" ID="Button6" Text="VISUALIZAR TUTORIAS EM ANÁLISE" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormTutorialSubmetido.aspx"/></div> 
+                          </div>
+                          <div class="article">                             
+                                <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">CHAMADOS FECHADOS</a></div>
+                             <div class="bot"> <asp:Button runat="server" ID="Button4" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormChamadosFechadosServidor.aspx"/></div> 
                           </div>
                       </div>
                   </div>    

@@ -5,15 +5,14 @@
 
     <div class="row">        
         <div class="column middle teste">
-            <div class="indicador"><a class="colorfix titulo"><i class="fa fa-desktop"></i>LABORATÓRIOS</a></div>              
+            <div class="indicador"><a class="title">LABORATÓRIOS</a></div>              
 
-            <!-- Busca -->
-            <div class="content top">            
+            <!-- Busca -->      
+            <div class="content"></div>
                 <div class="search">            
                     <i class="fa fa-search"></i><asp:TextBox ID="searchBox" runat="server" CssClass="searchbar" placeholder="PESQUISAR POR NOME"></asp:TextBox>
                     <asp:Button runat="server" Text="Buscar" ID="search" CssClass="btn" OnClick="search_Click"/>
                 </div>    
-            </div>
 
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">
@@ -21,7 +20,7 @@
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
-                            <div class="iconchamado"><i class="fa fa-desktop"></i><a class="text">Laboratório<%# DataBinder.Eval(Container.DataItem, "nome")%></a></div>
+                            <div class="iconchamado"><i class="fa fa-desktop"></i><a class="text"><%# DataBinder.Eval(Container.DataItem, "nome")%></a></div>
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i> ABRIR LABORATÓRIO</asp:LinkButton>
                             </div>
@@ -30,6 +29,5 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectStatus1" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
             </div>            
-        </div>
-        
+              </div>      
 </asp:Content>
