@@ -23,7 +23,10 @@ namespace ProjectColab
 
         protected void add_Click(object sender, EventArgs e)
         {
-           
+            Session["equipValue"] = "";
+            Session["labValue"] = "";
+            Session["tutorialValue"] = "";
+
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();                    
 

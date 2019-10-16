@@ -102,7 +102,7 @@ drop table Usuario
 
 /*		
 INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS:
-	values	('Diogo', 'ds', '27d08e8e003330f1880f0ff5d418c6f8', 1,1,''),						-- admin		      
+	values	('Diogo', 'ds', '21232f297a57a5a743894a0e4a801fc3', 1,1,''),						-- admin		      
 			('Administrador', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1,1,''),				-- admin			
 			('Servidor da Silva', 'serv', '27d08e8e003330f1880f0ff5d418c6f8', 2,1,''),		    -- serv
 			('Bolsita Andrade', 'bols', '1b98a6a467a4f28e5292f187d202342d', 3,1,''),		    -- bols
@@ -110,4 +110,5 @@ INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS
 
 */			
 
+select * from usuario
 
