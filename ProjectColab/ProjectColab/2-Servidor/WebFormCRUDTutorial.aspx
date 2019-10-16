@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle teste">     
-            <div class="indicador"><a class="colorfix titulo"><i class="fa fa-book"></i>TUTORIAIS</a></div>          
+            <div class="indicador"><a class="title">TUTORIAIS</a></div>          
             
             <!-- Busca -->
             <div class="content top">            

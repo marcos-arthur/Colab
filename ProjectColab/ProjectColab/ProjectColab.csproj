@@ -109,9 +109,11 @@
     <Content Include="SQL\triggers.sql" />
     <Content Include="Style.css" />
     <Content Include="styleadd.css" />
+    <Content Include="StyleButton.css" />
     <Content Include="StyleChat.css" />
     <Content Include="stylecontainer.css" />
     <Content Include="StyleEditChamado.css" />
+    <Content Include="StyleIndicador.css" />
     <Content Include="StyleInput.css" />
     <Content Include="stylelogin.css" />
     <Content Include="Web.config">

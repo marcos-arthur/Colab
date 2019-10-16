@@ -10,6 +10,8 @@
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="StyleChat.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
+<link rel="stylesheet" type="text/css" href="StyleButton.css"/>
+<link rel="stylesheet" type="text/css" href="StyleIndicador.css"/>
 <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
 <link href="css\fontawesome.css" rel="stylesheet">
 <link href="css\brands.css" rel="stylesheet">
@@ -27,11 +29,11 @@ body{
 <body>
 <div id="particles-js"></div> 
     <form id="form1" runat="server">
-            <div class="logo"><img src="..\logo.png"/></div>
         <div class="loginfix">
 
                 <div class="login"> 
-               <asp:Literal runat="server" ID="LabelMsgErro" />                
+               <asp:Literal runat="server" ID="LabelMsgErro" />
+            <div class="logo"><img  class="imagefix" src="..\logo.png"/></div>                    
                     <asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
                     <asp:TextBox ID="Senha" placeholder="DIGITE SUA SENHA" TextMode="Password" runat="server" CssClass="inputlogin"></asp:TextBox>
                 <asp:TextBox ID="data" runat="server" style="display:none" CssClass="text"></asp:TextBox>

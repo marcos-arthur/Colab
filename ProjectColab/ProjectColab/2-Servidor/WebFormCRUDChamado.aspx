@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row" >      
         <div class="column middle teste">
-            <div class="indicador"><a class="colorfix titulo"><i class="fa fa-bell"></i>CHAMADOS</a></div>            
+            <div class="indicador"><a class="title">CHAMADOS</a></div>            
             
             <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormChamadosFechadosServidor.aspx"/>
             

@@ -53,12 +53,6 @@
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
-.indicador {
-    width: 100%;
-    padding: 2%;
-    background-color: #7D81FF;
-    border-radius: 5px;
-}
 .content {
     border-radius: 3px;
     margin: 1%;
@@ -73,7 +67,7 @@
         float:none;
     }
 .content2 {
-    background-color: white;
+    background-color: none;
     border-radius: 3px;
     text-align: center;
 }
@@ -87,11 +81,6 @@
     color:black;
     display: block;
 }
-.title {
-    color: black;
-    font-size: 2vw;
-    display: block;
-}
 .sub-title {
     font-size: 0.8vw;
     display: block;
@@ -103,32 +92,6 @@
 
 .content.small a{
     padding:3%;
-}
-
-.btn {
-    margin-top: 5%;
-    width: 100%;
-    background-color: rgb(240, 240, 253);
-    border-color: rgb(180,180,255);
-    border-style: solid;
-    border-width: 1px;
-    padding: 1%;
-    color: rgb(180,180,255);
-    cursor: pointer;
-    font-size: 1vw;
-    border-radius: 5px;
-    text-align: center;
-    transition: all 0.5s;
-}
-    .btn.small {
-        padding: 5%;
-        max-width: 90%;
-        color: black;
-        font-size: 0.7vw;
-    }
-
-.grey{
-    background-color:rgb(180,180,180);
 }
 .btnPesquisar, .btnMaisBotoes {
     position: fixed;
@@ -144,27 +107,12 @@
     border-color: rgba(10,10,10,0.2);
     background-color: rgba(252,252,252,1);
 }
-
-.margin.id {
-    width: 100%;
-    margin: 0%;
-    float: left;
-    padding: 1%;
-    background-color: rgb(230,230,230);
-    border-radius: 0px 5px 5px 0px;
-}
-.margin{
-}
 .btn.test{
     font-size:0.8vw;
     width:10%;
     margin:0%;
     margin-left:50%;
 
-}
-.colorfix.titulo{
-    color:white;
-    font-size:2vw;
 }
 @media only screen and (max-width: 800px) {
     .row {
@@ -255,12 +203,6 @@
     .btnPesquisar {
         right: 30%;
     }
-}
-.btn:hover {
-    background-color: white;
-    color: RGBA(255,0,0,0.5);
-    transition: all 0.4s ease;
-    border-color:rgba(255,0,0,0.7);
 }
 .btn.fixed:hover {
     transition: all 0.4s ease;

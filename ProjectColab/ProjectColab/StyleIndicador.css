@@ -1,0 +1,39 @@
+﻿.indicador {
+    width: 100%;
+    padding: 2%;
+    color:black;
+    background-color:none;
+    border-radius: 5px;
+}
+.title {
+    color: black;
+    font-size: 2.5vw;
+}
+.bot {
+    background-color: rgb(220,220,255);
+    color: white;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 1vw;
+    padding: 5%;
+}
+.iconchamado {
+    background-color: rgb(220,220,255);
+    color: black;
+    border-radius: 5px 5px 0px 0px;
+    /*border-left: red 2px solid;*/
+    font-size: 1vw;
+    margin: 0%;
+    padding: 5%;
+    text-align: center;
+}
+.tag {
+    width: 100%;
+    margin-bottom: 1%;
+    color: rgb(20,20,20);
+    background-color: rgba(255,0,0,0.2);
+    border-radius: 0p   x 8px 8px 0px;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: rgba(255,0,0,0.5);
+    padding: 2%;
+}
