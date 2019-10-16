@@ -13,13 +13,13 @@
                             </div> 
 
                             <!--Botoes--> 
-                            <div class="btnplace">
+                            <div class="searchplace">
                                 <p>ATRIBUIR CHAMADO</p>
-                                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id"  CssClass="inputtextDrop"></asp:DropDownList>
+                                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id"  CssClass="inputsearch  "></asp:DropDownList>
                                 <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
 
-                                <asp:Button ID="atribuir" runat="server" CssClass="btnEditChamado" Text="atribuir" OnClick="atribuir_Click"/>
-                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnEditChamado" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>
+                                <asp:LinkButton ID="atribuir" runat="server" CssClass="btnsearch" CommandName="Fechar"  OnClick="atribuir_Click"><i class="fa fa-external-link-square"></i>atribuir</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>                     
                             </div>   
                             <!--Nome do usuario-->
                             <div class="rowChamado"><a class="textEditChamado">Aberto por </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
@@ -59,17 +59,21 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
     <div class="column middle">
-            
-            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputtext"></asp:TextBox>
-            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
-
+       
+            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS</a></div></div> 
+        
+            <div class="searchplace">
+            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
+            </div>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
                     <div class="containerChat">
                         <i class="fa fa-user-circle iconFix"></i>
                         <p class="data"><span> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></span>
                         <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
-                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
+                        <div class="coment">
+                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p></div>
                     </div>
                     <br />
                 </ItemTemplate>

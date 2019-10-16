@@ -99,6 +99,7 @@
         color: rgb(110,110,255);
     }
 .btnsearch {
+    text-decoration:none;
     display:inline-block;
     width: 15%;
     background-color: rgb(240, 240, 253);
@@ -115,6 +116,11 @@
 }
 .btnsearch.big{
     width:30%;
+}
+.btnsearch:hover {
+    background-color: rgb(230, 230, 253);
+    border-color: rgb(110,110,255);
+    color: rgb(110,110,255);
 }
 
 .botaoadd {

@@ -15,6 +15,22 @@
         width: 90%;
         border-radius: 5px;
     }
+.inputtxt {
+    padding: 1%;
+    width: 80%;
+    margin-bottom:3%;
+    border: none;
+    background-color: rgb(240, 240, 253);
+    border-bottom: solid 1px white;
+    transition: all 0.5s;
+}
+
+    .inputtxt:focus {
+        background-color: rgb(251,251,251);
+        border-bottom: solid 1px white;
+        width: 90%;
+        border-radius: 5px;
+    }
 .imagefix {
     max-width: 30%;
 }
@@ -64,23 +80,44 @@
 
 .inputsearch {
     padding: 1%;
-    display:inline-block;
+    display: inline-block;
     width: 30%;
     margin: auto;
     border: none;
     background-color: rgb(240, 240, 253);
     border-bottom: solid 1px white;
     transition: all 0.5s;
+    resize: none;
+}
+.inputsearch2 {
+    padding: 1%;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    margin-bottom:1%;
+    border: none;
+    background-color: rgb(240, 240, 253);
+    border-bottom: solid 1px white;
+    transition: all 0.5s;
+    resize: none;
 }
 .ch{
     margin-right:37%;
 }
+.invert {
+    margin-left: 37%;
+}
 
-    .inputsearch:focus {
+    .inputsearch2:focus {
         background-color: rgb(251,251,251);
         border-bottom: solid 1px white;
         border-radius: 5px;
     }
+.inputsearch2:focus {
+    background-color: rgb(251,251,251);
+    border-bottom: solid 1px white;
+    border-radius: 5px;
+}
 .searchplace {
     margin:2%;
     margin-top: 1%;

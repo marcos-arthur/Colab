@@ -10,6 +10,7 @@
 }
 .textEditChamado.nomeChamado {
     color: rgb(50,50,50);
+    text-transform:unset;
 }
 .editmenu{
     background-color:rgb(245,245,245);
