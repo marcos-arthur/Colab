@@ -48,9 +48,9 @@ namespace ProjectColab.DAL
 
         //SELECIONAR//
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Usuario> SelectLogin(string login)
+        public Modelo.Usuario SelectLogin(string login)
         {
-            Modelo.Usuario aUsuario;
+            Modelo.Usuario aUsuario = new Modelo.Usuario();
             List<Modelo.Usuario> aListUsuario = new List<Modelo.Usuario>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -71,14 +71,14 @@ namespace ProjectColab.DAL
                        Convert.ToInt32(dr["tipo"].ToString()),
                        (byte[])dr["foto"],
                        Convert.ToInt32(dr["status"].ToString()));
-                    aListUsuario.Add(aUsuario);
+                    //aListUsuario.Add(aUsuario);
                 }
             }
 
             dr.Close();
             conn.Close();
 
-            return aListUsuario;
+            return aUsuario;
         }
 
         //SELECTALL()//

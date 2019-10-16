@@ -60,6 +60,7 @@ namespace ProjectColab
             
             // Instancia objeto DAL
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
+            Modelo.Usuario aUsuarioBanco = null;
 
             // Critografa senha
             string senhaMD5 = "";
@@ -74,8 +75,8 @@ namespace ProjectColab
             Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);                       
 
             // Valida Usuario           
-            List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(login.Text);
-            if (aListUsuario.Count > 0)
+            aUsuarioBanco = aDALUsuario.SelectLogin(login.Text);
+            if (aUsuarioBanco == null)
             {
                 ok = false;
                 Session["MsgErrologin"] = "Usuário já cadastrado";

@@ -31,13 +31,13 @@ namespace ProjectColab
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
 
             // Valida Usuario
-            List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
+            //List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
                     
 
             // Critografa senha
             string senhaMD5 = GerarHashMd5(Senha.Text);
             // Le usuário da Lista
-            Modelo.Usuario aUsuario = aListUsuario[0];
+            Modelo.Usuario aUsuario = aDALUsuario.SelectLogin(Login.Text);
             // Valida Senha
             if (aUsuario.senha != senhaMD5)
             {
@@ -45,9 +45,9 @@ namespace ProjectColab
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
            
-            if ((aListUsuario.Count == 0) || (aUsuario.status != 1))
+            if ((aUsuario == null) || (aUsuario.status != 1))
             {
-                Session["msgErro"] = "Usuário não cadastrado";
+                Session["msgErro"] = "Usuário não cadastrado ou indisponível";
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
             // Salva usuário na sessão

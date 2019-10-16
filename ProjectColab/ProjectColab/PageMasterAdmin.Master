@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageMasterAdmin.master.cs" Inherits="ProjectColab.PageMasterAdmin" %>
 
 <!DOCTYPE html>
-
+<html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -33,7 +33,7 @@
             <ul class="menu2" style="background-color:white">
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
                 <li class="li2">
-                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>
+                <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//1-Admin/WebFormAddUsuario.aspx"/>
                     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                         <ItemTemplate>
                             <a><i class="fa fa-user-circle"></i><%# DataBinder.Eval(Container.DataItem,"nome")%></a>
@@ -55,7 +55,7 @@
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        
     </form>
 </body>
 </html>
