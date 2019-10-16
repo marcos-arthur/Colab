@@ -8,15 +8,17 @@
             <div class="indicador"><a class="title">LABORATÓRIOS</a></div>              
 
             <!-- Busca -->      
-            <div class="content"></div>
-                <div class="search">            
-                    <i class="fa fa-search"></i><asp:TextBox ID="searchBox" runat="server" CssClass="searchbar" placeholder="PESQUISAR POR NOME"></asp:TextBox>
-                    <asp:Button runat="server" Text="Buscar" ID="search" CssClass="btn" OnClick="search_Click"/>
-                </div>    
+            <div class="content">  
+                <div class="searchplace">                  
+                        <asp:Button runat="server" ID="Button1" Text="+ LABORATÓRIO" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx"/>                      
+                        <i class="fa fa-search"></i>
+                        <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox> 
+                        <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
+                </div>
+            </div>            
 
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">
-                <asp:Button ID="Button2" runat="server" Text="ADICIONAR LABORATÓRIO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddLab.aspx" />
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">

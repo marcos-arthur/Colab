@@ -57,9 +57,9 @@
     background-color: white;
     border-bottom: rgba(255,0,0,0.3) solid 1px;
 }
-.btnplace{
-    background-color:red;
-    margin:2%;
+.btnplace {
+    background-color: rgb(245,245,245);
+    margin: 2%;
 }
 
 .inputsearch {
@@ -125,22 +125,6 @@ body {
 .btn.adicao{
     width:20%;
 }
-.botaoadd {
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    float: left;
-    min-width: 25%;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    border: rgba(255,0,0,0.3) 1px solid;
-    border-radius: 5px;
-    padding: 2% 10% 2% 10%;
-    font-size: 0.8vw;
-    cursor: pointer;
-    margin-right: 2%;
-    margin-bottom: 2%;
-}
 .article {
     width:46%;
     background-color: rgb(250,250,250);
@@ -155,7 +139,7 @@ body {
 }
 .text {
     font-size:0.8vw;
-    text-transform: uppercase;
+    text-transform: unset;
     margin: 5% 5% 1% 5%;
     text-align: unset;
     text-align: unset;

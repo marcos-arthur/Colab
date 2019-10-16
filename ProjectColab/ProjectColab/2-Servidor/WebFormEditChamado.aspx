@@ -11,14 +11,16 @@
                             <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a>                          
                             <a class="text status" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
                             </div> 
-    <div class="btnplace">
-                <p>ATRIBUIR CHAMADO</p>
-                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id"  CssClass="inputtextDrop"></asp:DropDownList>
-                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
 
-                <asp:Button ID="atribuir" runat="server" CssClass="btnEditChamado" Text="atribuir" OnClick="atribuir_Click"/>
-                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnEditChamado" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>
-        </div>   
+                            <!--Botoes--> 
+                            <div class="btnplace">
+                                <p>ATRIBUIR CHAMADO</p>
+                                <asp:DropDownList runat="server" ID="atribuidoID" DataSourceID="ObjectDataSource4" DataTextField="nome" DataValueField="id"  CssClass="inputtextDrop"></asp:DropDownList>
+                                <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
+
+                                <asp:Button ID="atribuir" runat="server" CssClass="btnEditChamado" Text="atribuir" OnClick="atribuir_Click"/>
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnEditChamado" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>
+                            </div>   
                             <!--Nome do usuario-->
                             <div class="rowChamado"><a class="textEditChamado">Aberto por </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
 

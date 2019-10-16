@@ -6,23 +6,27 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css"/> 
-<link rel="stylesheet" type="text/css" href="StyleInput.css"/>
-<link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
-<link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
-<link href="css\fontawesome.css" rel="stylesheet">
-<link href="css\brands.css" rel="stylesheet">
-<link href="css\solid.css" rel="stylesheet">    
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script src="../confirmar.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--
-<link rel="stylesheet" type="text/css" href="styleadd.css"/> 
-<link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
-<link rel="stylesheet" type="text/css" href="Crudstyle.css"/> -->
-<script type="text/javascript">
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
+    <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
+    <link rel="stylesheet" type="text/css" href="StyleChat.css"/>
+    <link rel="stylesheet" type="text/css" href="StyleButton.css"/>
+    <link rel="stylesheet" type="text/css" href="StyleIndicador.css"/>
+    <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
+    <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
+    <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
+    <link href="css\fontawesome.css" rel="stylesheet">
+    <link href="css\brands.css" rel="stylesheet">
+    <link href="css\solid.css" rel="stylesheet">  
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="../confirmar.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--
+    <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
+    <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
+    <link rel="stylesheet" type="text/css" href="Crudstyle.css"/> -->
+    <script type="text/javascript">
 
-</script>  
+    </script>
     <title>COLAB</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
         
@@ -30,6 +34,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+<div id="particles-js"></div>  
         <div>
             <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~/3-Bolsista/WebFormAddChamadoBolsista.aspx"/>
             <div class="logo"><a href="IndexBolsista.aspx" class="logos">COLAB</a></div>
@@ -74,7 +79,8 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
         </asp:ContentPlaceHolder>
-
+<script src="../js/particles.js"></script>
+<script src="../js/app.js"></script>
     </form>
 </body>
 </html>
