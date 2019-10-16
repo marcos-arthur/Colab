@@ -13,7 +13,8 @@ namespace ProjectColab
     public partial class WebFormAddUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   // Apresenta mensagem de erro
+        {   
+            // Apresenta mensagem de erro
             if ((Session["MsgErronome"] != null) && (Session["MsgErronome"].ToString() != ""))
             {
                 MsgErronome.Text = Session["MsgErronome"].ToString();
@@ -49,6 +50,22 @@ namespace ProjectColab
         {
             bool ok = true;
 
+            // Instancia objeto DAL
+            DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
+            Modelo.Usuario aUsuarioBanco = null;
+
+            //Verifica o parse do tipo
+            int type = 0;
+            if (int.TryParse(tipo.Text, out int result)) type = Convert.ToInt32(tipo.Text);
+            else type = 0;
+
+            // Critografa senha
+            string senhaMD5 = "";
+            if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
+
+            // Instancia objeto Modelo
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);
+            
             // Validar senha
             if (senha.Text != confirmaSenha.Text)
             {
@@ -57,22 +74,6 @@ namespace ProjectColab
                 Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
             }
             Session["msgErro"] = "";
-            
-            // Instancia objeto DAL
-            DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
-            Modelo.Usuario aUsuarioBanco = null;
-
-            // Critografa senha
-            string senhaMD5 = "";
-            if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
-
-            //Verifica o parse do tipo
-            int type = 0;
-            if (int.TryParse(tipo.Text, out int result)) type = Convert.ToInt32(tipo.Text);
-            else type = 0;
-
-            // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);                       
 
             // Valida Usuario           
             aUsuarioBanco = aDALUsuario.SelectLogin(login.Text);
@@ -103,9 +104,11 @@ namespace ProjectColab
             }
              
             if(ok) Response.Redirect("~/1-Admin/IndexAdmin.aspx");
-            else Response.Redirect("~/1-Admin/IndexAdmin.aspx");
+            else Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
 
         }
+
+        //Método de criptpgrafia de senha
         public string GerarHashMd5(string input)
         {
             MD5 md5Hash = MD5.Create();

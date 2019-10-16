@@ -15,8 +15,7 @@ namespace ProjectColab
             {
                 ObjectDataSource1.SelectMethod = "selectSearch";
 
-                //string a = Session["labb"].ToString();
-
+                
                 //Passar chamadoValue como parâmetro
                 SessionParameter empid = new SessionParameter();
                 empid.Name = "nome";

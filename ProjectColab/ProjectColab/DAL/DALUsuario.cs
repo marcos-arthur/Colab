@@ -199,8 +199,7 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Usuario> SelectAllStatus2()
         {
-            DALUsuario usu = new DALUsuario();
-           string nomeUsuario;
+            DALUsuario usu = new DALUsuario();           
 
             // Variavel para armazenar um livro
             Modelo.Usuario aUsuario;

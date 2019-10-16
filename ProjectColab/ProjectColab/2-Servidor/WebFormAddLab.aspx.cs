@@ -23,7 +23,7 @@ namespace ProjectColab
 
         protected void Add_Click(object sender, EventArgs e)
         {
-            bool ok = true;
+           
             Modelo.Laboratorios alaboratorios;
             DAL.DALLaboratorio aDALLaboratorio;
 
@@ -35,7 +35,7 @@ namespace ProjectColab
             int idlab = aDALLaboratorio.SelectID(nome.Text);
             if (idlab != 0)
             {
-                ok = false;
+                
                 Session["msgErro"] = "Laboratório já cadastrado";
                 Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
             }

@@ -17,7 +17,7 @@
             <!--REPEATER PARA VISUALIZAR OS Equipamentos-->            
             <div class="content">
                 <asp:Button ID="Button2" runat="server" Text="ADICIONAR EQUIPAMENTO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />
-                <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
+                <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" >
                     <ItemTemplate>
                         <div class="article">
                             <div class="iconchamado"><i class="fa fa-keyboard-o"></i> <a class="text"><%# DataBinder.Eval(Container.DataItem, "modelo")%></a></div>
