@@ -11,7 +11,24 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["labValue"].ToString() == "search")
+            {
+                ObjectDataSource1.SelectMethod = "selectSearch";
+
+                //string a = Session["labb"].ToString();
+
+                //Passar chamadoValue como parâmetro
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "nome";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "labb";
+
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+            }
+
+            Session["labValue"] = "";
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -46,7 +63,14 @@ namespace ProjectColab
             }
         }
 
-
-        
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (searchBox.Text.Trim() != "")
+            {
+                Session["labValue"] = "search";
+                Session["labb"] = searchBox.Text;
+                Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
+            }
+        }
     }
 }

@@ -86,6 +86,44 @@ namespace ProjectColab.DAL
             return aListEquipamento;
         }
 
+        //Busca
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Equipamento> SelectSearch(string modelo)
+        {
+            // Variavel para armazenar um livro
+            Modelo.Equipamento aEquipamento;
+            // Cria Lista Vazia
+            List<Modelo.Equipamento> aListEquipamento = new List<Modelo.Equipamento>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "SELECT * FROM Equipamento where modelo like '%" + modelo + "%'";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_nome"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
+                    aListEquipamento.Add(aEquipamento);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListEquipamento;
+        }
+
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Equipamento obj)

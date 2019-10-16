@@ -11,7 +11,22 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (Session["equipValue"].ToString() == "search")
+            {
+                ObjectDataSource3.SelectMethod = "selectSearch";
+
+                //string a = Session["equipb"].ToString();
+
+                //Passar chamadoValue como parâmetro
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "modelo";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "equipb";
+
+
+                ObjectDataSource3.SelectParameters.Add(empid);
+                ObjectDataSource3.DataBind();
+            }
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -30,6 +45,16 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~//2-Servidor/WebFormEditChamado.aspx");
             }*/
+        }
+
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (searchBox.Text.Trim() != "")
+            {
+                Session["equipValue"] = "search";
+                Session["equipb"] = searchBox.Text;
+                Response.Redirect("~//2-Servidor/WebFormCRUDEquipamento.aspx");
+            }
         }
     }
 }

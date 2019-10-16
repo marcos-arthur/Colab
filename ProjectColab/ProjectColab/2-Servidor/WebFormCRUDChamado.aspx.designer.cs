@@ -40,15 +40,6 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.Button search1;
         
         /// <summary>
-        /// Controle search.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton search;
-        
-        /// <summary>
         /// Controle Repeater3.
         /// </summary>
         /// <remarks>

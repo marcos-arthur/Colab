@@ -11,10 +11,11 @@
             <!-- Busca -->
             <div class="content top">            
                 <div class="search">            
-                    <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="BUSCA PELO ID DO CHAMADO"></asp:TextBox>
+                    <i class="fa fa-search"></i><asp:TextBox ID="TextBox1" runat="server" CssClass="searchbar" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox>
+                    <asp:Button runat="server" Text="Buscar" ID="search1" CssClass="btn" OnClick="search_Click"/>
                 </div>
-                    <asp:Button runat="server" Text="Busca" ID="search1" CssClass="btn" OnClick="search_Click"/>
-                    <asp:LinkButton runat="server" ID="search" OnClick="search_Click"  CssClass="btn" text="Busca"></asp:LinkButton>
+                    
+                    
             </div>
             
             <!--REPEATER PARA VISUALIZAR OS CHAMADOS-->
