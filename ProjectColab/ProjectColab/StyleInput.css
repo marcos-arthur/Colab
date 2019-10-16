@@ -1,4 +1,81 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+﻿.inputlogin {
+    display: block;
+    padding: 2%;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    border: none;
+    background-color: rgb(240, 240, 253);
+    border-bottom: solid 1px white;
+    transition: all 0.5s;
+}
+
+    .inputlogin:focus {
+        background-color: rgb(251,251,251);
+        border-bottom: solid 1px white;
+        width: 100%;
+        border-radius: 5px;
+    }
+.imagefix {
+    max-width: 30%;
+}
+.inputtext {
+    width: 50%;
+    border: none;
+    background-color: rgb(240,240,240);
+    border-bottom: rgb(240,240,240) solid 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    box-sizing: border-box;
+    transition: all 0.3s linear 0.2s;
+}
+    .inputtext:focus {
+        background-color: rgb(250,250,250); 
+        border-bottom: white solid 1px;
+    }
+
+.inputtextDrop {
+    width: 10%;
+    border: none;
+    background-color: rgb(230,230,230);
+    border-bottom: rgb(240,240,240) solid 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    box-sizing: border-box;
+    transition: all 0.3s linear 0.2s;
+}
+
+    .inputtextDrop:first-of-type:focus {
+        background-color: rgb(250,250,250);
+        width: 40%;
+        border-bottom: rgba(255,0,0,0.3) solid 1px;
+    }
+
+.inputtext:focus {
+    background-color: white;
+    border-bottom: rgba(255,0,0,0.3) solid 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
@@ -30,49 +107,6 @@ body {
     box-sizing: border-box;
     transition: all 0.3s linear 0.2s;
 }
-    .inputtext:first-of-type:focus {
-        background-color: rgb(250,250,250);
-        width: 100%;
-        border-bottom: rgba(255,0,0,0.3) solid 1px;
-    }
-    .inputtext:focus {
-        background-color: rgb(250,250,250);
-        border-bottom: rgba(255,0,0,0.3) solid 1px;
-    }
-.inputtextDrop {
-    width: 10%;
-    border: none;
-    background-color: rgb(230,230,230);
-    border-bottom: rgb(240,240,240) solid 1px;
-    border-radius: 5px;
-    padding: 2%;
-    margin-top: 2%;
-    margin-bottom: 8%;
-    box-sizing: border-box;
-    transition: all 0.3s linear 0.2s;
-}
-
-    .inputtextDrop:first-of-type:focus {
-        background-color: rgb(250,250,250);
-        width: 40%;
-        border-bottom: rgba(255,0,0,0.3) solid 1px;
-    }
-
-    .inputtext:focus {
-        background-color: white;
-        border-bottom: rgba(255,0,0,0.3) solid 1px;
-    }
-.tag {
-    width:100%;
-    margin-bottom:1%;
-    color:rgb(20,20,20);
-    background-color: rgba(255,0,0,0.2);
-    border-radius: 0px 8px 8px 0px;
-    border-left-style: solid;
-    border-left-width: 2px;
-    border-left-color: rgba(255,0,0,0.5);
-    padding: 2%;
-}
 .menuadicao {
     margin: 2% 10% 0% 10%;
 }
@@ -95,16 +129,6 @@ body {
     margin-right: 2%;
     margin-bottom: 2%;
 }
-.iconchamado {
-    background-color: rgb(220,220,255);
-    color: black;
-    border-radius: 5px 5px 0px 0px;
-    /*border-left: red 2px solid;*/
-    font-size: 1vw;
-    margin:0%;
-    padding: 5%;
-    text-align:center;
-}
 .article {
     width:46%;
     background-color: rgb(250,250,250);
@@ -112,13 +136,6 @@ body {
     float:left;
     text-align:unset;
     margin:2%;
-}
-.bot {
-    background-color: rgb(220,220,255);
-    color: white;
-    border-radius: 0px 0px 5px 5px;
-    font-size: 1vw;
-    padding: 5%;
 }
 .labtext{
     text-align:center;
@@ -153,21 +170,6 @@ body {
 }
 .resumo{
     font-size:1vw;  
-}
-.botaoopen {
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    margin:5%;    
-    text-decoration: none;
-    color: black;
-    border: rgba(255,0,0,0.3) 1px solid;
-    border-radius: 5px;
-    padding: 2% 10% 2% 10%;
-    font-size: 0.8vw;
-    cursor: pointer;
-    display:block;
-    text-align:center;
 }
 input:focus{
     outline:none !important;

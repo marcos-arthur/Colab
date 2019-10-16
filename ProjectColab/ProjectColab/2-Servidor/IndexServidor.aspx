@@ -6,7 +6,7 @@
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>            
                   <div class="column middle" >
-                          <div class="indicador"><a class="colorfix titulo">DASHBOARD</a></div>
+                          <div class="indicador"><a class="title">DASHBOARD</a></div>
                       <div class="article">
                             <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TODOS OS CHAMADOS</a></div>
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "count")%></a>
@@ -35,16 +35,18 @@
         <ItemTemplate>
             <div class="column middle" >
                       <div class="content">
-                         <div class="indicador"><a class="colorfix titulo">TUTORIAIS</a></div>
-                         <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" />
+                          <div class="article">
+                                <div class="indicador"><a class="title">TUTORIAIS</a></div>
+                                <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">TUTORIAIS</a></div>
+                             <div class="bot"><asp:Button runat="server" ID="Button5" Text="VISUALIZAR TUTORIAIS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" /></div> 
+                          </div>
+                          <div class="article">
+                                <div class="indicador"><a class="title">LABORATÓRIOS</a></div>                                
+                                <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text chamadoid">laboratórios</a></div>
+                             <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" /></div> 
+                          </div>
                       </div>
-                  </div>
-                  <div class="column middle">
-                      <div class="content">
-                         <div class="indicador"><a class="colorfix titulo">LABORATÓRIOS</a></div>
-                         <asp:Button runat="server" ID="Button4" Text="VISUALIZAR LABORATÓRIOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" />
-                      </div>
-                  </div> 
+                  </div>    
         </ItemTemplate>
     </asp:Repeater>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectChamados" TypeName="ProjectColab.DAL.DALConsulta">

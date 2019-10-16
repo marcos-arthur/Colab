@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="style.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleInput.css"/>
 <link rel="stylesheet" type="text/css" href="StyleChat.css"/>
+<link rel="stylesheet" type="text/css" href="StyleButton.css"/>
+<link rel="stylesheet" type="text/css" href="StyleIndicador.css"/>
 <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
 <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
 <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
@@ -27,13 +29,13 @@
     <title>COLAB</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
 
-    </asp:ContentPlaceHolder>
+    </asp:ContentPlaceHolder>   
 </head>
 <body onload="alerta()">
 <div>
     <form id="form1" runat="server">
 <div id="particles-js"></div>        
-            <div class="logo"><img src="..\logo.png"/></div>
+            <div class="logo"><img src="..\logo.png"/ class="image"></div>
             <ul class="menu2" style="background-color: rgb(240, 240, 253);">
                 <li class="li1"><a href="IndexServidor.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDChamado.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
