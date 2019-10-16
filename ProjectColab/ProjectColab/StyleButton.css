@@ -3,22 +3,23 @@
 .btnlogin {
     margin-top: 15%;
     width: 50%;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(110,110,255);
     border-color: rgb(180,180,255);
     border-style: solid;
     border-width: 1px;
     padding: 1%;
-    color: rgb(180,180,255);
+    color: white;
     cursor: pointer;
     font-size: 1vw;
     border-radius: 5px;
     text-align: center;
     transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
     .btnlogin:hover {
         margin-top: 15%;
         width: 50%;
-        background-color: rgb(230, 230, 253);
+        background-color: rgb(240, 240, 253);
         border-color: rgb(110,110,255);
         border-style: solid;
         border-width: 1px;
@@ -34,17 +35,18 @@
 .btn {
     margin-top: 5%;
     width: 100%;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(110,110,255);
     border-color: rgb(110,110,255);
     border-style: solid;
     border-width: 1px;
     padding: 1%;
-    color: rgb(110,110,255);
+    color: white;
     cursor: pointer;
     font-size: 0.8vw;
     border-radius: 5px;
     text-align: center;
     transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
     .btn:hover {
         background-color: rgb(230, 230, 253);
@@ -53,11 +55,12 @@
     }
 .botaoopen {
     width: 100%;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(110,110,255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     border-color: rgb(110,110,255);
     border-style: solid;
     border-width: 1px;
-    color: rgb(110,110,255);
+    color: white;
     cursor: pointer;
     font-size: 1vw;
     border-radius: 5px;
@@ -69,7 +72,8 @@
     padding: 2% 10% 2% 10%;
     font-size: 0.8vw;
     cursor: pointer;
-    display:block;
+    display: block;
+    margin-bottom:1%;
     text-align: center;
 }
     .botaoopen:hover {
@@ -99,15 +103,16 @@
         color: rgb(110,110,255);
     }
 .btnsearch {
-    text-decoration:none;
-    display:inline-block;
+    text-decoration: none;
+    display: inline-block;
     width: 15%;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(110,110,255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     border-color: rgb(110,110,255);
     border-style: solid;
     border-width: 1px;
     padding: 1%;
-    color: rgb(110,110,255);
+    color: white;
     cursor: pointer;
     font-size: 0.6vw;
     border-radius: 5px;
@@ -125,16 +130,23 @@
 
 .botaoadd {
     margin-top: 5%;
+    text-decoration: none;
     width: 100%;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(110,110,255);
     border-color: rgb(110,110,255);
     border-style: solid;
     border-width: 1px;
     padding: 1%;
-    color: rgb(110,110,255);
+    color: white;
     cursor: pointer;
     font-size: 0.8vw;
     border-radius: 5px;
     text-align: center;
     transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
+    .botaoadd:hover {
+        background-color: rgb(230, 230, 253);
+        border-color: rgb(110,110,255);
+        color: rgb(110,110,255);
+    }

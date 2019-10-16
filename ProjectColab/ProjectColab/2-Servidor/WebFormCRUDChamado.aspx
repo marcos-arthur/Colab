@@ -9,11 +9,10 @@
             
             <!-- Busca -->  
             <div class="content">  
-                <div class="searchplace">       
-                        <asp:Button runat="server" ID="Button2" Text="ABRIR CHAMADO" CssClass="btnsearch bg ch" PostBackUrl="~/2-Servidor/WebFormAddChamado.aspx"/>                      
-                        <i class="fa fa-search"></i>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="inputsearch" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox> 
-                        <asp:Button runat="server" Text="PESQUISAR" ID="search1" CssClass="btnsearch" OnClick="search_Click"/>                       
+                <div class="searchplace">
+                        <asp:LinkButton ID="Button2" runat="server" CssClass="btnsearch bg ch" PostBackUrl="~/2-Servidor/WebFormAddChamado.aspx" ><i class=" fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>                                           
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="inputsearch" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox>    
+                        <asp:LinkButton ID="search1" runat="server" CssClass="btnsearch" OnClick="search_Click" ><i class="fa fa-search"></i></asp:LinkButton>                    
                 </div>
             </div>
             
@@ -30,20 +29,20 @@
                                 <a class="textEditChamado nomeChamado borderFix"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
                             </div>                                     
                             
-                            <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
                             <!-- Nome do laboratorio-->
-                            <div class="rowChamado rowFix"><a class="textEditChamado"> Laboratório </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Laboratório: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
 
                             <!-- Usuario atribuido -->
-                            <div class="rowChamado rowFix"><a class="textEditChamado"> Atribuido a </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Atribuido a: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
 
                             <!-- Quantidade de equipamentos -->
-                            <div class="rowChamado rowFix"><a class="textEditChamado">Quantidade de equipamentos </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Quantidade de equipamentos:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
 
                             <!-- Data de abertura -->
-                            <div class="rowChamado rowFix"><a class="textEditChamado">Data de abertura</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Data de abertura:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
 
-                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> VISUALIZAR CHAMADO</asp:LinkButton></div> 
+                            <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link"></i> VISUALIZAR CHAMADO</asp:LinkButton></div> 
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

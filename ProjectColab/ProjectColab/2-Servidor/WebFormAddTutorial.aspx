@@ -12,7 +12,7 @@
                 <asp:Label ID="MsgErrotitulo" runat="server" ForeColor="Red"></asp:Label>
 
                 <div class="tag"><a>URL DO ARQUIVO</a></div>
-                <asp:FileUpload ID="arquivo" runat="server" />
+                <asp:FileUpload ID="arquivo" CssClass="btn" runat="server" />
                 <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>                                
                 
                 <br />

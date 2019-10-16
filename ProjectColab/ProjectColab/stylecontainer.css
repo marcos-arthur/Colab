@@ -38,7 +38,7 @@
         margin-left: 2%;
         margin-bottom: 1%;
         padding: 1.4% 1% 1.4% 1%;
-        background-color:rgb(240, 240, 253);
+        background-color:rgb(254, 254, 254);
         border-radius: 3px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     }
@@ -47,7 +47,7 @@
     .column.middle {
         min-height: 400px;
         width: 75%;
-        background-color:rgb(240, 240, 253);
+        background-color: rgb(254, 254, 254);
         padding: 0.5%;
         margin-bottom: 2%;
         border-radius: 3px;
@@ -66,6 +66,10 @@
         width:100%;
         float:none;
     }
+.contentAdd {
+    border-radius: 3px;
+    margin: 1%;
+}
 .content2 {
     background-color: none;
     border-radius: 3px;

@@ -2,34 +2,33 @@
     padding: 2%;
     width: 80%;
     margin: auto;
-    margin-top: 10%;        
+    margin-top: 10%;
     border: none;
-    background-color: rgb(240, 240, 253);
-    border-bottom: solid 1px white;
+    background-color: none;
+    border-bottom: solid 1px rgb(200,200,200);
     transition: all 0.5s;
-}
+}   
 
     .inputlogin:focus {
-        background-color: rgb(251,251,251);
+        background-color: rgb(220,220,255);
         border-bottom: solid 1px white;
         width: 90%;
         border-radius: 5px;
     }
 .inputtxt {
+    display:block;
     padding: 1%;
-    width: 80%;
+    width: 50%;
     margin-bottom:3%;
     border: none;
-    background-color: rgb(240, 240, 253);
-    border-bottom: solid 1px white;
+    background-color: rgb(254, 254, 254);
+    border-bottom: solid 1px rgb(230,230,255);
     transition: all 0.5s;
 }
 
     .inputtxt:focus {
-        background-color: rgb(251,251,251);
-        border-bottom: solid 1px white;
+        border-bottom: solid 1px rgb(200,200,255);
         width: 90%;
-        border-radius: 5px;
     }
 .imagefix {
     max-width: 30%;
@@ -82,13 +81,17 @@
     padding: 1%;
     display: inline-block;
     width: 30%;
+    border-radius:5px;
     margin: auto;
     border: none;
-    background-color: rgb(240, 240, 253);
+    background-color: rgb(250, 250, 253);
     border-bottom: solid 1px white;
     transition: all 0.5s;
     resize: none;
 }
+    .inputsearch:focus {
+        background-color: rgb(220, 220, 253);
+    }
 .inputsearch2 {
     padding: 1%;
     display: inline-block;
@@ -175,12 +178,15 @@ body {
     padding:1%;
 }
 .text {
-    font-size:0.8vw;
+    font-size: 0.8vw;
+    color:rgb(100,100,100);
+    font-family: 'Roboto', sans-serif;
     text-transform: unset;
-    margin: 5% 5% 1% 5%;
     text-align: unset;
     text-align: unset;
-    display: block;
+}
+.iconColorFix {
+    color: rgb(150,150,150);
 }
 .status{
     background-color:rgb(240,240,240);

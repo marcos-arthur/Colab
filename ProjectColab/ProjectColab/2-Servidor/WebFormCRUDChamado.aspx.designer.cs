@@ -19,7 +19,7 @@ namespace ProjectColab {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.LinkButton Button2;
         
         /// <summary>
         /// Controle TextBox1.
@@ -37,7 +37,7 @@ namespace ProjectColab {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search1;
+        protected global::System.Web.UI.WebControls.LinkButton search1;
         
         /// <summary>
         /// Controle Repeater3.
