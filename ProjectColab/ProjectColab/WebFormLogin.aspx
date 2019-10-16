@@ -32,8 +32,8 @@ body{
         <div class="loginfix">
 
                 <div class="login"> 
-               <asp:Literal runat="server" ID="LabelMsgErro" />
-            <div class="logo"><img  class="imagefix" src="..\logo.png"/></div>    
+            <div class="logo"><img  class="imagefix" src="..\logo.png"/></div> 
+               <asp:Literal runat="server" ID="LabelMsgErro" />   
                     <div class="">
                         <i class="fa fa-user-circle"></i><asp:TextBox ID="Login" placeholder="DIGITE O SEU LOGIN" runat="server" CssClass="inputlogin"></asp:TextBox>
                     </div>

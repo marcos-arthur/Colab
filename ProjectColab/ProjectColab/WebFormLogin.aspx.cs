@@ -14,6 +14,9 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["equipValue"] = "";
+            Session["labValue"] = "";
+            Session["tutorialValue"] = "";
             // Apresenta mensagem de erro
             if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
             {

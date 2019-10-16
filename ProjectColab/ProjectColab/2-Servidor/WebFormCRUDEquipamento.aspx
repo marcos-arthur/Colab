@@ -6,17 +6,19 @@
         <div class="column middle teste">  
             <div class="indicador"><a class="title">EQUIPAMENTOS</a></div>              
 
-            <!-- Busca -->
-            <div class="content top">            
-                <div class="search">            
-                    <i class="fa fa-search"></i><asp:TextBox ID="searchBox" runat="server" CssClass="searchbar" placeholder="PESQUISAR MODELO"></asp:TextBox>
-                    <asp:Button runat="server" Text="Buscar" ID="search" CssClass="btn" OnClick="search_Click"/>
-                </div>    
+
+            <!-- Busca -->  
+            <div class="content">  
+                <div class="searchplace">       
+                    <asp:Button ID="Button2" runat="server" Text="+ EQUIPAMENTO" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />                    
+                    <i class="fa fa-search"></i>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="inputsearch" placeholder="PESQUISAR MODELO"></asp:TextBox>
+                    <asp:Button runat="server" Text="Buscar" ID="Button3" CssClass="btnsearch" OnClick="search_Click"/>                 
+                </div>
             </div>
 
             <!--REPEATER PARA VISUALIZAR OS Equipamentos-->            
             <div class="content">
-                <asp:Button ID="Button2" runat="server" Text="ADICIONAR EQUIPAMENTO" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" >
                     <ItemTemplate>
                         <div class="article">

@@ -24,7 +24,9 @@
                             <a class="text">Enviado por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%> </a>
 
                             <div class="bot">
-                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton></div>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Deletar" CommandArgument='<%#Eval("id") + ";"%>'><i class="fa fa-external-link-square"></i>DELETAR TUTORIAL</asp:LinkButton>                  
+                        </div>                          
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

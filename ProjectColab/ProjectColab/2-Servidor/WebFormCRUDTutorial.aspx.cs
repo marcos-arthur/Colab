@@ -69,6 +69,26 @@ namespace ProjectColab
                 }
                 Response.End();
             }
+            if (e.CommandName == "Deletar")
+            {
+                string id;
+                //int index = Convert.ToInt32(e.CommandArgument);
+                string[] arg = new string[2];
+                arg = e.CommandArgument.ToString().Split(';');
+
+                id = arg[0];
+                Session["id"] = id;
+                DAL.DALTutorial arquivo = new DAL.DALTutorial();
+
+                Modelo.Tutorial mtutorial;
+
+                mtutorial = arquivo.Select(id);
+
+                arquivo.Delete(mtutorial);
+
+                Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
+            }
+
         }
         
         protected void Button2_Click(object sender, EventArgs e)
