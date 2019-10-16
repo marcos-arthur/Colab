@@ -16,7 +16,7 @@ namespace ProjectColab
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+            //Desativar o usuário
             if (e.CommandName == "desativar")
             {
                 string id;               
@@ -44,7 +44,7 @@ namespace ProjectColab
 
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            //Ativar o usuário
             if (e.CommandName == "ativar")
             {
                 string id;

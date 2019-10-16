@@ -23,31 +23,26 @@ namespace ProjectColab
 
         protected void add_Click(object sender, EventArgs e)
         {
-            Session["tutorialValue"] = "";
-            Session["labValue"] = "";
-            Session["equipValue"] = "";
-
+           
             // Instancia objeto DAL
-            DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
-
-            // Valida Usuario
-            //List<Modelo.Usuario> aListUsuario = aDALUsuario.SelectLogin(Login.Text);
-                    
+            DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();                    
 
             // Critografa senha
             string senhaMD5 = GerarHashMd5(Senha.Text);
+
             // Le usuário da Lista
             Modelo.Usuario aUsuario = aDALUsuario.SelectLogin(Login.Text);
+
+            // Valida Usuario
+            if ((aUsuario == null) || (aUsuario.status != 1))
+            {
+                Session["msgErro"] = "Usuário não cadastrado ou indisponível";
+                Response.Redirect("~\\WebFormLogin.aspx");
+            }
             // Valida Senha
             if (aUsuario.senha != senhaMD5)
             {
                 Session["msgErro"] = "Senha Inválida";
-                Response.Redirect("~\\WebFormLogin.aspx");
-            }
-           
-            if ((aUsuario == null) || (aUsuario.status != 1))
-            {
-                Session["msgErro"] = "Usuário não cadastrado ou indisponível";
                 Response.Redirect("~\\WebFormLogin.aspx");
             }
             // Salva usuário na sessão

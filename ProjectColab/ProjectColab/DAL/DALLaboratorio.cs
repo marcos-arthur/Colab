@@ -258,25 +258,7 @@ namespace ProjectColab.DAL
 
             return nome;
         }
-
-
-        [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Laboratorios obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand com = conn.CreateCommand();
-
-            SqlCommand cmd = new SqlCommand("Delete From Equipamento Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.ExecuteNonQuery();
-
-            SqlCommand cmd2 = new SqlCommand("Delete From Laboratorios Where id = @id", conn);
-            cmd2.Parameters.AddWithValue("@id", obj.id);
-            cmd2.ExecuteNonQuery();
-        }
+                     
 
     }
 }
