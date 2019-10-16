@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._4_Professor
-{
-
-
-    public partial class WebFormEditChamadoProfessor
-    {
-
+namespace ProjectColab._4_Professor {
+    
+    
+    public partial class WebFormEditChamadoProfessor {
+        
         /// <summary>
         /// Controle Repeater3.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ProjectColab._4_Professor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater3;
-
+        
         /// <summary>
         /// Controle ObjectDataSource3.
         /// </summary>
@@ -31,25 +29,7 @@ namespace ProjectColab._4_Professor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
-
-        /// <summary>
-        /// Controle DetailsView1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
-
-        /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-
+        
         /// <summary>
         /// Controle descricao.
         /// </summary>
@@ -58,7 +38,7 @@ namespace ProjectColab._4_Professor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox descricao;
-
+        
         /// <summary>
         /// Controle add.
         /// </summary>
@@ -67,7 +47,7 @@ namespace ProjectColab._4_Professor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
-
+        
         /// <summary>
         /// Controle Repeater1.
         /// </summary>
@@ -76,7 +56,7 @@ namespace ProjectColab._4_Professor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
+        
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>

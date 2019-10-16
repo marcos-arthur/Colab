@@ -15,7 +15,8 @@
                         <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox> 
                         <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
                 </div>
-            </div>            
+            </div>    
+            
 
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->            
             <div class="content">

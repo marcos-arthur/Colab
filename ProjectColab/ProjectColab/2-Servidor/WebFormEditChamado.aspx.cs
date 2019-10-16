@@ -52,7 +52,8 @@ namespace ProjectColab
             DAL.DALChamado aDALChamado = new DAL.DALChamado();
             Modelo.Chamado aChamado = aDALChamado.Select(Session["idchamado"].ToString());
 
-            aChamado.usuario_atribuido_id = atribuidoID.SelectedValue;
+            DropDownList drop = (DropDownList)Repeater3.Items[0].FindControl("atribuidoID");
+            aChamado.usuario_atribuido_id = drop.SelectedValue;
             aChamado.status = 2;
 
             aDALChamado.UpdateAtribuido(aChamado);

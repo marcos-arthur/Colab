@@ -6,35 +6,40 @@
         <div class="column middle">
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
-                        <div class="">
-                            <div class=""><i class=""></i> <a class="text">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
-                            <a class="text" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
-                            <br />
+                        <div class="editmenu">
+                            <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a>                          
+                            <a class="text status" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                            </div> 
 
-                            <a class="text">Aberto por <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
-                            <br />
+                            <!--Botoes--> 
+                            <div class="searchplace">                                
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>                     
+                            </div>   
+                            <!--Nome do usuario-->
+                            <div class="rowChamado"><a class="textEditChamado">Aberto por </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
 
-                            <a class="text">Atribui a <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
-                            <br />
+                            <!--Usuario atribuido-->
+                            <div class="rowChamado"><a class="textEditChamado"> Atendente </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
+                           
+                            <!--Nome do laboratorio-->
+                            <div class="rowChamado"><a class="textEditChamado"> Laboratório </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
+                            <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
 
-                            <a class="text"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
-                            <br />
+                            <!--Resumo do problema-->
+                            <div class="rowChamado"><a class="textEditChamado"> Resumo do problema </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
                             <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
                             <br />-->
 
-                            <a class="text"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
-                            <br />
-                            <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
-                            <br />-->
-
-                            <a class="text">Quantidade de equipamentos: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>
-                            <br />
+                            <!--Quantidade de Equipamento-->
+                            <div class="rowChamado"><a class="textEditChamado"> Quantidade de equipamentos </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div> 
                             
-                            <a class="text">Data de abertura: <%# DataBinder.Eval(Container.DataItem, "data")%> </a>                            
-                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton></div> 
+                            <!--Data-->
+                            <div class="rowChamado"><a class="textEditChamado"> Data de abertura </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
+                           </div>     
                             
-                        </div>
-                    </ItemTemplate>
+                            <!--Botoes-->                
+        
+        </ItemTemplate>
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" TypeName="ProjectColab.DAL.DALChamado" SelectMethod="Select" >
                     <SelectParameters>
@@ -46,30 +51,31 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div class="column middle">
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALChamado">
-                <SelectParameters>
-                    <asp:SessionParameter SessionField="idchamado" Name="id" Type="String"></asp:SessionParameter>
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="comenttext"></asp:TextBox>
-            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
+        <div class="column middle">
+       
+            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS</a></div></div> 
+        
+            <div class="searchplace">
+            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
+            </div>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
-                    <div class="column middle">                        
-                        <a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a>
-                        <a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a>
-                        <a><%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></a>
+                    <div class="containerChat">
+                        <i class="fa fa-user-circle iconFix"></i>
+                        <p class="data"><span> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></span>
+                        <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                        <div class="coment">
+                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p></div>
                     </div>
                     <br />
                 </ItemTemplate>
             </asp:Repeater>
-
-
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
+            
         </div>
 </asp:Content>

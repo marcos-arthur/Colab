@@ -7,15 +7,16 @@
             <div class="indicador"><a class="title">TUTORIAIS</a></div>          
             
             <!-- Busca -->
-            <div class="content top">            
-                <div class="search">            
-                    <i class="fa fa-search"></i><asp:TextBox ID="searchBox" runat="server" CssClass="searchbar" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox>
-                    <asp:Button runat="server" Text="Buscar" ID="search" CssClass="btn" OnClick="search_Click"/>
-                </div>    
-            </div>
+            <div class="content">  
+                <div class="searchplace">                  
+                        <asp:Button runat="server" ID="Button1" Text="+ TUTORIAL" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx"/>                      
+                        <i class="fa fa-search"></i>
+                        <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox> 
+                        <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
+                </div>
+            </div>   
 
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
-            <asp:Button ID="Button2" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />
             <div class="content">
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
@@ -32,7 +33,11 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAllStatus2" TypeName="ProjectColab.DAL.DALTutorial"></asp:ObjectDataSource>
             </div>
-            <asp:Button ID="Button4" runat="server" Text="VER TUTORIAIS SUBMETIDOS" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormTutorialSubmetido.aspx" />
+
         </div>
-             
+                     <div class="column side">
+                    <div class="content2">
+                            <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS EM ANÁLISE" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormTutorialSubmetido.aspx"/> 
+                        </div>  
+                    </div>        
 </asp:Content>

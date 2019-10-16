@@ -31,15 +31,6 @@ namespace ProjectColab._3_Bolsista {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
         
         /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
         /// Controle descricao.
         /// </summary>
         /// <remarks>
