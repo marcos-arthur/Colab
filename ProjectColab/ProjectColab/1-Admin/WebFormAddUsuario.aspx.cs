@@ -54,18 +54,18 @@ namespace ProjectColab
             DAL.DALUsuario aDALUsuario = new DAL.DALUsuario();
             Modelo.Usuario aUsuarioBanco = null;
 
-            // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);
-            
-            // Critografa senha
-            string senhaMD5 = "";
-            if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
-
             //Verifica o parse do tipo
             int type = 0;
             if (int.TryParse(tipo.Text, out int result)) type = Convert.ToInt32(tipo.Text);
             else type = 0;
 
+            // Critografa senha
+            string senhaMD5 = "";
+            if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
+
+            // Instancia objeto Modelo
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);
+            
             // Validar senha
             if (senha.Text != confirmaSenha.Text)
             {
