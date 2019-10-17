@@ -23,7 +23,7 @@
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
-                            <div class="iconchamado"><i class="fa fa-desktop"></i><a class="text"><%# DataBinder.Eval(Container.DataItem, "nome")%></a></div>
+                            <div class="iconchamado"><i class="fa fa-desktop"></i><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nome")%></a></div>
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i> ABRIR LABORATÓRIO</asp:LinkButton>
                             </div>

@@ -22,7 +22,7 @@
                     <ItemTemplate>
                         <div class="article">
                             
-                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="text">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>
+                            <div class="iconchamado"><i class="fa fa-bell"></i> <a class="textEditChamado nomeChamado">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>
                             
                             <div class="rowChamado titleFix">
                                 <a class="textEditChamado">RESUMO DO CHAMADO:</a>                               

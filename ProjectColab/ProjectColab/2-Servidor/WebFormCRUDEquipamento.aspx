@@ -12,7 +12,7 @@
                 <div class="searchplace">       
                     <asp:Button ID="Button2" runat="server" Text="+ EQUIPAMENTO" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />                    
                     <i class="fa fa-search"></i>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="inputsearch" placeholder="PESQUISAR MODELO"></asp:TextBox>
+                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR MODELO"></asp:TextBox>
                     <asp:Button runat="server" Text="Buscar" ID="Button3" CssClass="btnsearch" OnClick="search_Click"/>                 
                 </div>
             </div>
@@ -22,10 +22,9 @@
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" >
                     <ItemTemplate>
                         <div class="article">
-                            <div class="iconchamado"><i class="fa fa-keyboard-o"></i> <a class="text"><%# DataBinder.Eval(Container.DataItem, "modelo")%></a></div>
-                            <!--<a class="text"> <%# DataBinder.Eval(Container.DataItem, "modelo")%> </a>-->
-                            <a class="text">Laboratório <%# DataBinder.Eval(Container.DataItem, "laboratorio_nome")%> </a>
-                            <a class="text">Quantidade: <%# DataBinder.Eval(Container.DataItem, "quantidade")%> </a>
+                            <div class="iconchamado"><i class="fa fa-keyboard-o"></i> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "modelo")%></a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Laboratório</a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "laboratorio_nome")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Quantidade:</a><a class="text"><%# DataBinder.Eval(Container.DataItem, "quantidade")%> </a></div>
                             <!-- EXCLUIR EQUIPAMENTO <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> ABRIR LABORATÓRIO</asp:LinkButton></div> -->
                         </div>
                     </ItemTemplate>

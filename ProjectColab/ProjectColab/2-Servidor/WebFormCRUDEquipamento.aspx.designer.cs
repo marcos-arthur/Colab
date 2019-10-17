@@ -11,15 +11,7 @@ namespace ProjectColab {
     
     
     public partial class WebFormCRUDEquipamento {
-
-        /// <summary>
-        /// Controle search1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchBox;
+        
         /// <summary>
         /// Controle Button2.
         /// </summary>
@@ -30,13 +22,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Controle TextBox1.
+        /// Controle searchBox.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox searchBox;
         
         /// <summary>
         /// Controle Button3.
