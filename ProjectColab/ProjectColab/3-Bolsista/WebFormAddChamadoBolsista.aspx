@@ -17,6 +17,8 @@
                 <div class="tag"><a>LABORATÓRIO</a></div>
                 <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtextDrop" DataSourceID="ObjectDataSource2"></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                <asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtextDrop"></asp:DropDownList>
+                
                 <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->
                 
@@ -24,6 +26,7 @@
                 <br />
                 <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" OnClick="add_Click1"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
                 <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
+                <asp:LinkButton ID="Button4" runat="server" CssClass="botaoadd" OnClick="add_Click2"><i class="fa fa-remove"></i> ABRIR CHAMADO INTERNO</asp:LinkButton>
             </div>
             </div>
 
