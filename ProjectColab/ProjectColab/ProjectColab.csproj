@@ -230,6 +230,7 @@
     <Compile Include="1-Admin\HandlerUsuario_info.ashx.cs">
       <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

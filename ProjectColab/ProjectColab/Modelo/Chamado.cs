@@ -19,29 +19,32 @@ namespace ProjectColab.Modelo
         public int quantidadeeq { get; set; }
         public DateTime data { get; set; }
         public string statuschamado { get; set; }
+        public int statusEI { get; set; }
 
         public Chamado()
         {
             this.id = "";
             this.status = 0;
+            this.statusEI = 0;
             this.statuschamado = "";
             this.resumo = "";
             this.quantidadeeq = 0;
             this.data = new DateTime();
         }
 
-        public Chamado(string aid, string usuAberto, string lab, int astatus,string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string lab, int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
             this.laboratorios_id = lab;
             this.status = astatus;
+            this.statusEI = astatusEI;
+            this.statuschamado = astatuschamado;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;
             this.data = adata;
-            this.statuschamado = astatuschamado;
         }
-        public Chamado(string aid, string usuAberto, string lab, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomeLab, int astatus, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string lab, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomeLab, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
@@ -51,6 +54,7 @@ namespace ProjectColab.Modelo
             this.nomeLaboratorio = nomeLab;
             this.nomeUsuarioAtribuido = nomeUsuAtribuido;
             this.status = astatus;
+            this.statusEI = astatusEI;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;
             this.data = adata;

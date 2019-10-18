@@ -36,6 +36,7 @@ CREATE TABLE Chamado(
 	usuario_atribuido_id INT,
 	laboratorios_id INT ,
 	categoria_id INT ,
+	statusEI INT,
 	status INT NOT NULL,
 	resumo VARCHAR(500) NOT NULL,
 	quant_equipamentos_defeituosos INT NOT NULL,
