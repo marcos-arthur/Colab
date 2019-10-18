@@ -7,21 +7,38 @@
         <div class="column middle">
                 <div class="indicador"><a class="title">ADICIONAR CHAMADO</a></div>
                 <div class="content">
-                    <div class="contentAdd">
+                    <!-- Primeira parte da criação de chamados-->
+                    <div class="contentCadastro">
                         
-                        <div class=""><a class="text">RESUMO DO PROBLEMA</a><asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="inputtxt"></asp:TextBox></div>  
-                        <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
-                
-                        <div class=""><a class="text">RESUMO DO PROBLEMA</a><asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputtxt"></asp:TextBox></div>
-                        <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
-                    </div>                
-                    <div class="contentAdd">
-                        <div class=""><a class="text">RESUMO DO PROBLEMA</a>
-                        <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtxt" DataSourceID="ObjectDataSource2"></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
-                        <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
+                        <div class="rowCadastro ">
+                            <a class="">RESUMO DO PROBLEMA</a>
+
+                            <asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="cadastro"></asp:TextBox>
+
+                            <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
+                        </div>                  
+                        <div class="rowCadastro">
+                            <a class="">RESUMO DO PROBLEMA</a>
+                            <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtxt" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                            <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
+                        </div>
+                    
+
+
+                    <!-- Segunda parte da criação de chamados-->
+                    <div class="contentCadastro">
+                        <div class="rowCadastro">
+                            <a class="">RESUMO DO PROBLEMA</a>
+                            <asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="cadastro"></asp:TextBox>
+                            <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
+                        </div>
+
                     </div>
-                    </div>
+                    </div>  
+
+
+
                 </div>
                 <div class="content">
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->

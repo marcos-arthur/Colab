@@ -6,12 +6,13 @@
         <div class="column middle">
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />
+                <asp:Button ID="Button3" runat="server" Text="VOLTAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" />  
             <div class="content">
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="article">
-                            <div class="iconchamado"><i class="fa fa-bell"></i><a class="text"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a></div>
-                            <a class="text">Enviado por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%> </a>
+                            <div class="iconchamado"><i class="fa fa-book"></i><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Enviado por: </a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%> </a></div>
 
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="Autorizar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> AUTORIZAR TUTORIAL</asp:LinkButton>
@@ -24,7 +25,6 @@
 
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectStatus1" TypeName="ProjectColab.DAL.DALTutorial"></asp:ObjectDataSource>
             </div>            
-                <asp:Button ID="Button3" runat="server" Text="VOLTAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" />  
         </div>
                 
 </asp:Content>

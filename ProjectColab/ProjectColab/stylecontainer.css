@@ -237,3 +237,8 @@
         opacity: 1;
     } 
 }
+
+.contentCadastro {
+    display: flex;
+    flex-wrap: nowrap;
+}

@@ -12,7 +12,7 @@
                 <div class="searchplace">
                         <asp:LinkButton ID="Button2" runat="server" CssClass="btnsearch bg ch" PostBackUrl="~/2-Servidor/WebFormAddChamado.aspx" ><i class=" fa fa-plus"></i> ABRIR CHAMADO</asp:LinkButton>                                           
                         <asp:TextBox ID="TextBox1" runat="server" CssClass="inputsearch" placeholder="PESQUISAR CHAMADO (RESUMO)"></asp:TextBox>    
-                        <asp:LinkButton ID="search1" runat="server" CssClass="btnsearch" OnClick="search_Click" ><i class="fa fa-search"></i></asp:LinkButton>                    
+                        <asp:LinkButton ID="search1" runat="server" CssClass="btnsearch" OnClick="search_Click" >PESQUISAR</asp:LinkButton>                    
                 </div>
             </div>
             

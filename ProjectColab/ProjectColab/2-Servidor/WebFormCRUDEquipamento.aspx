@@ -13,7 +13,7 @@
                     <asp:Button ID="Button2" runat="server" Text="+ EQUIPAMENTO" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddEquipamento.aspx" />                    
                     <i class="fa fa-search"></i>
                     <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR MODELO"></asp:TextBox>
-                    <asp:Button runat="server" Text="Buscar" ID="Button3" CssClass="btnsearch" OnClick="search_Click"/>                 
+                    <asp:Button runat="server" Text="PESQUISAR" ID="Button3" CssClass="btnsearch" OnClick="search_Click"/>                 
                 </div>
             </div>
 
