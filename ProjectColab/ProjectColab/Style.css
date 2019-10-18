@@ -2,12 +2,13 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    overflow-x:hidden;
+    overflow-x: hidden;
     background-color: rgb(10, 10, 45);
     /*background-image: url("background.png");
     background-repeat: no-repeat;
     background-size: cover;*/
     z-index: 1;
+    transition: all 1s;
 }
 
 /*

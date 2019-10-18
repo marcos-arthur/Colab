@@ -8,8 +8,11 @@
     align-items: center;
 }
 .login {
-    align-items:center;
-    text-align:center;
+    align-items: center;
+    text-align: center;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     width: 25%;
     padding: 2%;
     background-color: rgb(254, 254, 254);
@@ -32,5 +35,14 @@
     50% {
         transform: translateY(3px);
         -webkit-transform: translateY(3px);
+    }
+}
+@keyframes fadeInAnimation {
+    0% {
+        margin-top: 70%;
+    }
+
+    100% {
+        margin-top: 0%
     }
 }
