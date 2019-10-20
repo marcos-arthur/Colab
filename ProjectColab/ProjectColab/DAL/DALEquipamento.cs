@@ -73,7 +73,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
                     // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_nome"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
                     aListEquipamento.Add(aEquipamento);
                 }
@@ -111,7 +111,7 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
                     // Adiciona o livro lido à lista /*, dr["eq.id"].ToString(), dr["eq.laboratorio_nome"].ToString(), dr["eq.modelo"].ToString(), Convert.ToDecimal(dr["eq.quantidade"].ToString())*/
                     aListEquipamento.Add(aEquipamento);
                 }
@@ -178,7 +178,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
 
                     aListEquipamento.Add(aEquipamento);
                 }
@@ -213,7 +213,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToDecimal(dr["quantidade"].ToString()));
+                    aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["laboratorio_nome"].ToString(), dr["laboratorio_id"].ToString(), dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
 
                     aListEquipamento.Add(aEquipamento);
                 }

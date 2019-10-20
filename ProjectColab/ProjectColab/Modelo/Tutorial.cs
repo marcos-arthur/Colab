@@ -11,7 +11,7 @@ namespace ProjectColab.Modelo
         public string idUsuario { get; set; }
         public string nomeUsuario { get; set; }
         public string tutorial_titulo { get; set; }
-        public decimal status { get; set; }
+        public int status { get; set; }
         public byte[] arquivo { get; set; }
 
 
@@ -23,7 +23,7 @@ namespace ProjectColab.Modelo
             this.arquivo = null;
         }
 
-        public Tutorial(string id, string idU, string tutorial_titulo, decimal status, byte[] arquivo)
+        public Tutorial(string id, string idU, string tutorial_titulo, int status, byte[] arquivo)
         {
             this.id = id;
             this.idUsuario = idU;
@@ -31,7 +31,7 @@ namespace ProjectColab.Modelo
             this.status = status;
             this.arquivo = arquivo;
         }
-        public Tutorial(string id, string idU, string nomeUsu, string tutorial_titulo, decimal status, byte[] arquivo)
+        public Tutorial(string id, string idU, string nomeUsu, string tutorial_titulo, int status, byte[] arquivo)
         {
             this.id = id;
             this.nomeUsuario = nomeUsu;

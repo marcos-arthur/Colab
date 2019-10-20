@@ -28,7 +28,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Comentario(usuario_id,chamados_id,restricao,descricao,data_hora) VALUES (@usuario_id,@chamados_id,@restricao,@descricao,@data_hora)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Comentario(usuario_id,chamados_id,restricao,descricao,data_horaz) VALUES (@usuario_id,@chamados_id,@restricao,@descricao,@data_hora)", conn);
             cmd.Parameters.AddWithValue("@usuario_id", obj.usuario_id);
             cmd.Parameters.AddWithValue("@chamados_id", obj.chamados_id);
             cmd.Parameters.AddWithValue("@restricao", obj.restricao);
@@ -68,7 +68,7 @@ namespace ProjectColab.DAL
                         //Retorna o nome do usuário
                         nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
 
-                        aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["chamados_id"].ToString(), Convert.ToDecimal(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
+                        aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["chamados_id"].ToString(), Convert.ToInt32(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
 
                         aListcomentario.Add(aComentario);
                     }

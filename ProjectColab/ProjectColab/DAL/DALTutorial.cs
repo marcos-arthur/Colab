@@ -270,7 +270,7 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToDecimal(dr["status"].ToString()), (byte[]) dr["arquivo"]);
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), (byte[]) dr["arquivo"]);
 
                     //aListTutorial.Add(aTutorial);
                 }

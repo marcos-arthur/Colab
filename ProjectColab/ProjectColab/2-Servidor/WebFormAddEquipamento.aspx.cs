@@ -41,9 +41,9 @@ namespace ProjectColab._2_Servidor
             Modelo.Equipamento aEquipamento = new Modelo.Equipamento();
             DAL.DALEquipamento aDALEquipamento;
 
-            decimal quantidade;
+            int quantidade;
 
-            if (decimal.TryParse(quant.Text, out decimal result)) quantidade = Convert.ToDecimal(quant.Text);
+            if (int.TryParse(quant.Text, out int result)) quantidade = Convert.ToInt32(quant.Text);
             else quantidade = 0;
 
             aEquipamento = new Modelo.Equipamento("1", idnome.SelectedItem.ToString(), idnome.SelectedValue, modelo.Text, quantidade);

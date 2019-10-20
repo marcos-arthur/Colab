@@ -33,7 +33,7 @@ namespace ProjectColab._3_Bolsista
 
             byte[] bytes = arquivo.FileBytes;
 
-            aTutorial = new Modelo.Tutorial("1", Session["idusuario"].ToString(), titulo.Text, 3, bytes);
+            aTutorial = new Modelo.Tutorial("1", Session["idusuario"].ToString(),titulo.Text, 3, bytes);
 
             aDALTutorial = new DAL.DALTutorial();
 

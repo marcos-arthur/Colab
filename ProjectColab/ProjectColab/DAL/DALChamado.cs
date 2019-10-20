@@ -58,7 +58,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(),dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(),dr["resumo"].ToString(),Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(),dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(),dr["resumo"].ToString(),Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()),Convert.ToDateTime( dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -113,7 +113,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -168,7 +168,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -226,7 +226,7 @@ namespace ProjectColab.DAL
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
