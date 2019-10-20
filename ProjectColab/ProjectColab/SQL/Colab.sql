@@ -10,6 +10,7 @@ CREATE TABLE Categoria(
 	nome VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id)
 )
+
 CREATE TABLE Usuario(
 	id INT IDENTITY NOT NULL,
 	nome VARCHAR(100) NOT NULL,
@@ -20,6 +21,7 @@ CREATE TABLE Usuario(
 	status int not null,
     	PRIMARY KEY(id)
 )
+
 CREATE TABLE Equipamento(
 	id INT IDENTITY NOT NULL,
 	laboratorio_id INT NOT NULL,
@@ -29,14 +31,15 @@ CREATE TABLE Equipamento(
 	PRIMARY KEY(id),
 	FOREIGN KEY(laboratorio_id) REFERENCES Laboratorios(id)
 )
-	CREATE TABLE Chamado(
+
+CREATE TABLE Chamado(
 	id INT IDENTITY NOT NULL,
 	usuario_aberto_id INT ,
 	usuario_atribuido_id INT,
 	laboratorios_id INT ,
-	categoria_id INT ,
-	statusEI INT,
+	categoria_id INT ,	
 	status INT NOT NULL,
+	statusEI INT not null,
 	resumo VARCHAR(500) NOT NULL,
 	quant_equipamentos_defeituosos INT NOT NULL,
 	data DATE NOT NULL,
@@ -58,6 +61,7 @@ CREATE TABLE Comentario(
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id),
 	FOREIGN KEY(chamados_id) REFERENCES Chamado(id)
 )
+
 CREATE TABLE Tutorial(
 	id INT IDENTITY NOT NULL,
 	usuario_id INT,
@@ -67,9 +71,6 @@ CREATE TABLE Tutorial(
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
-
-
-
 
 /* DANGER ZONE - CUIDADO
 drop table Comentario
@@ -104,7 +105,9 @@ INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS
 
 */		
 
-insert into categoria (nome) values ('Instalar software'),
-('Instalar sistema operacional'),
-('HD sem espaço de armazenamento'),
-('Computador não liga')
+insert into categoria (nome) 
+	values
+		('Instalar software'),
+		('Instalar sistema operacional'),
+		('HD sem espaço de armazenamento'),
+		('Computador não liga')

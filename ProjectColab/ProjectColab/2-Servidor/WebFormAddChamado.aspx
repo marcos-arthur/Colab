@@ -32,7 +32,7 @@
                     <div class="contentCadastro">
                         <div class="rowCadastro">
                             <a class="">RESUMO DO PROBLEMA</a>
-                            <asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="cadastro"></asp:TextBox>
+                            <asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="cadastro" OnTextChanged="quantidadeeq_TextChanged"></asp:TextBox>
                             <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
                         </div>
 
@@ -49,4 +49,5 @@
             </div>
          </div>
     
+</div>
 </asp:Content>
