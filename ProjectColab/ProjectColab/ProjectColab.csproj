@@ -217,6 +217,7 @@
     <Compile Include="4-Professor\WebFormEditChamadoProfessor.aspx.designer.cs">
       <DependentUpon>WebFormEditChamadoProfessor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DALCategoria.cs" />
     <Compile Include="DAL\DALChamado.cs" />
     <Compile Include="DAL\DALComentario.cs" />
     <Compile Include="DAL\DALConsulta.cs" />

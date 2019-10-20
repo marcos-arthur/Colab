@@ -45,7 +45,7 @@ namespace ProjectColab._3_Bolsista
             else quantidade = 0;
 
             //Salva os valores pegos na WebForm na classe modelo
-            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, 1, 1, "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
+            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, catDrop.Text, 1, 1, "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
 
             //bool para controle de erros
             //ok == true    -> Erro inexistente
@@ -110,7 +110,7 @@ namespace ProjectColab._3_Bolsista
             else quantidade = 0;
 
             //Salva os valores pegos na WebForm na classe modelo
-            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, 1,1, "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
+            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, catDrop.Text, 1, 2, "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
 
             //bool para controle de erros
             //ok == true    -> Erro inexistente
@@ -163,7 +163,7 @@ namespace ProjectColab._3_Bolsista
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~//3-Servidor/WebFormCRUDChamadoBolsista.aspx");
+            Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

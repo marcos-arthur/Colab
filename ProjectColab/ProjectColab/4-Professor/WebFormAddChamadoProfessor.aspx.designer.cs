@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._4_Professor {
-    
-    
-    public partial class WebFormAddChamadoProfessor {
-        
+namespace ProjectColab._4_Professor
+{
+
+
+    public partial class WebFormAddChamadoProfessor
+    {
+
         /// <summary>
         /// Controle status.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox status;
-        
+
         /// <summary>
         /// Controle id.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox id;
-        
+
         /// <summary>
         /// Controle resumo.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox resumo;
-        
+
         /// <summary>
         /// Controle MsgErroresumop.
         /// </summary>
@@ -47,7 +49,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
-        
+
         /// <summary>
         /// Controle quantidadeeq.
         /// </summary>
@@ -56,7 +58,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-        
+
         /// <summary>
         /// Controle MsgErromaqdef.
         /// </summary>
@@ -65,7 +67,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
-        
+
         /// <summary>
         /// Controle labDrop.
         /// </summary>
@@ -74,7 +76,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList labDrop;
-        
+
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -83,7 +85,25 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-        
+
+        /// <summary>
+        /// Controle catDrop.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList catDrop;
+
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+
         /// <summary>
         /// Controle MsgErrolab.
         /// </summary>
@@ -92,7 +112,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrolab;
-        
+
         /// <summary>
         /// Controle add.
         /// </summary>
@@ -101,7 +121,7 @@ namespace ProjectColab._4_Professor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
-        
+
         /// <summary>
         /// Controle Button1.
         /// </summary>

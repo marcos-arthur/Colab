@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._3_Bolsista {
-    
-    
-    public partial class WebFormAddChamadoBolsista {
-        
+namespace ProjectColab._3_Bolsista
+{
+
+
+    public partial class WebFormAddChamadoBolsista
+    {
+
         /// <summary>
         /// Controle resumo.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox resumo;
-        
+
         /// <summary>
         /// Controle MsgErroresumop.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
-        
+
         /// <summary>
         /// Controle quantidadeeq.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-        
+
         /// <summary>
         /// Controle MsgErromaqdef.
         /// </summary>
@@ -47,7 +49,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
-        
+
         /// <summary>
         /// Controle labDrop.
         /// </summary>
@@ -56,7 +58,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList labDrop;
-        
+
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -65,7 +67,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-        
+
         /// <summary>
         /// Controle catDrop.
         /// </summary>
@@ -74,7 +76,16 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList catDrop;
-        
+
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+
         /// <summary>
         /// Controle MsgErrolab.
         /// </summary>
@@ -83,7 +94,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrolab;
-        
+
         /// <summary>
         /// Controle idnome.
         /// </summary>
@@ -92,7 +103,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList idnome;
-        
+
         /// <summary>
         /// Controle Button2.
         /// </summary>
@@ -101,7 +112,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button2;
-        
+
         /// <summary>
         /// Controle Button3.
         /// </summary>
@@ -110,7 +121,7 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button3;
-        
+
         /// <summary>
         /// Controle Button4.
         /// </summary>

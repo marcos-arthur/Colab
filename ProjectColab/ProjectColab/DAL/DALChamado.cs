@@ -363,7 +363,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(usuario_aberto_id, status, laboratorios_id, resumo,quant_equipamentos_defeituosos,data) VALUES (@usuario_aberto_id, @status, @laboratorios_id,@resumo,@quant_equipamentos_defeituosos,@data)", conn);            
+            SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(usuario_aberto_id, laboratorios_id, categoria_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data) VALUES (@usuario_aberto_id, @status, @laboratorios_id,@resumo,@quant_equipamentos_defeituosos,@data)", conn);            
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@usuario_aberto_id", int.Parse(obj.usuario_aberto_id));
 
@@ -376,8 +376,18 @@ namespace ProjectColab.DAL
             {
                 cmd.Parameters.AddWithValue("@laboratorios_id", 0);
             }
+            //TryCatch para conversão
+            try
+            {
+                cmd.Parameters.AddWithValue("@categoria_id", int.Parse(obj.categoria_id));
+            }
+            catch (FormatException error)
+            {
+                cmd.Parameters.AddWithValue("@categoria_id", 0);
+            }
 
             cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@statusEI", obj.statusEI);
             cmd.Parameters.AddWithValue("@resumo", obj.resumo);
             cmd.Parameters.AddWithValue("@quant_equipamentos_defeituosos", obj.quantidadeeq);
             cmd.Parameters.AddWithValue("@data", obj.data);

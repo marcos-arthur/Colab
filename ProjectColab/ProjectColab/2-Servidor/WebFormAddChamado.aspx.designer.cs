@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab {
-    
-    
-    public partial class WebFormAddChamado {
-        
+namespace ProjectColab
+{
+
+
+    public partial class WebFormAddChamado
+    {
+
         /// <summary>
         /// Controle resumo.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox resumo;
-        
+
         /// <summary>
         /// Controle MsgErroresumop.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
-        
+
         /// <summary>
         /// Controle labDrop.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList labDrop;
-        
+
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -47,7 +49,25 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-        
+
+        /// <summary>
+        /// Controle catDrop.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList catDrop;
+
+        /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+
         /// <summary>
         /// Controle MsgErrolab.
         /// </summary>
@@ -56,7 +76,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrolab;
-        
+
         /// <summary>
         /// Controle quantidadeeq.
         /// </summary>
@@ -65,7 +85,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-        
+
         /// <summary>
         /// Controle MsgErromaqdef.
         /// </summary>
@@ -74,7 +94,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
-        
+
         /// <summary>
         /// Controle idnome.
         /// </summary>
@@ -83,7 +103,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList idnome;
-        
+
         /// <summary>
         /// Controle Button2.
         /// </summary>
@@ -92,7 +112,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button2;
-        
+
         /// <summary>
         /// Controle Button3.
         /// </summary>

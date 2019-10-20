@@ -17,6 +17,8 @@
                 <p>Laboratório</p>
                 <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                <asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtextDrop" DataSourceID="ObjectDataSource1"></asp:DropDownList>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
                 <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
                 
                 <br />

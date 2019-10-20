@@ -12,6 +12,7 @@ namespace ProjectColab.Modelo
         public string usuario_aberto_id { get; set; }
         public string usuario_atribuido_id { get; set; }
         public string laboratorios_id { get; set; }
+        public string categoria_id { get; set; }
         public string nomeUsuarioAberto { get; set; }
         public string nomeUsuarioAtribuido { get; set; }
         public string nomeLaboratorio { get; set; }
@@ -31,12 +32,12 @@ namespace ProjectColab.Modelo
             this.quantidadeeq = 0;
             this.data = new DateTime();
         }
-
-        public Chamado(string aid, string usuAberto, string lab, int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string lab, string cat,int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
             this.laboratorios_id = lab;
+            this.categoria_id = cat;
             this.status = astatus;
             this.statusEI = astatusEI;
             this.statuschamado = astatuschamado;
