@@ -29,8 +29,7 @@ CREATE TABLE Equipamento(
 	PRIMARY KEY(id),
 	FOREIGN KEY(laboratorio_id) REFERENCES Laboratorios(id)
 )
-
-CREATE TABLE Chamado(
+	CREATE TABLE Chamado(
 	id INT IDENTITY NOT NULL,
 	usuario_aberto_id INT ,
 	usuario_atribuido_id INT,
@@ -47,13 +46,6 @@ CREATE TABLE Chamado(
 	FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
 )
 
-CREATE TABLE Patrimonio(
-	id INT IDENTITY NOT NULL,
-	chamados_id INT,
-	numero_patrimonio VARCHAR(45) NOT NULL,
-	PRIMARY KEY(id),
-	FOREIGN KEY(chamados_id) REFERENCES Chamado(id)
-)
 CREATE TABLE Comentario(
 	id INT IDENTITY NOT NULL,
 	usuario_id INT NOT NULL,
@@ -61,6 +53,7 @@ CREATE TABLE Comentario(
 	data_hora DATETIME NOT NULL,
 	descricao VARCHAR(256) NOT NULL,
 	restricao VARCHAR(25) NOT NULL,
+	status int NOT NULL,
 	PRIMARY KEY(id), 
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id),
 	FOREIGN KEY(chamados_id) REFERENCES Chamado(id)
@@ -103,13 +96,15 @@ drop table Usuario
 
 /*		
 INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS:
-	values	('Diogo', 'ds', '21232f297a57a5a743894a0e4a801fc3', 1,1,''),						-- admin		      
+	values	   
 			('Administrador', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1,1,''),				-- admin			
 			('Servidor da Silva', 'serv', '27d08e8e003330f1880f0ff5d418c6f8', 2,1,''),		    -- serv
 			('Bolsita Andrade', 'bols', '1b98a6a467a4f28e5292f187d202342d', 3,1,''),		    -- bols
 			('Professor Soares', 'prof', 'd450c5dbcc10db0749277efc32f15f9f', 4, 1,'')	        -- prof
 
-*/			
+*/		
 
-select * from usuario
-
+insert into categoria (nome) values ('Instalar software'),
+('Instalar sistema operacional'),
+('HD sem espaço de armazenamento'),
+('Computador não liga')
