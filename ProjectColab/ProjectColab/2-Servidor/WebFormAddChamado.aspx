@@ -45,6 +45,10 @@
                 </div>
                 <div class="content">
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->
+                <asp:DropDownList ID="statusEI" runat="server">
+                    <asp:ListItem Value="1">Externo</asp:ListItem>
+                    <asp:ListItem Value="2">Interno</asp:ListItem>
+                    </asp:DropDownList>
                 <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd" OnClick="add_Click1"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
                 <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
             </div>
