@@ -5,8 +5,12 @@
     <div class="row">
         <div class="column middle">
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
-            <asp:Button ID="Button2" runat="server" Text="ADICIONAR TUTORIAL" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />
-                <asp:Button ID="Button3" runat="server" Text="VOLTAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" />  
+            <div class="indicador"><a class="title">TUTORIAIS EM ANÁLISE</a></div>  
+            <div class="menuAddLab"> 
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR TUTORIAL" CssClass="botaoadd btnToAdd lit" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx" />
+                <asp:Button ID="Button3" runat="server" Text="VOLTAR" CssClass="botaoadd btnToAdd lit" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" /> 
+            </div>    
+    
             <div class="content">
                 <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
