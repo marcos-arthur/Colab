@@ -265,3 +265,27 @@ begin
 		rollback transaction
 	end
 end
+
+go
+create trigger validar_comentario on Comentario
+for insert, update
+as
+begin
+--Declaracao de variaveis
+	declare @descricao varchar(256)
+	declare @erro bit
+	set @erro = 0
+
+		select 
+		@descricao = descricao
+	from inserted
+
+	--Validar o resumo
+	if(rtrim(ltrim(@descricao)) = '')
+	begin
+		--rollback transaction
+		raiserror('Insira um comentário', 16, 1)
+		set @erro = 1
+		--return
+	end	
+end
