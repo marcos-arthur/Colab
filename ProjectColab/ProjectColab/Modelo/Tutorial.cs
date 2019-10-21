@@ -31,7 +31,7 @@ namespace ProjectColab.Modelo
             this.status = status;
             this.arquivo = arquivo;
         }
-        public Tutorial(string id, string idU, string nomeUsu, string tutorial_titulo, int status, byte[] arquivo)
+        public Tutorial(string id, string idU, string nomeUsu, string tutorial_titulo, int status)
         {
             this.id = id;
             this.nomeUsuario = nomeUsu;

@@ -6,16 +6,13 @@
     <div class="row">
             <div class="column middle">
             <div class="indicador"><a class="title">ADICIONAR LABORATÓRIO</a></div>
-                <div class="menuadicao">
-
-                <div class=""><i class="fa fa-desktop"></i>
-                <asp:TextBox ID="nome" runat="server" Placeholder="nome do laboratório" CssClass="inputtext"></asp:TextBox> </div> 
-                <asp:Label ID="MsgErro" runat="server" ForeColor="Red"></asp:Label>
-
-                <br />
-                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd" OnClick="Add_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
-                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
-            </div>     
+                <div class="menuAdd">
+                    <i class="fa fa-desktop"></i>
+                    <asp:TextBox ID="nome" runat="server" Placeholder="nome do laboratório" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
+                    <asp:Label ID="MsgErro" runat="server" ForeColor="Red"></asp:Label>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd btnToAdd" OnClick="Add_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd btnToAdd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
+                </div>     
                 
             </div>
       
