@@ -242,3 +242,28 @@
     display: flex;
     flex-wrap: nowrap;
 }
+
+
+.menuAdd {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5%;
+    margin-top: 2%;
+}
+.inputToAdd{
+    display:block;
+    margin-left:4%;
+    width:90%;
+    margin-bottom:10%;
+}
+.AreaToInput {
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+.btnToAdd {
+    width: 48%;
+    margin:1%;
+}
