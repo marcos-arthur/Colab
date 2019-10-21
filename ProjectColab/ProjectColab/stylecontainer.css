@@ -249,8 +249,20 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 5%;
+    margin: auto;
+    justify-content:space-between;
     margin-top: 2%;
+}
+.menuAddLab {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    margin-bottom:5%;
+    border-bottom: solid rgb(150,150,150) 1px;
 }
 .inputToAdd{
     display:block;
@@ -264,6 +276,16 @@
     width:100%;
 }
 .btnToAdd {
-    width: 48%;
+    width: 46%;
     margin:1%;
+}
+.lit{
+    width:20%;
+}
+.menuAddText {
+    font-size: 1vw;
+    color: rgb(100,100,100);
+}
+.menuAddDiv{
+    width:100%;
 }
