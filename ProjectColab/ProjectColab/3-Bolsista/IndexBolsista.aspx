@@ -36,7 +36,7 @@
                           <div class="article">                                
                               <div class="iconchamado"><i class="fa fa-book"></i> <a class="text chamadoid">TUTORIAIS DISPONÍVEIS</a></div>
                                 <a class="first"> <%# DataBinder.Eval(Container.DataItem, "tutoCount")%></a>
-                              <div class="bot"><asp:Button runat="server" ID="Button5" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//3-Bolsista/WebFormCRUDTutorialBolsistta.aspx" /></div> 
+                              <div class="bot"><asp:Button runat="server" ID="Button5" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//3-Bolsista/WebFormCRUDTutorialBolsista.aspx" /></div> 
                           </div>
                       </div>   
         </ItemTemplate>

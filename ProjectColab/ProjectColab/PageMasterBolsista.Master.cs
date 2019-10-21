@@ -22,14 +22,14 @@ namespace ProjectColab
         {
             Session["chamadoValue"] = "noCount";
 
-            Response.Redirect("~/3-Bolsista/WebFormCRUDChamado.aspx");
+            Response.Redirect("~/3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
         }
 
         protected void Button8_Click(object sender, EventArgs e)
         {
             Session["chamadoValue"] = "myCount";
 
-            Response.Redirect("~/3-Bolsista/WebFormCRUDChamado.aspx");
+            Response.Redirect("~/3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
         }
     }
 }

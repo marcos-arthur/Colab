@@ -52,7 +52,7 @@
         </div>
                 <div class="column side">
                     <div class="content2">
-                            <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/3Bolsista/WebFormChamadosFechadosBolsista.aspx"/> 
+                            <asp:Button runat="server" ID="Button1" Text="VISUALIZAR CHAMADOS FECHADOS" CssClass="btn" PostBackUrl="~/3-Bolsista/WebFormChamadosFechadosBolsista.aspx"/> 
                         </div>  
                     </div>
             <!--FIM DO REPEATER-->          
