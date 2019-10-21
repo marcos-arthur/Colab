@@ -18,7 +18,7 @@ namespace ProjectColab.DAL
         }
 
         
-        //Atribuido a ninguem
+        //Método para selecionar chamados ainda não atribuidos
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectNo()
         {
@@ -73,7 +73,7 @@ namespace ProjectColab.DAL
 
             return aListChamado;
         }
-        //Aberto, Em Andamento e Reaberto
+        //Métodos para selecioar chamados em Aberto(1), Em Andamento(2) e Reaberto(4)
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectOnly()
         {
@@ -130,7 +130,7 @@ namespace ProjectColab.DAL
             return aListChamado;
         }
 
-        //Atribuido ao usuário logado
+        //Metódo para selecionar chamados atribuido ao usuário logado
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectMy(string id)
         {
@@ -188,7 +188,7 @@ namespace ProjectColab.DAL
             return aListChamado;
         }
 
-        //Chamado fechados
+        //Método para selecionar chamados fechados
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectClose()
         {
@@ -244,7 +244,7 @@ namespace ProjectColab.DAL
 
             return aListChamado;
         }
-        //Chamados fechados do professor
+        //Método para selecionar chamados fechados pelo professor
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectCloseProf(string id)
         {
@@ -302,6 +302,7 @@ namespace ProjectColab.DAL
             return aListChamado;
         }
 
+        //Método para inserir um chamado
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Chamado obj)
         {
@@ -344,7 +345,7 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-        //Pesquisa somente por resumo
+        //Método para pesquisas feitas somente por resumo
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> selectSearch(string resumo)
         {

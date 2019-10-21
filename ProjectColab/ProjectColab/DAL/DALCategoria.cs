@@ -16,6 +16,8 @@ namespace ProjectColab.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
+
+        //Metódo para selecionar todas as categorias
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Categoria> SelectAll()
         {

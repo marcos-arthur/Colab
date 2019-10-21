@@ -51,14 +51,16 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-        <div class="column middle">
-       
-            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS</a></div></div> 
-        
-            <div class="searchplace">
-            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
-            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
-            </div>
+            <div class="column middle">
+          <div class="searchplace">
+                <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
+                 <asp:DropDownList ID="statuscomentario"  runat="server">
+                    <asp:ListItem Value="1">Externo</asp:ListItem>
+                    <asp:ListItem Value="2">Interno</asp:ListItem>
+                </asp:DropDownList>
+            </div>       
+            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS EXTERNOS</a></div></div> 
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
                     <div class="containerChat">
@@ -72,6 +74,32 @@
                 </ItemTemplate>
             </asp:Repeater>
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
+                <SelectParameters>
+                    <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            
+        </div>
+    <div class="column middle">
+       
+            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS INTERNOS</a></div></div> 
+        
+            <div class="searchplace">
+            </div>
+            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
+                <ItemTemplate>
+                    <div class="containerChat">
+                        <i class="fa fa-user-circle iconFix"></i>
+                        <p class="data"><span> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></span>
+                        <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                        <div class="coment">
+                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p></div>
+                    </div>
+                    <br />
+                </ItemTemplate>
+            </asp:Repeater>
+            
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectInterno" TypeName="ProjectColab.DAL.DALComentario">
                 <SelectParameters>
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>

@@ -40,7 +40,7 @@ namespace ProjectColab
             Modelo.Comentario aComentario;
             DAL.DALComentario aDALComentario;
 
-            aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now,1);
+            aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now, Convert.ToInt32(statuscomentario.Text));
             aDALComentario = new DAL.DALComentario();
 
             aDALComentario.Insert(aComentario);
@@ -73,6 +73,11 @@ namespace ProjectColab
             Session["chamadoValue"] = "myCount";
 
             Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
         }
     }
 }
