@@ -36,8 +36,7 @@ namespace ProjectColab.DAL
                     aUsuario = new Modelo.Usuario(dr["id"].ToString(), 
                         dr["nome"].ToString(), dr["login"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToInt32(dr["tipo"].ToString()), 
-                        (byte[])dr["foto"], 
+                        Convert.ToInt32(dr["tipo"].ToString()),                        
                         Convert.ToInt32(dr["status"].ToString()));
                 }
             }
@@ -68,8 +67,7 @@ namespace ProjectColab.DAL
                     aUsuario = new Modelo.Usuario(dr["id"].ToString(),
                        dr["nome"].ToString(), dr["login"].ToString(),
                        dr["senha"].ToString(),
-                       Convert.ToInt32(dr["tipo"].ToString()),
-                       (byte[])dr["foto"],
+                       Convert.ToInt32(dr["tipo"].ToString()),                      
                        Convert.ToInt32(dr["status"].ToString()));
                     //aListUsuario.Add(aUsuario);
                 }
@@ -109,8 +107,7 @@ namespace ProjectColab.DAL
                     aUsuario = new Modelo.Usuario(dr["id"].ToString(),
                       dr["nome"].ToString(), dr["login"].ToString(),
                       dr["senha"].ToString(),
-                      Convert.ToInt32(dr["tipo"].ToString()),
-                      (byte[])dr["foto"],
+                      Convert.ToInt32(dr["tipo"].ToString()),                      
                       Convert.ToInt32(dr["status"].ToString()));
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
@@ -152,7 +149,6 @@ namespace ProjectColab.DAL
                        dr["nome"].ToString(), dr["login"].ToString(),
                        dr["senha"].ToString(),
                        Convert.ToInt32(dr["tipo"].ToString()),
-                       (byte[])dr["foto"],
                        Convert.ToInt32(dr["status"].ToString()));
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
@@ -226,7 +222,6 @@ namespace ProjectColab.DAL
                        dr["nome"].ToString(), dr["login"].ToString(),
                        dr["senha"].ToString(),
                        Convert.ToInt32(dr["tipo"].ToString()),
-                       (byte[])dr["foto"],
                        Convert.ToInt32(dr["status"].ToString()));
                     // Adiciona o livro lido à lista
                     aListUsuario.Add(aUsuario);
@@ -251,12 +246,11 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nome,login,senha,tipo,foto,status) VALUES(@nome,@login,@senha,@tipo,@foto, @status)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Usuario(nome,login,senha,tipo,status) VALUES(@nome,@login,@senha,@tipo, @status)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@login", obj.login);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
-            cmd.Parameters.AddWithValue("@tipo", obj.tipo);
-            cmd.Parameters.AddWithValue("@foto", obj.foto);
+            cmd.Parameters.AddWithValue("@tipo", obj.tipo);            
             cmd.Parameters.AddWithValue("@status", obj.status);
 
             cmd.ExecuteNonQuery();
@@ -279,18 +273,7 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-        //EDITAR FOTO//
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void UpdateImagem(Modelo.Usuario obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Usuario Set foto = @foto Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@foto", obj.foto);
-            cmd.ExecuteNonQuery();
-        }
+        
         //EDITAR STATUS//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void UpdateStatus(Modelo.Usuario obj)

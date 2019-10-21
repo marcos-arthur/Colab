@@ -103,24 +103,6 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.Label MsgErrotipo;
         
         /// <summary>
-        /// Controle foto.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload foto;
-        
-        /// <summary>
-        /// Controle MsgErrofoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErrofoto;
-        
-        /// <summary>
         /// Controle Button2.
         /// </summary>
         /// <remarks>

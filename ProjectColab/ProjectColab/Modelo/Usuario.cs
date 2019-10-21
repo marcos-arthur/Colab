@@ -11,8 +11,7 @@ namespace ProjectColab.Modelo
         public string nome { get; set; }
         public string login { get; set; }
         public string senha { get; set; }
-        public int tipo { get; set; }
-        public byte[] foto { get; set; }
+        public int tipo { get; set; }        
         public int status { get; set; }
 
 
@@ -22,19 +21,17 @@ namespace ProjectColab.Modelo
             nome = "";
             login = "";
             senha = "";
-            tipo = 0;
-            foto = null;
+            tipo = 0;           
             status = 0;
         }
 
-        public Usuario(string id, string nome, string login, string senha, int tipo, byte[] foto, int status)
+        public Usuario(string id, string nome, string login, string senha, int tipo, int status)
         {
             this.id = id;
             this.nome = nome;
             this.login = login;
             this.senha = senha;
             this.tipo = tipo;
-            this.foto = foto;
             this.status = status;
         }
     }
