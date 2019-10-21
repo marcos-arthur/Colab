@@ -18,18 +18,7 @@
                 <SelectParameters>
                     <asp:SessionParameter SessionField="idlab" Name="id" Type="String"></asp:SessionParameter>
                 </SelectParameters>
-            </asp:ObjectDataSource>  
-
-            <div class="menuadicao">
-
-                <div class="tag"><a>Nome do Laboratório</a></div>
-                <asp:TextBox ID="nome" runat="server" Placeholder="DIGITE AQUI O NOME" CssClass="inputtext"></asp:TextBox>  
-                <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
-
-                <br />
-                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd" OnClick="LinkButton1_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
-                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd" OnClick="LinkButton2_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
-            </div>            
+            </asp:ObjectDataSource>            
             
              <br />
             <asp:LinkButton ID="Button2" runat="server" CssClass="" OnClick="Button2_Click"><i class="fa fa-check"></i>ADICIONAR EQUIPAMENTO</asp:LinkButton>

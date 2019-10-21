@@ -20,36 +20,7 @@ namespace ProjectColab._2_Servidor
             //Session["nomelab"] = .Rows[1].Cells[1].Text;
             Response.Redirect("~//2-Servidor/WebFormAddEquipamento.aspx");
         }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            Modelo.Laboratorios alaboratorios;
-            DAL.DALLaboratorio aDALLaboratorio;
-
-            alaboratorios = new Modelo.Laboratorios("1", nome.Text,"1");
-
-            aDALLaboratorio = new DAL.DALLaboratorio();
-
-            try
-            {
-                //aDALLaboratorio.Insert(alaboratorios); Mudar para UPDATE
-            }
-            //UM ERRO PODE SER CAUSADO CASO O SERVIDOR EM QUE O COMPILADOR DO C# ESTEJA INSTALADO ESTEJA EM OUTRA LINGUA
-            catch (SqlException error) when (error.Message == "A transação foi encerrada no gatilho. O lote foi anulado.\r\nO novo laboratorio deve possuir um nome")
-            {
-                Session["msgErro"] = "O novo laboratorio deve possuir um nome";
-                Response.Redirect("~\\WebFormAddLab.aspx");
-            }
-            finally
-            {
-                Response.Redirect("~//2-Servidor/WebFormAddLab.aspx");
-            }
-        }
-
-        protected void LinkButton2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
-        }
+        
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Fechar")

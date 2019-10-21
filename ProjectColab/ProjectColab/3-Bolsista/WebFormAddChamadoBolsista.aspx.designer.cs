@@ -31,24 +31,6 @@ namespace ProjectColab._3_Bolsista {
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
         
         /// <summary>
-        /// Controle quantidadeeq.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-        
-        /// <summary>
-        /// Controle MsgErromaqdef.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
-        
-        /// <summary>
         /// Controle labDrop.
         /// </summary>
         /// <remarks>
@@ -92,6 +74,24 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrolab;
+        
+        /// <summary>
+        /// Controle quantidadeeq.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
+        
+        /// <summary>
+        /// Controle MsgErromaqdef.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
         
         /// <summary>
         /// Controle idnome.

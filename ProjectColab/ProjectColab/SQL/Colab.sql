@@ -95,7 +95,7 @@ drop table Usuario
 	*/
 
 
-/*		
+		
 INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS:
 	values	   
 			('Administrador', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1,1,''),				-- admin			
@@ -103,7 +103,7 @@ INSERT INTO Usuario(nome,login,senha,tipo,status, foto)									        --SENHAS
 			('Bolsita Andrade', 'bols', '1b98a6a467a4f28e5292f187d202342d', 3,1,''),		    -- bols
 			('Professor Soares', 'prof', 'd450c5dbcc10db0749277efc32f15f9f', 4, 1,'')	        -- prof
 
-*/		
+	
 
 insert into categoria (nome) 
 	values

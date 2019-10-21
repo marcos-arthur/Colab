@@ -63,5 +63,16 @@ namespace ProjectColab
 
             Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
         }
+
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text.Trim() != "")
+            {
+                Session["chamadoValue"] = "search";
+                Session["chamadob"] = TextBox1.Text;
+                Response.Redirect("~//3-Bolsista/WebFormCRUDChamadoBolsista.aspx");
+            }
+
+        }
     }
 }
