@@ -17,7 +17,6 @@ CREATE TABLE Usuario(
 	login VARCHAR(100) NOT NULL,
 	senha VARCHAR(100) NOT NULL,
 	tipo INT NOT NULL, 
-	foto image NOT NULL,
 	status int not null,
     	PRIMARY KEY(id)
 )
@@ -25,7 +24,6 @@ CREATE TABLE Usuario(
 CREATE TABLE Equipamento(
 	id INT IDENTITY NOT NULL,
 	laboratorio_id INT NOT NULL,
-	laboratorio_nome VARCHAR(45) NOT NULL,
 	modelo VARCHAR(45) NOT NULL,
 	quantidade INT NOT NULL,
 	PRIMARY KEY(id),

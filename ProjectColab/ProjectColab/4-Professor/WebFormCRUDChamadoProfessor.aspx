@@ -28,7 +28,7 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectOnly" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectOnlyProf" TypeName="ProjectColab.DAL.DALChamado"></asp:ObjectDataSource>
             </div>
         </div>  
 </asp:Content>

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="2-Servidor\WebFormAddEquipamento.aspx" />
     <Content Include="2-Servidor\WebFormChamadosFechadosServidor.aspx" />
+    <Content Include="2-Servidor\WebFormEditEquipamento.aspx" />
     <Content Include="2-Servidor\WebFormEditLab.aspx" />
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
@@ -147,6 +148,13 @@
     <Compile Include="2-Servidor\WebFormChamadosFechadosServidor.aspx.designer.cs">
       <DependentUpon>WebFormChamadosFechadosServidor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="2-Servidor\WebFormEditEquipamento.aspx.cs">
+      <DependentUpon>WebFormEditEquipamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormEditEquipamento.aspx.designer.cs">
+      <DependentUpon>WebFormEditEquipamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="2-Servidor\WebFormEditLab.aspx.cs">
       <DependentUpon>WebFormEditLab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,12 +233,6 @@
     <Compile Include="DAL\DALLaboratorio.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
-    <Compile Include="HandlerTutorial_info.ashx.cs">
-      <DependentUpon>HandlerTutorial_info.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="1-Admin\HandlerUsuario_info.ashx.cs">
-      <DependentUpon>HandlerUsuario_info.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
@@ -381,8 +383,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HandlerTutorial_info.ashx" />
-    <Content Include="1-Admin\HandlerUsuario_info.ashx" />
     <Content Include="PageMasterAdmin.Master" />
     <Content Include="PageMasterBolsista.Master" />
     <Content Include="PageMasterProfessor.Master" />
