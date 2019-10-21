@@ -40,11 +40,7 @@ namespace ProjectColab
                 MsgErrotipo.Text = Session["MsgErrotipo"].ToString();
                 Session["MsgErrotipo"] = null;
             }
-            if ((Session["MsgErrofoto"] != null) && (Session["MsgErrofoto"].ToString() != ""))
-            {
-                MsgErrofoto.Text = Session["MsgErrofoto"].ToString();
-                Session["MsgErrofoto"] = null;
-            }
+           
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -64,7 +60,7 @@ namespace ProjectColab
             if (senha.Text != "") senhaMD5 = GerarHashMd5(senha.Text);
 
             // Instancia objeto Modelo
-            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, foto.FileBytes, 1);
+            Modelo.Usuario aUsuario = new Modelo.Usuario("1", nome.Text, login.Text, senhaMD5, type, 1);
             
             // Validar senha
             if (senha.Text != confirmaSenha.Text)
