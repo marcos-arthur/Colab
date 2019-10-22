@@ -34,7 +34,7 @@
             <div class="column middle" >
                       <div class="content">
                           <div class="article">                                
-                              <div class="iconchamado"><i class="fa fa-book"></i> <a class="text chamadoid">TUTORIAIS CONFIRMADOS</a></div>
+                              <div class="iconchamado"><i class="fa fa-book"></i> <a class="text chamadoid">TUTORIAIS DISPONÍVEIS</a></div>
                                 <a class="first"> <%# DataBinder.Eval(Container.DataItem, "tutoCount")%></a>
                               <div class="bot"><asp:Button runat="server" ID="Button5" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx" /></div> 
                           </div>
@@ -53,7 +53,7 @@
         <ItemTemplate>
                       <div class="content">
                             <div class="article">                              
-                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">salas</a></div>
+                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">SALAS</a></div>
                                 <a class="first"> <%# DataBinder.Eval(Container.DataItem, "salaCount")%></a>
                              <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDSalas.aspx" /></div> 
                           </div>                          
@@ -67,7 +67,7 @@
         <ItemTemplate>
                       <div class="content">
                             <div class="article">                              
-                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">equipamentos</a></div>
+                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">EQUIPAMENTOS</a></div>
                                 <a class="first"> <%# DataBinder.Eval(Container.DataItem, "EquipCount")%></a>
                              <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDSalas.aspx" /></div> 
                           </div>                          

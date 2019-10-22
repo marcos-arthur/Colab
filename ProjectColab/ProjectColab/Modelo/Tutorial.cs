@@ -40,5 +40,9 @@ namespace ProjectColab.Modelo
             this.status = status;
             this.arquivo = arquivo;
         }
+        public Tutorial(byte[] arquivo)
+        {
+            this.arquivo = arquivo;
+        }
     }
 }

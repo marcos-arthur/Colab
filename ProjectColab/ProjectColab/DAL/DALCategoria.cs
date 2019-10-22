@@ -54,5 +54,46 @@ namespace ProjectColab.DAL
 
             return aListCategoria;
         }
+
+        //Selecionar uma categoria específica
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Categoria Select(string id)
+        {
+            // Variavel para armazenar uma categoria
+            Modelo.Categoria aCategoria = new Modelo.Categoria();            
+
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            // Abre conexão com o banco de dados
+            conn.Open();
+
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+
+            // define SQL do comando com parâmetros
+            cmd.CommandText = "SELECT * FROM Categoria where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    // Cria objeto com dados lidos do banco de dados
+                    aCategoria = new Modelo.Categoria(dr["id"].ToString(), dr["nome"].ToString());                    
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aCategoria;
+        }
     }
 }

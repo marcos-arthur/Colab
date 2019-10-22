@@ -38,18 +38,16 @@ namespace ProjectColab
             if (e.CommandName.ToString() == "Baixar")
             {
                 string id;
-                //int index = Convert.ToInt32(e.CommandArgument);
-
+                
                 string[] arg = new string[2];
                 arg = e.CommandArgument.ToString().Split(';');
 
                 id = arg[0];
-                string theFileName = arg[1];
-                //string theFileName = GridView1.Rows[index].Cells[2].Text;
+                string theFileName = arg[1];                
 
                 DAL.DALTutorial arquivo = new DAL.DALTutorial();
 
-                byte[] data = arquivo.Select(id).arquivo;
+                byte[] data = arquivo.SelectDownload(id).arquivo;
                 byte[] buffer = null;
                 using (Stream st = new MemoryStream(data))
                 {
