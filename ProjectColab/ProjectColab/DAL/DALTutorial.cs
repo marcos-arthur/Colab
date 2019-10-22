@@ -36,7 +36,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial";
+            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -125,7 +125,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial Where status = 1";
+            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial Where status = 1";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -168,7 +168,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial Where status = 2";
+            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial Where status = 2";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -238,10 +238,10 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Tutorial Set status = @status, arquivo = @arquivo Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Tutorial Set status = @status Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+            
 
             cmd.ExecuteNonQuery();
         }
@@ -251,6 +251,9 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Tutorial Select(string id)
         {
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuario;
+
             Modelo.Tutorial aTutorial = new Modelo.Tutorial();
 
             //List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
@@ -261,7 +264,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "Select * From Tutorial Where id = @id";
+            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status From Tutorial Where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -270,9 +273,44 @@ namespace ProjectColab.DAL
             {
                 while (dr.Read())
                 {
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), (byte[]) dr["arquivo"]);
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
 
-                    //aListTutorial.Add(aTutorial);
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aTutorial;
+        }
+
+        // Download do arquivo
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Tutorial SelectDownload(string id)
+        {
+            Modelo.Tutorial aTutorial = new Modelo.Tutorial();
+            
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Select arquivo From Tutorial Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aTutorial = new Modelo.Tutorial((byte[])dr["arquivo"]);
+                    
                 }
             }
 

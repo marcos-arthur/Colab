@@ -83,7 +83,7 @@ namespace ProjectColab._2_Servidor
                 string theFileName = arg[1];
                 DAL.DALTutorial arquivo = new DAL.DALTutorial();
 
-                byte[] data = arquivo.Select(id).arquivo;
+                byte[] data = arquivo.SelectDownload(id).arquivo;
                 byte[] buffer = null;
                 using (Stream st = new MemoryStream(data))
                 {

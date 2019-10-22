@@ -22,13 +22,16 @@
                     <ItemTemplate>
                         <div class="article">
                             
+                            <!-- ID do chamado -->
                             <div class="iconchamado"><i class="fa fa-bell"></i> <a class="textEditChamado nomeChamado">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>
                             
+                            <!-- Resumo do chamado -->
                             <div class="rowChamado titleFix">
                                 <a class="textEditChamado">RESUMO DO CHAMADO:</a>                               
                                 <a class="textEditChamado nomeChamado borderFix"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
                             </div>                                     
                             
+                            <!-- Usuário que abriu -->
                             <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
                             <!-- Nome da sala-->
                             <div class="rowChamado rowFix"><a class="textEditChamado"> SALA: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
