@@ -1,7 +1,10 @@
 ﻿.containerChat {
-    background-color: rgb(253,253,255);
-    border-radius: 5px;
-    margin:2%;
+    margin:auto;
+    padding:0;
+    width:95%;
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction:column;
 
 }
     .containerChat i {
