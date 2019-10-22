@@ -31,13 +31,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
         
         /// <summary>
-        /// Controle labDrop.
+        /// Controle salaDrop.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList labDrop;
+        protected global::System.Web.UI.WebControls.DropDownList salaDrop;
         
         /// <summary>
         /// Controle ObjectDataSource2.
@@ -67,13 +67,13 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Controle MsgErrolab.
+        /// Controle MsgErroSala.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErrolab;
+        protected global::System.Web.UI.WebControls.Label MsgErroSala;
         
         /// <summary>
         /// Controle quantidadeeq.

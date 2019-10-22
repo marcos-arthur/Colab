@@ -16,8 +16,8 @@ namespace ProjectColab._2_Servidor
            
             if ((Session["MsgErroDropLab"] != null) && (Session["MsgErroDropLab"].ToString() != ""))
             {
-                MsgErroDropLab.Text = Session["MsgErroDropLab"].ToString();
-                Session["MsgErroDropLab"] = null;
+                MsgErroDropSalas.Text = Session["MsgErroDropSalas"].ToString();
+                Session["MsgErroDropSalas"] = null;
             }
             if ((Session["MsgErroModelo"] != null) && (Session["MsgErroModelo"].ToString() != ""))
             {
@@ -59,7 +59,7 @@ namespace ProjectColab._2_Servidor
             {
                 ok = false;
 
-                if (error.Message.Contains("O equipamento inserido deve pertencer a algum laboratorio")) Session["MsgErroDropLab"] = "O equipamento inserido deve pertencer a algum laboratório";
+                if (error.Message.Contains("O equipamento inserido deve pertencer a alguma sala")) Session["MsgErroDropSalas"] = "O equipamento inserido deve pertencer a alguma sala";
 
                 if (error.Message.Contains("A quantidade de equipamento deve ser um número maior que 0")) Session["MsgErroQuant"] = "A quantidade de equipamento deve ser um número maior que 0";
 

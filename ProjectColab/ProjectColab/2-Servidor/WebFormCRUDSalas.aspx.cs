@@ -7,27 +7,27 @@ using System.Web.UI.WebControls;
 
 namespace ProjectColab
 {
-    public partial class WebFormCRUDLabs : System.Web.UI.Page
+    public partial class WebFormCRUDSalas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["labValue"].ToString() == "search")
+            if (Session["salaValue"].ToString() == "search")
             {
                 ObjectDataSource1.SelectMethod = "selectSearch";
 
-                
+
                 //Passar chamadoValue como parâmetro
                 SessionParameter empid = new SessionParameter();
                 empid.Name = "nome";
                 empid.Type = TypeCode.String;
-                empid.SessionField = "labb";
+                empid.SessionField = "sala";
 
 
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
             }
 
-            Session["labValue"] = "";
+            Session["salaValue"] = "";
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace ProjectColab
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            //Verifica se o comando é "Editar"
+            //Verifica se o comando é "Abir"
             if (e.CommandName.ToString() == "ABRIR")
             {
                 //string id;
@@ -55,10 +55,10 @@ namespace ProjectColab
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
 
                 // Grava código do Livro na sessão
-                Session["idlab"] = id;
+                Session["idsala"] = id;
 
                 // Chama a tela de edição
-                Response.Redirect("~//2-Servidor/WebFormEditLab.aspx");
+                Response.Redirect("~//2-Servidor/WebFormEditSalas.aspx");
             }
         }
 
@@ -66,9 +66,9 @@ namespace ProjectColab
         {
             if (searchBox.Text.Trim() != "")
             {
-                Session["labValue"] = "search";
-                Session["labb"] = searchBox.Text;
-                Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
+                Session["salaValue"] = "search";
+                Session["sala"] = searchBox.Text;
+                Response.Redirect("~//2-Servidor/WebFormCRUDSalas.aspx");
             }
         }
     }

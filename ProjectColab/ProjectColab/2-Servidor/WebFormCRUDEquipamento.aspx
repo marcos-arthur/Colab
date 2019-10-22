@@ -23,7 +23,7 @@
                     <ItemTemplate>
                         <div class="article">
                             <div class="iconchamado"><i class="fa fa-keyboard-o"></i> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "modelo")%></a></div>
-                            <div class="rowChamado rowFix"><a class="textEditChamado">Laboratório</a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "laboratorio_nome")%> </a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">SALA</a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "sala_nome")%> </a></div>
                             <div class="rowChamado rowFix"><a class="textEditChamado">Quantidade:</a><a class="text"><%# DataBinder.Eval(Container.DataItem, "quantidade")%> </a></div>
                             <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link"></i> VISUALIZAR EQUIPAMENTO</asp:LinkButton></div> 
                         </div>

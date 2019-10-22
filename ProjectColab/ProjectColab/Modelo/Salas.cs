@@ -7,17 +7,23 @@ namespace ProjectColab.Modelo
 {
     public class Salas
     {
+        public string id { get; set; }
         public string nome { get; set; }
-        public int id { get; set; }
+        public string status { get; set; }
 
-        public Salas(){
-            id = 0;
-            nome = "";
+        public Salas()
+        {
+            this.id = "";
+            this.nome = "";
+            this.status = "";
+
         }
 
-        public Salas(string name, int id) {
-            this.id = id;
-            nome = name;
+        public Salas(string aid, string anome, string astatus)
+        {
+            this.id = aid;
+            this.nome = anome;
+            this.status = astatus;
         }
     }
 }

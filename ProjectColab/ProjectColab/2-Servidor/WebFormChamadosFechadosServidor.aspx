@@ -26,8 +26,8 @@
                                 <a class="textEditChamado nomeChamado borderFix"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
                             </div>
                             
-                            <!--nome do laborátório-->
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Laboratório:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
+                            <!--nome da sala-->
+                            <div class="rowChamado rowFix"><a class="textEditChamado ">Sala:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
 
                             <div class="rowChamado rowFix"><a class="textEditChamado ">Atribuido a:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
                             <div class="rowChamado rowFix"><a class="textEditChamado ">Quantidade de equipamentos:</a><a class="textEditChamado nomeChamado">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>

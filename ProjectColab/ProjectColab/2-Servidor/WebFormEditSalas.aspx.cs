@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ProjectColab._2_Servidor
 {
-    public partial class WebFormEditLab : System.Web.UI.Page
+    public partial class WebFormEditSalas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace ProjectColab._2_Servidor
             //Session["nomelab"] = .Rows[1].Cells[1].Text;
             Response.Redirect("~//2-Servidor/WebFormAddEquipamento.aspx");
         }
-        
+
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Fechar")
@@ -29,9 +29,9 @@ namespace ProjectColab._2_Servidor
                 int index = Convert.ToInt32(e.CommandArgument);
                 id = e.CommandArgument.ToString();
                 Session["id"] = id;
-                DAL.DALLaboratorio arquivo = new DAL.DALLaboratorio();
+                DAL.DALSalas arquivo = new DAL.DALSalas();
 
-                Modelo.Laboratorios mchamado;
+                Modelo.Salas mchamado;
 
                 mchamado = arquivo.Select2(id);
 
@@ -39,7 +39,7 @@ namespace ProjectColab._2_Servidor
 
                 arquivo.Update(mchamado);
 
-                Response.Redirect("~//2-Servidor/WebFormCRUDLabs.aspx");
+                Response.Redirect("~//2-Servidor/WebFormCRUDSalas.aspx");
             }
         }
     }

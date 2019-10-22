@@ -30,8 +30,8 @@
                             </div>                                     
                             
                             <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
-                            <!-- Nome do laboratorio-->
-                            <div class="rowChamado rowFix"><a class="textEditChamado"> Laboratório: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
+                            <!-- Nome da sala-->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> SALA: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
 
                             <!-- Usuario atribuido -->
                             <div class="rowChamado rowFix"><a class="textEditChamado"> Atribuido a: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>

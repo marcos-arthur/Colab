@@ -13,9 +13,9 @@
 <link rel="stylesheet" type="text/css" href="StyleButton.css"/>
 <link rel="stylesheet" type="text/css" href="StyleIndicador.css"/>
 <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
-<link href="css\fontawesome.css" rel="stylesheet">
-<link href="css\brands.css" rel="stylesheet">
-<link href="css\solid.css" rel="stylesheet">  
+<link href="css\fontawesome.css" rel="stylesheet"/>
+<link href="css\brands.css" rel="stylesheet"/>
+<link href="css\solid.css" rel="stylesheet"/> 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <style>
 body{
@@ -23,7 +23,7 @@ body{
 }
 </style>
 <script src="../confirmar.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <title>COLAB</title>
 </head>
 <body>

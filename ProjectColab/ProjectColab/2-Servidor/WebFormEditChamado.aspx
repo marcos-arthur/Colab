@@ -26,8 +26,8 @@
                             <!--Usuario atribuido-->
                             <div class="rowChamado"><a class="textEditChamado"> Atendente </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
                            
-                            <!--Nome do laboratorio-->
-                            <div class="rowChamado"><a class="textEditChamado"> Laboratório </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a></div>
+                            <!--Nome da sala-->
+                            <div class="rowChamado"><a class="textEditChamado"> Sala </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
                             <!--<asp:TextBox runat="server" visible="false"></asp:TextBox>
 
                             <!--Resumo do problema-->

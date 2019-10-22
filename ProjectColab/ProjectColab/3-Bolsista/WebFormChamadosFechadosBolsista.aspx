@@ -17,7 +17,7 @@
                             <div class="iconchamado"><i class="fa fa-bell"></i><a class="text">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>
                             <a class="text"><%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
                             <a class="text">Aberto por: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a>
-                            <a class="text">Laboratório: <%# DataBinder.Eval(Container.DataItem, "nomeLaboratorio")%> </a>
+                            <a class="text">SALA: <%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a>
                             <a class="text">Atribuido a: <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a>
                             <div class="resu"><a class="text"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>
                             <a class="text">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a>

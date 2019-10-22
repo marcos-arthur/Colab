@@ -11,11 +11,11 @@ namespace ProjectColab.Modelo
         public int status { get; set; }
         public string usuario_aberto_id { get; set; }
         public string usuario_atribuido_id { get; set; }
-        public string laboratorios_id { get; set; }
+        public string sala_id { get; set; }
         public string categoria_id { get; set; }
         public string nomeUsuarioAberto { get; set; }
         public string nomeUsuarioAtribuido { get; set; }
-        public string nomeLaboratorio { get; set; }
+        public string nomesala { get; set; }
         public string resumo { get; set; }
         public int quantidadeeq { get; set; }
         public DateTime data { get; set; }
@@ -32,11 +32,11 @@ namespace ProjectColab.Modelo
             this.quantidadeeq = 0;
             this.data = new DateTime();
         }
-        public Chamado(string aid, string usuAberto, string lab, string cat,int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string sala, string cat,int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
-            this.laboratorios_id = lab;
+            this.sala_id = sala;
             this.categoria_id = cat;
             this.status = astatus;
             this.statusEI = astatusEI;
@@ -45,14 +45,14 @@ namespace ProjectColab.Modelo
             this.quantidadeeq = aquantidadeeq;
             this.data = adata;
         }
-        public Chamado(string aid, string usuAberto, string lab, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomeLab, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string sala, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomesala, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
-            this.laboratorios_id = lab;
+            this.sala_id = sala;
             this.usuario_atribuido_id = usuAtribuido;
             this.nomeUsuarioAberto = nomeUsuAberto;
-            this.nomeLaboratorio = nomeLab;
+            this.nomesala = nomesala;
             this.nomeUsuarioAtribuido = nomeUsuAtribuido;
             this.status = astatus;
             this.statusEI = astatusEI;

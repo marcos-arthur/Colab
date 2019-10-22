@@ -24,10 +24,10 @@ namespace ProjectColab._3_Bolsista
                 MsgErromaqdef.Text = Session["MsgErromaqdef"].ToString();
                 Session["MsgErromaqdef"] = null;
             }
-            if ((Session["MsgErrolab"] != null) && (Session["MsgErrolab"].ToString() != ""))
+            if ((Session["MsgErrosala"] != null) && (Session["MsgErrosala"].ToString() != ""))
             {
-                MsgErrolab.Text = Session["MsgErrolab"].ToString();
-                Session["MsgErrolab"] = null;
+                MsgErrosala.Text = Session["MsgErrosala"].ToString();
+                Session["MsgErrosala"] = null;
             }
         }
 
@@ -45,7 +45,7 @@ namespace ProjectColab._3_Bolsista
             else quantidade = 0;
 
             //Salva os valores pegos na WebForm na classe modelo
-            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), labDrop.Text, catDrop.Text, 1, Convert.ToInt32(statusEI.Text), "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
+            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), salaDrop.Text, catDrop.Text, 1, Convert.ToInt32(statusEI.Text), "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
             //bool para controle de erros
             //ok == true    -> Erro inexistente
             //ok == false = -> Erro existente
@@ -71,11 +71,11 @@ namespace ProjectColab._3_Bolsista
                 //Quantidade de máquinas com defeito menor que 1
                 if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos deve ser um número maior que 0";
 
-                //Quantidade de máquinas maior que o existente no laboratório
+                //Quantidade de máquinas maior que o existente na sala
                 if (error.Message.Contains("Numero maximo de maquinas excedido")) Session["MsgErromaqdef"] = "Número máximo de equipamentos excedido";
 
                 //Nenhum equipamento foi escolhido -- Caso esse erro ocorra, nenhum dos outros será chamado, pois ele ocorre antes do trigger
-                if (error.Message.Contains("FK__Chamado__laborat__5EBF139D")) Session["MsgErrolab"] = "Voce deve selecionar o laboratório que possui equipamentos com defeito";
+                if (error.Message.Contains("FK__Chamado__salas__5EBF139D")) Session["MsgErrosala"] = "Voce deve selecionar a sala que possui equipamentos com defeito";
 
             }
             //Erro de erro de conversão que pode acontecer no DAL            
@@ -88,7 +88,7 @@ namespace ProjectColab._3_Bolsista
                 //Esse erro não será tratado caso a língua padrão da máquina onde a aplicação foi instalada for diferente do português
                 //    Acontecerá, pois o Format Exception é gerado automaticamente
                 //Nenhum equipamento foi escolhido -- Caso esse erro ocorra, nenhum dos outros será chamado, pois ele ocorre antes do trigger
-                if (errorFormat.Message.Contains("A cadeia de caracteres de entrada não estava em um formato correto")) Session["MsgErrolab"] = "Deve haver um laboratório válido existente";
+                if (errorFormat.Message.Contains("A cadeia de caracteres de entrada não estava em um formato correto")) Session["MsgErrosala"] = "Deve haver uma sala válido existente";
             }
 
             //If para confirmação de erro

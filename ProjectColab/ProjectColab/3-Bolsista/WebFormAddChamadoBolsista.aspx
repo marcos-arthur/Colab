@@ -16,12 +16,12 @@
                             <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
                         </div>                  
                         <div class="rowCadastro">
-                            <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtxt" DataSourceID="ObjectDataSource2"></asp:DropDownList>
-                            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                            <asp:DropDownList ID="salaDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtxt" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALSalas"></asp:ObjectDataSource>
                             <asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtext" DataSourceID="ObjectDataSource1"></asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;
                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
-                            <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
+                            <asp:Label ID="MsgErrosala" runat="server" ForeColor="Red"></asp:Label>   
                         </div>                   
                     <!-- Segunda parte da criação de chamados-->
                     <div class="contentCadastro">

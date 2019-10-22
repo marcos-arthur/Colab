@@ -7,16 +7,16 @@
                         <div class="editmenu">
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
-                            <div class="iconchamado"><i class=""></i> <a class="title">Laboratório #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
+                            <div class="iconchamado"><i class=""></i> <a class="title">Sala #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                            
                             <a class="text" ><%# DataBinder.Eval(Container.DataItem, "nome")%> </a>                                     
                         <div class="bot">
                          <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Fechar" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i>FECHAR LABORATÓRIO</asp:LinkButton>
                     </ItemTemplate>
                 </asp:Repeater>
 </div>
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select2" TypeName="ProjectColab.DAL.DALLaboratorio">
+            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select2" TypeName="ProjectColab.DAL.DALSalas">
                 <SelectParameters>
-                    <asp:SessionParameter SessionField="idlab" Name="id" Type="String"></asp:SessionParameter>
+                    <asp:SessionParameter SessionField="idsala" Name="id" Type="String"></asp:SessionParameter>
                 </SelectParameters>
             </asp:ObjectDataSource>            
             
@@ -26,7 +26,7 @@
         
             <br />
 
-            <!--Repeater para os equipamentos do lab-->
+            <!--Repeater para os equipamentos da sala-->
             <asp:repeater runat="server" ID="LabEquips" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
                     <div class="">                            
@@ -44,7 +44,7 @@
             </asp:repeater>            
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectFromLab" TypeName="ProjectColab.DAL.DALEquipamento">
                 <SelectParameters>
-                    <asp:SessionParameter Name="idLab" SessionField="idlab" Type="String" />
+                    <asp:SessionParameter Name="idsala" SessionField="idsala" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
 

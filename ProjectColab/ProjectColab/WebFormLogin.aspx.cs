@@ -15,7 +15,7 @@ namespace ProjectColab
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["equipValue"] = "";
-            Session["labValue"] = "";
+            Session["salaValue"] = "";
             Session["tutorialValue"] = "";
             // Apresenta mensagem de erro
             if ((Session["msgErro"] != null) && (Session["msgErro"].ToString() != ""))
@@ -27,7 +27,7 @@ namespace ProjectColab
         protected void add_Click(object sender, EventArgs e)
         {
             Session["equipValue"] = "";
-            Session["labValue"] = "";
+            Session["salaValue"] = "";
             Session["tutorialValue"] = "";
 
             // Instancia objeto DAL

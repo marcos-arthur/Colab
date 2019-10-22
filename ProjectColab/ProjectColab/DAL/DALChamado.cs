@@ -22,11 +22,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectNo()
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -39,10 +39,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
                               "WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (usuario_atribuido_id is null) and (status = 1 or status = 2 or status = 4)";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -54,14 +54,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -78,11 +78,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectOnlyProf()
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala= new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -95,10 +95,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN" +
                               " status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO' WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado" +
                               " FROM Chamado where (status = 1 or status = 2 or status = 4) and (statusEI = 1)";
             // Executa comando, gerando objeto DbDataReader
@@ -111,15 +111,15 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala= sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -136,11 +136,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectOnly()
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;            
+            string nomesala;            
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -153,10 +153,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE " +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE " +
                               "WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
                               "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (status = 1 or status = 2 or status = 4)";
             // Executa comando, gerando objeto DbDataReader
@@ -169,15 +169,15 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                    
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -194,11 +194,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectMy(string id)
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -211,10 +211,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
                               "WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where status in (1,2,4) and usuario_atribuido_id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
@@ -228,14 +228,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome das salas
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -252,11 +252,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectClose()
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -269,10 +269,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
                               "WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where status = 3";
 
             // Executa comando, gerando objeto DbDataReader
@@ -285,14 +285,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala= sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -308,11 +308,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> SelectCloseProf(string id)
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             // Variavel para armazenar um livro
             Modelo.Chamado aChamado;
@@ -325,10 +325,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             SqlCommand cmdUsu = conn.CreateCommand();
-            SqlCommand cmdLab = conn.CreateCommand();
+            SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,Sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'" +
                               "WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where status in (3) and usuario_aberto_id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
@@ -342,14 +342,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
                 }
@@ -373,18 +373,18 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(usuario_aberto_id, laboratorios_id, categoria_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data) VALUES (@usuario_aberto_id, @laboratorios_id,@categoria_id,@status, @statusEI,@resumo,@quant_equipamentos_defeituosos,@data)", conn);            
+            SqlCommand cmd = new SqlCommand("INSERT INTO Chamado(usuario_aberto_id, sala_id, categoria_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data) VALUES (@usuario_aberto_id, @sala_id,@categoria_id,@status, @statusEI,@resumo,@quant_equipamentos_defeituosos,@data)", conn);            
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@usuario_aberto_id", int.Parse(obj.usuario_aberto_id));
 
             //TryCatch para conversão
             try
             {
-                cmd.Parameters.AddWithValue("@laboratorios_id", int.Parse(obj.laboratorios_id));
+                cmd.Parameters.AddWithValue("@sala_id", int.Parse(obj.sala_id));
             }
             catch (FormatException error)
             {
-                cmd.Parameters.AddWithValue("@laboratorios_id", 0);
+                cmd.Parameters.AddWithValue("@sala_id", 0);
             }
             //TryCatch para conversão
             try
@@ -409,11 +409,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Chamado> selectSearch(string resumo)
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             Modelo.Chamado aChamado = new Modelo.Chamado();
             List<Modelo.Chamado> listChamado = new List<Modelo.Chamado>();
@@ -424,7 +424,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
                               "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (resumo like '%" + resumo + "%')";            
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -437,14 +437,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
                     // Adiciona o livro lido à lista                    
 
                     listChamado.Add(aChamado);
@@ -461,11 +461,11 @@ namespace ProjectColab.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Chamado Select(string id)
         {
-            DALLaboratorio lab = new DALLaboratorio();
+            DALSalas sala = new DALSalas();
             DALUsuario usu = new DALUsuario();
             string nomeUsuarioAberto;
             string nomeUsuarioAtribuido;
-            string nomeLab;
+            string nomesala;
 
             Modelo.Chamado aChamado = new Modelo.Chamado();            
 
@@ -475,7 +475,7 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "SELECT id,usuario_aberto_id,laboratorios_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'SEM ATRIBUIÇÃO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where id = @id";
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data,CASE WHEN status = 1 THEN 'SEM ATRIBUIÇÃO'WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -488,14 +488,14 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
 
-                    //Retorna o nome do laboratório
-                    nomeLab = lab.SelectNome(dr["laboratorios_id"].ToString());
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
                     nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["laboratorios_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomeLab, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()));
 
                 }
             }

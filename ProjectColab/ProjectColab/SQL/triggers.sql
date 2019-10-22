@@ -1,7 +1,7 @@
---validar dados de laboratório
---drop trigger validar_lab
+--validar dados de salas
+--drop trigger validar_salas
 go
-create trigger validar_lab on Laboratorios
+create trigger validar_salas on Salas
 for insert, update
 as
 begin
@@ -16,7 +16,7 @@ begin
 	if(rtrim(ltrim(@nome)) = '')
 	begin
 		rollback transaction
-		raiserror('O novo laboratorio deve possuir um nome', 0, 0)
+		raiserror('A nova sala deve possuir um nome', 0, 0)
 	end
 
 	--Validar repetição de nome (Sem ideias de como fazer)
@@ -37,7 +37,7 @@ begin
 	set @erro = 0 --controle para erros
 
 	select 
-		@nome = laboratorio_nome,
+		@nome = sala_nome,
 		@modelo = modelo,
 		@quant = quantidade	
 	from inserted
@@ -46,7 +46,7 @@ begin
 	if(rtrim(ltrim(@nome)) = '')
 	begin
 		--rollback transaction
-		raiserror('O equipamento inserido deve pertencer a algum laboratorio', 16, 1)
+		raiserror('O equipamento inserido deve pertencer a alguma sala', 16, 1)
 		set @erro = 1
 		--return
 	end	
@@ -201,27 +201,23 @@ go
 create trigger validar_chamado on Chamado
 for insert, update
 as
-begin
-    /*select eq.laboratorio_nome,eq.quantidade from Equipamento eq
-  inner join Laboratorios lab on lab.nome = eq.laboratorio_nome -- retorna o numero de maquinas cadastradas em cada lab
-  */
-    
+begin   
 
 	--Declaracao de variaveis
 	declare @resumo varchar(500)
 	declare @quant_equipamentos_defeituosos int
-    declare @laboratorios_id varchar
+    declare @sala_id varchar
 	declare @erro bit
 	set @erro = 0
 
 	select 
 		@resumo = resumo,
 		@quant_equipamentos_defeituosos = quant_equipamentos_defeituosos,
-		@laboratorios_id = laboratorios_id	
+		@sala_id = sala_id	
 		
 	from inserted
 	DECLARE @totalmaq INT 
- select @totalmaq = SUM(quantidade) from equipamento where laboratorio_id  = @laboratorios_id
+ select @totalmaq = SUM(quantidade) from equipamento where sala_id  = @sala_id
 	
 
 	--Validar o resumo
@@ -233,17 +229,17 @@ begin
 		--return
 	end	
 	
-	--Validar laboratório 
-	if(@laboratorios_id = '') or (@laboratorios_id = 0)
+	--Validar salas 
+	if(@sala_id = '') or (@sala_id = 0)
 	begin
 		--rollback transaction
-		raiserror('Voce deve selecionar o laboratório que possui equipamentos com defeito', 16, 1)
+		raiserror('Voce deve selecionar a sala que possui equipamentos com defeito', 16, 1)
 		set @erro = 1
 		--return
 	end	
 	
 	--Validar quantidade de maquinas com defeitos
-	if(@quant_equipamentos_defeituosos < 1) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	if(@quant_equipamentos_defeituosos < 1) 
 	begin
 		--rollback transaction
 		raiserror('A quantidade de equipamentos deve ser um número maior que 0', 16, 1)
@@ -251,7 +247,7 @@ begin
 		--return
 	end	
 	--Validar quantidade de maquinas com defeitos
-	if(@quant_equipamentos_defeituosos > @totalmaq ) --or(@quant_equipamentos_defeituosos > numero de maquinas com defeito desse lab)--
+	if(@quant_equipamentos_defeituosos > @totalmaq ) 
 	begin
 		--rollback transaction
 		raiserror('Numero maximo de maquinas excedido', 16, 1)

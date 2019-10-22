@@ -10,7 +10,7 @@
 namespace ProjectColab {
     
     
-    public partial class WebFormAddLab {
+    public partial class WebFormAddSala {
         
         /// <summary>
         /// Controle nome.

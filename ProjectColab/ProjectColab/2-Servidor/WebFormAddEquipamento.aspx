@@ -7,10 +7,10 @@
                 <div class="menuAdd">
 
                     <i class="fa fa-desktop"></i><asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd"></asp:DropDownList>
-                    <asp:Label ID="MsgErroDropLab" runat="server" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="MsgErroDropSalas" runat="server" ForeColor="Red"></asp:Label>
 
 
-                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Laboratorios" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Salas" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALSalas" UpdateMethod="Update"></asp:ObjectDataSource>
 
                     <i class="fa fa-desktop"></i><asp:TextBox ID="modelo" runat="server" Placeholder="DIGITE AQUI O MODELO DO EQUIPAMENTO" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
                     <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>

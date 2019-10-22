@@ -14,12 +14,12 @@
                 <asp:TextBox ID="quantidadeeq" runat="server" type="number" CssClass="text"></asp:TextBox>
                 <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
 
-                <p>Laboratório</p>
-                <asp:DropDownList ID="labDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALLaboratorio"></asp:ObjectDataSource>
+                <p>SALA</p>
+                <asp:DropDownList ID="salaDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="text" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALSalas"></asp:ObjectDataSource>
                 <asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputtextDrop" DataSourceID="ObjectDataSource1"></asp:DropDownList>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
-                <asp:Label ID="MsgErrolab" runat="server" ForeColor="Red"></asp:Label>   
+                <asp:Label ID="MsgErrosalas" runat="server" ForeColor="Red"></asp:Label>   
                 
                 <br />
                 <br />

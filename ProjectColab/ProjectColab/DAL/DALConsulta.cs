@@ -26,7 +26,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "  SELECT lab.id AS 'CODIGO',lab.nome AS 'NOME DO LABORATÓRIO',eq.id AS 'CODIGO DO EQUIPAMENTO',eq.modelo 'AS MODELO DOS EQUIPAMENTOS',eq.quantidade 'A QUANTIDADE DE EQUIPAMENTO'  FROM Laboratorios lab INNER JOIN Equipamento eq ON eq.laboratorio_id = lab.id";
+            cmd.CommandText = "  SELECT sala.id AS 'CODIGO',sala.nome AS 'NOME DA SALA',eq.id AS 'CODIGO DO EQUIPAMENTO',eq.modelo 'AS MODELO DOS EQUIPAMENTOS',eq.quantidade 'A QUANTIDADE DE EQUIPAMENTO'  FROM Salas sala INNER JOIN Equipamento eq ON eq.sala_id = sala.id";
 
             // Cria objeto DataAdapter para execução do comando e 
             // geração de dados para o Dataset
@@ -150,7 +150,7 @@ namespace ProjectColab.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public DataSet SelectLabDash()
+        public DataSet SelectSalaDash()
         {
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
@@ -159,7 +159,7 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT COUNT(*) as labCount FROM laboratorios";
+            cmd.CommandText = "SELECT COUNT(*) as salaCount FROM Salas";
 
 
             // Cria objeto DataAdapter para execução do comando e 
@@ -212,9 +212,9 @@ namespace ProjectColab.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, laboratorio_nome = @laboratorio_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, sala_nome = @sala_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@laboratorio_nome", obj.laboratorio_nome);
+            cmd.Parameters.AddWithValue("@sala_nome", obj.sala_nome);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
 

@@ -23,7 +23,7 @@
     </asp:Repeater>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamadoDash" TypeName="ProjectColab.DAL.DALConsulta">
     </asp:ObjectDataSource>
-
+</div>
 </asp:Content>
 
 
@@ -53,14 +53,14 @@
         <ItemTemplate>
                       <div class="content">
                             <div class="article">                              
-                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">laboratórios</a></div>
-                                <a class="first"> <%# DataBinder.Eval(Container.DataItem, "labCount")%></a>
-                             <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" /></div> 
+                                <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">salas</a></div>
+                                <a class="first"> <%# DataBinder.Eval(Container.DataItem, "salaCount")%></a>
+                             <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDSalas.aspx" /></div> 
                           </div>                          
                       </div> 
         </ItemTemplate>
     </asp:Repeater>
-    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectLabDash" TypeName="ProjectColab.DAL.DALConsulta">
+    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectsalaDash" TypeName="ProjectColab.DAL.DALConsulta">
     </asp:ObjectDataSource>
 
     <asp:Repeater runat="server" ID="Repeater4" DataSourceID="ObjectDataSource4">
@@ -69,7 +69,7 @@
                             <div class="article">                              
                                 <div class="iconchamado"><i class="fa fa-desktop"></i> <a class="text chamadoid">equipamentos</a></div>
                                 <a class="first"> <%# DataBinder.Eval(Container.DataItem, "EquipCount")%></a>
-                             <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDLabs.aspx" /></div> 
+                             <div class="bot"> <asp:Button runat="server" ID="Button3" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormCRUDSalas.aspx" /></div> 
                           </div>                          
                       </div>
                   </div>    
