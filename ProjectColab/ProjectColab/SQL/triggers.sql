@@ -263,6 +263,7 @@ begin
 end
 
 go
+--drop trigger validar_comentario
 create trigger validar_comentario on Comentario
 for insert, update
 as
@@ -284,4 +285,10 @@ begin
 		set @erro = 1
 		--return
 	end	
+
+	--Validar erro
+	if(@erro = 1)
+	begin
+		rollback transaction
+	end
 end

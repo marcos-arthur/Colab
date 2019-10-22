@@ -73,7 +73,7 @@ namespace ProjectColab
                 if (error.Message.Contains("Numero maximo de maquinas excedido")) Session["MsgErromaqdef"] = "Número máximo de equipamentos excedido";
                 
                 //Nenhum equipamento foi escolhido -- Caso esse erro ocorra, nenhum dos outros será chamado, pois ele ocorre antes do trigger
-                if (error.Message.Contains("FK__Chamado__salas__5EBF139D")) Session["MsgErroSala"] = "Voce deve selecionar a sala que possui equipamentos com defeito";
+                if (error.Message.Contains("FK__Chamado__sala_id")) Session["MsgErroSala"] = "Voce deve selecionar a sala que possui equipamentos com defeito";
 
             }
             //Erro de erro de conversão que pode acontecer no DAL            

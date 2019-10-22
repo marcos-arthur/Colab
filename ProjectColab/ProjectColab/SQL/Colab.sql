@@ -73,11 +73,11 @@ CREATE TABLE Tutorial(
 
 /* DANGER ZONE - CUIDADO
 drop table Comentario
+drop table Tutorial
+drop table Equipamento
 drop table Chamado
 drop table Categoria
-drop table Equipamento
 drop table Salas
-drop table Tutorial
 drop table Usuario
 */
 

@@ -59,6 +59,9 @@ namespace ProjectColab.Modelo
         //nome da categoria
         public string categoriaNome { get; set; }
 
+        //nome do tipo de chamado
+        public string tipoNome { get; set; }
+
         /* CONSTUTORES */
 
         //Construtor padrão
@@ -105,6 +108,11 @@ namespace ProjectColab.Modelo
             this.data = adata;
             this.statuschamado = astatuschamado;
             this.categoriaNome = catNome;
+
+            //Tipo de chamado (Externo ou Interno)
+            if (statusEI == 1) this.tipoNome = "Externo";
+            else this.tipoNome = "Interno";
+
         }
     }
 }
