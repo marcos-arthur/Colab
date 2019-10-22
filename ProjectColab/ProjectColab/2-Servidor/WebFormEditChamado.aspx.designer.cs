@@ -40,6 +40,15 @@ namespace ProjectColab {
         protected global::System.Web.UI.WebControls.TextBox descricao;
         
         /// <summary>
+        /// Controle MsgErrocoment.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrocoment;
+        
+        /// <summary>
         /// Controle add.
         /// </summary>
         /// <remarks>

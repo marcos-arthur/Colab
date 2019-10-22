@@ -2,6 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+      <div class="column middle">           
+        <div class="indicador"><a class="title">CADASTRO DE USUÁRIOS</a></div>
         <div class ="mid">   
             <p>NOME</p>   <asp:TextBox ID="nome" runat="server" CssClass="text"></asp:TextBox> 
             <asp:Label ID="MsgErronome" runat="server" ForeColor="Red"></asp:Label>
@@ -18,5 +21,7 @@
             <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="Button1_Click"/>
             <asp:Button runat="server" ID="Button3" Text="CANCELAR" CssClass="cancelbtn" PostBackUrl="~/1-Admin/IndexAdmin.aspx"/>
         </div>
+      </div>
+    </div>
 </asp:Content>
 

@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="column middle">
+            <div class="indicador"><a class="title">USUÁRIOS ATIVOS</a></div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" OnRowCommand="GridView1_RowCommand" DataKeyNames="id,senha">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
@@ -17,7 +18,8 @@
             </Columns>
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="ProjectColab.Modelo.Usuario" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALUsuario" UpdateMethod="Update"></asp:ObjectDataSource>
-    
+        <br /><br />
+        <div class="indicador"><a class="title">USUÁRIOS INATIVOS</a></div>
     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2" OnRowCommand="GridView2_RowCommand" DataKeyNames="id,senha">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />

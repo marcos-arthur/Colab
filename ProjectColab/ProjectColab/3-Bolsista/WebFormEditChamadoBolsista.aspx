@@ -54,6 +54,7 @@
             <div class="column middle">
           <div class="searchplace">
                 <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                <asp:Label ID="MsgErrocoment" runat="server" ForeColor="Red"></asp:Label>  
                 <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
                  <asp:DropDownList ID="statuscomentario"  runat="server">
                     <asp:ListItem Value="1">Externo</asp:ListItem>
