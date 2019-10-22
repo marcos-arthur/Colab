@@ -99,17 +99,27 @@
 
 <!--Comentario interno-->
     <div class="column middle">       
-            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS INTERNOS</a></div></div> 
-
-
+            <div class="searchplace">         
+                    <div class="navbar">
+                        <div><p>COMENTÁRIOS INTERNOS</p></div>
+                        <div><p>COMENTÁRIOS EXTERNOS</p></div>
+                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
+           </div> 
+    <div class="containerChat">
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
-                        <i class="fa fa-user-circle iconFix"></i>
-                        <p class="data"><span> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></span>
-                        <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
-
-                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
-
+                        <div class="topoComentario">
+                            <i class="fa fa-user-circle iconFix"></i>
+                                <div class="infoComentario">
+                                    <div class="Info">
+                                        <p class="data"> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></p>
+                                        <p class="coment"> <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                                    </div>
+                                    <div class="coment">   
+                                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
+                                    </div>
+                                </div>
+                        </div>
                 </ItemTemplate>
             </asp:Repeater>
             
@@ -119,5 +129,5 @@
                 </SelectParameters>
             </asp:ObjectDataSource>
             
-
+    </div>
 </asp:Content>

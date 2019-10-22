@@ -1,11 +1,10 @@
 ﻿.containerChat {
-    margin:auto;
-    padding:0;
-    width:95%;
-    display:flex;
-    flex-wrap: nowrap;
+    margin: auto;
+    padding: 0;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction:column;
-
 }
     .containerChat i {
         float: left;
@@ -21,11 +20,34 @@
         margin-right: 15px;
     }
     .coment {
-        font-size: 0.9vw;
-        margin-top:1%;
-        word-break:break-all;
-        overflow:auto;
         
     }
-
-
+.topoComentario {
+    display: grid;
+    grid-template-columns: 7% 93%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom:2%;
+}
+.infoComentario {
+    padding: 1%;
+    display: grid;
+    background-color: rgb(110,110,255);
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+}
+.Info {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    border-bottom: 1px black solid;
+}
+.navbar{
+    display:grid;
+    flex-wrap:nowrap;
+    grid-template-columns:25% 25%;
+    grid-template-rows:auto;
+}
