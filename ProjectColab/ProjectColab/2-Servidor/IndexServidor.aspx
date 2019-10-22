@@ -18,7 +18,7 @@
                          <a class="first"> <%# DataBinder.Eval(Container.DataItem, "countFechado")%></a>
                          <div class="bot"><asp:Button runat="server" ID="Button2" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~//2-Servidor/WebFormChamadosFechadosServidor.aspx" /></div> 
                       </div>
-                  </div>                                             
+                                            
         </ItemTemplate>
     </asp:Repeater>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectChamadoDash" TypeName="ProjectColab.DAL.DALConsulta">

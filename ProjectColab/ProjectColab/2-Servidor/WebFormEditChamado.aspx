@@ -88,21 +88,23 @@
             </asp:ObjectDataSource>
             
         </div>
-<!--Comentario externo-->
+
+
+
+
+<!--Comentario interno-->
     <div class="column middle">       
             <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS INTERNOS</a></div></div> 
-            <div class="searchplace">
-            </div>
+
+
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
-                    <div class="containerChat">
                         <i class="fa fa-user-circle iconFix"></i>
                         <p class="data"><span> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></span>
                         <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
-                        <div class="coment">
-                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p></div>
-                    </div>
-                    <br />
+
+                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
+
                 </ItemTemplate>
             </asp:Repeater>
             
@@ -112,5 +114,5 @@
                 </SelectParameters>
             </asp:ObjectDataSource>
             
-        </div>
+
 </asp:Content>

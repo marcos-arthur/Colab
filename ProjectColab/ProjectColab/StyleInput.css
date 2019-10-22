@@ -115,6 +115,7 @@
     .inputsearch:focus {
         background-color: rgb(220, 220, 253);
     }
+
 .inputsearch2 {
     padding: 1%;
     display: inline-block;
@@ -127,6 +128,9 @@
     transition: all 0.5s;
     resize: none;
 }
+    .inputsearch2.inputToAdd:focus {
+        background-color: rgb(220, 220, 253);
+    }
 .ch{
     margin-right:37%;
 }

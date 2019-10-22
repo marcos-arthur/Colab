@@ -32,6 +32,5 @@
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectStatus1" TypeName="ProjectColab.DAL.DALSalas"></asp:ObjectDataSource>
             </div>            
               </div>  
-    </div>
     
 </asp:Content>
