@@ -81,7 +81,8 @@
     <Content Include="4-Professor\WebFormChamadosFechadosProfessor.aspx" />
     <Content Include="4-Professor\WebFormEditChamadoProfessor.aspx" />
     <Content Include="background2.png" />
-    <Content Include="confirmar.js" />
+    <Content Include="JavaScriptEdit.js" />
+    <Content Include="js\confirmar.js" />
     <Content Include="Crudstyle.css" />
     <Content Include="css\all.css" />
     <Content Include="css\all.min.css" />

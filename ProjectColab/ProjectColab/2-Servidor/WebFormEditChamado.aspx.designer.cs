@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab {
-    
-    
-    public partial class WebFormEditChamado {
-        
+namespace ProjectColab
+{
+
+
+    public partial class WebFormEditChamado
+    {
+
         /// <summary>
         /// Controle Repeater3.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater3;
-        
+
         /// <summary>
         /// Controle ObjectDataSource3.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
-        
+
         /// <summary>
         /// Controle descricao.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox descricao;
-        
+
         /// <summary>
         /// Controle MsgErrocoment.
         /// </summary>
@@ -47,7 +49,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrocoment;
-        
+
         /// <summary>
         /// Controle add.
         /// </summary>
@@ -56,7 +58,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
-        
+
         /// <summary>
         /// Controle statuscomentario.
         /// </summary>
@@ -65,7 +67,16 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList statuscomentario;
-        
+
+        /// <summary>
+        /// Controle Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+
         /// <summary>
         /// Controle Repeater1.
         /// </summary>
@@ -74,7 +85,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
-        
+
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -83,7 +94,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-        
+
         /// <summary>
         /// Controle Repeater2.
         /// </summary>
@@ -92,7 +103,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater2;
-        
+
         /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>

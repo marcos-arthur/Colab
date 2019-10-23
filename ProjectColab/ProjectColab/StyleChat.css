@@ -46,8 +46,6 @@
     border-bottom: 1px black solid;
 }
 .navbar{
-    display:grid;
+    display:flex;
     flex-wrap:nowrap;
-    grid-template-columns:25% 25%;
-    grid-template-rows:auto;
 }

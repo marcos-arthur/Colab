@@ -96,5 +96,15 @@ namespace ProjectColab
         {
 
         }
+
+        protected void IN_Click(object sender, EventArgs e)
+        {
+                
+        }
+
+        protected void EX_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

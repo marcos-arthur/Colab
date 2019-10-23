@@ -21,6 +21,7 @@
     border-bottom: dotted 3px rgb(200,200,255);
     border-top: solid 2px rgb(220, 220, 253);
     color: black;
+    display:block;
     border-radius: 5px 5px 0px 0px;
     /*border-left: red 2px solid;*/
     font-size: 1vw;

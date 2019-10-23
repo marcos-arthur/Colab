@@ -7,20 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab {
-    
-    
-    public partial class WebFormAddTutorial {
-        
-        /// <summary>
-        /// Controle titulo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox titulo;
-        
+namespace ProjectColab
+{
+
+
+    public partial class WebFormAddTutorial
+    {
+
         /// <summary>
         /// Controle MsgErrotitulo.
         /// </summary>
@@ -29,16 +22,16 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErrotitulo;
-        
+
         /// <summary>
-        /// Controle arquivo.
+        /// Controle titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload arquivo;
-        
+        protected global::System.Web.UI.WebControls.TextBox titulo;
+
         /// <summary>
         /// Controle MsgErroarquivo.
         /// </summary>
@@ -47,7 +40,16 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroarquivo;
-        
+
+        /// <summary>
+        /// Controle arquivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload arquivo;
+
         /// <summary>
         /// Controle LinkButton1.
         /// </summary>
@@ -56,7 +58,7 @@ namespace ProjectColab {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
+
         /// <summary>
         /// Controle LinkButton2.
         /// </summary>

@@ -8,9 +8,10 @@
                 <div class="menuAdd">
                     <!-- Primeira parte da criação de chamados-->
                         <div class="AreaToInput">
+                            <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red" CssClass="alerta"></asp:Label> 
                             <i class="fa fa-desktop"></i><asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
                         </div>
-                            <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>                
+               
                             <i class="fa fa-desktop"></i><asp:DropDownList ID="salaDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource2"></asp:DropDownList>
                             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectStatus1" TypeName="ProjectColab.DAL.DALSalas"></asp:ObjectDataSource>
                             <i class="fa fa-desktop"></i><asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource1"></asp:DropDownList>
@@ -19,9 +20,10 @@
                             <asp:Label ID="MsgErroSala" runat="server" ForeColor="Red"></asp:Label>             
                     
                     <!-- Segunda parte da criação de chamados-->
-                        <div class="AreaToInput">                            
+                        <div class="AreaToInput">      
+                            <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red" CssClass="alerta"></asp:Label>                            
                             <i class="fa fa-desktop"></i><asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputsearch2 inputToAdd" OnTextChanged="quantidadeeq_TextChanged"></asp:TextBox>
-                            <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
+
                         </div>
 
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->                
@@ -33,7 +35,7 @@
                 <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd btnToAdd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>                
             </div>
          </div>    
-</div>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server"></asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server"></asp:Content>

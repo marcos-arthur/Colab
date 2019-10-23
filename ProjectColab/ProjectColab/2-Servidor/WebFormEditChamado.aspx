@@ -3,12 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row">
+    <div class="row" onload="sumir()">
         <div class="column middle">
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="editmenu">
-                            <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a><a class="text status" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                            <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a><a class="text status" ><%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
                             </div> 
 
                             <!--Botoes--> 
@@ -79,11 +79,19 @@
                     <asp:ListItem Value="2">Interno</asp:ListItem>
                 </asp:DropDownList>
             </div>       
-            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS EXTERNOS</a></div></div> 
+            <div class="searchplace">         
+                    <div class="navbar">
+                        <div><button class="btn" onclick="sumir()">COMENTÁRIOS INTERNOS</button></div>
+                        <div><button id="btn" class="btn" onclick="sumir() ">COMENTÁRIOS EXTERNOS</button></div>
+                        <div><asp:Button ID="Button2" runat="server" Text="COMENTÁRIOS EXTERNOS"  CssClass="btn" OnClick="EX_Click"/></div>
+                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
+           </div> 
+
+
           <div class="containerChat">
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                  <ItemTemplate>
-                        <div class="topoComentario">
+                        <div class="topoComentario" runat="server">
                             <i class="fa fa-user-circle iconFix"></i>
                                 <div class="infoComentario">
                                     <div class="Info">
@@ -105,16 +113,8 @@
             </asp:ObjectDataSource>
             
         </div>
-    </div>
 
-<!--Comentario interno-->
-    <div class="column middle">       
-            <div class="searchplace">         
-                    <div class="navbar">
-                        <div><p>COMENTÁRIOS INTERNOS</p></div>
-                        <div><p>COMENTÁRIOS EXTERNOS</p></div>
-                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
-           </div> 
+<!--Comentario interno-->     
     <div class="containerChat">
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
