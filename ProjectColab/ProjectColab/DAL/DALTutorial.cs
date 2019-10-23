@@ -45,8 +45,8 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    ////Retorna o nome do usuário
-                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
@@ -89,8 +89,8 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    ////Retorna o nome do usuário
-                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
@@ -134,8 +134,8 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    ////Retorna o nome do usuário
-                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
@@ -177,8 +177,8 @@ namespace ProjectColab.DAL
 
                 while (dr.Read()) // Le o proximo registro
                 {
-                    ////Retorna o nome do usuário
-                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
@@ -274,7 +274,7 @@ namespace ProjectColab.DAL
                 while (dr.Read())
                 {
                     //Retorna o nome do usuário
-                    nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
                     

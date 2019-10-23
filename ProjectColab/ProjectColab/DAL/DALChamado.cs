@@ -51,13 +51,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;                    
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -114,13 +114,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -179,14 +179,14 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
-                    
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
+
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
 
@@ -242,13 +242,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -307,13 +307,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
-                    //Retorna o nome das salas
+                    //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -371,13 +371,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
-                    nomesala= sala.SelectNome(dr["sala_id"].ToString());
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -436,13 +436,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
 
@@ -494,13 +494,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
@@ -554,13 +554,13 @@ namespace ProjectColab.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     //Retorna o nome do usuário
-                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+                    nomeUsuarioAberto = usu.Select(dr["usuario_aberto_id"].ToString()).nome;
 
                     //Retorna o nome da sala
                     nomesala = sala.SelectNome(dr["sala_id"].ToString());
 
                     //Retorna o nome do usuario
-                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+                    nomeUsuarioAtribuido = usu.Select(dr["usuario_atribuido_id"].ToString()).nome;
 
                     //Retorna o nome da categoria
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
