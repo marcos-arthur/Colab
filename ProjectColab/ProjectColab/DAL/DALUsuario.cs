@@ -160,37 +160,7 @@ namespace ProjectColab.DAL
             conn.Close();
 
             return aListUsuario;
-        }
-
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public string SelectNome(string id)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand cmd = conn.CreateCommand();
-
-            cmd.CommandText = "Select * From Usuario Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            string nome = "";
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    nome = dr["nome"].ToString();
-                }
-            }
-
-            dr.Close();
-
-            conn.Close();
-
-            return nome;
-        }
+        }        
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Usuario> SelectAllStatus2()
