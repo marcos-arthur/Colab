@@ -13,15 +13,6 @@ namespace ProjectColab._3_Bolsista {
     public partial class WebFormAddChamadoBolsista {
         
         /// <summary>
-        /// Controle resumo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox resumo;
-        
-        /// <summary>
         /// Controle MsgErroresumop.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
+        
+        /// <summary>
+        /// Controle resumo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox resumo;
         
         /// <summary>
         /// Controle salaDrop.
@@ -49,6 +49,15 @@ namespace ProjectColab._3_Bolsista {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
         
         /// <summary>
+        /// Controle MsgErrosala.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErrosala;
+        
+        /// <summary>
         /// Controle catDrop.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace ProjectColab._3_Bolsista {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// Controle MsgErrosala.
+        /// Controle MsgErromaqdef.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErrosala;
+        protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
         
         /// <summary>
         /// Controle quantidadeeq.
@@ -83,15 +92,6 @@ namespace ProjectColab._3_Bolsista {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-        
-        /// <summary>
-        /// Controle MsgErromaqdef.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
         
         /// <summary>
         /// Controle idnome.

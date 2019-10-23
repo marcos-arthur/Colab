@@ -8,11 +8,10 @@
         <div class="content">
             <div class="menuAdd">
                 <!-- Primeira parte da criação de chamados-->
+
                 <div class="AreaToInput">
-
+                    <asp:Label ID="MsgErroresumop" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
                     <asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
-
-                    <asp:Label ID="MsgErroresumop" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="AreaToInput">
@@ -21,16 +20,17 @@
                 </div>
 
                 <div class="AreaToInput">
+                    <asp:Label ID="MsgErrosala" CssClass="alerta" runat="server" ForeColor="Red"></asp:Label>   
                     <asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource1"></asp:DropDownList>
                     &nbsp;&nbsp;&nbsp;
-                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
-                    <asp:Label ID="MsgErrosala" runat="server" ForeColor="Red"></asp:Label>                  
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>         
                     <!-- Segunda parte da criação de chamados-->
                 </div>
 
+
                 <div class="AreaToInput">
+                    <asp:Label ID="MsgErromaqdef" CssClass="alerta" runat="server" ForeColor="Red"></asp:Label>
                     <asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputsearch2 inputToAdd" OnTextChanged="quantidadeeq_TextChanged"></asp:TextBox>
-                    <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red"></asp:Label>
                 </div>
 
                 <div class="AreaToInput">
