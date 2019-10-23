@@ -519,7 +519,67 @@ namespace ProjectColab.DAL
             conn.Close();
 
             return listChamado;
-        }        
+        }
+
+        //Método para pesquisas feitas somente por resumo
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Chamado> selectSearchFechados(string resumo)
+        {
+            //Variáveis para buscar o nome das outras tabelas
+            DALSalas sala = new DALSalas();
+            DALUsuario usu = new DALUsuario();
+            DALCategoria cat = new DALCategoria();
+            string nomeUsuarioAberto;
+            string nomeUsuarioAtribuido;
+            string nomesala;
+            string categoriaName;
+
+            Modelo.Chamado aChamado = new Modelo.Chamado();
+            List<Modelo.Chamado> listChamado = new List<Modelo.Chamado>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data, categoria_id, CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO'" +
+                              "WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where (resumo like '%" + resumo + "%') and (status like 3)";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    //Retorna o nome do usuário
+                    nomeUsuarioAberto = usu.SelectNome(dr["usuario_aberto_id"].ToString());
+
+                    //Retorna o nome da sala
+                    nomesala = sala.SelectNome(dr["sala_id"].ToString());
+
+                    //Retorna o nome do usuario
+                    nomeUsuarioAtribuido = usu.SelectNome(dr["usuario_atribuido_id"].ToString());
+
+                    //Retorna o nome da categoria
+                    categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
+
+                    // Cria objeto com dados lidos do banco de dados
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()), categoriaName);
+
+                    // Adiciona o livro lido à lista                    
+
+                    listChamado.Add(aChamado);
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return listChamado;
+        }
 
         /* SEÇÃO DE INSERT */
 

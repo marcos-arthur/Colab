@@ -22,15 +22,6 @@ namespace ProjectColab._2_Servidor {
         protected global::System.Web.UI.WebControls.DropDownList idnome;
         
         /// <summary>
-        /// Controle MsgErroDropSalas.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MsgErroDropSalas;
-        
-        /// <summary>
         /// Controle ObjectDataSource3.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace ProjectColab._2_Servidor {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
+        
+        /// <summary>
+        /// Controle MsgErroDropSalas.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MsgErroDropSalas;
         
         /// <summary>
         /// Controle modelo.

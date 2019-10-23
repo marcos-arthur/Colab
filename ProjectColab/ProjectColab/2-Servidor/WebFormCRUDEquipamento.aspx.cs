@@ -11,7 +11,8 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["equipValue"].ToString() == "search")
+            if ((Session["equipValue"].ToString() == "")) ObjectDataSource3.SelectMethod = "SelectAll";
+            else if (Session["equipValue"].ToString() == "search")
             {
                 ObjectDataSource3.SelectMethod = "selectSearch";
 
@@ -27,6 +28,8 @@ namespace ProjectColab
                 ObjectDataSource3.SelectParameters.Add(empid);
                 ObjectDataSource3.DataBind();
             }
+
+            Session["equipValue"] = "";
         }
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -39,7 +42,7 @@ namespace ProjectColab
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
 
                 // Grava código do Livro na sessão
-                Session["idchamado"] = id;
+                Session["idequip"] = id;
 
                 // Chama a tela de edição
                 Response.Redirect("~//2-Servidor/WebFormEditEquipamento.aspx");

@@ -11,8 +11,40 @@ namespace ProjectColab._2_Servidor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["chamadoValue"].ToString() == "")) ObjectDataSource1.SelectMethod = "SelectClose";
+            else if (Session["chamadoValue"].ToString() == "search")
+            {
+                ObjectDataSource1.SelectMethod = "selectSearchFechados";
+
+                string a = Session["chamadob"].ToString();
+
+                //Passar chamadoValue como parâmetro
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "resumo";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "chamadob";
+
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+
+            }
+
+            //Session["chamadobusca"] = "";
+            Session["chamadoValue"] = "";
+        }
+
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text.Trim() != "")
+            {
+                Session["chamadoValue"] = "search";
+                Session["chamadob"] = TextBox1.Text;
+                Response.Redirect("~//2-Servidor/WebFormChamadosFechadosServidor.aspx");
+            }
 
         }
+
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Reabrir")

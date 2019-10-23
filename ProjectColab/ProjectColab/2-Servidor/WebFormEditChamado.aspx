@@ -18,7 +18,7 @@
                                 <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
 
                                 <asp:LinkButton ID="atribuir" runat="server" CssClass="btnsearch" CommandName="Fechar"  OnClick="atribuir_Click"> ATRIBUIR</asp:LinkButton>
-                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'> FECHAR CHAMADO</asp:LinkButton>                     
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'> FECHAR CHAMADO</asp:LinkButton>
                             </div>   
 
                             <!--Nome do usuario-->

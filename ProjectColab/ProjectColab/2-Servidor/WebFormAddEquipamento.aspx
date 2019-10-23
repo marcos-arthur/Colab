@@ -6,17 +6,15 @@
             <div class="column middle">
                 <div class="menuAdd">
 
-                    <i class="fa fa-desktop"></i><asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd"></asp:DropDownList>
-                    <asp:Label ID="MsgErroDropSalas" runat="server" ForeColor="Red"></asp:Label>
-
-
+                    <i class="fa fa-desktop"></i><asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd"></asp:DropDownList>                    
                     <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DataObjectTypeName="ProjectColab.Modelo.Salas" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALSalas" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:Label ID="MsgErroDropSalas" runat="server" ForeColor="Red"></asp:Label>
 
                     <i class="fa fa-desktop"></i><asp:TextBox ID="modelo" runat="server" Placeholder="DIGITE AQUI O MODELO DO EQUIPAMENTO" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
                     <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
                 
                     <i class="fa fa-desktop"></i><asp:TextBox ID="quant" runat="server" Placeholder="QUANTIDADE DE EQUIPAMENTOS" CssClass="inputsearch2 inputToAdd"></asp:TextBox>                
-                    <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>   
+                    <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>
                 
                     <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button2_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
                     <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>

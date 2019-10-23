@@ -131,7 +131,7 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, sala_nome = @sala_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set sala_nome = @sala_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@sala_nome", obj.sala_nome);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
@@ -193,9 +193,9 @@ namespace ProjectColab.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Equipamento> Select(string id)
+        public Modelo.Equipamento Select(string id)
         {
-            Modelo.Equipamento aEquipamento;
+            Modelo.Equipamento aEquipamento = new Modelo.Equipamento();
 
             List<Modelo.Equipamento> aListEquipamento = new List<Modelo.Equipamento>();
 
@@ -216,7 +216,7 @@ namespace ProjectColab.DAL
                 {
                     aEquipamento = new Modelo.Equipamento(dr["id"].ToString(), dr["sala_nome"].ToString(), dr["sala_id"].ToString(), dr["modelo"].ToString(), Convert.ToInt32(dr["quantidade"].ToString()));
 
-                    aListEquipamento.Add(aEquipamento);
+                    
                 }
             }
 
@@ -224,7 +224,7 @@ namespace ProjectColab.DAL
 
             conn.Close();
 
-            return aListEquipamento;
+            return aEquipamento;
         }
     }
 }
