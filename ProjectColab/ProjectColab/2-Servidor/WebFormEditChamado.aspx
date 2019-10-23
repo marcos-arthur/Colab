@@ -18,7 +18,7 @@
                                 <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" SelectMethod="SelectBolsistaServidor" TypeName="ProjectColab.DAL.DALUsuario"></asp:ObjectDataSource>
 
                                 <asp:LinkButton ID="atribuir" runat="server" CssClass="btnsearch" CommandName="Fechar"  OnClick="atribuir_Click"> ATRIBUIR</asp:LinkButton>
-                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'> FECHAR CHAMADO</asp:LinkButton>                     
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'> FECHAR CHAMADO</asp:LinkButton>
                             </div>   
 
                             <!--Nome do usuario-->
@@ -34,7 +34,7 @@
                             <div class="rowChamado"><a class="textEditChamado"> Categoria </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "categoriaNome")%> </a></div>                            
 
                             <!--Tipo do chamado-->
-                            <div class="rowChamado"><a class="textEditChamado"> Tipo </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>                            
+                            <div class="rowChamado"><a class="textEditChamado"> Tipo </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>           
 
                             <!--Resumo do problema-->
                             <div class="rowChamado"><a class="textEditChamado"> Resumo do problema </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>

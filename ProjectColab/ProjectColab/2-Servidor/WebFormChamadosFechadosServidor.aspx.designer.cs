@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab._2_Servidor
-{
-
-
-    public partial class WebFormChamadosFechadosServidor
-    {
-
+namespace ProjectColab._2_Servidor {
+    
+    
+    public partial class WebFormChamadosFechadosServidor {
+        
         /// <summary>
         /// Controle Button2.
         /// </summary>
@@ -22,7 +20,25 @@ namespace ProjectColab._2_Servidor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button2;
-
+        
+        /// <summary>
+        /// Controle TextBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        
+        /// <summary>
+        /// Controle search1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton search1;
+        
         /// <summary>
         /// Controle Repeater1.
         /// </summary>
@@ -31,7 +47,7 @@ namespace ProjectColab._2_Servidor
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
+        
         /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
