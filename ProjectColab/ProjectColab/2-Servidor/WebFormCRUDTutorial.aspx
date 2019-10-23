@@ -35,9 +35,20 @@
             </div>
 
         </div>
-                     <div class="column side">
-                    <div class="content2">
-                            <asp:Button runat="server" ID="Button3" Text="VISUALIZAR TUTORIAIS EM ANÁLISE" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormTutorialSubmetido.aspx"/> 
-                        </div>  
-                    </div>        
+
+
+
+        <div class="column side">
+            <div class="content2">
+                <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
+                    <ItemTemplate>
+                        <div class="indicador"><a class="sub-title">TUTORIAIS EM ANÁLISE</a></div>
+                        <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "tutoCountAnalise")%></a>
+                        <asp:Button runat="server" ID="Button7" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormTutorialSubmetido.aspx"/>                                   
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelecTutoAll" TypeName="ProjectColab.DAL.DALConsulta">
+                </asp:ObjectDataSource>
+            </div>  
+        </div>        
 </asp:Content>
