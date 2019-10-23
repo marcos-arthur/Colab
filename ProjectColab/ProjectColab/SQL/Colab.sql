@@ -115,15 +115,5 @@ insert into categoria (nome)
 	values
 		('Instalar software'),
 		('Instalar sistema operacional'),
-		('HD sem espaço de armazenamento'),
-		('Computador não liga')
-
-
-SELECT	count(case when (usuario_atribuido_id LIKE 1) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as myCount, 
-		count(case when status like 1 or status like 2 or status like 4 then 1 end) as count, 
-		count(case when (usuario_atribuido_id IS NULL) and (statusEI = 1) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as noCount 
-	FROM Chamado
-
-	SELECT	count(case when (statusEI like 1) and (status like 1 or status like 2 or status like 4) then 1 end) as count, 
-		count(case when (statusEI like 1) and (status like 3) then 1 end) as closeCount
-	FROM Chamado
+		('HD sem espaÃ§o de armazenamento'),
+		('Computador nÃ£o liga')
