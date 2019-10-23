@@ -10,8 +10,11 @@ namespace ProjectColab
     public partial class WebFormCRUDChamado : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
+        {   
+            /*if(Session["tipocomentario"] == "")
+            {
+                PanelEx.visible = 
+            }*/
                 
             if ((Session["chamadoValue"].ToString() == "") ) ObjectDataSource1.SelectMethod = "SelectOnly";
             else if (Session["chamadoValue"].ToString() == "noCount")
