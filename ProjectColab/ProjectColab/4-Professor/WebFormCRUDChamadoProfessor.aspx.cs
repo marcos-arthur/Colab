@@ -11,8 +11,44 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        
-        
+            if ((Session["chamadoValue"].ToString() == "")) ObjectDataSource1.SelectMethod = "SelectOnlyProf";
+            else if (Session["chamadoValue"].ToString() == "noCount")
+            {
+                ObjectDataSource1.SelectMethod = "SelectNo";
+            }
+            else if (Session["chamadoValue"].ToString() == "myCount")
+            {
+                ObjectDataSource1.SelectMethod = "SelectMy";
+
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "id";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "idusuario";
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+            }
+            else if (Session["chamadoValue"].ToString() == "search")
+            {
+                ObjectDataSource1.SelectMethod = "selectSearch";
+
+                string a = Session["chamadob"].ToString();
+
+                //Passar chamadoValue como parâmetro
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "resumo";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "chamadob";
+
+
+                ObjectDataSource1.SelectParameters.Add(empid);
+                ObjectDataSource1.DataBind();
+
+            }
+
+            //Session["chamadobusca"] = "";
+            Session["chamadoValue"] = "";
+
         }
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -31,6 +67,32 @@ namespace ProjectColab
                 // Chama a tela de edição
                 Response.Redirect("~//4-Professor/WebFormEditChamadoProfessor.aspx");
             }
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "noCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Session["chamadoValue"] = "myCount";
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+        }
+
+        protected void search_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text.Trim() != "")
+            {
+                Session["chamadoValue"] = "search";
+                Session["chamadob"] = TextBox1.Text;
+                Response.Redirect("~//2-Servidor/WebFormCRUDChamado.aspx");
+            }
+
         }
 
     }

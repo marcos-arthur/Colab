@@ -47,19 +47,26 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div class="column middle">
-            
-            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="comenttext"></asp:TextBox>
-            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="cancelbtn" OnClick="add_Click"/>
-
+    <div class="content">
+            <div class="searchplace">
+            <div class="indicador"><p class="title">COMENTÁRIOS</p></div>
+            <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+            <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
+            </div>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
-                    <div class="column middle">
-                        <a><%# DataBinder.Eval(Container.DataItem, "descricao")%></a>
-                        <a><%# DataBinder.Eval(Container.DataItem, "data_hora")%></a>
-                        <a><%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></a>
-                    </div>
-                    <br />
+                        <div class="topoComentario" runat="server">
+                            <i class="fa fa-user-circle iconFix"></i>
+                                <div class="infoComentario">
+                                    <div class="Info">
+                                        <p class="data"> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></p>
+                                        <p class="coment"> <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                                    </div>
+                                    <div class="coment">   
+                                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
+                                    </div>
+                                </div>
+                        </div>
                 </ItemTemplate>
             </asp:Repeater>
             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">

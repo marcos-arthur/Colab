@@ -12,18 +12,19 @@
 
                         <!-- Modelo do equipamento -->
                         <div class="rowChamado">
+                            <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
                             <a class="textEditChamado">Modelo </a>
 
-                            <asp:TextBox ID="modelo" runat="server" Placeholder="DIGITE AQUI" CssClass="textEditChamado inputsearch2 inputToAdd"></asp:TextBox>                
-                            <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
+                            <asp:TextBox ID="modelo" runat="server" Placeholder="DIGITE AQUI" CssClass="nomeChamado inputsearch2 inputToAdd"></asp:TextBox>                
+
                         </div>                         
 
                         <!-- Quantidade -->
                         <div class="rowChamado">
+                            <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>
                             <a class="textEditChamado">Quantidade </a>
 
-                            <asp:TextBox ID="quant" runat="server" Placeholder="DIGITE AQUI" CssClass="textEditChamado inputsearch2 inputToAdd"></asp:TextBox>                
-                            <asp:Label ID="MsgErroQuant" runat="server" ForeColor="Red"></asp:Label>
+                            <asp:TextBox ID="quant" runat="server" Placeholder="DIGITE AQUI" CssClass="inputsearch2 inputToAdd"></asp:TextBox>                
                         </div>                            
                             
                         <!-- Fazer botão de excluir <div class="bot"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link-square"></i> ABRIR LABORATÓRIO</asp:LinkButton></div> -->                        
@@ -35,9 +36,11 @@
                     <asp:SessionParameter Name="id" SessionField="idequip" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
+            <div class="bot">
             <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button2_Click"><i class="fa fa-check"></i>ATUALIZAR</asp:LinkButton>
             <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd btnToAdd" PostBackUrl="~/2-Servidor/WebFormCRUDEquipamento.aspx"> CANCELAR</asp:LinkButton>
             <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button3_Click"><i class="fa fa-check"></i>EXCLUIR</asp:LinkButton>
+            </div>
         </div>
 
 </asp:Content>
