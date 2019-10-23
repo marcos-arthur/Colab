@@ -67,7 +67,7 @@ namespace ProjectColab
                 if (error.Message.Contains("Para abrir um chamado você deve indicar o problema")) Session["MsgErroresumop"] = "Para abrir um chamado você deve indicar o problema";
 
                 //Quantidade de máquinas com defeito menor que 1
-                if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos deve ser um número maior que 0";
+                if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos inválida";
 
                 //Quantidade de máquinas maior que o existente na sala
                 if (error.Message.Contains("Numero maximo de maquinas excedido")) Session["MsgErromaqdef"] = "Número máximo de equipamentos excedido";
