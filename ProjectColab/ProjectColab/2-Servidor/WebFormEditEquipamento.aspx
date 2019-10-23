@@ -8,10 +8,15 @@
             <asp:repeater runat="server" ID="LabEquips" DataSourceID="ObjectDataSource2">
                 <ItemTemplate>
                     <div class="editmenu">              
-                        <div class="iconchamado"><i class=""></i> <a class="title"><%# DataBinder.Eval(Container.DataItem, "modelo")%></a></div> 
+                        <div class="iconchamado"><i class=""></i> <a class="title">Equipamento #<%# DataBinder.Eval(Container.DataItem, "id")%></a></div>                        
 
-                        <!-- id do equipamento -->
-                        <div class="rowChamado"><a class="textEditChamado">id </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "id")%> </a></div>
+                        <!-- Modelo do equipamento -->
+                        <div class="rowChamado">
+                            <a class="textEditChamado">Modelo </a>
+
+                            <asp:TextBox ID="modelo" runat="server" Placeholder="DIGITE AQUI" CssClass="textEditChamado inputsearch2 inputToAdd"></asp:TextBox>                
+                            <asp:Label ID="MsgErroModelo" runat="server" ForeColor="Red"></asp:Label>
+                        </div>                         
 
                         <!-- Quantidade -->
                         <div class="rowChamado">
@@ -30,8 +35,9 @@
                     <asp:SessionParameter Name="id" SessionField="idequip" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button2_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
+            <asp:LinkButton ID="Button2" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button2_Click"><i class="fa fa-check"></i>ATUALIZAR</asp:LinkButton>
             <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd btnToAdd" PostBackUrl="~/2-Servidor/WebFormCRUDEquipamento.aspx"> CANCELAR</asp:LinkButton>
+            <asp:LinkButton ID="Button3" runat="server" CssClass="botaoadd btnToAdd"  OnClick="Button3_Click"><i class="fa fa-check"></i>EXCLUIR</asp:LinkButton>
         </div>
 
 </asp:Content>

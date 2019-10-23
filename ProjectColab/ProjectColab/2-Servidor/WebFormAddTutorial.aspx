@@ -7,13 +7,16 @@
         <div class="column middle">
             <div class="indicador"><a class="title">ADICIONAR TUTORIAL</a></div>
                 <div class="menuAdd">
-                <asp:Label ID="MsgErrotitulo" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
-                <asp:TextBox ID="titulo" runat="server" Placeholder="DIGITE AQUI O TÍTULO DO TUTORIAL" CssClass="inputsearch2 inputToAdd"></asp:TextBox>  
+                    <div class="AreaToInput">
+                    <asp:Label ID="MsgErrotitulo" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>
+                    <asp:TextBox ID="titulo" runat="server" Placeholder="DIGITE AQUI O TÍTULO DO TUTORIAL" CssClass="inputsearch2 inputToAdd"></asp:TextBox>  
+                    </div>
 
-                <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>   
-                <div class=""><a>ADICIONAR ARQUIVO DE TUTORIAL</a></div>
-                <asp:FileUpload ID="arquivo" CssClass="inputsearch2 inputToAdd" placeholder="ola" runat="server" />
-                             
+                    <div class="AreaToInput">
+                    <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>   
+                    <div class=""><a>ADICIONAR ARQUIVO DE TUTORIAL</a></div>
+                    <asp:FileUpload ID="arquivo" CssClass="inputsearch2 inputToAdd" placeholder="ola" runat="server" />
+                    </div>           
                 
                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd btnToAdd" OnClick="Button1_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
                 <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd btnToAdd" PostBackUrl="~//2-Servidor/WebFormCRUDTutorial.aspx"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
