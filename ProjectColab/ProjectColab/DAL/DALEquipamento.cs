@@ -131,8 +131,9 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Equipamento Set modelo= @modelo, quantidade = @quantidade  Where id = @id", conn);
+            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, sala_nome = @sala_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@sala_nome", obj.sala_nome);
             cmd.Parameters.AddWithValue("@modelo", obj.modelo);
             cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
 

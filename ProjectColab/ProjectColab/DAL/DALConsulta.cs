@@ -17,6 +17,11 @@ namespace ProjectColab.DAL
         {
             connectionString = ConfigurationManager.ConnectionStrings["ColabConnectionString"].ConnectionString;
         }
+
+        /* SEÇÃO DOS SELECT */
+
+        //Retorna um DataSet de Salas
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectPublishers()
         {
             // Cria Conexão com banco de dados
@@ -41,6 +46,8 @@ namespace ProjectColab.DAL
 
             return ds;
         }
+
+        //Retorna um DataSet com os dados de um usuário
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectImage(string id)
         {
@@ -67,6 +74,10 @@ namespace ProjectColab.DAL
             return ds;
         }
 
+        //Retorna um DataSet com os contadores de chamados externos e internos
+        //myCount -> Quantidade de chamados atribuidos ao usuário da sessão
+        //noCount -> Quantidade de chamados sem atribuição
+        //count   -> Quantidade de chamados ao todo
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectChamados(int id)
         {
@@ -77,8 +88,10 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT	count(case when (usuario_atribuido_id LIKE @id) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as myCount, " +
-                "count(case when status like 1 or status like 2 or status like 4 then 1 end) as count, count(case when (usuario_atribuido_id IS NULL) and (statusEI = 1) then 1 end) as noCount FROM Chamado";
+            cmd.CommandText = "SELECT count(case when (usuario_atribuido_id LIKE @id) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as myCount, " +
+                "count(case when status like 1 or status like 2 or status like 4 then 1 end) as count, " +
+                "count(case when (usuario_atribuido_id IS NULL) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as noCount  " +
+                "FROM Chamado";
             cmd.Parameters.AddWithValue("@id", id);
 
             // Cria objeto DataAdapter para execução do comando e 
@@ -95,8 +108,11 @@ namespace ProjectColab.DAL
             return ds;
         }
 
+        //Retorna um DataSet com os contadores de chamados externos exclusivo para o professor        
+        //count      -> Quantidade de chamados externos ao todo
+        //closeCount -> Quantidade de chamados externos fechados
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public DataSet SelectChamadoDash()
+        public DataSet SelectChamadosProf()
         {
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
@@ -105,8 +121,9 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "SELECT COUNT(case when (status like 1) or (status like 2) then 1 end) as countAberto, count(case when status like 3 then 1 end) as countFechado FROM chamado";
-
+            cmd.CommandText = "SELECT count(case when (statusEI like 1) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as count, " +
+                "count(case when (statusEI like 1) and (status like 3) then 1 end) as closeCount " +
+                "FROM Chamado";
 
             // Cria objeto DataAdapter para execução do comando e 
             // geração de dados para o Dataset
@@ -122,6 +139,38 @@ namespace ProjectColab.DAL
             return ds;
         }
 
+        //Retorna um DataSet com os contadores de chamados externos para os servidores e bolsistas
+        //countAberto  -> Quantidade de chamados abertos
+        //countFechado -> Quantidade de chamados fechados
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public DataSet SelectChamadoDash()
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText = "SELECT COUNT(case when (status like 1) or (status like 2) then 1 end) as countAberto, " +
+                "count(case when status like 3 then 1 end) as countFechado " +
+                "FROM chamado";
+            
+            // Cria objeto DataAdapter para execução do comando e 
+            // geração de dados para o Dataset
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            // Cria o objeto Dataset para armazernar o resultada da 
+            // consulta SQL a ser executada
+            DataSet ds = new DataSet();
+
+            // Executa o comando SQL e tranfere o resultado para o DataSet
+            da.Fill(ds);
+
+            return ds;
+        }
+
+        //Retorna um DataSet a quantidade total de equipamentos
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectEquipDash()
         {
@@ -149,6 +198,7 @@ namespace ProjectColab.DAL
             return ds;
         }
 
+        //Retorna um DataSet a quantidade total de salas
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelectSalaDash()
         {
@@ -176,6 +226,9 @@ namespace ProjectColab.DAL
             return ds;
         }
 
+        //Retorna um DataSet os contadores de tutoriais
+        //tutoCount        -> Quantidade de tutoriais autorizados
+        //tutoCountAnalise -> Quantidade de tutoriais para serem analizados
         [DataObjectMethod(DataObjectMethodType.Select)]
         public DataSet SelecTutoAll()
         {
@@ -200,25 +253,6 @@ namespace ProjectColab.DAL
             da.Fill(ds);
 
             return ds;
-        }
-
-
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.Equipamento obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            conn.Open();
-
-            SqlCommand com = conn.CreateCommand();
-
-            SqlCommand cmd = new SqlCommand("Update Equipamento Set nome = @nome, sala_nome = @sala_nome , modelo = @modelo , quantidade = @quantidade   Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@sala_nome", obj.sala_nome);
-            cmd.Parameters.AddWithValue("@modelo", obj.modelo);
-            cmd.Parameters.AddWithValue("@quantidade", obj.quantidade);
-
-            cmd.ExecuteNonQuery();
-        }
+        }        
     }
 }

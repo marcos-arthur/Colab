@@ -126,7 +126,7 @@ namespace ProjectColab.DAL
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()), categoriaName);
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()), categoriaName);
 
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);
@@ -360,8 +360,8 @@ namespace ProjectColab.DAL
             SqlCommand cmdsala = conn.CreateCommand();
 
             // define SQL do comando
-            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status,resumo,quant_equipamentos_defeituosos,data, categoria_id, CASE WHEN status = 1 THEN 'ABERTO'" +
-                              "WHEN status = 2 THEN 'EM ATENDIMENTO'WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado FROM Chamado where status = 3";
+            cmd.CommandText = "SELECT id,usuario_aberto_id,sala_id, usuario_atribuido_id, status, statusEI, resumo,quant_equipamentos_defeituosos,data, categoria_id, CASE WHEN status = 1 THEN 'ABERTO'WHEN status = 2 THEN 'EM ATENDIMENTO' WHEN status = 3 THEN 'FECHADO'ELSE 'REABERTO' END AS statuschamado " +
+                "FROM Chamado where(status = 3)";
 
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -383,7 +383,7 @@ namespace ProjectColab.DAL
                     categoriaName = cat.Select(dr["categoria_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["status"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()), categoriaName);
+                    aChamado = new Modelo.Chamado(dr["id"].ToString(), dr["usuario_aberto_id"].ToString(), dr["sala_id"].ToString(), dr["usuario_atribuido_id"].ToString(), nomeUsuarioAberto, nomeUsuarioAtribuido, nomesala, Convert.ToInt32(dr["status"].ToString()), Convert.ToInt32(dr["statusEI"].ToString()), dr["statuschamado"].ToString(), dr["resumo"].ToString(), Convert.ToInt32(dr["quant_equipamentos_defeituosos"].ToString()), Convert.ToDateTime(dr["data"].ToString()), categoriaName);
 
                     // Adiciona o livro lido à lista
                     aListChamado.Add(aChamado);

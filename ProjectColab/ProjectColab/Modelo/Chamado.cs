@@ -111,7 +111,7 @@ namespace ProjectColab.Modelo
 
             //Tipo de chamado (Externo ou Interno)
             if (statusEI == 1) this.tipoNome = "Externo";
-            else this.tipoNome = "Interno";
+            if (statusEI == 2) this.tipoNome = "Interno";
 
         }
     }

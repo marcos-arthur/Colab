@@ -18,20 +18,33 @@
                            
                             <div class="iconchamado"><i class="fa fa-bell"></i> <a class="textEditChamado nomeChamado">CHAMADO #<%# DataBinder.Eval(Container.DataItem, "id")%></a><asp:HyperLink ID="status"     CssClass="text status" runat="server"> <%# DataBinder.Eval(Container.DataItem, "statuschamado")%></asp:HyperLink></div>                            
                             
-                            <!--Atribuição-->
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Aberto por:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
-
+                            <!-- Resumo do chamado -->
                             <div class="rowChamado titleFix">
                                 <a class="textEditChamado">RESUMO DO CHAMADO:</a>                               
                                 <a class="textEditChamado nomeChamado borderFix"> <%# DataBinder.Eval(Container.DataItem, "resumo")%> </a>
-                            </div>
+                            </div>                                     
                             
-                            <!--nome da sala-->
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Sala:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
+                            <!-- Usuário que abriu -->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Aberto por: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
+                            
+                            <!-- Categoria -->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Categoria: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "categoriaNome")%> </a></div>                                                      
 
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Atribuido a:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Quantidade de equipamentos:</a><a class="textEditChamado nomeChamado">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
-                            <div class="rowChamado rowFix"><a class="textEditChamado ">Data:</a><a class="textEditChamado nomeChamado">CHAMADO: <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
+                            <!--Tipo do chamado-->
+                            <div class="rowChamado"><a class="textEditChamado"> Tipo </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>
+
+                            <!-- Nome da sala-->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> SALA: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomesala")%> </a></div>
+
+                            <!-- Usuario atribuido -->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Atribuido a: </a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAtribuido")%> </a></div>
+
+                            <!-- Quantidade de equipamentos -->
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Quantidade de equipamentos:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div>
+
+                            <!-- Data de abertura -->
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Data de abertura:</a><a class="textEditChamado nomeChamado"> <%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
+
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Reabrir" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") %>'><i class="fa fa-external-link-square"></i>REABRIR CHAMADO</asp:LinkButton>
                             </div>

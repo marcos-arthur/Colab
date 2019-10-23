@@ -34,7 +34,7 @@
                             <div class="rowChamado"><a class="textEditChamado"> Categoria </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "categoriaNome")%> </a></div>                            
 
                             <!--Tipo do chamado-->
-                            <div class="rowChamado"><a class="textEditChamado"> Tipo </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>                            
+                            <div class="rowChamado"><a class="textEditChamado"> Tipo </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>           
 
                             <!--Resumo do problema-->
                             <div class="rowChamado"><a class="textEditChamado"> Resumo do problema </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "resumo")%> </a></div>

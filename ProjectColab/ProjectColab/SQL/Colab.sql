@@ -92,11 +92,19 @@ drop table Usuario
 
 	*/
 
+	/* Status de Chamados
+		
+		1 - Aberto
+		2 - Em andamento
+		3 - Fechado
+		4 - Reaberto
+
+	*/
 
 		
 INSERT INTO Usuario(nome,login,senha,tipo,status)									        --SENHAS:
 	values	   
-			('Administrador', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1,1),				-- admin			
+			('Administrador', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1,1),			-- admin			
 			('Servidor da Silva', 'serv', '27d08e8e003330f1880f0ff5d418c6f8', 2,1),		    -- serv
 			('Bolsita Andrade', 'bols', '1b98a6a467a4f28e5292f187d202342d', 3,1),		    -- bols
 			('Professor Soares', 'prof', 'd450c5dbcc10db0749277efc32f15f9f', 4, 1)	        -- prof
@@ -109,3 +117,13 @@ insert into categoria (nome)
 		('Instalar sistema operacional'),
 		('HD sem espaço de armazenamento'),
 		('Computador não liga')
+
+
+SELECT	count(case when (usuario_atribuido_id LIKE 1) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as myCount, 
+		count(case when status like 1 or status like 2 or status like 4 then 1 end) as count, 
+		count(case when (usuario_atribuido_id IS NULL) and (statusEI = 1) and ((status like 1) or (status like 2) or (status like 4)) then 1 end) as noCount 
+	FROM Chamado
+
+	SELECT	count(case when (statusEI like 1) and (status like 1 or status like 2 or status like 4) then 1 end) as count, 
+		count(case when (statusEI like 1) and (status like 3) then 1 end) as closeCount
+	FROM Chamado
