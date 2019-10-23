@@ -23,7 +23,20 @@ namespace ProjectColab._2_Servidor
 
             equip.quantidade = Convert.ToInt32(quantidade.Text);
 
+            TextBox modelo = (TextBox)LabEquips.Items[0].FindControl("modelo");
+
+            equip.modelo = modelo.Text;
+
             dalEquip.Update(equip);
+
+            Response.Redirect("~//2-Servidor/WebFormCRUDEquipamento.aspx");
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            DAL.DALEquipamento dalEquip = new DAL.DALEquipamento();
+            Modelo.Equipamento equip = dalEquip.Select(Session["idequip"].ToString());
+
+            dalEquip.Delete(equip);
 
             Response.Redirect("~//2-Servidor/WebFormCRUDEquipamento.aspx");
         }
