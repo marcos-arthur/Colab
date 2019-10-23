@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,12 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Apresenta mensagem de erro
+            if ((Session["MsgErrocoment"] != null) && (Session["MsgErrocoment"].ToString() != ""))
+            {
+                MsgErrocoment.Text = Session["MsgErrocoment"].ToString();
+                Session["MsgErrocoment"] = null;
+            }
         }
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -43,7 +49,18 @@ namespace ProjectColab
             aComentario = new Modelo.Comentario("1", Convert.ToString(Session["idusuario"]), Convert.ToString(Session["idchamado"]), 1, Convert.ToString(descricao.Text), DateTime.Now, Convert.ToInt32(statuscomentario.Text));
             aDALComentario = new DAL.DALComentario();
 
-            aDALComentario.Insert(aComentario);
+            //validação dos outros dados
+            try
+            {
+                aDALComentario.Insert(aComentario);
+            }
+            catch (SqlException error)
+            {
+
+                if (error.Message.Contains("Insira um comentário")) Session["MsgErrocoment"] = "Por favor, Insira um comentário";
+
+            }
+               
             Response.Redirect("~\\2-Servidor\\WebFormEditChamado.aspx");
         }
 
