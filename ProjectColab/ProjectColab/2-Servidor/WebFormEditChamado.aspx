@@ -69,26 +69,23 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
-    <div class="column middle">
-          <div class="searchplace">
-                <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
-                <asp:Label ID="MsgErrocoment" runat="server" ForeColor="Red"></asp:Label>  
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
-                 <asp:DropDownList ID="statuscomentario"  runat="server">
-                    <asp:ListItem Value="1">Externo</asp:ListItem>
-                    <asp:ListItem Value="2">Interno</asp:ListItem>
-                </asp:DropDownList>
-            </div>       
+    <div class="column middle">    
             <div class="searchplace">         
                     <div class="navbar">
-                        <div><button class="btn" onclick="sumir()">COMENTÁRIOS INTERNOS</button></div>
-                        <div><button id="btn" class="btn" onclick="sumir() ">COMENTÁRIOS EXTERNOS</button></div>
-                        <div><asp:Button ID="Button2" runat="server" Text="COMENTÁRIOS EXTERNOS"  CssClass="btn" OnClick="EX_Click"/></div>
+                        <div><asp:Button ID="ButtonIn" runat="server" Text="COMENTÁRIOS INTERNOS"  CssClass="btn" OnClick="ButtonIn_Click"/></div>
+                        <div><asp:Button ID="ButtonEx" runat="server" Text="COMENTÁRIOS EXTERNOS"  CssClass="btn" OnClick="ButtonEx_Click"/></div>
                     </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
            </div> 
 
+                <asp:Label ID="MsgErrocoment" runat="server" ForeColor="Red"></asp:Label>  
+        <asp:Panel ID="PanelEx" runat="server">
+          <div class="searchplace">
+                <asp:TextBox runat="server" ID="descricaoEx" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                
 
-          <div class="containerChat">
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickEx"/>
+            </div>  
+            <div class="containerChat">
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                  <ItemTemplate>
                         <div class="topoComentario" runat="server">
@@ -111,11 +108,16 @@
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            
-        </div>
+            </div>
+    </asp:Panel>
 
 <!--Comentario interno-->     
-    <div class="containerChat">
+        <asp:Panel ID="PanelIn" runat="server">
+          <div class="searchplace">
+                <asp:TextBox runat="server" ID="descricaoIn" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickIn"/>
+            </div>  
+            <div class="containerChat">
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
                         <div class="topoComentario">
@@ -138,7 +140,8 @@
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            
-        </div>
+    </div>
+  </asp:Panel>          
+
     </div>
 </asp:Content>
