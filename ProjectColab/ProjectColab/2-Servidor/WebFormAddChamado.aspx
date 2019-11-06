@@ -18,8 +18,13 @@
                             &nbsp;&nbsp;&nbsp;
                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
                             <asp:Label ID="MsgErroSala" runat="server" ForeColor="Red"></asp:Label>             
-                    
-                    <!-- Segunda parte da criação de chamados-->
+                              <i class="fa fa-desktop"></i><asp:DropDownList ID="DropDownList1" runat="server" DataTextField="modelo" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource3" ></asp:DropDownList>
+                             <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectFromSala" TypeName="ProjectColab.DAL.DALEquipamento">
+                                 <SelectParameters>
+                                     <asp:ControlParameter ControlID="salaDrop" DefaultValue="0" Name="idsala" PropertyName="SelectedValue" Type="String" />
+                                 </SelectParameters>
+                    </asp:ObjectDataSource>
+                             <!-- Segunda parte da criação de chamados-->
                         <div class="AreaToInput">      
                             <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red" CssClass="alerta"></asp:Label>                            
                             <i class="fa fa-desktop"></i><asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputsearch2 inputToAdd" OnTextChanged="quantidadeeq_TextChanged"></asp:TextBox>
@@ -36,6 +41,7 @@
             </div>
          </div>    
 
+     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server"></asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server"></asp:Content>
