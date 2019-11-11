@@ -12,13 +12,13 @@
                             <i class="fa fa-desktop"></i><asp:TextBox ID="resumo" runat="server" Placeholder="DIGITE AQUI O RESUMO DO PROBLEMA" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
                         </div>
                
-                            <i class="fa fa-desktop"></i><asp:DropDownList ID="salaDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource2"></asp:DropDownList>
+                            <i class="fa fa-desktop"></i><asp:DropDownList ID="salaDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource2" AutoPostBack="True" ></asp:DropDownList>
                             <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectStatus1" TypeName="ProjectColab.DAL.DALSalas"></asp:ObjectDataSource>
                             <i class="fa fa-desktop"></i><asp:DropDownList ID="catDrop" runat="server" DataTextField="nome" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource1"></asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;
                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DALCategoria"></asp:ObjectDataSource>
                             <asp:Label ID="MsgErroSala" runat="server" ForeColor="Red"></asp:Label>             
-                              <i class="fa fa-desktop"></i><asp:DropDownList ID="DropDownList1" runat="server" DataTextField="modelo" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource3" ></asp:DropDownList>
+                              <i class="fa fa-desktop"></i><asp:DropDownList ID="modeloDrop" runat="server" DataTextField="modelo" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource3" ></asp:DropDownList>
                              <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectFromSala" TypeName="ProjectColab.DAL.DALEquipamento">
                                  <SelectParameters>
                                      <asp:ControlParameter ControlID="salaDrop" DefaultValue="0" Name="idsala" PropertyName="SelectedValue" Type="String" />
@@ -28,8 +28,11 @@
                         <div class="AreaToInput">      
                             <asp:Label ID="MsgErromaqdef" runat="server" ForeColor="Red" CssClass="alerta"></asp:Label>                            
                             <i class="fa fa-desktop"></i><asp:TextBox ID="quantidadeeq" runat="server" Placeholder="DIGITE AQUI A QUANTIDADE DE EQUIPAMENTOS DEFEITUOSOS" CssClass="inputsearch2 inputToAdd" OnTextChanged="quantidadeeq_TextChanged"></asp:TextBox>
+                           
 
                         </div>
+                            <asp:CheckBox ID="CheckBox1" runat="server" Text="Todos"/>
+                            <i class="fa fa-desktop"></i><asp:TextBox ID="tombamento" runat="server" Placeholder="DIGITE AQUI OS TOMBAMENTOS" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
 
             <!--<asp:DropDownList ID="idnome" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nome" DataValueField="nome"></asp:DropDownList>-->                
                 <i class="fa fa-desktop"></i><asp:DropDownList ID="statusEI" CssClass="inputsearch2 inputToAdd" runat="server">

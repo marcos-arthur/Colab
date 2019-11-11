@@ -32,6 +32,10 @@ namespace ProjectColab.Modelo
         //id da categoria do chamado
         public string categoria_id { get; set; }
 
+        public string equip_id { get; set; }
+
+        public string tombamento { get; set; }
+
         //quantidade de equipamentos
         public int quantidadeeq { get; set; }
 
@@ -77,12 +81,14 @@ namespace ProjectColab.Modelo
         }
 
         //Usado quando um chamado é aberto
-        public Chamado(string aid, string usuAberto, string sala, string cat,int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string sala, string cat, string equip, string tombamento, int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
             this.sala_id = sala;
             this.categoria_id = cat;
+            this.equip_id = equip;
+            this.tombamento = tombamento;
             this.status = astatus;
             this.statusEI = astatusEI;
             this.statuschamado = astatuschamado;
