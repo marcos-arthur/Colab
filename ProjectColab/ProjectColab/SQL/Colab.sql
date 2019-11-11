@@ -70,7 +70,18 @@ CREATE TABLE Tutorial(
 	PRIMARY KEY(id),
 	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
 )
+CREATE TABLE Assunto(
+	id INT IDENTITY NOT NULL,
+	titulo VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+)
 
+CREATE TABLE Tutorial_Assunto(
+	tutorial_id INT NOT NULL,
+	assunto_id INT NOT NULL,
+	FOREIGN KEY (tutorial_id) REFERENCES Tutorial(id),
+	FOREIGN KEY (assunto_id) REFERENCES Assunto(id)
+)
 /* DANGER ZONE - CUIDADO
 drop table Comentario
 drop table Tutorial
