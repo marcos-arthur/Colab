@@ -63,7 +63,7 @@ CREATE TABLE Comentario(
 
 CREATE TABLE Tutorial(
 	id INT IDENTITY NOT NULL,
-	usuario_id INT,
+	usuario_id INT,	
 	tutorial_titulo VARCHAR(45) NOT NULL,
 	arquivo varbinary(max) NOT NULL,
 	status INT NOT NULL,
@@ -82,6 +82,7 @@ CREATE TABLE Tutorial_Assunto(
 	FOREIGN KEY (tutorial_id) REFERENCES Tutorial(id),
 	FOREIGN KEY (assunto_id) REFERENCES Assunto(id)
 )
+
 /* DANGER ZONE - CUIDADO
 drop table Comentario
 drop table Tutorial
@@ -122,7 +123,7 @@ INSERT INTO Usuario(nome,login,senha,tipo,status)									        --SENHAS:
 
 	
 
-insert into categoria (nome) 
+insert into Assunto (titulo) 
 	values
 		('Instalar software'),
 		('Instalar sistema operacional'),

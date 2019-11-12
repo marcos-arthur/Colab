@@ -248,8 +248,11 @@
     <Compile Include="DAL\DALSalas.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
+    <Compile Include="DAL\DAOAssunto.cs" />
+    <Compile Include="Modelo\Assunto.cs" />
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\Salas.cs" />
+    <Compile Include="Modelo\Tutorial_Assunto.cs" />
     <Compile Include="PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

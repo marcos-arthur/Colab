@@ -9,10 +9,15 @@
             <!-- Busca -->
             <div class="content">  
                 <div class="searchplace">                  
-                        <asp:Button runat="server" ID="Button1" Text="+ TUTORIAL" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx"/>                      
-                        <i class="fa fa-search"></i>
-                        <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox> 
-                        <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
+                    <asp:Button runat="server" ID="Button1" Text="+ TUTORIAL" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx"/>                      
+                    <i class="fa fa-search"></i>
+
+                    <asp:DropDownList runat="server" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
+                    </asp:DropDownList>
+
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
+                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox> 
+                    <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
                 </div>
             </div>   
 
@@ -27,7 +32,7 @@
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton>
                                 <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Deletar" CommandArgument='<%#Eval("id") + ";"%>'><i class="fa fa-external-link-square"></i>DELETAR TUTORIAL</asp:LinkButton>                  
-                        </div>                          
+                            </div>                          
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
