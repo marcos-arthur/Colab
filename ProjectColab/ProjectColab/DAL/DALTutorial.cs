@@ -323,6 +323,32 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
+        /*
+         //EDITAR - EM TESTE PARA TERMINAR//
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Tutorial obj, string idAssunAtual, string idAssunNovo)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo = @arquivo Where id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+
+            cmd.ExecuteNonQuery();            
+
+            //cmd = new SqlCommand("insert into Tutorial_Assunto(tutorial_id, assunto_id) values (@idTut, @idAssun)", conn);
+            cmd = new SqlCommand("Update Tutorial_Assunto set assunto_id = @idassun where tutorial_id = @idTut and assunto_id = @idassunAtual", conn);
+            cmd.Parameters.AddWithValue("@idTut", obj.id);
+            cmd.Parameters.AddWithValue("@idAssunAtual", idAssunAtual);
+            cmd.Parameters.AddWithValue("@idAssunNovo", idAssunNovo); //id vem como parâmetro
+
+            cmd.ExecuteNonQuery();
+        }
+        */
+
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void UpdateStatus(Modelo.Tutorial obj)
