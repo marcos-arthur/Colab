@@ -94,6 +94,20 @@ namespace ProjectColab
 
                 Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
             }
+            //Verifica se o comando é "Editar"
+            if (e.CommandName.ToString() == "ABRIR")
+            {
+                //string id;
+
+                // Lê o número da linha selecionada
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+
+                // Grava código do Livro na sessão
+                Session["idtutorial"] = id;
+
+                // Chama a tela de edição
+                Response.Redirect("~//2-Servidor/WebFormViewTutorial.aspx");
+            }
 
         }
         
