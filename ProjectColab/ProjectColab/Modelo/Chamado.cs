@@ -75,6 +75,8 @@ namespace ProjectColab.Modelo
             this.status = 0;
             this.statusEI = 0;
             this.statuschamado = "";
+            this.equip_id = "";
+            this.tombamento = "";
             this.resumo = "";
             this.quantidadeeq = 0;
             this.data = new DateTime();
@@ -98,7 +100,7 @@ namespace ProjectColab.Modelo
         }
 
         //Usado quando um chamado é selecionado
-        public Chamado(string aid, string usuAberto, string sala, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomesala, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata, string catNome)
+        public Chamado(string aid, string usuAberto, string sala, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomesala, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq,string equip_id, string tombamento, DateTime adata, string catNome)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
@@ -111,6 +113,8 @@ namespace ProjectColab.Modelo
             this.statusEI = astatusEI;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;
+            this.equip_id = equip_id;
+            this.tombamento = tombamento; 
             this.data = adata;
             this.statuschamado = astatuschamado;
             this.categoriaNome = catNome;
