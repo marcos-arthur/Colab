@@ -13,5 +13,23 @@ namespace ProjectColab._2_Servidor
         {
 
         }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            string idTut, idAssuntoAtual, idAssuntoNovo;
+
+            idTut = Session["idtutorial"].ToString();
+            idAssuntoAtual = Session["idAssunto"].ToString();
+
+            DropDownList dropTuto = (DropDownList)Repeater1.Items[0].FindControl("dropAssuntos");
+
+            idAssuntoNovo = dropTuto.SelectedValue;
+
+            FileUpload arquivo = (FileUpload)Repeater1.Items[0].FindControl("arquivo");
+
+            if (arquivo.FileBytes.Length == 0) {
+
+            }
+        }
     }
 }

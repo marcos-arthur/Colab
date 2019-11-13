@@ -33,7 +33,7 @@
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton>
                                 <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Deletar" CommandArgument='<%#Eval("id") + ";"%>'><i class="fa fa-external-link-square"></i>DELETAR TUTORIAL</asp:LinkButton>         
-                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument=<%# DataBinder.Eval(Container.DataItem, "id") %> ><i class="fa fa-external-link"></i> VISUALIZAR TUTORIAL</asp:LinkButton></div> 
+                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") + ";" + DataBinder.Eval(Container.DataItem, "idAssunto") %>' ><i class="fa fa-external-link"></i> VISUALIZAR TUTORIAL</asp:LinkButton></div> 
                             </div>                          
                         </div>
                     </ItemTemplate>

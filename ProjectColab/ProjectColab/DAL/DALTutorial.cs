@@ -55,7 +55,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -112,7 +112,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     //aAssunto = new Modelo.Assunto(dr["idAssunto"].ToString(), dr["Assunto"].ToString());
 
                     // Adiciona o livro lido à lista
@@ -165,7 +165,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -210,7 +210,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "", "");
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -262,7 +262,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -307,7 +307,8 @@ namespace ProjectColab.DAL
             cmd.ExecuteNonQuery();
         }
 
-        //EDITAR//
+        /*
+         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Tutorial obj)
         {
@@ -322,8 +323,9 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
+             */
 
-        /*
+        
          //EDITAR - EM TESTE PARA TERMINAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Tutorial obj, string idAssunAtual, string idAssunNovo)
@@ -347,7 +349,7 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
-        */
+        
 
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -382,7 +384,13 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status From Tutorial Where id = @id";
+            cmd.CommandText = "select	tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "Where tut.id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -394,8 +402,8 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
-                    
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
+
                 }
             }
 

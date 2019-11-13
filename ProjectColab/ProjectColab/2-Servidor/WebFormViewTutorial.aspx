@@ -17,11 +17,18 @@
 
                 <!--titulo-->
                 <div id="textEnviado"  class="rowChamado"><a class="textEditChamado">Enviado por:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%></a></div>
-                               
-                <!--assunto-->                            
+                
+                <div class="rowChamado assuntoDiv">
+                    <div class=""><a>ATUALIZAR ARQUIVO</a></div>
+                    <asp:FileUpload ID="arquivo" CssClass="inputsearch2 inputToAdd" placeholder="ola" runat="server" />
+                </div>                
+
+                <!--assunto-->                                    
+                <div class="rowChamado"><a class="textEditChamado">Assunto: </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%></a></div>                    
                 <asp:DropDownList runat="server" CssClass="inputsearch2 inputToAdd" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
                 </asp:DropDownList>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
+                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>                
+                
                 <!--Botoes-->  
 
             </ItemTemplate>
@@ -29,7 +36,7 @@
         </asp:Repeater>
             <div class="bot">
                 <div id="hide" class="botaoadd btnToAdd">Editar</div>
-                <asp:LinkButton ID="btnEditar" runat="server" CssClass="botaoadd btnToAdd"><i class="fa fa-check"></i>EDITAR</asp:LinkButton>
+                <asp:LinkButton ID="btnEditar" runat="server" CssClass="botaoadd btnToAdd" OnClick="btnEditar_Click"><i class="fa fa-check"></i>EDITAR</asp:LinkButton>
                 <asp:LinkButton ID="btnCancelar" runat="server" CssClass="botaoadd btnToAdd"><i class="fa fa-remove"></i>CANCELAR</asp:LinkButton>
             </div>
              </div>    
@@ -37,6 +44,7 @@
 <script>
 $(document).ready(function () {
     $(".inputToAdd").hide();
+    $(".assuntoDiv").hide();
     $("#ContentPlaceHolder1_btnEditar").hide();
     $("#ContentPlaceHolder1_btnCancelar").hide();
     $("#hide").click(function () {
@@ -46,7 +54,8 @@ $(document).ready(function () {
         $("#hide").hide();
         $("#ContentPlaceHolder1_btnEditar").show();
         $("#ContentPlaceHolder1_btnCancelar").show();
-      $(".inputToAdd").show();
+        $(".inputToAdd").show();
+        $(".assuntoDiv").show();
   });
   $("#show").click(function(){
     $("p").show();

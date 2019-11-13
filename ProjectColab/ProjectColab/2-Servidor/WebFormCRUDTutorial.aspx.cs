@@ -97,13 +97,15 @@ namespace ProjectColab
             //Verifica se o comando é "Editar"
             if (e.CommandName.ToString() == "ABRIR")
             {
-                //string id;
+                string id, idAssunto;
+                //int index = Convert.ToInt32(e.CommandArgument);
+                string[] arg = new string[2];
+                arg = e.CommandArgument.ToString().Split(';');
 
-                // Lê o número da linha selecionada
-                int id = Convert.ToInt32(e.CommandArgument.ToString());
-
-                // Grava código do Livro na sessão
+                id = arg[0];
                 Session["idtutorial"] = id;
+                idAssunto = arg[1];
+                Session["idAssunto"] = idAssunto;
 
                 // Chama a tela de edição
                 Response.Redirect("~//2-Servidor/WebFormViewTutorial.aspx");
