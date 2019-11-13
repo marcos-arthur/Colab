@@ -49,7 +49,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -92,7 +92,7 @@ namespace ProjectColab.DAL
                                 "from Tutorial as tut " +
                                 "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
                                 "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
-                                "where tut.tutorial_titulo like '%outro%' and Assun.id = " + idAssunto;            
+                                "where tut.tutorial_titulo like '%" + titulo + "%' and Assun.id = " + idAssunto;            
 
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -106,8 +106,8 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
-                    aAssunto = new Modelo.Assunto(dr["idAssunto"].ToString(), dr["Assunto"].ToString());
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString());
+                    //aAssunto = new Modelo.Assunto(dr["idAssunto"].ToString(), dr["Assunto"].ToString());
 
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
@@ -153,7 +153,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -196,7 +196,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -291,7 +291,7 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "");
                     
                 }
             }

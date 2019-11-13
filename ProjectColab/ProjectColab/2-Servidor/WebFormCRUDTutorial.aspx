@@ -27,6 +27,7 @@
                     <ItemTemplate>
                         <div class="article">
                             <div class="iconchamado"><i class="fa fa-book"></i><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a></div>
+                            <div class="rowChamado rowFix"><a class="textEditChamado">Assunto: </a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%> </a></div>
                             <div class="rowChamado rowFix"><a class="textEditChamado">Enviado por: </a> <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%> </a></div>
 
                             <div class="bot">

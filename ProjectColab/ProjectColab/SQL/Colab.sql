@@ -144,6 +144,8 @@ insert into Tutorial_Assunto(tutorial_id, assunto_id)
 select * from tutorial
 select * from assunto
 
+
+
 select	tut.*,
 		Assun.titulo as Assunto,
 		Assun.id as idAssunto
@@ -151,7 +153,7 @@ select	tut.*,
 from Tutorial as tut
 inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id
 inner join Assunto as Assun on Assun.id = TA.assunto_id
-where tut.tutorial_titulo like '%outro%' and Assun.id = 4
+where tut.tutorial_titulo like '%lattes%' and Assun.id = 1
 
 
 --tutorial_titulo like '%" + titulo + "%' and Assun.titulo = assunto
