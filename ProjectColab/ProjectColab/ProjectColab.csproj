@@ -71,6 +71,7 @@
     <Content Include="2-Servidor\WebFormCRUDSalas.aspx" />
     <Content Include="2-Servidor\WebFormEditEquipamento.aspx" />
     <Content Include="2-Servidor\WebFormEditSalas.aspx" />
+    <Content Include="2-Servidor\WebFormEditTutorial.aspx" />
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormAddTutorialBolsista.aspx" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="2-Servidor\WebFormEditSalas.aspx.designer.cs">
       <DependentUpon>WebFormEditSalas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormEditTutorial.aspx.cs">
+      <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormEditTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormEditTutorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="2-Servidor\WebFormTutorialSubmetido.aspx.cs">
       <DependentUpon>WebFormTutorialSubmetido.aspx</DependentUpon>
