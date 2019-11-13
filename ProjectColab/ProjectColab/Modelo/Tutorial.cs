@@ -23,7 +23,7 @@ namespace ProjectColab.Modelo
             this.status = 0;
             this.arquivo = null;
         }
-
+        
         public Tutorial(string id, string idU, string tutorial_titulo, int status, byte[] arquivo)
         {
             this.id = id;
