@@ -27,13 +27,13 @@
                     <!-- Segunda parte da criação de chamados-->
                 </div>
 
+
                  <i class="fa fa-desktop"></i><asp:DropDownList ID="modeloDrop" runat="server" DataTextField="modelo" DataValueField="id" CssClass="inputsearch2 inputToAdd" DataSourceID="ObjectDataSource3" ></asp:DropDownList>
                              <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="SelectFromSala" TypeName="ProjectColab.DAL.DALEquipamento">
                                  <SelectParameters>
                                      <asp:ControlParameter ControlID="salaDrop" DefaultValue="0" Name="idsala" PropertyName="SelectedValue" Type="String" />
                                  </SelectParameters>
                             </asp:ObjectDataSource>
-                <asp:CheckBox ID="CheckBox1" runat="server" Text="Todos"/>
                  <i class="fa fa-desktop"></i><asp:TextBox ID="tombamento" runat="server" Placeholder="DIGITE AQUI OS TOMBAMENTOS" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
 
                 <div class="AreaToInput">
