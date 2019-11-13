@@ -64,13 +64,15 @@ namespace ProjectColab.DAL
 
         //Pesquisa somente por titulo
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial> selectSearch(string titulo)
+        public List<Modelo.Tutorial> selectSearch(string titulo, string idAssunto)
         {
             DALUsuario usu = new DALUsuario();
             string nomeUsuario;
 
             // Variavel para armazenar um livro
             Modelo.Tutorial aTutorial;
+            Modelo.Assunto aAssunto;
+
             // Cria Lista Vazia
             List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
             // Cria Conexão com banco de dados
@@ -79,8 +81,19 @@ namespace ProjectColab.DAL
             conn.Open();
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
+
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial where tutorial_titulo like '%" + titulo + "%'";
+
+            //cmd.CommandText = "Select * from Tutorial where tutorial_titulo like '%" + titulo + "%'";
+
+            cmd.CommandText =   "select tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "where tut.tutorial_titulo like '%outro%' and Assun.id = " + idAssunto;            
+
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -94,6 +107,8 @@ namespace ProjectColab.DAL
 
                     // Cria objeto com dados lidos do banco de dados
                     aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aAssunto = new Modelo.Assunto(dr["idAssunto"].ToString(), dr["Assunto"].ToString());
+
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }

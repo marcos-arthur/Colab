@@ -14,10 +14,10 @@
 
                     <asp:DropDownList runat="server" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
                     </asp:DropDownList>
-
                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
-                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox> 
-                    <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>                       
+
+                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox>
+                    <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>
                 </div>
             </div>   
 

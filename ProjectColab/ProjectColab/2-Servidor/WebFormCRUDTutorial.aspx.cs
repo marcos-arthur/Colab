@@ -17,6 +17,7 @@ namespace ProjectColab
                 ObjectDataSource1.SelectMethod = "selectSearch";
 
                 string a = Session["tutorialb"].ToString();
+                string b = Session["filtro"].ToString();
 
                 //Passar chamadoValue como parâmetro
                 SessionParameter empid = new SessionParameter();
@@ -24,11 +25,18 @@ namespace ProjectColab
                 empid.Type = TypeCode.String;
                 empid.SessionField = "tutorialb";
 
-
                 ObjectDataSource1.SelectParameters.Add(empid);
+
+                empid = new SessionParameter();
+                empid.Name = "idAssunto";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "filtro";
+
+                ObjectDataSource1.SelectParameters.Add(empid);                
+
                 ObjectDataSource1.DataBind();
             }
-
+            
             Session["tutorialValue"] = "";
         }
 
@@ -109,6 +117,7 @@ namespace ProjectColab
             {
                 Session["tutorialValue"] = "search";
                 Session["tutorialb"] = searchBox.Text;
+                Session["filtro"] = dropAssuntos.SelectedValue;
                 Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
             }
         }
