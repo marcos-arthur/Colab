@@ -46,7 +46,20 @@ namespace ProjectColab.Modelo
         }
         public Tutorial(byte[] arquivo)
         {
+            this.arquivo = arquivo;           
+        }
+        
+        /// <summary>
+        /// Contrutor usado para atualizar um tutorial
+        /// </summary>
+        /// <param name="id">id do tutorial</param>
+        /// <param name="titulo">titulo do tutorial</param>        
+        /// <param name="arquivo">array de byte do arquivo</param>
+        public Tutorial(string id, string titulo, byte[] arquivo) {
+            this.id = id;
+            this.tutorial_titulo = titulo;
             this.arquivo = arquivo;
         }
+
     }
 }

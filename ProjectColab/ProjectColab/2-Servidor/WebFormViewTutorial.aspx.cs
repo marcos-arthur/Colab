@@ -11,7 +11,7 @@ namespace ProjectColab._2_Servidor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
@@ -22,14 +22,24 @@ namespace ProjectColab._2_Servidor
             idAssuntoAtual = Session["idAssunto"].ToString();
 
             DropDownList dropTuto = (DropDownList)Repeater1.Items[0].FindControl("dropAssuntos");
-
             idAssuntoNovo = dropTuto.SelectedValue;
 
             FileUpload arquivo = (FileUpload)Repeater1.Items[0].FindControl("arquivo");
 
-            if (arquivo.FileBytes.Length == 0) {
+            TextBox titulo = (TextBox)Repeater1.Items[0].FindControl("titulo");
 
+            Modelo.Tutorial attTutorial = new Modelo.Tutorial(idTut, titulo.Text, arquivo.FileBytes);
+
+            CheckBox manter = (CheckBox)Repeater1.Items[0].FindControl("manter");
+
+            DAL.DALTutorial dALTutorial = new DAL.DALTutorial();
+            if (manter.Checked) {                
+                dALTutorial.Update(attTutorial, idAssuntoAtual, idAssuntoNovo);
             }
+            else {
+                dALTutorial.Update(attTutorial, idAssuntoAtual, idAssuntoAtual);
+            }
+            
         }
     }
 }

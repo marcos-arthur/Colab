@@ -333,16 +333,28 @@ namespace ProjectColab.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, status = @status, arquivo = @arquivo Where id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);
-            cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+            SqlCommand cmd;
 
-            cmd.ExecuteNonQuery();            
+            if (obj.arquivo.Length == 0) {
+                cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo Where id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", obj.id);
+                cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);                
+
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+
+                cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, arquivo = @arquivo Where id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", obj.id);
+                cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);                
+                cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+
+                cmd.ExecuteNonQuery();
+            }            
 
             //cmd = new SqlCommand("insert into Tutorial_Assunto(tutorial_id, assunto_id) values (@idTut, @idAssun)", conn);
-            cmd = new SqlCommand("Update Tutorial_Assunto set assunto_id = @idassun where tutorial_id = @idTut and assunto_id = @idassunAtual", conn);
+            cmd = new SqlCommand("Update Tutorial_Assunto set assunto_id = @idAssunNovo where tutorial_id = @idTut and assunto_id = @idassunAtual", conn);
             cmd.Parameters.AddWithValue("@idTut", obj.id);
             cmd.Parameters.AddWithValue("@idAssunAtual", idAssunAtual);
             cmd.Parameters.AddWithValue("@idAssunNovo", idAssunNovo); //id vem como parâmetro

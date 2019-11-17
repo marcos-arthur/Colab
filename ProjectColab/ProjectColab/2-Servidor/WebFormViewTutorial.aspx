@@ -13,8 +13,6 @@
                 <asp:TextBox ID="titulo" runat="server"  CssClass="inputsearch2 inputToAdd"></asp:TextBox> 
                 </div>
  
-        
-
                 <!--titulo-->
                 <div id="textEnviado"  class="rowChamado"><a class="textEditChamado">Enviado por:</a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuario")%></a></div>
                 
@@ -24,16 +22,27 @@
                 </div>                
 
                 <!--assunto-->                                    
-                <div class="rowChamado"><a class="textEditChamado">Assunto: </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%></a></div>                    
-                <asp:DropDownList runat="server" CssClass="inputsearch2 inputToAdd" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
-                </asp:DropDownList>
-                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>                
+                <div class="rowChamado">
+                    <a class="textEditChamado">Assunto: </a>
+                    <a class="textEditChamado nomeChamado">
+                        <%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%>
+                    </a>
+                    
+                    <asp:CheckBox runat="server" ID="manter"/>
+                    <a id="manterTxt">Trocar assunto</a>
+
+                    <asp:DropDownList runat="server" CssClass="inputsearch2 inputToAdd" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
+                    
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>                
+                </div>
                 
                 <!--Botoes-->  
 
             </ItemTemplate>
 
         </asp:Repeater>
+
             <div class="bot">
                 <div id="hide" class="botaoadd btnToAdd">Editar</div>
                 <asp:LinkButton ID="btnEditar" runat="server" CssClass="botaoadd btnToAdd" OnClick="btnEditar_Click"><i class="fa fa-check"></i>EDITAR</asp:LinkButton>
@@ -43,10 +52,14 @@
         </div>
 <script>
 $(document).ready(function () {
+    
     $(".inputToAdd").hide();
-    $(".assuntoDiv").hide();
-    $("#ContentPlaceHolder1_btnEditar").hide();
-    $("#ContentPlaceHolder1_btnCancelar").hide();
+    $("#manterTxt").hide();
+        $(".assuntoDiv").hide();
+        $("#ContentPlaceHolder1_btnEditar").hide();
+        $("#ContentPlaceHolder1_btnCancelar").hide();
+        $("#ContentPlaceHolder1_Repeater1_manter_0").hide();
+
     $("#hide").click(function () {
         $("#ContentPlaceHolder1_Repeater1_titulo_0").val($("#titulotext").text());
         $("#textEnviado").hide();
@@ -54,8 +67,10 @@ $(document).ready(function () {
         $("#hide").hide();
         $("#ContentPlaceHolder1_btnEditar").show();
         $("#ContentPlaceHolder1_btnCancelar").show();
+        $("#ContentPlaceHolder1_Repeater1_manter_0").show();
         $(".inputToAdd").show();
         $(".assuntoDiv").show();
+        $("#manterTxt").show();
   });
   $("#show").click(function(){
     $("p").show();
@@ -63,10 +78,11 @@ $(document).ready(function () {
 });
 </script>
         <!--Nome do usuario-->
+
         <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="Select" TypeName="ProjectColab.DAL.DALTutorial"><SelectParameters>
-<asp:SessionParameter SessionField="idtutorial" Name="id" Type="String"></asp:SessionParameter>
-</SelectParameters>
-</asp:ObjectDataSource>
+            <asp:SessionParameter SessionField="idtutorial" Name="id" Type="String"></asp:SessionParameter>
+            </SelectParameters>
+        </asp:ObjectDataSource>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
