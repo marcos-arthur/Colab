@@ -71,6 +71,7 @@ namespace ProjectColab
             }
             Session["msgErro"] = "";
 
+            
             // Valida Usuario           
             aUsuarioBanco = aDALUsuario.SelectLogin(login.Text);
             if (aUsuarioBanco == null)
@@ -97,9 +98,11 @@ namespace ProjectColab
 
                 if (error.Message.Contains("tipo invalido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor")) Session["MsgErrotipo"] = "Tipo inválido(tipo 2 = servirdor, tipo 3 = bolsita, tipo 4 = professor)";
 
+                if (error.Message.Contains("O administrador não pode ser inserido")) Session["MsgErrotipo"] = "O administrador não pode ser inserido";
+
             }
-             
-            if(ok) Response.Redirect("~/1-Admin/IndexAdmin.aspx");
+
+            if (ok) Response.Redirect("~/1-Admin/IndexAdmin.aspx");
             else Response.Redirect("~/1-Admin/WebFormAddUsuario.aspx");
 
         }
