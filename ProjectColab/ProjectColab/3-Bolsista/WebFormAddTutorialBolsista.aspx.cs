@@ -41,7 +41,7 @@ namespace ProjectColab._3_Bolsista
             //validação dos outros dados
             try
             {
-                aDALTutorial.Insert(aTutorial);
+                aDALTutorial.Insert(aTutorial, "");
             }
             catch (SqlException error)
 

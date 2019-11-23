@@ -13,9 +13,14 @@
                     </div>
 
                     <div class="AreaToInput">
-                    <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>   
-                    <div class=""><a>ADICIONAR ARQUIVO DE TUTORIAL</a></div>
-                    <asp:FileUpload ID="arquivo" CssClass="inputsearch2 inputToAdd" placeholder="ola" runat="server" />
+                        <asp:Label ID="MsgErroarquivo" runat="server" ForeColor="Red"></asp:Label>   
+                        <div class=""><a>ADICIONAR ARQUIVO DE TUTORIAL</a></div>
+                        <asp:FileUpload ID="arquivo" CssClass="inputsearch2 inputToAdd" placeholder="ola" runat="server" />
+
+                        <div class="something"><a>ADICIONAR ASSUNTO</a></div>                        
+                        <asp:DropDownList runat="server" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
                     </div>           
                 
                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd btnToAdd" OnClick="Button1_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>

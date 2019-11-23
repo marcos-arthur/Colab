@@ -42,7 +42,7 @@ namespace ProjectColab
             //validação dos outros dados
             try
             {
-                aDALTutorial.Insert(aTutorial);
+                aDALTutorial.Insert(aTutorial, dropAssuntos.SelectedValue);
             }
             catch (SqlException error)
 

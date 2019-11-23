@@ -71,6 +71,7 @@
     <Content Include="2-Servidor\WebFormCRUDSalas.aspx" />
     <Content Include="2-Servidor\WebFormEditEquipamento.aspx" />
     <Content Include="2-Servidor\WebFormEditSalas.aspx" />
+    <Content Include="2-Servidor\WebFormViewTutorial.aspx" />
     <Content Include="2-Servidor\WebFormTutorialSubmetido.aspx" />
     <Content Include="3-Bolsista\WebFormAddChamadoBolsista.aspx" />
     <Content Include="3-Bolsista\WebFormAddTutorialBolsista.aspx" />
@@ -177,6 +178,13 @@
     <Compile Include="2-Servidor\WebFormEditSalas.aspx.designer.cs">
       <DependentUpon>WebFormEditSalas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="2-Servidor\WebFormViewTutorial.aspx.cs">
+      <DependentUpon>WebFormViewTutorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2-Servidor\WebFormViewTutorial.aspx.designer.cs">
+      <DependentUpon>WebFormViewTutorial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="2-Servidor\WebFormTutorialSubmetido.aspx.cs">
       <DependentUpon>WebFormTutorialSubmetido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,8 +256,11 @@
     <Compile Include="DAL\DALSalas.cs" />
     <Compile Include="DAL\DALTutorial.cs" />
     <Compile Include="DAL\DALUsuario.cs" />
+    <Compile Include="DAL\DAOAssunto.cs" />
+    <Compile Include="Modelo\Assunto.cs" />
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\Salas.cs" />
+    <Compile Include="Modelo\Tutorial_Assunto.cs" />
     <Compile Include="PageMasterServidor.Master.cs">
       <DependentUpon>PageMasterServidor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

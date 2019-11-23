@@ -36,7 +36,13 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial";
+            cmd.CommandText =   "select	tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id";
+
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -49,7 +55,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -64,13 +70,15 @@ namespace ProjectColab.DAL
 
         //Pesquisa somente por titulo
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Tutorial> selectSearch(string titulo)
+        public List<Modelo.Tutorial> selectSearch(string titulo, string idAssunto)
         {
             DALUsuario usu = new DALUsuario();
             string nomeUsuario;
 
             // Variavel para armazenar um livro
             Modelo.Tutorial aTutorial;
+            Modelo.Assunto aAssunto;
+
             // Cria Lista Vazia
             List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
             // Cria Conexão com banco de dados
@@ -79,8 +87,19 @@ namespace ProjectColab.DAL
             conn.Open();
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
+
             // define SQL do comando
-            cmd.CommandText = "Select * from Tutorial where tutorial_titulo like '%" + titulo + "%'";
+
+            //cmd.CommandText = "Select * from Tutorial where tutorial_titulo like '%" + titulo + "%'";
+
+            cmd.CommandText =   "select tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "where tut.tutorial_titulo like '%" + titulo + "%' and Assun.id = " + idAssunto;            
+
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -93,7 +112,9 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
+                    //aAssunto = new Modelo.Assunto(dr["idAssunto"].ToString(), dr["Assunto"].ToString());
+
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -125,7 +146,13 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial Where status = 1";
+            cmd.CommandText = "select	tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "Where tut.status = 1";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -138,7 +165,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -150,6 +177,53 @@ namespace ProjectColab.DAL
 
             return aListTutorial;
         }
+
+        //Select para adição
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Tutorial> SelectStatus1toAdd()
+        {
+            DALUsuario usu = new DALUsuario();
+            string nomeUsuario;
+
+            // Variavel para armazenar um livro
+            Modelo.Tutorial aTutorial;
+            // Cria Lista Vazia
+            List<Modelo.Tutorial> aListTutorial = new List<Modelo.Tutorial>();
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+            // define SQL do comando
+            cmd.CommandText =   "select * from tutorial " +
+                                "where status = 1";
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+            // Le titulo do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows)
+            {
+
+                while (dr.Read()) // Le o proximo registro
+                {
+                    //Retorna o nome do usuário
+                    nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
+
+                    // Cria objeto com dados lidos do banco de dados
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), "", "");
+                    // Adiciona o livro lido à lista
+                    aListTutorial.Add(aTutorial);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListTutorial;
+        }
+
+
         //Tutoriais com status 2(aprovado)
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Tutorial> SelectAllStatus2()
@@ -168,7 +242,14 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status from Tutorial Where status = 2";
+            cmd.CommandText =   "select	tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "Where tut.status = 2";
+
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -181,7 +262,7 @@ namespace ProjectColab.DAL
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
                     // Cria objeto com dados lidos do banco de dados
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
                     // Adiciona o livro lido à lista
                     aListTutorial.Add(aTutorial);
                 }
@@ -197,7 +278,7 @@ namespace ProjectColab.DAL
         //INSERIR//
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Tutorial obj)
+        public void Insert(Modelo.Tutorial obj, string idAssunto)
         {
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
@@ -213,9 +294,21 @@ namespace ProjectColab.DAL
             cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
             // Executa Comando
             cmd.ExecuteNonQuery();
+
+            //Pegar id do tutorial com select            
+
+            Modelo.Tutorial newTutorial = SelectStatus1toAdd().Last();
+
+
+            cmd = new SqlCommand("insert into Tutorial_Assunto(tutorial_id, assunto_id) values (@idTut, @idAssun)", conn);
+            cmd.Parameters.AddWithValue("@idTut", newTutorial.id);
+            cmd.Parameters.AddWithValue("@idAssun", idAssunto); //id vem como parâmetro
+
+            cmd.ExecuteNonQuery();
         }
 
-        //EDITAR//
+        /*
+         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Tutorial obj)
         {
@@ -230,6 +323,45 @@ namespace ProjectColab.DAL
 
             cmd.ExecuteNonQuery();
         }
+             */
+
+        
+         //EDITAR - EM TESTE PARA TERMINAR//
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void Update(Modelo.Tutorial obj, string idAssunAtual, string idAssunNovo)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd;
+
+            if (obj.arquivo.Length == 0) {
+                cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo Where id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", obj.id);
+                cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);                
+
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+
+                cmd = new SqlCommand("Update Tutorial Set tutorial_titulo = @tutorial_titulo, arquivo = @arquivo Where id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", obj.id);
+                cmd.Parameters.AddWithValue("@tutorial_titulo", obj.tutorial_titulo);                
+                cmd.Parameters.AddWithValue("@arquivo", obj.arquivo);
+
+                cmd.ExecuteNonQuery();
+            }            
+
+            //cmd = new SqlCommand("insert into Tutorial_Assunto(tutorial_id, assunto_id) values (@idTut, @idAssun)", conn);
+            cmd = new SqlCommand("Update Tutorial_Assunto set assunto_id = @idAssunNovo where tutorial_id = @idTut and assunto_id = @idassunAtual", conn);
+            cmd.Parameters.AddWithValue("@idTut", obj.id);
+            cmd.Parameters.AddWithValue("@idAssunAtual", idAssunAtual);
+            cmd.Parameters.AddWithValue("@idAssunNovo", idAssunNovo); //id vem como parâmetro
+
+            cmd.ExecuteNonQuery();
+        }
+        
 
         //EDITAR//
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -264,7 +396,13 @@ namespace ProjectColab.DAL
 
             SqlCommand cmd = conn.CreateCommand();
 
-            cmd.CommandText = "Select id, usuario_id, tutorial_titulo, status From Tutorial Where id = @id";
+            cmd.CommandText = "select	tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "Where tut.id = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -276,8 +414,8 @@ namespace ProjectColab.DAL
                     //Retorna o nome do usuário
                     nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
 
-                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()));
-                    
+                    aTutorial = new Modelo.Tutorial(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["tutorial_titulo"].ToString(), Convert.ToInt32(dr["status"].ToString()), dr["Assunto"].ToString(), dr["idAssunto"].ToString());
+
                 }
             }
 
