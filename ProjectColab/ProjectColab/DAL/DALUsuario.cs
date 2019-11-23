@@ -94,9 +94,12 @@ namespace ProjectColab.DAL
              // Cria comando SQL
              SqlCommand cmd = conn.CreateCommand();
              // define SQL do comando
-             cmd.CommandText = "Select * from Usuario Where status = 1";
-             // Executa comando, gerando objeto DbDataReader
-             SqlDataReader dr = cmd.ExecuteReader();
+             cmd.CommandText = "Select id, nome, login, senha, tipo, status, CASE WHEN " + "tipo = 2 THEN 'Servidor' WHEN tipo = 3 THEN 'Bolsista' WHEN tipo = 4 THEN 'Professor' END AS tipo, " +
+                                "CASE WHEN status = 1 THEN 'Ativo' END AS status FROM Usuario where (status = 1) and (tipo = 2 or tipo = 3 or tipo = 4)";
+
+                                
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
              // Le titulo do livro do resultado e apresenta no segundo rótulo
              if (dr.HasRows)
              {
@@ -105,7 +108,8 @@ namespace ProjectColab.DAL
                  {
                     // Cria objeto com dados lidos do banco de dados
                     aUsuario = new Modelo.Usuario(dr["id"].ToString(),
-                      dr["nome"].ToString(), dr["login"].ToString(),
+                      dr["nome"].ToString(), 
+                      dr["login"].ToString(),
                       dr["senha"].ToString(),
                       Convert.ToInt32(dr["tipo"].ToString()),                      
                       Convert.ToInt32(dr["status"].ToString()));
@@ -146,7 +150,8 @@ namespace ProjectColab.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     aUsuario = new Modelo.Usuario(dr["id"].ToString(),
-                       dr["nome"].ToString(), dr["login"].ToString(),
+                       dr["nome"].ToString(), 
+                       dr["login"].ToString(),
                        dr["senha"].ToString(),
                        Convert.ToInt32(dr["tipo"].ToString()),
                        Convert.ToInt32(dr["status"].ToString()));
@@ -178,7 +183,8 @@ namespace ProjectColab.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "Select * from Usuario Where status = 2";
+            cmd.CommandText = "Select id, nome, login, senha, tipo, status, CASE WHEN " + "tipo = 2 THEN 'Servidor' WHEN tipo = 3 THEN 'Bolsista' WHEN tipo = 4 THEN 'Professor' END AS tipo, " +
+                                "CASE WHEN status = 2 THEN 'Inativo' END AS status FROM Usuario where (status = 2) and (tipo = 2 or tipo = 3 or tipo = 4)";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo

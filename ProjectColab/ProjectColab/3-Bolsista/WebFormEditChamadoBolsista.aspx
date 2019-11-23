@@ -33,6 +33,12 @@
                             <!--Quantidade de Equipamento-->
                             <div class="rowChamado"><a class="textEditChamado"> Quantidade de equipamentos </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div> 
                             
+                            <!--Equipamentos-->
+                            <div class="rowChamado"><a class="textEditChamado"> Equipamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>
+
+                            <!--Tombamentos-->
+                            <div class="rowChamado"><a class="textEditChamado"> Tombamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>
+
                             <!--Data-->
                             <div class="rowChamado"><a class="textEditChamado"> Data de abertura </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
                            </div>     

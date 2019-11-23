@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjectColab
-{
-
-
-    public partial class WebFormAddChamado
-    {
-
+namespace ProjectColab {
+    
+    
+    public partial class WebFormAddChamado {
+        
         /// <summary>
         /// Controle MsgErroresumop.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroresumop;
-
+        
         /// <summary>
         /// Controle resumo.
         /// </summary>
@@ -31,7 +29,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox resumo;
-
+        
         /// <summary>
         /// Controle salaDrop.
         /// </summary>
@@ -40,7 +38,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList salaDrop;
-
+        
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -49,7 +47,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-
+        
         /// <summary>
         /// Controle catDrop.
         /// </summary>
@@ -58,7 +56,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList catDrop;
-
+        
         /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
@@ -67,7 +65,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-
+        
         /// <summary>
         /// Controle MsgErroSala.
         /// </summary>
@@ -76,7 +74,25 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErroSala;
-
+        
+        /// <summary>
+        /// Controle modeloDrop.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList modeloDrop;
+        
+        /// <summary>
+        /// Controle ObjectDataSource3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
+        
         /// <summary>
         /// Controle MsgErromaqdef.
         /// </summary>
@@ -85,7 +101,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MsgErromaqdef;
-
+        
         /// <summary>
         /// Controle quantidadeeq.
         /// </summary>
@@ -94,7 +110,16 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox quantidadeeq;
-
+        
+        /// <summary>
+        /// Controle tombamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tombamento;
+        
         /// <summary>
         /// Controle idnome.
         /// </summary>
@@ -103,7 +128,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList idnome;
-
+        
         /// <summary>
         /// Controle statusEI.
         /// </summary>
@@ -112,7 +137,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList statusEI;
-
+        
         /// <summary>
         /// Controle Button2.
         /// </summary>
@@ -121,7 +146,7 @@ namespace ProjectColab
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Button2;
-
+        
         /// <summary>
         /// Controle Button3.
         /// </summary>
