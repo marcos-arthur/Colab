@@ -54,7 +54,7 @@
 
     /* Middle column */
     .column.middle {
-        min-height: 400px;
+        min-height: 600px;
         width: 75%;
         background-color: rgb(254, 254, 254);
         padding: 0.5%;
@@ -269,6 +269,7 @@
     margin-left:4%;
     width:90%;
     margin-bottom:10%;
+    color:black;
 }
 .AreaToInput {
     display:flex;

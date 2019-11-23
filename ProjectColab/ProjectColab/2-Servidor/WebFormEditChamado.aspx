@@ -3,12 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row">
+    <div class="row" onload="sumir()">
         <div class="column middle">
             <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3" OnItemCommand="Repeater3_ItemCommand">
                     <ItemTemplate>
                         <div class="editmenu">
-                            <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a><a class="text status" >Status: <%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
+                            <div class="iconchamado"><i class=""></i> <a class="title">Chamado #<%# DataBinder.Eval(Container.DataItem, "id")%></a><a class="text status" ><%# DataBinder.Eval(Container.DataItem, "statuschamado")%> </a>
                             </div> 
 
                             <!--Botoes--> 
@@ -43,7 +43,13 @@
 
                             <!--Quantidade de Equipamento-->
                             <div class="rowChamado"><a class="textEditChamado"> Quantidade de equipamentos </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div> 
-                            
+                           
+                            <!--Equipamentos-->
+                            <div class="rowChamado rowFix"><a class="textEditChamado"> Equipamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "equip_id")%> </a></div>
+
+                            <!--Tombamentos-->
+                            <div class="rowChamado  rowFix"><a class="textEditChamado"> Tombamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tombamento")%> </a></div>
+                                                       
                             <!--Data-->
                             <div class="rowChamado"><a class="textEditChamado"> Data de abertura </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
                                 
@@ -69,21 +75,26 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
-    <div class="column middle">
-          <div class="searchplace">
-                <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+    <div class="column middle">    
+            <div class="searchplace">         
+                    <div class="navbar">
+                        <div><asp:Button ID="ButtonIn" runat="server" Text="COMENTÁRIOS INTERNOS"  CssClass="btn" OnClick="ButtonIn_Click"/></div>
+                        <div><asp:Button ID="ButtonEx" runat="server" Text="COMENTÁRIOS EXTERNOS"  CssClass="btn" OnClick="ButtonEx_Click"/></div>
+                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
+           </div> 
+
                 <asp:Label ID="MsgErrocoment" runat="server" ForeColor="Red"></asp:Label>  
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
-                 <asp:DropDownList ID="statuscomentario"  runat="server">
-                    <asp:ListItem Value="1">Externo</asp:ListItem>
-                    <asp:ListItem Value="2">Interno</asp:ListItem>
-                </asp:DropDownList>
-            </div>       
-            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS EXTERNOS</a></div></div> 
-          <div class="containerChat">
+        <asp:Panel ID="PanelEx" runat="server">
+          <div class="searchplace">
+                <asp:TextBox runat="server" ID="descricaoEx" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                
+
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickEx"/>
+            </div>  
+            <div class="containerChat">
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                  <ItemTemplate>
-                        <div class="topoComentario">
+                        <div class="topoComentario" runat="server">
                             <i class="fa fa-user-circle iconFix"></i>
                                 <div class="infoComentario">
                                     <div class="Info">
@@ -103,19 +114,16 @@
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            
-        </div>
-    </div>
+            </div>
+    </asp:Panel>
 
-<!--Comentario interno-->
-    <div class="column middle">       
-            <div class="searchplace">         
-                    <div class="navbar">
-                        <div><p>COMENTÁRIOS INTERNOS</p></div>
-                        <div><p>COMENTÁRIOS EXTERNOS</p></div>
-                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
-           </div> 
-    <div class="containerChat">
+<!--Comentario interno-->     
+        <asp:Panel ID="PanelIn" runat="server">
+          <div class="searchplace">
+                <asp:TextBox runat="server" ID="descricaoIn" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickIn"/>
+            </div>  
+            <div class="containerChat">
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                 <ItemTemplate>
                         <div class="topoComentario">
@@ -138,7 +146,8 @@
                     <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-            
-        </div>
+    </div>
+  </asp:Panel>          
+
     </div>
 </asp:Content>

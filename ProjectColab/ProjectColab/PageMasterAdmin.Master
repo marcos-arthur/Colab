@@ -35,6 +35,7 @@
         <div>
             <div class="logo"><img src="..\logo.png" class="image"></div>
             <ul class="menu2" style="background-color:white">
+                <li class="li1"><a href="IndexAdmin.aspx">USUÁRIOS</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
                 <li class="li2">
                 <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//1-Admin/WebFormAddUsuario.aspx"/>

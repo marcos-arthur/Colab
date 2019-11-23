@@ -68,7 +68,8 @@ namespace ProjectColab.DAL
                     while (dr.Read())
                     {
                         //Retorna o nome do usuário
-                        nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                        nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
+
                         // Cria objeto com dados lidos do banco de dados
                         aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["chamados_id"].ToString(), Convert.ToInt32(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
 
@@ -112,7 +113,8 @@ namespace ProjectColab.DAL
                     while (dr.Read())
                     {
                         //Retorna o nome do usuário
-                        nomeUsuario = usu.SelectNome(dr["usuario_id"].ToString());
+                        nomeUsuario = usu.Select(dr["usuario_id"].ToString()).nome;
+
                         // Cria objeto com dados lidos do banco de dados
                         aComentario = new Modelo.Comentario(dr["id"].ToString(), dr["usuario_id"].ToString(), nomeUsuario, dr["chamados_id"].ToString(), Convert.ToInt32(dr["restricao"].ToString()), dr["descricao"].ToString(), Convert.ToDateTime(dr["data_hora"].ToString()));
 

@@ -10,7 +10,14 @@ function alerta() {
     }
 }
 
-//Confirmar arquivo .pdf
-$(document).ready(function () {
-    document.getElementById("ContentPlaceHolder1_arquivo").setAttribute('accept', 'application/pdf');
-})
+function sumir() {
+    document.getElementById("btn").style.display = "none";
+    console.log(2);
+}
+
+function chamado() {
+    if{
+        document.getElementById("statusdochamado").style.display = "none";
+        console.log(2);
+    }
+}

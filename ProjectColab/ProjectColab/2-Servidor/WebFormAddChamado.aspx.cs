@@ -43,7 +43,7 @@ namespace ProjectColab
             else quantidade = 0;
 
             //Salva os valores pegos na WebForm na classe modelo
-            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), salaDrop.Text, catDrop.Text,1, Convert.ToInt32(statusEI.Text), "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
+            aChamado = new Modelo.Chamado("1", Session["idusuario"].ToString(), salaDrop.Text, catDrop.Text, modeloDrop.Text,tombamento.Text,1, Convert.ToInt32(statusEI.Text), "", Convert.ToString(resumo.Text), quantidade, DateTime.Now);
             //bool para controle de erros
             //ok == true    -> Erro inexistente
             //ok == false = -> Erro existente
@@ -67,7 +67,7 @@ namespace ProjectColab
                 if (error.Message.Contains("Para abrir um chamado você deve indicar o problema")) Session["MsgErroresumop"] = "Para abrir um chamado você deve indicar o problema";
 
                 //Quantidade de máquinas com defeito menor que 1
-                if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos deve ser um número maior que 0";
+                if (error.Message.Contains("A quantidade de equipamentos deve ser um número maior que 0")) Session["MsgErromaqdef"] = "A quantidade de equipamentos inválida";
 
                 //Quantidade de máquinas maior que o existente na sala
                 if (error.Message.Contains("Numero maximo de maquinas excedido")) Session["MsgErromaqdef"] = "Número máximo de equipamentos excedido";

@@ -13,11 +13,12 @@
     <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
     <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
     <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="css\fontawesome.css" rel="stylesheet">
     <link href="css\brands.css" rel="stylesheet">
     <link href="css\solid.css" rel="stylesheet">  
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script src="../confirmar.js"></script>
+    <script src="../js/confirmar.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--
     <link rel="stylesheet" type="text/css" href="styleadd.css"/> 
@@ -92,6 +93,7 @@
         </asp:ContentPlaceHolder>
                             <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>  
 <script src="../js/particles.js"></script>
+<script src="../js/app.js"></script>
 <script src="../js/app.js"></script>
     </form>
 </div>

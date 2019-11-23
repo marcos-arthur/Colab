@@ -65,13 +65,25 @@ FOREIGN KEY(chamados_id) REFERENCES Chamado(id)
 )
 
 CREATE TABLE Tutorial(
-id INT IDENTITY NOT NULL,
-usuario_id INT,
-tutorial_titulo VARCHAR(45) NOT NULL,
-arquivo varbinary(max) NOT NULL,
-status INT NOT NULL,
-PRIMARY KEY(id),
-FOREIGN KEY(usuario_id) REFERENCES Usuario(id)
+	id INT IDENTITY NOT NULL,
+	usuario_id INT,	
+	tutorial_titulo VARCHAR(45) NOT NULL,
+	arquivo varbinary(max) NOT NULL,
+	status INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(usuario_id) REFERENCES Usuario(id)	
+)
+CREATE TABLE Assunto(
+	id INT IDENTITY NOT NULL,
+	titulo VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+)
+
+CREATE TABLE Tutorial_Assunto(
+	tutorial_id INT NOT NULL,
+	assunto_id INT NOT NULL,
+	FOREIGN KEY (tutorial_id) REFERENCES Tutorial(id),
+	FOREIGN KEY (assunto_id) REFERENCES Assunto(id)
 )
 
 /* DANGER ZONE - CUIDADO
@@ -108,11 +120,39 @@ values
 ('Bolsita Andrade', 'bols', '1b98a6a467a4f28e5292f187d202342d', 3,1), -- bols
 ('Professor Soares', 'prof', 'd450c5dbcc10db0749277efc32f15f9f', 4, 1) -- prof
 
-insert into categoria (nome)
-values
-('Instalar software'),
-('Instalar sistema operacional'),
-('HD sem espa�o de armazenamento'),
-('Computador n�o liga')
+insert into Categoria (nome) 
+	values
+		('Instalar software'),
+		('Instalar sistema operacional'),
+		('HD sem espaço de armazenamento'),
+		('Computador não liga')
+
+insert into Assunto(titulo) 
+	values
+		('Instalar software'),
+		('Instalar sistema operacional'),
+		('HD sem espaço de armazenamento'),
+		('Computador não liga')
+
+insert into Tutorial_Assunto(tutorial_id, assunto_id)
+	values
+		(2, 4)
+
+select * from tutorial
+select * from assunto
+
+
+
+select	tut.*,
+		Assun.titulo as Assunto,
+		Assun.id as idAssunto
+
+from Tutorial as tut
+inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id
+inner join Assunto as Assun on Assun.id = TA.assunto_id
+where tut.tutorial_titulo like '%lattes%' and Assun.id = 2
+
+
+--tutorial_titulo like '%" + titulo + "%' and Assun.titulo = assunto
 
 select * from Chamado

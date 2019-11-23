@@ -32,6 +32,10 @@ namespace ProjectColab.Modelo
         //id da categoria do chamado
         public string categoria_id { get; set; }
 
+        public string equip_id { get; set; }
+
+        public string tombamento { get; set; }
+
         //quantidade de equipamentos
         public int quantidadeeq { get; set; }
 
@@ -71,18 +75,22 @@ namespace ProjectColab.Modelo
             this.status = 0;
             this.statusEI = 0;
             this.statuschamado = "";
+            this.equip_id = "";
+            this.tombamento = "";
             this.resumo = "";
             this.quantidadeeq = 0;
             this.data = new DateTime();
         }
 
         //Usado quando um chamado é aberto
-        public Chamado(string aid, string usuAberto, string sala, string cat,int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
+        public Chamado(string aid, string usuAberto, string sala, string cat, string equip, string tombamento, int astatus, int astatusEI, string astatuschamado ,string aresumo, int aquantidadeeq, DateTime adata)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
             this.sala_id = sala;
             this.categoria_id = cat;
+            this.equip_id = equip;
+            this.tombamento = tombamento;
             this.status = astatus;
             this.statusEI = astatusEI;
             this.statuschamado = astatuschamado;
@@ -92,7 +100,7 @@ namespace ProjectColab.Modelo
         }
 
         //Usado quando um chamado é selecionado
-        public Chamado(string aid, string usuAberto, string sala, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomesala, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq, DateTime adata, string catNome)
+        public Chamado(string aid, string usuAberto, string sala, string usuAtribuido, string nomeUsuAberto, string nomeUsuAtribuido, string nomesala, int astatus, int astatusEI, string astatuschamado, string aresumo, int aquantidadeeq,string equip_id, string tombamento, DateTime adata, string catNome)
         {
             this.id = aid;
             this.usuario_aberto_id = usuAberto;
@@ -105,6 +113,8 @@ namespace ProjectColab.Modelo
             this.statusEI = astatusEI;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;
+            this.equip_id = equip_id;
+            this.tombamento = tombamento; 
             this.data = adata;
             this.statuschamado = astatuschamado;
             this.categoriaNome = catNome;

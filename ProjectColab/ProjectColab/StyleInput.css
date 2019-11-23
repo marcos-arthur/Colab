@@ -154,6 +154,11 @@
     padding-bottom: 2%;
     border-bottom: solid 1px rgb(210, 210, 255);
 }
+.alerta{
+    padding:1%;
+    border-radius:4px;
+    width:100%;
+}
 
 
 
@@ -217,6 +222,7 @@ body {
 }
 .status{
     background-color:rgb(240,240,240);
+    display:block;
     font-size:0.6vw;
     margin-top:3%;
     margin:0%;

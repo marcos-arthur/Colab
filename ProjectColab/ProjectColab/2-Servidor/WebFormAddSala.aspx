@@ -9,7 +9,7 @@
                 <div class="menuAdd">
                     <i class="fa fa-desktop"></i>
                     <asp:TextBox ID="nome" runat="server" Placeholder="nome da sala" CssClass="inputsearch2 inputToAdd"></asp:TextBox>
-                    <asp:Label ID="MsgErro" runat="server" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="MsgErro" runat="server" ForeColor="Red" CssClass="alerta"></asp:Label>
                     <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoadd btnToAdd" OnClick="Add_Click"><i class="fa fa-check"></i>ADICIONAR</asp:LinkButton>
                     <asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoadd btnToAdd" OnClick="Button1_Click"><i class="fa fa-remove"></i> CANCELAR</asp:LinkButton>
                 </div>    

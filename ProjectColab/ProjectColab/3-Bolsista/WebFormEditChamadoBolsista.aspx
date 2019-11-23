@@ -13,7 +13,7 @@
 
                             <!--Botoes--> 
                             <div class="searchplace">                                
-                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg invert" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>                     
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btnsearch bg" CommandName="Fechar" CommandArgument='<%#Eval("id")%>'><i class="fa fa-external-link-square"></i> FECHAR CHAMADO</asp:LinkButton>                     
                             </div>   
                             <!--Nome do usuario-->
                             <div class="rowChamado"><a class="textEditChamado">Aberto por </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeUsuarioAberto")%> </a></div>
@@ -33,6 +33,12 @@
                             <!--Quantidade de Equipamento-->
                             <div class="rowChamado"><a class="textEditChamado"> Quantidade de equipamentos </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "quantidadeeq")%> </a></div> 
                             
+                            <!--Equipamentos-->
+                            <div class="rowChamado"><a class="textEditChamado"> Equipamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>
+
+                            <!--Tombamentos-->
+                            <div class="rowChamado"><a class="textEditChamado"> Tombamento(s) </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tipoNome")%> </a></div>
+
                             <!--Data-->
                             <div class="rowChamado"><a class="textEditChamado"> Data de abertura </a><a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "data")%> </a></div>
                            </div>     
@@ -51,48 +57,55 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-            <div class="column middle">
+        <div class="column middle">  
+
+                    <div class="navbar">
+                        <div><asp:Button ID="ButtonIn" runat="server" Text="COMENTÁRIOS INTERNOS"  CssClass="btn" OnClick="ButtonIn_Click"/></div>
+                        <div><asp:Button ID="ButtonEx" runat="server" Text="COMENTÁRIOS EXTERNOS"  CssClass="btn" OnClick="ButtonEx_Click"/></div>
+                    </div><!--<a class="title">COMENTÁRIOS INTERNOS</a>-->
+
+                <asp:Label ID="MsgErrocoment" runat="server" CssClass="alerta" ForeColor="Red"></asp:Label>  
+
+        <asp:Panel ID="PanelEx" runat="server">   
+             <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS INTERNOS</a></div></div>            
           <div class="searchplace">
-                <asp:TextBox runat="server" ID="descricao" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
-                <asp:Label ID="MsgErrocoment" runat="server" ForeColor="Red"></asp:Label>  
-                <asp:Button ID="add" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_Click"/>
-                 <asp:DropDownList ID="statuscomentario"  runat="server">
-                    <asp:ListItem Value="1">Externo</asp:ListItem>
-                    <asp:ListItem Value="2">Interno</asp:ListItem>
-                </asp:DropDownList>
-            </div>       
-            <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS EXTERNOS</a></div></div> 
+                <asp:TextBox runat="server" ID="descricaoEx" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>               
+                <asp:Button ID="Button2" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickEx"/>
+            </div> 
             <div class="containerChat">
-            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
-                 <ItemTemplate>
-                        <div class="topoComentario">
-                            <i class="fa fa-user-circle iconFix"></i>
-                                <div class="infoComentario">
-                                    <div class="Info">
-                                        <p class="data"> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></p>
-                                        <p class="coment"> <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
+                     <ItemTemplate>
+                            <div class="topoComentario" runat="server">
+                                <i class="fa fa-user-circle iconFix"></i>
+                                    <div class="infoComentario">
+                                        <div class="Info">
+                                            <p class="data"> <%# DataBinder.Eval(Container.DataItem, "usuario_nome")%></p>
+                                            <p class="coment"> <%# DataBinder.Eval(Container.DataItem, "data_hora")%></p>
+                                        </div>
+                                        <div class="coment">   
+                                            <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
+                                        </div>
                                     </div>
-                                    <div class="coment">   
-                                        <p class="coment"><%# DataBinder.Eval(Container.DataItem, "descricao")%></p>
-                                    </div>
-                                </div>
-                        </div>
-                 </ItemTemplate>
-            </asp:Repeater>
-            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
-                <SelectParameters>
-                    <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
-                </SelectParameters>
-            </asp:ObjectDataSource>
-            
-        </div>
-    <div class="column middle">
-       
+                            </div>
+                     </ItemTemplate>
+                </asp:Repeater>
+                                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DataObjectTypeName="ProjectColab.Modelo.Comentario" InsertMethod="Insert" SelectMethod="Select" TypeName="ProjectColab.DAL.DALComentario">
+                                            <SelectParameters>
+                                                <asp:SessionParameter Name="id" SessionField="idchamado" Type="String" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                </div>
+      </asp:Panel>          
+        <asp:Panel ID="PanelIn" runat="server">       
             <div class="searchplace"><div class="indicador"><a class="title">COMENTÁRIOS INTERNOS</a></div></div> 
         
+
             <div class="searchplace">
-            </div>
+                <asp:TextBox runat="server" ID="descricaoIn" placeholder="ADICIONAR COMENTARIO" CssClass="inputsearch2"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="ADICIONAR"  CssClass="btnsearch" OnClick="add_ClickIn"/>
+            </div> 
             <div class="containerChat">
+
             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource1">
                  <ItemTemplate>
                         <div class="topoComentario">
@@ -117,4 +130,7 @@
             </asp:ObjectDataSource>
             
         </div>
+      </asp:Panel>  
+    </div>
+
 </asp:Content>

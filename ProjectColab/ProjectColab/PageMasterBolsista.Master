@@ -42,8 +42,9 @@
                 <li class="li1"><a href="IndexBolsista.aspx"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
                 <li class="li1"><a href="WebFormCRUDChamadoBolsista.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorialBolsista.aspx"><i class="fa fa-book"></i> TUTORIAIS</a></li>
-                <li class="li2"><a>USUÁRIO</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
+                <li class="li2"><a>USUÁRIO</a></li>
+
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
