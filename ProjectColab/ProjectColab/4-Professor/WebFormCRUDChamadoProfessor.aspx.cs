@@ -11,7 +11,8 @@ namespace ProjectColab
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((Session["chamadoValue"].ToString() == "")) ObjectDataSource1.SelectMethod = "SelectOnlyProf";
+            Session["chamadoValue"] = "";
+            if ((Session["chamadoValue"].ToString() == "")) ObjectDataSource1.SelectMethod = "SelectOnly";
             else if (Session["chamadoValue"].ToString() == "noCount")
             {
                 ObjectDataSource1.SelectMethod = "SelectNo";
@@ -27,7 +28,7 @@ namespace ProjectColab
 
                 ObjectDataSource1.SelectParameters.Add(empid);
                 ObjectDataSource1.DataBind();
-            }
+            }   
             else if (Session["chamadoValue"].ToString() == "search")
             {
                 ObjectDataSource1.SelectMethod = "selectSearch";

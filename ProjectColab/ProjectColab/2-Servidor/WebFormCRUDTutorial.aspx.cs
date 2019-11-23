@@ -17,6 +17,7 @@ namespace ProjectColab
                 ObjectDataSource1.SelectMethod = "selectSearch";
 
                 string a = Session["tutorialb"].ToString();
+                string b = Session["filtro"].ToString();
 
                 //Passar chamadoValue como parâmetro
                 SessionParameter empid = new SessionParameter();
@@ -24,11 +25,18 @@ namespace ProjectColab
                 empid.Type = TypeCode.String;
                 empid.SessionField = "tutorialb";
 
-
                 ObjectDataSource1.SelectParameters.Add(empid);
+
+                empid = new SessionParameter();
+                empid.Name = "idAssunto";
+                empid.Type = TypeCode.String;
+                empid.SessionField = "filtro";
+
+                ObjectDataSource1.SelectParameters.Add(empid);                
+
                 ObjectDataSource1.DataBind();
             }
-
+            
             Session["tutorialValue"] = "";
         }
 
@@ -86,6 +94,22 @@ namespace ProjectColab
 
                 Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
             }
+            //Verifica se o comando é "Editar"
+            if (e.CommandName.ToString() == "ABRIR")
+            {
+                string id, idAssunto;
+                //int index = Convert.ToInt32(e.CommandArgument);
+                string[] arg = new string[2];
+                arg = e.CommandArgument.ToString().Split(';');
+
+                id = arg[0];
+                Session["idtutorial"] = id;
+                idAssunto = arg[1];
+                Session["idAssunto"] = idAssunto;
+
+                // Chama a tela de edição
+                Response.Redirect("~//2-Servidor/WebFormViewTutorial.aspx");
+            }
 
         }
         
@@ -109,6 +133,7 @@ namespace ProjectColab
             {
                 Session["tutorialValue"] = "search";
                 Session["tutorialb"] = searchBox.Text;
+                Session["filtro"] = dropAssuntos.SelectedValue;
                 Response.Redirect("~//2-Servidor/WebFormCRUDTutorial.aspx");
             }
         }

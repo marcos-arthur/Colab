@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="stylecontainer.css"/> 
     <link rel="stylesheet" type="text/css" href="StyleEditChamado.css"/> 
     <link rel="stylesheet" type="text/css" href="stylelogin.css"/> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="css\fontawesome.css" rel="stylesheet">
     <link href="css\brands.css" rel="stylesheet">
     <link href="css\solid.css" rel="stylesheet">  
