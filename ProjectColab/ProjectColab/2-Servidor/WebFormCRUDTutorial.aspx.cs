@@ -11,7 +11,8 @@ namespace ProjectColab
     public partial class WebFormCRUDTutorial : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
+
             if (Session["tutorialValue"].ToString() == "search")
             {
                 ObjectDataSource1.SelectMethod = "selectSearch";
@@ -32,12 +33,12 @@ namespace ProjectColab
                 empid.Type = TypeCode.String;
                 empid.SessionField = "filtro";
 
-                ObjectDataSource1.SelectParameters.Add(empid);                
+                ObjectDataSource1.SelectParameters.Add(empid);
 
                 ObjectDataSource1.DataBind();
             }
             
-            Session["tutorialValue"] = "";
+            Session["tutorialValue"] = "";        
         }
 
         protected void Repeater3_ItemCommand(object source, RepeaterCommandEventArgs e)

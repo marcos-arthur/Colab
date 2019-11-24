@@ -92,13 +92,25 @@ namespace ProjectColab.DAL
 
             //cmd.CommandText = "Select * from Tutorial where tutorial_titulo like '%" + titulo + "%'";
 
-            cmd.CommandText =   "select tut.*, " +
+            if (idAssunto != "-1") {
+                cmd.CommandText = "select tut.*, " +
                                 "Assun.titulo as Assunto, " +
                                 "Assun.id as idAssunto " +
                                 "from Tutorial as tut " +
                                 "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
                                 "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
-                                "where tut.tutorial_titulo like '%" + titulo + "%' and Assun.id = " + idAssunto;            
+                                "where tut.tutorial_titulo like '%" + titulo + "%' and Assun.id = " + idAssunto;
+            }
+            else {
+                cmd.CommandText = "select tut.*, " +
+                                "Assun.titulo as Assunto, " +
+                                "Assun.id as idAssunto " +
+                                "from Tutorial as tut " +
+                                "inner join Tutorial_Assunto as TA on tut.id = TA.tutorial_id " +
+                                "inner join Assunto as Assun on Assun.id = TA.assunto_id " +
+                                "where tut.tutorial_titulo like '%" + titulo + "%'";
+            }
+            
 
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();

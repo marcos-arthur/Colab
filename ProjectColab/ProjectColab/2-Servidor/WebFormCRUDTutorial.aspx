@@ -8,18 +8,21 @@
             
             <!-- Busca -->
             <div class="content">  
-                <div class="searchplace">                  
+                <div class="nobar searchplace">
                     <asp:Button runat="server" ID="Button1" Text="+ TUTORIAL" CssClass="btnsearch bg ch" PostBackUrl="~//2-Servidor/WebFormAddTutorial.aspx"/>                      
+                </div>
+                
+                <div class="toright searchplace">
                     <i class="fa fa-search"></i>
-
-                    <asp:DropDownList runat="server" ID="dropAssuntos" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
+                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox>
+                    
+                    <asp:DropDownList runat="server" ID="dropAssuntos" CssClass="inputsearch" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
                     </asp:DropDownList>
                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
 
-                    <asp:TextBox ID="searchBox" runat="server" CssClass="inputsearch" placeholder="PESQUISAR POR TÍTULO"></asp:TextBox>
                     <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>
                 </div>
-            </div>   
+            </div>
 
             <!--REPEATER PARA VISUALIZAR OS LABORATÓRIOS-->
             <div class="content">
@@ -32,9 +35,9 @@
 
                             <div class="bot">
                                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="botaoopen" CommandName="Baixar" CommandArgument='<%#Eval("id") + ";" +Eval("tutorial_titulo")%>'><i class="fa fa-external-link-square"></i> BAIXAR TUTORIAL</asp:LinkButton>
-                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Deletar" CommandArgument='<%#Eval("id") + ";"%>'><i class="fa fa-external-link-square"></i>DELETAR TUTORIAL</asp:LinkButton>         
-                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") + ";" + DataBinder.Eval(Container.DataItem, "idAssunto") %>' ><i class="fa fa-external-link"></i> VISUALIZAR TUTORIAL</asp:LinkButton></div> 
-                            </div>                          
+                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="botaoopen" CommandName="Deletar" CommandArgument='<%#Eval("id") + ";"%>'><i class="fa fa-external-link-square"></i>DELETAR TUTORIAL</asp:LinkButton>
+                            <div class="bot"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="botaoopen" CommandName="ABRIR" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id") + ";" + DataBinder.Eval(Container.DataItem, "idAssunto") %>' ><i class="fa fa-external-link"></i> VISUALIZAR TUTORIAL</asp:LinkButton></div>
+                            </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -51,7 +54,7 @@
                     <ItemTemplate>
                         <div class="indicador"><a class="sub-title">TUTORIAIS EM ANÁLISE</a></div>
                         <a class="sub-first"> <%# DataBinder.Eval(Container.DataItem, "tutoCountAnalise")%></a>
-                        <asp:Button runat="server" ID="Button7" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormTutorialSubmetido.aspx"/>                                   
+                        <asp:Button runat="server" ID="Button7" Text="VISUALIZAR" CssClass="btn" PostBackUrl="~/2-Servidor/WebFormTutorialSubmetido.aspx"/>
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelecTutoAll" TypeName="ProjectColab.DAL.DALConsulta">

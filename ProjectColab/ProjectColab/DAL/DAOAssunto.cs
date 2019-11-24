@@ -57,6 +57,9 @@ namespace ProjectColab.DAL
             
             SqlDataReader dr = cmd.ExecuteReader();
 
+            aAssunto = new Modelo.Assunto("-1", "Tudo");
+            listAssunto.Add(aAssunto);
+
             if (dr.HasRows)
             {
                 while (dr.Read())

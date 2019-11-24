@@ -148,12 +148,22 @@
     border-bottom: solid 1px white;
     border-radius: 5px;
 }
+
 .searchplace {
     margin:2%;
     margin-top: 1%;
     padding-bottom: 2%;
     border-bottom: solid 1px rgb(210, 210, 255);
 }
+
+.nobar {
+    border-bottom: none;
+}
+
+.toright {
+    text-align: right;
+}
+
 .alerta{
     padding:1%;
     border-radius:4px;
