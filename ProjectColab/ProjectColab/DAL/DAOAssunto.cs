@@ -54,6 +54,34 @@ namespace ProjectColab.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * From Assunto";
+
+            SqlDataReader dr = cmd.ExecuteReader();            
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aAssunto = new Modelo.Assunto(dr["id"].ToString(), dr["titulo"].ToString());
+                    listAssunto.Add(aAssunto);
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+            return listAssunto;
+        }
+
+        //Select All
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Assunto> SelectAllPlusTudo()
+        {
+            Modelo.Assunto aAssunto = new Modelo.Assunto();
+            List<Modelo.Assunto> listAssunto = new List<Modelo.Assunto>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * From Assunto";
             
             SqlDataReader dr = cmd.ExecuteReader();
 

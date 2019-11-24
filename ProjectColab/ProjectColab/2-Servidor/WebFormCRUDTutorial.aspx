@@ -18,7 +18,7 @@
                     
                     <asp:DropDownList runat="server" ID="dropAssuntos" CssClass="inputsearch" DataSourceID="ObjectDataSource3" DataTextField="titulo" DataValueField="id">
                     </asp:DropDownList>
-                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAllPlusTudo" TypeName="ProjectColab.DAL.DAOAssunto"></asp:ObjectDataSource>
 
                     <asp:Button runat="server" Text="PESQUISAR" ID="search" CssClass="btnsearch" OnClick="search_Click"/>
                 </div>
