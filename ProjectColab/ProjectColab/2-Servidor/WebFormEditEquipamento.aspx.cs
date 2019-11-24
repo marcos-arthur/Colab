@@ -57,9 +57,9 @@ namespace ProjectColab._2_Servidor
 
                 if (error.Message.Contains("O equipamento inserido deve pertencer a alguma sala")) Session["MsgErroDropSalas"] = "O equipamento inserido deve pertencer a alguma sala";
 
-                if (error.Message.Contains("A quantidade de equipamento deve ser um número maior que 0")) errorModelo.Text = "A quantidade de equipamento deve ser um número maior que 0";
+                if (error.Message.Contains("A quantidade de equipamento deve ser um número maior que 0")) errorQuant.Text = "A quantidade de equipamento deve ser um número maior que 0";
 
-                if (error.Message.Contains("O modelo do equipamento nao pode ser vazio")) errorQuant.Text = "O modelo do equipamento nao pode ser vazio";
+                if (error.Message.Contains("O modelo do equipamento nao pode ser vazio")) errorModelo.Text = "O modelo do equipamento nao pode ser vazio";
             }
 
            /* if (ok) Response.Redirect("~//2-Servidor/WebFormCRUDEquipamento.aspx");

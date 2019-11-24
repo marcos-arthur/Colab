@@ -7,10 +7,12 @@
     <div class="editmenu">
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
             <ItemTemplate>
-        <div class="iconchamado"><i class=""></i> <a class="title">tutorial # <%# DataBinder.Eval(Container.DataItem, "id")%></a>
+        <div class="iconchamado"><i class=""></i> <a class="title"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a>
         </div> 
-                <div class="rowChamado"><a class="textEditChamado">Titulo:</a><a id="titulotext" class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a>
-                <asp:TextBox ID="titulo" runat="server"  CssClass="inputsearch2 inputToAdd"></asp:TextBox> 
+                <div class="rowChamado">
+                    <a class="textEditChamado">Titulo:</a>
+                    <a id="titulotext" class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "tutorial_titulo")%></a>
+                    <asp:TextBox ID="titulo" runat="server"  CssClass="inputsearch2 inputToAdd"></asp:TextBox> 
                 </div>
  
                 <!--titulo-->
@@ -24,9 +26,7 @@
                 <!--assunto-->                                    
                 <div class="rowChamado">
                     <a class="textEditChamado">Assunto: </a>
-                    <a class="textEditChamado nomeChamado">
-                        <%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%>
-                    </a>
+                    <a class="textEditChamado nomeChamado"><%# DataBinder.Eval(Container.DataItem, "nomeAssunto")%></a>
                     
                     <asp:CheckBox runat="server" ID="manter"/>
                     <a id="manterTxt">Trocar assunto</a>

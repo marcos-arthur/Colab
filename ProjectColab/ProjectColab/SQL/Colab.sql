@@ -88,9 +88,11 @@ CREATE TABLE Tutorial_Assunto(
 
 /* DANGER ZONE - CUIDADO
 drop table Comentario
+drop table Tutorial_Assunto
 drop table Tutorial
-drop table Equipamento
+drop table Assunto
 drop table Chamado
+drop table Equipamento
 drop table Categoria
 drop table Salas
 drop table Usuario
