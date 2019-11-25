@@ -43,7 +43,20 @@
                 <li class="li1"><a href="WebFormCRUDChamadoBolsista.aspx"><i class="fa fa-bell"></i> CHAMADOS</a></li>
                 <li class="li1"><a href="WebFormCRUDTutorialBolsista.aspx"><i class="fa fa-book"></i> TUTORIAIS</a></li>
                 <li class="li2"><a href="..\WebFormLogin.aspx"><i class="fa fa-power-off"></i></a></li>
-                <li class="li2"><a>USUÁRIO</a></li>
+                <li class="li2">
+                    <asp:Button runat="server" CssClass="btnPesquisar btn fixed" Text="+" PostBackUrl="~//2-Servidor/WebFormAddChamado.aspx"/>
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                        <ItemTemplate>
+                            <a><i class="fa fa-user-circle"></i>  <%# DataBinder.Eval(Container.DataItem,"nome")%></a> 
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" SelectMethod="SelectImage" TypeName="ProjectColab.DAL.DALConsulta">
+                        <SelectParameters>
+                            <asp:SessionParameter SessionField="idusuario" Name="id" Type="String"></asp:SessionParameter>
+
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </li>
 
             </ul>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

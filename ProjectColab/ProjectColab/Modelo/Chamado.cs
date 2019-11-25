@@ -96,7 +96,7 @@ namespace ProjectColab.Modelo
             this.statuschamado = astatuschamado;
             this.resumo = aresumo;
             this.quantidadeeq = aquantidadeeq;
-            this.data = adata;
+            this.data = adata.Date;
         }
 
         //Usado quando um chamado é selecionado
@@ -115,7 +115,7 @@ namespace ProjectColab.Modelo
             this.quantidadeeq = aquantidadeeq;
             this.equip_id = equip_id;
             this.tombamento = tombamento; 
-            this.data = adata;
+            this.data = adata.Date;
             this.statuschamado = astatuschamado;
             this.categoriaNome = catNome;
 
